@@ -1,0 +1,47 @@
+configuration {
+	display-drun: " ";
+	display-window: " ";
+	display-run: " ";
+	drun-display-format: "{icon} {name}";
+	show-icons: true;
+
+}
+
+* {
+	background-color: #202020;
+	border-color: #2e343f;
+	text-color: #f2f2f2;
+	font: "hack 10";
+
+	border-radius: 0px;
+	border: 0;
+	lines: 15;
+	padding: 0;
+	margin: 0;
+	spacing: 0;
+}
+
+inputbar {
+	padding: 8px;
+}
+
+window {
+	width: 30%;
+	transparency: "real";
+}
+
+listview {
+	scrollbar: false;
+	columns: 1;
+}
+
+element {
+	padding: 8px;
+	orientation: vertical;
+}
+
+element selected {
+	background-color: #bfbfbf;
+	text-color: #0d0d0d;
+}
+

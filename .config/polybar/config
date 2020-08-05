@@ -1,0 +1,136 @@
+;+-+-+-+-+-+-+
+;|C|O|L|O|R|S|
+;+-+-+-+-+-+-+
+
+[colors]
+background = #0D0D0D
+foreground = #F2F2F2
+
+primary = #A0A0A0
+secondary = #262626
+icons = #595959
+alert = #E85858
+
+
+;+-+-+-+
+;|B|A|R|
+;+-+-+-+
+
+[bar/mybar]
+
+; COLORS ;
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; DIMENSIONS ;
+width = 100%
+height = 23
+
+; FONTS ;
+font-0 = "Ubuntu:pixelsize=10"
+font-1 = "Font Awesome 5 Free:pixelsize=10"
+font-2 = "SauceCodePro Nerd Font:pixelsize=10"
+
+;BAR MODULES;
+modules-left = i3 xwindow
+modules-center = date
+modules-right = network1 cpu memory pulseaudio
+
+;+-+-+-+-+-+-+-+
+;|M|O|D|U|L|E|S|
+;+-+-+-+-+-+-+-+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+label-focused-background = ${colors.primary}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+[module/xwindow]
+type = internal/xwindow
+format-title = %title%
+label-maxlen = 50
+format-padding = 2
+format-background = ${colors.secondary}
+
+[module/date]
+type = internal/date
+interval = 5
+
+time = "%H:%M"
+date-alt = "%d/%m/%y"
+
+format = <label>
+format-prefix = "  "
+format-background = ${colors.icons}
+format-padding = 2
+
+label = %time% %date%
+label-background = ${colors.secondary}
+label-padding = 2
+
+
+[module/cpu]
+type = internal/cpu
+
+interval = 2
+format-prefix = "  "
+format-background = ${colors.icons}
+format-padding = 2
+label-cpu = %percentage:2%%
+label-background = ${colors.secondary}
+label-padding = 2
+
+[module/memory]
+type = internal/memory
+
+interval = 2
+format-prefix = "  "
+format-background = ${colors.icons}
+format-padding = 2
+label-memory = %percentage_used%%
+label-background = ${colors.secondary}
+label-padding = 2
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+format-volume-prefix = "  "
+format-volume-background = ${colors.icons}
+format-volume-padding = 2
+
+label-volume = %percentage%%
+label-volume-background = ${colors.secondary}
+label-volume-padding = 2
+
+
+format-muted-prefix = "  "
+format-muted-background = ${colors.alert}
+format-muted-padding = 2
+
+label-muted = "MUTED"
+label-muted-background = ${colors.secondary}
+label-muted-padding = 2

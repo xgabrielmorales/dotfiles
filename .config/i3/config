@@ -1,0 +1,215 @@
+# [en] i3 config file (v4)
+# Please see https://i3wm.org/docs/userguide.html for a complete reference
+# [es] Arcivo de configuración de i3wm (v4)
+# Ve a https://i3wm.org/docs/userguide.html para ver la guia de uso.
+
+# [en] Set mod key (Mod1=<Alt>, Mod4=<Super/window>)
+# [es] Asigna la tecla de mod (Mod1=<alt>, Mod4=<Super/window>)
+set $mod Mod4
+
+# set default desktop layout (default is tiling)
+# workspace_layout tabbed <stacking|tabbed>
+
+# [en] Change borders
+# [es] Cambia los bordes de las ventanas
+bindsym $mod+u border none
+bindsym $mod+y border pixel 1
+bindsym $mod+n border normal
+
+# [en] Configure border style <normal|1pixel|pixel xx|none|pixel>
+# [es] Configura el diseño de los bordes de las ventanas <normal|1pixel|pixel xx|none|pixel>¬
+default_border pixel 0
+default_floating_border normal
+
+# [en] Hide borders
+# [es] Esconde los bordes
+hide_edge_borders none
+
+# [en] Font for window titles. Will also be used by the bar unless a different font
+# [es] Fuente tipografica para los titulos de las ventanas. Tambien será usada para la barra a no ser que uses otra fuente
+font pango:ubuntu 10
+
+# [en] default terminal
+# [es] Terminal por defecto
+set $myTerm alacritty
+
+# [en] Start a terminal
+# [es] Terminal a ejecutar
+bindsym $mod+Return exec $myTerm; workspace $ws2
+
+# [en] Kill focused window
+# [es] Cierra la ventana fijada
+bindsym $mod+Shift+q kill
+
+# [en] Start rofi (a program launcher)
+# [es] Abre rofi (un program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+x exec --no-startup-id rofi -show window
+
+# [en] Change focus
+# [es] Fija otra ventana
+bindsym $mod+j      focus left
+bindsym $mod+k      focus down
+bindsym $mod+l      focus up
+bindsym $mod+ntilde focus right
+
+# [en] Alternatively, you can use the cursor keys
+# [es] Tambien puedes usar las flechitas
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# [en] Move focused window
+# [es] Mueve la ventana fijada
+bindsym $mod+Shift+j      move left
+bindsym $mod+Shift+k      move down
+bindsym $mod+Shift+l      move up
+bindsym $mod+Shift+ntilde move right
+
+# [en] Alternatively, you can use the cursor keys:
+# [es] Tambien puedes usar las flechitas:
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+# [en] Use Mouse+$mod to drag floating windows to their wanted position
+# [es] Usa la tecla super y el mouse para mover las ventanas flotantes
+floating_modifier $mod
+
+# [en] Splits the screen and report the mode
+# [es] Divide la pantalla y notifica el el modo
+bindsym $mod+h split h; exec notify-send 'Horizontally'
+bindsym $mod+v split v; exec notify-send 'Vertical'
+bindsym $mod+f fullscreen toggle
+
+# [en] Change container layout (stacked, tabbed, toggle split)
+# [es] Cambia el diseño de las ventanas (apiladas, en pestañas, divididas)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# [en] Toggle tiling / floating
+# [es] Cambia a ventana flotante/completa
+bindsym $mod+Shift+space floating toggle
+
+# [en] Change focus between tiling / floating windows
+# [es] Cambia la fijacion de la ventana flotante/completa
+bindsym $mod+space focus mode_toggle
+
+# [en] Focus the parent container
+# [es] Fija al contenedor principal
+bindsym $mod+a focus parent
+
+# [en] Define names for default workspaces for which we configure key bindings later on.
+# [es] Define vairables con los nombres de los workspaces para luego usarlas en la configuracion de los workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+
+# [en] Switch to workspace
+# [es] Cambia de workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# [en] Move focused container to workspace
+# [es] Mueve la ventana en foco al workspace
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+# [en] Open application on specific workspaces
+# [es] Abre estas aplicaciones en workspaces especficios
+assign [class="Firefox"] $ws1
+assign [class="firefox"] $ws1
+
+assign [class="Alacritty"] $ws2
+
+assign [class="Discord"] $ws3
+assign [class="discord"] $ws3
+assign [class="Zathura"] $ws3
+
+assign [class="VirtualBox Manager"] $ws4
+assign [class="Thunderbird"] $ws4
+
+assign [class="Gimp-2.10"] $ws5
+assign [class="obs"] $ws5
+
+# [en] Open specific application in floating mode
+# [es] Abre estas aplicaciones en modo ventala flotante
+for_window [class="Nitrogen"] 			floating enable sticky enable normal
+for_window [class="Gnome-calculator"]	floating enable sticky enable normal
+for_window [class="Gnome-screenshot"]	floating enable sticky enable normal
+for_window [class="XTerm"]				floating enable sticky enable normal
+for_window [class="Tk"]					floating enable sticky enable normal
+for_window [class="Matplotlib"]			floating enable sticky enable normal
+for_window [class="Lxappearance"]		floating enable sticky enable normal
+for_window [class="Gpicview"]			floating enable sticky enable normal
+
+# [en] Switch to workspace with urgent window automatically
+# [es] Cambia al workspace de la ventana emergente automaticamente
+for_window [urgent=latest] focus
+
+# [en] Reload the configuration file
+# [es] Actualiza el archivo de configuración de i3
+bindsym $mod+Shift+c reload
+
+# [en] Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# [es] Reinicia i3 (conserva la sesión, puede usarse para actualizar i3)
+bindsym $mod+Shift+r restart
+
+# [en] Resize window
+# [es] Redimensiona las ventanas
+mode "resize" {
+		# [en] Use the j,k,l,ñ keys to rezise
+		# [es] Usas las letras j,k,l,ñ para dedimensionar
+		bindsym j      resize shrink width  10 px or 10 ppt
+		bindsym k      resize grow height   10 px or 10 ppt
+		bindsym l      resize shrink height 10 px or 10 ppt
+		bindsym ntilde resize grow width    10 px or 10 ppt
+
+		# [en] Same bindings, but for the arrow keys
+		# [es] Lo mismo pero con las flechitas
+		bindsym Left   resize shrink width  10 px or 10 ppt
+		bindsym Down   resize grow height   10 px or 10 ppt
+		bindsym Up     resize shrink height 10 px or 10 ppt
+		bindsym Right  resize grow width    10 px or 10 ppt
+
+		# [en] Back to normal: Enter or Escape or $mod+r
+		# [es] Regresa a la normalidad: Enter o Escape o $mod+r
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+		bindsym $mod+r mode "default"
+}
+
+# [es] Rezise mode
+# [es] Modo de redimensionado
+bindsym $mod+r mode "resize"
+
+# [en] Bar info (Polybar)
+# [es] La barra de información (Polybar)
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id nm-applet
+
+# [en] Gaps
+# [es] Separacion entre ventanas
+smart_gaps on
+gaps inner 10
+gaps outer 1
