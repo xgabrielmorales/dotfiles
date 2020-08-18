@@ -32,7 +32,7 @@
     geometry = "300x40-12+38"
 
     # Show how many messages are currently hidden (because of geometry).
-    indicate_hidden = yes
+    indicate_hidden = off
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -42,7 +42,7 @@
     # [es] Transparencia de la ventana. Rango entre: [0, 100]
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, picom, etc.).
-    transparency = 0
+    transparency = 10
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -64,12 +64,12 @@
 
     # [en] Padding between text and separator.
     # [es] Paddind entre el texto y el borde de la ventana
-    padding = 24
-    horizontal_padding = 24
+    padding = 20
+    horizontal_padding = 20
 
     #[es] Borde al rededor de la ventana de notificaciones
     frame_width = 0
-    frame_color = "#f2f2f2"
+    frame_color = "#eaeaea"
 
 
     # Sort messages by urgency.
@@ -158,13 +158,13 @@
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = ~/.icons/We10X
 
     ### History ###
 
@@ -195,7 +195,7 @@
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
     # automatically after a crash.
-    startup_notification = false
+    startup_notification = true
 
     # Manage dunst's desire for talking
     # Can be one of the following values:
@@ -273,15 +273,15 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#3B3B3B"
-    foreground = "#f2f2f2"
+    background = "#eaeaea"
+    foreground = "#0d0d0d"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#f2f2f2"
+    background = "#0d0d0d"
+    foreground = "#eaeaea"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon

@@ -137,31 +137,32 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # [en] Open application on specific workspaces
 # [es] Abre estas aplicaciones en workspaces especficios
-assign [class="Firefox"] $ws1
-assign [class="firefox"] $ws1
+assign [class="Firefox"]            $ws1
+assign [class="firefox"]            $ws1
 
-assign [class="Alacritty"] $ws2
+assign [class="Alacritty"]          $ws2
 
-assign [class="Discord"] $ws3
-assign [class="discord"] $ws3
-assign [class="Zathura"] $ws3
+assign [class="Discord"]            $ws3
+assign [class="discord"]            $ws3
+assign [class="Ripcord"]            $ws3
+assign [class="Zathura"]            $ws3
 
 assign [class="VirtualBox Manager"] $ws4
-assign [class="Thunderbird"] $ws4
+assign [class="Thunderbird"]        $ws4
 
-assign [class="Gimp-2.10"] $ws5
-assign [class="obs"] $ws5
+assign [class="Gimp-2.10"]          $ws5
+assign [class="obs"]                $ws5
 
 # [en] Open specific application in floating mode
 # [es] Abre estas aplicaciones en modo ventala flotante
-for_window [class="Nitrogen"] 			floating enable sticky enable normal
-for_window [class="Gnome-calculator"]	floating enable sticky enable normal
-for_window [class="Gnome-screenshot"]	floating enable sticky enable normal
-for_window [class="XTerm"]				floating enable sticky enable normal
-for_window [class="Tk"]					floating enable sticky enable normal
-for_window [class="Matplotlib"]			floating enable sticky enable normal
-for_window [class="Lxappearance"]		floating enable sticky enable normal
-for_window [class="Gpicview"]			floating enable sticky enable normal
+for_window [class="Nitrogen"]           floating enable sticky enable normal
+for_window [class="Gnome-calculator"]   floating enable sticky enable normal
+for_window [class="Gnome-screenshot"]   floating enable sticky enable normal
+for_window [class="XTerm"]              floating enable sticky enable normal
+for_window [class="Tk"]                 floating enable sticky enable normal
+for_window [class="Matplotlib"]         floating enable sticky enable normal
+for_window [class="Lxappearance"]       floating enable sticky enable normal
+for_window [class="Gpicview"]           floating enable sticky enable normal
 
 # [en] Switch to workspace with urgent window automatically
 # [es] Cambia al workspace de la ventana emergente automaticamente
@@ -177,7 +178,7 @@ bindsym $mod+Shift+r restart
 
 # [en] Resize window
 # [es] Redimensiona las ventanas
-mode "resize" {
+mode "Resize" {
 		# [en] Use the j,k,l,ñ keys to rezise
 		# [es] Usas las letras j,k,l,ñ para dedimensionar
 		bindsym j      resize shrink width  10 px or 10 ppt
@@ -201,12 +202,11 @@ mode "resize" {
 
 # [es] Rezise mode
 # [es] Modo de redimensionado
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "Resize"
 
 # [en] Bar info (Polybar)
 # [es] La barra de información (Polybar)
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id nm-applet
 
 # [en] Gaps
 # [es] Separacion entre ventanas
