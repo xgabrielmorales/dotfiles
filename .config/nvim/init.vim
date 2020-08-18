@@ -1,8 +1,9 @@
-syntax on
-set t_Co=256
-set encoding=utf-8
-colorscheme xgm
+set nocompatible
+filetype off
 
+" Plugins
+source $HOME/.config/nvim/vim-plug/plugins.vim
+"
 " Indentation
 set autoindent
 set copyindent
@@ -19,9 +20,17 @@ set number
 set showmode!
 set laststatus=2
 
+syntax on
+set t_Co=256
+set encoding=utf-8
+set background=dark
+colorscheme xgm
+
 " Don't bother with backups
 set noswapfile
 set nobackup
+
+autocmd BufWritePre * %s/\s\+$//e
 
 let g:currentmode={
        \ 'n'  : 'NORMAL ',
@@ -42,4 +51,7 @@ set statusline+=%3*\ %{&modified?'[+]':''}
 set statusline+=%=
 set statusline+=\ %3*\ [%{&fileformat}]
 set statusline+=%3*\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %1*\ %Y\  
+set statusline+=\ %1*\ %Y\  ""
+
+"Plugin Configuration
+map <C-n> :NERDTreeToggle<CR>
