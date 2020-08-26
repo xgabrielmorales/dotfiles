@@ -27,8 +27,10 @@ width = 100%
 height = 23
 padding-right= 2
 
-border-left-size = 350
-border-right-size = 350
+border-top-size = 10
+border-bottom-size = 10
+border-left-size = 300
+border-right-size = 300
 border-color = ${colors.transparent}
 
 ; FONTS ;
@@ -40,7 +42,7 @@ module-margin = 2
 
 modules-left = i3 cmus
 modules-center = date
-modules-right = ram cpu pulseaudio
+modules-right = network ram pulseaudio
 
 ;+-+-+-+-+-+-+-+
 ;|M|O|D|U|L|E|S|
@@ -123,3 +125,9 @@ label = %output%
 
 click-left  = cmus-remote --pause
 click-right = cmus-remote --stop
+
+[module/network]
+type = custom/script
+exec = sh ~/.config/polybar/scripts/network.sh
+interval = 3
+format = <label>
