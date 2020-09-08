@@ -1,6 +1,6 @@
 # ~/dotfiles
 
-![](https://i.imgur.com/hgdAxwx.png)
+![](https://i.imgur.com/aEraX4l.png)
 
 ## Fonts
 | Font  | Origen |

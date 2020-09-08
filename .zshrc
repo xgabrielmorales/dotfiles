@@ -1,7 +1,10 @@
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR="nvim"
 export HISTCONTROL=ignoredups:erasedups
-export TERM=xterm-256color
+export EDITOR="nvim"
+export VISUAL="nvim"
+export READER="zathura"
+export TERM="alacritty"
+export BROWSER="firefox"
 
 ZSH_THEME="xgm"
 source $ZSH/oh-my-zsh.sh
@@ -21,7 +24,8 @@ alias dl="cd ~/Downloads && ls -lA"
 alias doc="cd ~/Documents && ls -lA"
 alias dotfiles="cd ~/dotfiles && ls"
 alias dconfig="cd ~/dotfiles/.config"
-alias chrome="cd /home/xgm/.mozilla/firefox/rszqgpto.default-release/chrome"
+alias chrome="cd ~/.mozilla/firefox/rszqgpto.default-release/chrome"
+alias wallpapers="cd ~/Pictures/wallpapers/"
 
 ext(){
 	if [ -f $1 ]; then

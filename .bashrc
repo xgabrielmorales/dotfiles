@@ -8,7 +8,9 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-export EDITOR="vim"
+export EDITOR=nvim
+export VISUAL=nvim
+export TERM=alacritty
 export HISTCONTROL=ignoredups:erasedups
 
 # Promt
@@ -26,4 +28,3 @@ alias dl='cd ~/Downloads && ls -lA'
 
 alias dotfiles="cd ~/dotfiles"
 alias dconfig="cd ~/dotfiles/.config"
-
