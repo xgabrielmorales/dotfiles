@@ -1,41 +1,27 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
-#env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
-
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-dimensions:
-  columns: 85
-  lines: 16
+  dimensions:
+    columns: 85
+    lines: 16
 
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
-  #position:
-  #  x: 0
-  #  y: 0
+  position:
+    x: 0
+    y: 0
 
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-padding:
-  x: 60
-  y: 50
+  padding:
+    x: 10
+    y: 10
 
   # Spread additional padding evenly around the terminal content.
 dynamic_padding: true
@@ -85,7 +71,6 @@ font:
   normal:
     family: hack
     style: regular
-
 
   # Bold font face
   #bold:
@@ -142,37 +127,38 @@ font:
 # Colors theme
 colors:
   primary:
-    background: '#121212'
-    foreground: '#d6dbe5'
+    background: "#1d1d1d"
+    foreground: "#eaeaea"
 
 cursor:
-    text: '0x2E3440'
-    cursor: '0xD8DEE9'
+  text:   "0x2E3440"
+  cursor: "0xD8DEE9"
 
 selection:
-  text: '#f2f2f2'
+  text:       '#f2f2f2'
   background: '#404040'
 
   # Normal colors
 normal:
-  black: "#1f1f1f"
-  red: "#f81118"
-  green: "#2dc55e"
-  yellow: "#ecba0f"
-  blue: "#2a84d2"
-  purple: "#4e5ab7"
-  cyan: "#1081d6"
-  white: "#d6dbe5"
+  black:   "#1f1f1f"
+  red:     "#f81118"
+  green:   "#2dc55e"
+  yellow:  "#ecba0f"
+  blue:    "#2a84d2"
+  purple:  "#4e5ab7"
+  cyan:    "#1081d6"
+  white:   "#d6dbe5"
+
   # Bright colors
 bright:
-  black: '#d6dbe5'
-  red: '#de352e'
-  green: '#1dd361'
-  yellow: '#f3bd09'
-  blue: '#1081d6'
-  magenta: '#5350b9'
-  cyan: '#0f7ddb'
-  white: '#ffffff'
+  black:   "#d6dbe5"
+  red:     "#de352e"
+  green:   "#1dd361"
+  yellow:  "#f3bd09"
+  blue:    "#1081d6"
+  magenta: "#5350b9"
+  cyan:    "#0f7ddb"
+  white:   "#ffffff"
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based

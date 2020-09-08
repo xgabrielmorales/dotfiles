@@ -19,7 +19,7 @@ bindsym $mod+n border normal
 # [en] Configure border style <normal|1pixel|pixel xx|none|pixel>
 # [es] Configura el diseño de los bordes de las ventanas <normal|1pixel|pixel xx|none|pixel>¬
 default_border pixel 0
-default_floating_border normal
+default_floating_border none
 
 # [en] Hide borders
 # [es] Esconde los bordes
@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 
 # [en] Start rofi (a program launcher)
 # [es] Abre rofi (un program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+x exec --no-startup-id rofi -show window
 
 # [en] Change focus
@@ -211,5 +211,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # [en] Gaps
 # [es] Separacion entre ventanas
 smart_gaps on
-gaps inner 10
-gaps outer 1
+gaps inner 8

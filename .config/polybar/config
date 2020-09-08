@@ -27,7 +27,6 @@ width = 100%
 height = 23
 padding-right= 2
 
-border-top-size = 10
 border-bottom-size = 10
 border-left-size = 300
 border-right-size = 300
@@ -42,7 +41,7 @@ module-margin = 2
 
 modules-left = i3 cmus
 modules-center = date
-modules-right = network ram pulseaudio
+modules-right = network cpu ram pulseaudio
 
 ;+-+-+-+-+-+-+-+
 ;|M|O|D|U|L|E|S|
