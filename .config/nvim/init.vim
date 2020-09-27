@@ -1,35 +1,30 @@
-syntax on
-set nocompatible
-set t_Co=256
-set encoding=utf-8
-set background=dark
-colorscheme xgm
-
 " Plugins
 source $HOME/.config/nvim/vim-plug/plugins.vim
-"
-" Indentation
+
+syntax on
+set nocompatible
+colorscheme onedark
+set background=dark
+
 set autoindent
 set copyindent
-set showtabline=4
-set shiftwidth=4
 set tabstop=4
+set shiftwidth=4
+set showtabline=4
 set list
 set listchars=eol:¶,tab:>·
-
-" Aditional
 set cursorline
-set norelativenumber
 set number
+set relativenumber
 set laststatus=2
 set noshowmode
 set noshowcmd
 set shortmess+=F
 set showtabline=1
-
-" Don't bother with backups
-set noswapfile
 set nobackup
+set noswapfile
+set foldmethod=manual
+set termguicolors
 
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -38,26 +33,20 @@ imap <C-j> <Esc>:bnext<CR>
  map <C-k>      :bprev<CR>
 imap <C-k> <Esc>:bprev<CR>
 
-let g:currentmode={
-       \ 'n'  : 'NORMAL ',
-       \ 'v'  : 'VISUAL ',
-       \ 'V'  : 'V-Line ',
-       \ '' : 'V-Block ',
-       \ 'i'  : 'INSERT ',
-       \ 'R'  : 'REPLACE ',
-       \ 'Rv' : 'V-Replace ',
-       \ 'c'  : 'COMAND ',
-       \}
-
-set statusline=
-set statusline+=%1*\ %{toupper(g:currentmode[mode()])}
-set statusline+=%2*\ %f\ "
-set statusline+=%3*\ %{&modified?'[+]':''}
-
-set statusline+=%=
-set statusline+=\ %3*\ [%{&fileformat}]
-set statusline+=%3*\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %1*\ %Y\  "
-
-"Plugin Configuration
-map <C-f> :NERDTreeToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-f> :NERDTreeToggle <CR>
+let NERDTreeShowHidden=1
+let g:NERDTreeDirArrowExpandable = '|'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Lightline.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lightline = {"colorscheme": "one"}
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-s> :SyntasticCheck<CR>
