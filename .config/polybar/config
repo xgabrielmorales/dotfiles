@@ -3,12 +3,11 @@
 ;+-+-+-+-+-+-+
 
 [colors]
-background = #eaeaea
+background = #fafafa
 foreground = #0d0d0d
 
 primary = #c0c0c0
 secondary = #262626
-icons = #595959
 alert = #E85858
 transparent = #00000000
 
@@ -27,9 +26,8 @@ width = 100%
 height = 23
 padding-right= 2
 
-border-bottom-size = 10
-border-left-size = 300
-border-right-size = 300
+border-left-size = 200
+border-right-size = 200
 border-color = ${colors.transparent}
 
 ; FONTS ;
@@ -41,7 +39,7 @@ module-margin = 2
 
 modules-left = i3 cmus
 modules-center = date
-modules-right = network cpu ram pulseaudio
+modules-right = cpu ram pulseaudio network  powermenu
 
 ;+-+-+-+-+-+-+-+
 ;|M|O|D|U|L|E|S|
@@ -49,13 +47,10 @@ modules-right = network cpu ram pulseaudio
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
 
 enable-scroll = false
 
-label-mode-padding = 2
-label-mode-foreground = ${colors.secondary}
-label-mode-background = ${colors.primary}
+format = <label-state>
 
 label-focused = %index%
 label-focused-background = ${colors.primary}
@@ -105,11 +100,17 @@ label = %percentage_used%%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume =  <label-volume>
+format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
 
 format-muted-prefix = 
 label-muted = " Muted"
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+click-right = pavucontrol &
 
 [module/cmus]
 type = custom/script
@@ -118,7 +119,7 @@ exec = sh ~/.config/polybar/scripts/cmus.sh
 exec-if = pgrep -x cmus
 interval = 2
 
-format = <label>  
+format =   <label>
 label-maxlen = 30
 label = %output%
 
@@ -130,3 +131,22 @@ type = custom/script
 exec = sh ~/.config/polybar/scripts/network.sh
 interval = 3
 format = <label>
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-close-foreground = ${colors.alert}
+label-separator = " | "
+
+menu-0-0 =  Shutdown
+menu-0-0-exec = systemctl poweroff
+
+menu-0-1 =  Reboot
+menu-0-1-exec = systemctl reboot
+
+menu-0-2 =  Suspend
+menu-0-2-exec = systemctl suspend
+
+expand-right = false

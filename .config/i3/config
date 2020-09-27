@@ -43,8 +43,9 @@ bindsym $mod+Shift+q kill
 
 # [en] Start rofi (a program launcher)
 # [es] Abre rofi (un program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+x exec --no-startup-id rofi -show window
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+x exec --no-startup-id rofi -show run
+bindsym $mod+z exec --no-startup-id rofi -show window
 
 # [en] Change focus
 # [es] Fija otra ventana
@@ -80,8 +81,8 @@ floating_modifier $mod
 
 # [en] Splits the screen and report the mode
 # [es] Divide la pantalla y notifica el el modo
-bindsym $mod+h split h; exec notify-send 'Horizontally'
-bindsym $mod+v split v; exec notify-send 'Vertical'
+bindsym $mod+h split h; exec notify-send "Horizontally"
+bindsym $mod+v split v; exec notify-send "Vertical"
 bindsym $mod+f fullscreen toggle
 
 # [en] Change container layout (stacked, tabbed, toggle split)
@@ -149,9 +150,8 @@ assign [class="Zathura"]            $ws3
 
 assign [class="VirtualBox Manager"] $ws4
 assign [class="Thunderbird"]        $ws4
-
-assign [class="Gimp-2.10"]          $ws5
-assign [class="obs"]                $ws5
+assign [class="Gimp-2.10"]          $ws4
+assign [class="obs"]                $ws4
 
 # [en] Open specific application in floating mode
 # [es] Abre estas aplicaciones en modo ventala flotante
@@ -208,7 +208,8 @@ bindsym $mod+r mode "Resize"
 # [es] La barra de información (Polybar)
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# [en] Gaps
-# [es] Separacion entre ventanas
-smart_gaps on
+# [en] Gaps (i3-gaps)
+# [es] Separacion entre ventanas (i3-gaps)
+for_window [class=".*"] border pixel 0
 gaps inner 8
+gaps outer 3

@@ -1,12 +1,12 @@
 export ZSH="$HOME/.oh-my-zsh"
 export HISTCONTROL=ignoredups:erasedups
-export EDITOR="nvim"
-export VISUAL="nvim"
-export READER="zathura"
-export TERM="alacritty"
-export BROWSER="firefox"
+export EDITOR=nvim
+export VISUAL=nvim
+export READER=zathura
+export TERM=xterm-256color
+export BROWSER=firefox
 
-ZSH_THEME="xgm"
+ZSH_THEME=xgm
 source $ZSH/oh-my-zsh.sh
 
 plugins=(git)
@@ -17,7 +17,8 @@ alias vim="nvim"
 alias free="free -m"
 
 alias ld="ls -lAF | grep '^d'"
-alias ls="ls -FXhAc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
+alias ls="ls -FXAhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
+alias la="ls -og"
 
 alias dev="cd ~/Documents/dev"
 alias dl="cd ~/Downloads && ls -lA"
@@ -26,6 +27,8 @@ alias dotfiles="cd ~/dotfiles && ls"
 alias dconfig="cd ~/dotfiles/.config"
 alias chrome="cd ~/.mozilla/firefox/rszqgpto.default-release/chrome"
 alias wallpapers="cd ~/Pictures/wallpapers/"
+alias vimconf="cd ~/.config/nvim/"
+
 
 ext(){
 	if [ -f $1 ]; then

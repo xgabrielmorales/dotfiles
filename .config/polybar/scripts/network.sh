@@ -1,7 +1,12 @@
-wget -q --spider http://google.com
+wget -q --spider https://www.google.com
+
+# -q,  --quiet    Silencioso (sin texto de salida).
+#      --spider   Retorna la respuesta del servidor pero no descarga nada.
 
 if [ $? -eq 0 ]; then
-	echo ""
+	# Si retorna respuesta el servidor entonces hay Internet.
+	echo 
 else
-	echo ""
+	# Si no retorna nada, entonces no hay Internet.
+	echo 
 fi

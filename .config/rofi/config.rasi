@@ -1,4 +1,5 @@
 configuration {
+	modi: "window,run,ssh,drun";
 	display-drun: " ";
 	display-window: " ";
 	display-run: " ";
@@ -7,24 +8,30 @@ configuration {
 }
 
 * {
-	font: "hack 10";
-	color: #f2f2f2;
-	background-color: #202020;
-}
+	/*Colors*/
+	dark-gray: #202020;
+	gray:      #bfbfbf;
+	white:     #f2f2f2;
 
-inputbar {
-	padding: 8px;
+	font: "hack 10";
+	color: @white;
+	background-color: @dark-gray;
 }
 
 window {
 	width: 30%;
 }
 
+inputbar,
 element {
 	padding: 8px;
 }
 
 element selected {
-	color: #0d0d0d;
-	background-color: #bfbfbf;
+	color: @dark-gray;
+	background-color: @gray;
+}
+
+element-icon {
+	size: 14px;
 }
