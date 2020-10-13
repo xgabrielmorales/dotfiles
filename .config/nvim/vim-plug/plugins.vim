@@ -7,12 +7,11 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-  Plug 'preservim/nerdtree'           "File system explorer
-  Plug 'itchyny/lightline.vim'        "Status line / Tab line
-  Plug 'sheerun/vim-polyglot'         "Syntax Highlight
-  Plug 'vim-syntastic/syntastic'      "Syntax Checking
-  Plug 'joshdick/onedark.vim'         "Color Scheme
-  Plug 'ryanoasis/vim-devicons'       "Add icons to nerdtree
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'tpope/vim-surround'
+  Plug 'sainnhe/sonokai'         " Color Scheme
+  Plug 'tpope/vim-surround'      " Indescribable, but it's cool
+  Plug 'preservim/nerdtree'      " File system explorer
+  Plug 'sheerun/vim-polyglot'    " Syntax Highlight
+  Plug 'itchyny/lightline.vim'   " Status line / Tab line
+  Plug 'ryanoasis/vim-devicons'  " Add icons to nerdtree
+  Plug 'vim-syntastic/syntastic' " Syntax Checking
 call plug#end()
