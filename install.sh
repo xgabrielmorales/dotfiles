@@ -3,29 +3,30 @@
 #[es] Crea un carpeta para guardar tus dotfiles antiguos
 mkdir -p "$HOME/old_dotfiles"
 
-
 #[es] Ruta de tus dotfiles
 dotfiles_dir=$HOME/dotfiles
-dotfiles_home="$dotfiles_dir/dt_home.txt"
-
-cd "$dotfiles_dir"
 
 # +-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 # |H|O|M|E| |D|I|R|E|C|T|O|R|Y|
 # +-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-
-for file in `cat $dotfiles_home`; do
-	unlink $HOME/$file
-	mv "$HOME/$file" "$HOME/old_dotfiles/" &> /dev/null
-	ln -s $dotfiles_dir/$file $HOME/ && echo "$file instalado!"
+home_files=( ".bashrc" ".gitconfig" ".vimrc" ".zshrc" ".tmux.conf" )
+for file in "${home_files[@]}"; do
+	if [ -L $HOME/$file ]; then
+		unlink $HOME/$file
+	elif [ -e $HOME/$file ]; then
+		mv "$HOME/$file" "$HOME/old_dotfiles/"
+	fi
+	ln -s $dotfiles_dir/$file $HOME/ && echo "Se instaló correctamente: $file"
 done
 
 # +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 # |.|C|O|N|F|I|G| |D|I|R|E|C|T|O|R|Y|
 # +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-
-for file in `ls -A .config`; do
-	unlink $HOME/.config/$file &> /dev/null
-	mv "$HOME/.config/$file" "$HOME/old_dotfiles/" &> /dev/null
-	ln -s $dotfiles_dir/.config/$file $HOME/.config && echo "$file instalado!"
+for file in `ls -A $dotfiles_dir/.config`; do
+	if [ -L $HOME/.config/$file ]; then
+		unlink $HOME/.config/$file
+	elif [ -e $dotfiles_dir/.config/$file ]; then
+		mv "$HOME/.config/$file" "$HOME/old_dotfiles/"
+	fi
+	ln -s $dotfiles_dir/.config/$file $HOME/.config && echo "Se instaló correctamente: $file"
 done

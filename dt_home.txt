@@ -1,5 +1,0 @@
-.bashrc
-.gitconfig
-.vimrc
-.zshrc
-.tmux.conf
