@@ -204,6 +204,8 @@ mode "Resize" {
 # [es] Modo de redimensionado
 bindsym $mod+r mode "Resize"
 
+bindsym $mod+c exec $myTerm -e ranger
+
 # [en] Bar info (Polybar)
 # [es] La barra de información (Polybar)
 exec_always --no-startup-id ~/.config/polybar/launch.sh

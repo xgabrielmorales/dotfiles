@@ -39,9 +39,7 @@
     shrink = no
 
     # [en] The transparency of the window.  Range: [0; 100]
-    # [es] Transparencia de la ventana. Rango entre: [0, 100]
-    # This option will only work if a compositing window manager is
-    # present (e.g. xcompmgr, compiz, picom, etc.).
+    # [es] Transparencia de la ventana. Rango: [0, 100]
     transparency = 10
 
     # The height of the entire notification.  If the height is smaller
@@ -52,7 +50,7 @@
     # Draw a line of separator height pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 10
 
     # Define a color for the separator.
     # possible values are:
@@ -60,7 +58,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = "#00000000"
 
     # [en] Padding between text and separator.
     # [es] Paddind entre el texto y el borde de la ventana
@@ -124,7 +122,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%s\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -273,15 +271,15 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#eaeaea"
-    foreground = "#0d0d0d"
+    background = "#2c2e34"
+    foreground = "#eaeaea"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#0d0d0d"
-    foreground = "#eaeaea"
+    background = "#fafafa"
+    foreground = "#0d0d0d"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon

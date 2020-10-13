@@ -1,34 +1,34 @@
-export ZSH="$HOME/.oh-my-zsh"
-export HISTCONTROL=ignoredups:erasedups
 export EDITOR=nvim
 export VISUAL=nvim
 export READER=zathura
 export TERM=xterm-256color
-export BROWSER=firefox
 
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=xgm
 source $ZSH/oh-my-zsh.sh
 
-plugins=(git)
+plugins=(
+	git
+)
 
 # Aliases
 alias cp="cp -i"
 alias vim="nvim"
-alias free="free -m"
 
+alias la="ls -og"
 alias ld="ls -lAF | grep '^d'"
 alias ls="ls -FXAhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
-alias la="ls -og"
 
-alias dev="cd ~/Documents/dev"
+# Navegación
 alias dl="cd ~/Downloads && ls -lA"
 alias doc="cd ~/Documents && ls -lA"
-alias dotfiles="cd ~/dotfiles && ls"
-alias dconfig="cd ~/dotfiles/.config"
-alias chrome="cd ~/.mozilla/firefox/rszqgpto.default-release/chrome"
-alias wallpapers="cd ~/Pictures/wallpapers/"
-alias vimconf="cd ~/.config/nvim/"
-
+alias dotfiles="cd ~/dotfiles && ls -LA"
+alias dev="cd ~/Documents/dev && ls -LA"
+alias math="cd ~/Documents/math && ls -LA"
+alias vimconf="cd ~/.config/nvim/ && ls -LA"
+alias dconfig="cd ~/dotfiles/.config && ls -LA"
+alias wallpapers="cd ~/Pictures/wallpapers/ && ls -LA"
+alias chrome="cd ~/.mozilla/firefox/rszqgpto.default-release/chrome && ls -LA"
 
 ext(){
 	if [ -f $1 ]; then

@@ -11,7 +11,7 @@ configuration {
 	/*Colors*/
 	dark-gray: #202020;
 	gray:      #bfbfbf;
-	white:     #f2f2f2;
+	white:     #fafafa;
 
 	font: "hack 10";
 	color: @white;
