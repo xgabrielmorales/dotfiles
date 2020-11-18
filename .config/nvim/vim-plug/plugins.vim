@@ -11,7 +11,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-surround'      " Indescribable, but it's cool
   Plug 'preservim/nerdtree'      " File system explorer
   Plug 'sheerun/vim-polyglot'    " Syntax Highlight
+  Plug 'vim-syntastic/syntastic' " Syntax Checking
   Plug 'itchyny/lightline.vim'   " Status line / Tab line
   Plug 'ryanoasis/vim-devicons'  " Add icons to nerdtree
-  Plug 'vim-syntastic/syntastic' " Syntax Checking
+  Plug 'Yggdroot/indentLine'
 call plug#end()

@@ -9,4 +9,5 @@ if [ $? -eq 0 ]; then
 else
 	# Si no retorna nada, entonces no hay Internet.
 	echo 
+	notify-send "  No Internet connection" "Verifica tu conección a Internet."
 fi

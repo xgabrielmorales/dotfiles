@@ -1,8 +1,3 @@
-export EDITOR=nvim
-export VISUAL=nvim
-export READER=zathura
-export TERM=xterm-256color
-
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=xgm
 source $ZSH/oh-my-zsh.sh
@@ -11,24 +6,12 @@ plugins=(
 	git
 )
 
-# Aliases
-alias cp="cp -i"
-alias vim="nvim"
+source $HOME/dotfiles/alias.sh
 
-alias la="ls -og"
-alias ld="ls -lAF | grep '^d'"
-alias ls="ls -FXAhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
-
-# Navegación
-alias dl="cd ~/Downloads && ls -lA"
-alias doc="cd ~/Documents && ls -lA"
-alias dotfiles="cd ~/dotfiles && ls -LA"
-alias dev="cd ~/Documents/dev && ls -LA"
-alias math="cd ~/Documents/math && ls -LA"
-alias vimconf="cd ~/.config/nvim/ && ls -LA"
-alias dconfig="cd ~/dotfiles/.config && ls -LA"
-alias wallpapers="cd ~/Pictures/wallpapers/ && ls -LA"
-alias chrome="cd ~/.mozilla/firefox/rszqgpto.default-release/chrome && ls -LA"
+if command -v tmux >/dev/null 2>&1 && [ "${DISPLAY}" ]; then
+    # if not inside a tmux session, and if no session is started, start a new session
+    [ -z "${TMUX}" ] && (tmux attach >/dev/null 2>&1 || tmux)
+fi
 
 ext(){
 	if [ -f $1 ]; then
@@ -55,10 +38,18 @@ ext(){
 ccc(){
 	if [ -f $1 ]; then
 		case $1 in
-			*.c)   gcc $1 -o temp && ./temp && rm temp ;;
-			*.cpp) g++ $1 -o temp && ./temp && rm temp ;;
+			*.c)   gcc $1 && ./a.out ;;
+			*.cpp) g++ $1 && ./a.out ;;
 		esac
 	else
-		echo "'$1' isn't a valid file"
+		echo "'$1' no es un archivo valido."
 	fi
+}
+
+mandroid(){
+	device=$(simple-mtpfs -l | cut -d : -f 1)
+	simple-mtpfs --device $device ~/cell/ && notify-send " Tu dispositivo android está listo para usarse"
+}
+uandroid(){
+	fusermount -u ~/cell/ && notify-send " Tu dispositivo android ha sido desconectado"
 }

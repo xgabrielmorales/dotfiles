@@ -145,8 +145,8 @@ assign [class="Alacritty"]          $ws2
 
 assign [class="Discord"]            $ws3
 assign [class="discord"]            $ws3
-assign [class="Ripcord"]            $ws3
-assign [class="Zathura"]            $ws3
+
+assign [class="Zathura"]            $ws4
 
 assign [class="VirtualBox Manager"] $ws4
 assign [class="Thunderbird"]        $ws4
@@ -203,8 +203,6 @@ mode "Resize" {
 # [es] Rezise mode
 # [es] Modo de redimensionado
 bindsym $mod+r mode "Resize"
-
-bindsym $mod+c exec $myTerm -e ranger
 
 # [en] Bar info (Polybar)
 # [es] La barra de información (Polybar)

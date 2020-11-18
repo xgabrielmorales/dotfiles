@@ -1,3 +1,9 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [en] I dont use vim, better go to my nvim config.
+" [es] Ya no uso vim, mejor vé a mi configuración de nvim.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 "[en] Colorscheme, fonts and systax
 "[es] Esquema de colores, fuente tipografica y sintaxis
 syntax on

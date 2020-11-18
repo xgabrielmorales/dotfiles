@@ -16,7 +16,7 @@ for file in "${home_files[@]}"; do
 	elif [ -e $HOME/$file ]; then
 		mv "$HOME/$file" "$HOME/old_dotfiles/"
 	fi
-	ln -s $dotfiles_dir/$file $HOME/ && echo "Se instaló correctamente: $file"
+	ln -s $dotfiles_dir/$file $HOME/
 done
 
 # +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
@@ -28,5 +28,7 @@ for file in `ls -A $dotfiles_dir/.config`; do
 	elif [ -e $dotfiles_dir/.config/$file ]; then
 		mv "$HOME/.config/$file" "$HOME/old_dotfiles/"
 	fi
-	ln -s $dotfiles_dir/.config/$file $HOME/.config && echo "Se instaló correctamente: $file"
+	ln -s $dotfiles_dir/.config/$file $HOME/.config
 done
+
+echo "Instalación completada."

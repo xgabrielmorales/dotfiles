@@ -9,13 +9,13 @@ configuration {
 
 * {
 	/*Colors*/
-	dark-gray: #202020;
+	dark-gray: #0d0d0d;
 	gray:      #bfbfbf;
 	white:     #fafafa;
 
-	font: "hack 10";
-	color: @white;
-	background-color: @dark-gray;
+	font: "hack 9";
+	color: @dark-gray;
+	background-color: @white;
 }
 
 window {

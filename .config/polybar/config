@@ -3,6 +3,11 @@
 ;+-+-+-+-+-+-+
 
 [colors]
+;Dark mode
+;background = #2f3136
+;foreground = #ffffff
+
+;Light mode
 background = #fafafa
 foreground = #0d0d0d
 
@@ -16,6 +21,9 @@ transparent = #00000000
 ;+-+-+-+
 
 [bar/mybar]
+
+;MONITOR
+monitor = ${env:MONITOR:HDMI-A-0}
 
 ; COLORS ;
 background = ${colors.background}
@@ -39,7 +47,7 @@ module-margin = 2
 
 modules-left = i3 cmus
 modules-center = date
-modules-right = cpu ram pulseaudio network  powermenu
+modules-right = pulseaudio network  powermenu
 
 ;+-+-+-+-+-+-+-+
 ;|M|O|D|U|L|E|S|
@@ -47,10 +55,8 @@ modules-right = cpu ram pulseaudio network  powermenu
 
 [module/i3]
 type = internal/i3
-
-enable-scroll = false
-
 format = <label-state>
+index-sort = true
 
 label-focused = %index%
 label-focused-background = ${colors.primary}
@@ -59,6 +65,9 @@ label-focused-padding = 2
 
 label-unfocused = %index%
 label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-padding = 2
 
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
@@ -75,8 +84,8 @@ format-background = ${colors.secondary}
 type = internal/date
 interval = 5
 
-time =  %H:%M
-date-alt =  %d/%m/%Y
+time = %H:%M
+date-alt = %d/%m/%Y
 
 label = %time% %date%
 
@@ -129,7 +138,7 @@ click-right = cmus-remote --stop
 [module/network]
 type = custom/script
 exec = sh ~/.config/polybar/scripts/network.sh
-interval = 3
+interval = 5
 format = <label>
 
 [module/powermenu]
