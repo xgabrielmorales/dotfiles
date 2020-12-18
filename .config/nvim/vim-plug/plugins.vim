@@ -7,12 +7,15 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-  Plug 'sainnhe/sonokai'         " Color Scheme
-  Plug 'tpope/vim-surround'      " Indescribable, but it's cool
-  Plug 'preservim/nerdtree'      " File system explorer
-  Plug 'sheerun/vim-polyglot'    " Syntax Highlight
-  Plug 'vim-syntastic/syntastic' " Syntax Checking
-  Plug 'itchyny/lightline.vim'   " Status line / Tab line
-  Plug 'ryanoasis/vim-devicons'  " Add icons to nerdtree
-  Plug 'Yggdroot/indentLine'
+  "Plug 'sainnhe/sonokai'         " Color Scheme
+  Plug 'arcticicestudio/nord-vim' " Color Scheme
+  Plug 'tpope/vim-surround'       " Indescribable, but it's cool
+  Plug 'preservim/nerdtree'       " File system explorer (NERDTree)
+  Plug 'sheerun/vim-polyglot'     " Syntax Highlight
+  Plug 'vim-syntastic/syntastic'  " Syntax Checking
+  Plug 'itchyny/lightline.vim'    " Status line / Tab line
+  Plug 'itchyny/vim-gitbranch'    " Provides the branch name of the current git repository
+  Plug 'ryanoasis/vim-devicons'   " Add icons to NERDTree
+  Plug 'jiangmiao/auto-pairs'     " a
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
