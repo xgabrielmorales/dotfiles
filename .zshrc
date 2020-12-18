@@ -2,9 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=xgm
 source $ZSH/oh-my-zsh.sh
 
-plugins=(
-	git
-)
+plugins=( git )
 
 source $HOME/dotfiles/alias.sh
 
@@ -31,25 +29,6 @@ ext(){
 			*.rar)     unrar x $1     ;;
 		esac
 	else
-		echo "'$1' isn't a valid file"
-	fi
-}
-
-ccc(){
-	if [ -f $1 ]; then
-		case $1 in
-			*.c)   gcc $1 && ./a.out ;;
-			*.cpp) g++ $1 && ./a.out ;;
-		esac
-	else
 		echo "'$1' no es un archivo valido."
 	fi
-}
-
-mandroid(){
-	device=$(simple-mtpfs -l | cut -d : -f 1)
-	simple-mtpfs --device $device ~/cell/ && notify-send " Tu dispositivo android está listo para usarse"
-}
-uandroid(){
-	fusermount -u ~/cell/ && notify-send " Tu dispositivo android ha sido desconectado"
 }

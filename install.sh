@@ -9,7 +9,7 @@ dotfiles_dir=$HOME/dotfiles
 # +-+-+-+-+ +-+-+-+-+-+-+-+-+-+
 # |H|O|M|E| |D|I|R|E|C|T|O|R|Y|
 # +-+-+-+-+ +-+-+-+-+-+-+-+-+-+
-home_files=( ".bashrc" ".gitconfig" ".vimrc" ".zshrc" ".tmux.conf" )
+home_files=( ".bashrc" ".zshrc" ".tmux.conf" )
 for file in "${home_files[@]}"; do
 	if [ -L $HOME/$file ]; then
 		unlink $HOME/$file
