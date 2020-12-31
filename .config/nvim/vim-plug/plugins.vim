@@ -7,8 +7,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-  "Plug 'sainnhe/sonokai'         " Color Scheme
-  Plug 'arcticicestudio/nord-vim' " Color Scheme
+  Plug 'sainnhe/sonokai'         " Color Scheme
+  "Plug 'arcticicestudio/nord-vim' " Color Scheme
+  Plug 'joshdick/onedark.vim'
   Plug 'tpope/vim-surround'       " Indescribable, but it's cool
   Plug 'preservim/nerdtree'       " File system explorer (NERDTree)
   Plug 'sheerun/vim-polyglot'     " Syntax Highlight

@@ -10,8 +10,7 @@ source $HOME/.config/nvim/vim-plug/plugin_config.vim
 "                      Configuración de Color de Vim
 "==========================================================================
 set nocompatible
-"colorscheme sonokai
-colorscheme nord
+colorscheme onedark
 if exists('+termguicolors')
     set termguicolors
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -20,11 +19,11 @@ endif
 "==========================================================================
 "                                Indentación
 "==========================================================================
-set autoindent                         " Copia la sangría de la línea anterior
-set smartindent                        " Inserta automáticamente un nivel de sangría extra
-set noexpandtab                        " No expande los tabs a espacios
-set tabstop=4                          " Espacios de indentación en modo insertar
-set shiftwidth=4                       " Espacios de indentación en modo normal
+set autoindent          " Copia la sangría de la línea anterior
+set smartindent         " Inserta automáticamente un nivel de sangría extra
+set noexpandtab         " No expande los tabs a espacios
+set tabstop=4           " Espacios de indentación en modo insertar
+set shiftwidth=4        " Espacios de indentación en modo normal
 set softtabstop=0
 "==========================================================================
 "                           Configuración Nucleo
@@ -32,21 +31,21 @@ set softtabstop=0
 set list
 set listchars=tab:>·,trail:-,eol:¶
 
-set cursorline                         " Muestra la ubicación de la linea cursor
-set number                             " Enumera las líneas
-set relativenumber                     " Número de lineas relativo a la posición del cursorline
-set laststatus=2                       " Muestra la línea de estado
+set cursorline          " Muestra la ubicación de la linea cursor
+set number              " Enumera las líneas
+set relativenumber      " Número de lineas relativo a la posición del cursorline
+set laststatus=2        " Muestra la línea de estado
 
-set nobackup                           " Evita que Vim haga backups
-set noswapfile                         " Evita cree swapfiles
-set foldmethod=manual                  " Define el método de pliegues
-set showtabline=1                      " Muestra la tabline solo cunado hay más de una tab presente
+set nobackup            " Evita que Vim haga backups
+set noswapfile          " Evita que Vim cree swapfiles
+set foldmethod=manual   " Define el método de pliegues
+set showtabline=1       " Muestra la tabline solo cunado hay más de una pestaña
 
 set noshowmode
 set noshowcmd
 set shortmess+=F
 
-set spelllang=es                       " Idioma del corrector ortográfico
+set spelllang=es        " Idioma del corrector ortográfico
 "==========================================================================
 "                           Atajos de teclado
 "==========================================================================
@@ -66,15 +65,22 @@ nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
 " Borra automáticamente los espacios sobrantes al final de la línea
 autocmd BufWritePre * %s/\s\+$//e
 
-" Compilar rapidamente desde vim
+" Abrir y cerrar los plieges de texto con la barra de espacio.
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
+" Compilar o ejecutar archivos rapidamente desde vim
 autocmd FileType c   nnoremap <buffer><silent><f5> :!gcc % -lm && ./a.out <cr>
-autocmd FileType python  nnoremap <buffer><silent><f5> :!python %<cr>
 autocmd FileType cpp nnoremap <buffer><silent><f5> :!g++ % && ./a.out <cr>
 autocmd FileType tex nnoremap <buffer><silent><f5> :!xelatex % && zathura %:r.pdf<cr>
+autocmd FileType python  nnoremap <buffer><silent><f5> :!python %<cr>
+autocmd FileType javascript nnoremap <buffer><silent><f5> :!node %<cr>
+autocmd FileType octave nnoremap <buffer><silent><f5> :!octave %<cr>
 
 " Define el tipo de indentación de acuerdo al tipo de archivo
-autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType css  setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType css    setlocal expandtab tabstop=4 shiftwidth=4
+autocmd FileType html   setlocal expandtab tabstop=4 shiftwidth=4
+autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
 
 " Define la longitud de una linea de texto en archivos de texto.
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.

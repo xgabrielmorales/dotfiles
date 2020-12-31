@@ -5,6 +5,7 @@ map <C-f> :NERDTreeToggle <CR>
 let NERDTreeShowHidden=1
 let NERDTreeSortOrder=['[[extension]]']
 let g:NERDTreeDirArrowExpandable = '|'
+let g:NERDTreeDirArrowCollapsible = '└'
 let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 let NERDTreeQuitOnOpen=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
@@ -13,7 +14,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
 "                                Lightline.vim
 "+===============================================================================+
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
