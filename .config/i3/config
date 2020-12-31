@@ -204,6 +204,8 @@ mode "Resize" {
 # [es] Modo de redimensionado
 bindsym $mod+r mode "Resize"
 
+bindsym $mod+shift+x exec betterlockscreen --lock
+
 # [en] Bar info (Polybar)
 # [es] La barra de información (Polybar)
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -211,5 +213,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # [en] Gaps (i3-gaps)
 # [es] Separacion entre ventanas (i3-gaps)
 for_window [class=".*"] border pixel 0
-gaps inner 8
-gaps outer 3
+gaps inner 10
