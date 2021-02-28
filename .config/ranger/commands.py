@@ -4,56 +4,6 @@ import os
 from ranger.api.commands import Command
 from ranger.core.loader import CommandLoader
 
-# Any class that is a subclass of "Command" will be integrated into ranger as a
-# command.  Try typing ":my_edit<ENTER>" in ranger!
-class my_edit(Command):
-    # The so-called doc-string of the class will be visible in the built-in
-    # help that is accessible by typing "?c" inside ranger.
-    """:my_edit <filename>
-
-    A sample command for demonstration purposes that opens a file in an editor.
-    """
-
-    # The execute method is called when you run this command in ranger.
-    def execute(self):
-        # self.arg(1) is the first (space-separated) argument to the function.
-        # This way you can write ":my_edit somefilename<ENTER>".
-        if self.arg(1):
-            # self.rest(1) contains self.arg(1) and everything that follows
-            target_filename = self.rest(1)
-        else:
-            # self.fm is a ranger.core.filemanager.FileManager object and gives
-            # you access to internals of ranger.
-            # self.fm.thisfile is a ranger.container.file.File object and is a
-            # reference to the currently selected file.
-            target_filename = self.fm.thisfile.path
-
-        # This is a generic function to print text in ranger.
-        self.fm.notify("Let's edit the file " + target_filename + "!")
-
-        # Using bad=True in fm.notify allows you to print error messages:
-        if not os.path.exists(target_filename):
-            self.fm.notify("The given file does not exist!", bad=True)
-            return
-
-        # This executes a function from ranger.core.acitons, a module with a
-        # variety of subroutines that can help you construct commands.
-        # Check out the source, or run "pydoc ranger.core.actions" for a list.
-        self.fm.edit_file(target_filename)
-
-    # The tab method is called when you press tab, and should return a list of
-    # suggestions that the user will tab through.
-    # tabnum is 1 for <TAB> and -1 for <S-TAB> by default
-    def tab(self, tabnum):
-        # This is a generic tab-completion function that iterates through the
-        # content of the current directory.
-        return self._tab_directory_content()
-
-class term(Command):
-    def execute(self):
-        self.fm.run("tmux neww")
-        self.fm.notify("A new tmux window has been created.")
-
 class ext(Command):
     def execute(self):
         """ extract selected files to current directory."""
@@ -84,3 +34,52 @@ class ext(Command):
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
+
+class compress(Command):
+    def execute(self):
+        """ Compress marked files to current directory """
+        cwd = self.fm.thisdir
+        marked_files = cwd.get_selection()
+
+        if not marked_files:
+            return
+
+        def refresh(_):
+            cwd = self.fm.get_directory(original_path)
+            cwd.load_content()
+
+        original_path = cwd.path
+        parts = self.line.split()
+        au_flags = parts[1:]
+
+        descr = "compressing files in: " + os.path.basename(parts[1])
+        obj = CommandLoader(args=['apack'] + au_flags + \
+                [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr, read=True)
+
+        obj.signal_bind('after', refresh)
+        self.fm.loader.add(obj)
+
+    def tab(self, tabnum):
+        """ Complete with current folder name """
+
+        extension = ['.zip', '.tar.gz', '.rar', '.7z']
+        return ['compress ' + os.path.basename(self.fm.thisdir.path) + ext for ext in extension]
+
+class img2pdf(Command):
+    """
+    :img2pdf <output_file_name>
+
+    Convert JPG images to pdf
+    """
+    def execute(self):
+        import img2pdf
+
+        cwd = self.fm.thisdir
+        marked_files = [os.path.relpath(f.path, cwd.path) for f in cwd.get_selection()]
+        output_file_name = self.rest(1) if self.arg(1) else "output.pdf"
+
+        A4 = (img2pdf.mm_to_pt(210), img2pdf.mm_to_pt(297))
+        A4_size = img2pdf.get_layout_fun(A4)
+
+        with open(output_file_name, "wb") as f:
+            f.write(img2pdf.convert(*marked_files, layout_fun=A4_size))
