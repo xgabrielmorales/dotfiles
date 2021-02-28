@@ -12,9 +12,9 @@ source $HOME/.config/nvim/vim-plug/plugin_config.vim
 set nocompatible
 colorscheme onedark
 if exists('+termguicolors')
-    set termguicolors
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 "==========================================================================
 "                                Indentación
@@ -29,7 +29,8 @@ set softtabstop=0
 "                           Configuración Nucleo
 "==========================================================================
 set list
-set listchars=tab:>·,trail:-,eol:¶
+set listchars=tab:!·,trail:-,eol:¶
+set clipboard=unnamedplus
 
 set cursorline          " Muestra la ubicación de la linea cursor
 set number              " Enumera las líneas
@@ -70,12 +71,9 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
 " Compilar o ejecutar archivos rapidamente desde vim
-autocmd FileType c   nnoremap <buffer><silent><f5> :!gcc % -lm && ./a.out <cr>
-autocmd FileType cpp nnoremap <buffer><silent><f5> :!g++ % && ./a.out <cr>
-autocmd FileType tex nnoremap <buffer><silent><f5> :!xelatex % && zathura %:r.pdf<cr>
-autocmd FileType python  nnoremap <buffer><silent><f5> :!python %<cr>
-autocmd FileType javascript nnoremap <buffer><silent><f5> :!node %<cr>
-autocmd FileType octave nnoremap <buffer><silent><f5> :!octave %<cr>
+autocmd FileType c      nnoremap <buffer><silent><f5> :!gcc % -lm && ./a.out <cr>
+autocmd FileType cpp    nnoremap <buffer><silent><f5> :!g++ % -lm && ./a.out <cr>
+autocmd FileType python nnoremap <buffer><silent><f5> :!python %<cr>
 
 " Define el tipo de indentación de acuerdo al tipo de archivo
 autocmd FileType css    setlocal expandtab tabstop=4 shiftwidth=4
@@ -86,3 +84,10 @@ autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
 autocmd BufRead,BufNewFile *.md  setlocal textwidth=90
 autocmd BufRead,BufNewFile *.tex setlocal textwidth=90
+
+" Hard ass
+for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+	exec 'noremap' key '<Nop>'
+	exec 'inoremap' key '<Nop>'
+	"exec 'cnoremap' key '<Nop>'
+endfor
