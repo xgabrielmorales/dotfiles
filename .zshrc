@@ -32,3 +32,7 @@ ext(){
 		echo "'$1' no es un archivo valido."
 	fi
 }
+mkcd(){
+	mkdir $1 && cd $_
+}
+source "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

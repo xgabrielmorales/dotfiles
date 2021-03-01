@@ -87,7 +87,7 @@ bindsym $mod+f fullscreen toggle
 
 # [en] Change container layout (stacked, tabbed, toggle split)
 # [es] Cambia el diseño de las ventanas (apiladas, en pestañas, divididas)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -163,6 +163,8 @@ for_window [class="Tk"]                 floating enable sticky enable normal
 for_window [class="Matplotlib"]         floating enable sticky enable normal
 for_window [class="Lxappearance"]       floating enable sticky enable normal
 for_window [class="Gpicview"]           floating enable sticky enable normal
+for_window [class="Pavucontrol"]        floating enable sticky enable normal
+for_window [class="SpeedCrunch"]        floating enable sticky enable normal
 
 # [en] Switch to workspace with urgent window automatically
 # [es] Cambia al workspace de la ventana emergente automaticamente
