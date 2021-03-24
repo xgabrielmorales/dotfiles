@@ -1,5 +1,5 @@
 "+===============================================================================+
-"                                   NERDTree
+" NERDTREE
 "+===============================================================================+
 map <C-f> :NERDTreeToggle <CR>
 let NERDTreeShowHidden=1
@@ -12,7 +12,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
       \ && b:NERDTree.isTabTree()) | q | endif
 autocmd BufWinEnter * silent NERDTreeMirror
 "+===============================================================================+
-"                                Lightline.vim
+" LIGHTLINE.VIM
 "+===============================================================================+
 let g:lightline = {
       \ 'colorscheme': 'onedark',
@@ -25,15 +25,20 @@ let g:lightline = {
       \ },
       \ }
 "+===============================================================================+
-"                                  One Dark
+" ONE DARK
 "+===============================================================================+
 let g:onedark_terminal_italics = 1
 let g:onedark_hide_endofbuffer = 1
 "+===============================================================================+
-"                                Syntastic
+" SYNTASTIC
 "+===============================================================================+
 nnoremap <F2> :SyntasticCheck<CR>
 "+===============================================================================+
-"                                Vim gitgutter
+" VIM GITGUTTER
 "+===============================================================================+
+let g:gitgutter_map_keys = 0
 set updatetime=100
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_modified_removed = ''
