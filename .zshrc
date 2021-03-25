@@ -1,16 +1,38 @@
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=xgm
-source $ZSH/oh-my-zsh.sh
-
-plugins=( git )
-
+#+====================================================+
+# ALIASES
+#+====================================================+
 source $HOME/dotfiles/alias.sh
 
+#+====================================================+
+# CONFIGURACIÓN DE OH MY ZSH
+#+====================================================+
+ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="xgm"
+
+plugins=(
+	git
+	zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+#+====================================================+
+# OTRAS CONFIGURACIONES
+#+====================================================+
+
+# Abre tmux automáticamente al abrir una terminal
 if command -v tmux >/dev/null 2>&1 && [ "${DISPLAY}" ]; then
-    # if not inside a tmux session, and if no session is started, start a new session
+    # if not inside a tmux session,
+	# and if no session is started,
+	# start a new session
     [ -z "${TMUX}" ] && (tmux attach >/dev/null 2>&1 || tmux)
 fi
 
+#+====================================================+
+# FUNCIONES
+#+====================================================+
+
+# Extrae cualquier archivo comprimido
 ext(){
 	if [ -f $1 ]; then
 		case $1 in
@@ -32,7 +54,3 @@ ext(){
 		echo "'$1' no es un archivo valido."
 	fi
 }
-mkcd(){
-	mkdir $1 && cd $_
-}
-source "$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

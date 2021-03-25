@@ -1,19 +1,22 @@
+export TERM=xterm-256color
 export EDITOR=nvim
 export VISUAL=nvim
 export READER=zathura
-export TERM=xterm-256color
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
-# Aliases
+#+====================================================+
+# MODIFICACIONES
+#+====================================================+
 alias cp="cp -i"
 alias rm="rm -i"
+alias vim="nvim"
 
 alias la="ls -og"
 alias ld="ls -lAF | grep '^d'"
 alias ls="ls -FXAhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
 
-alias vim="nvim"
 #+====================================================+
-#                     Atajos
+#  ATAJOS DE NAVEGACIÓN
 #+====================================================+
 alias dl="cd ~/Downloads && ls -l"
 alias doc="cd ~/Documents && ls -l"
