@@ -8,7 +8,6 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'joshdick/onedark.vim'     " Colorsheme
-  Plug 'tpope/vim-surround'       " Indescribable, but it's cool
   Plug 'preservim/nerdtree'       " File system explorer (NERDTree)
   Plug 'sheerun/vim-polyglot'     " Syntax Highlight
   Plug 'vim-syntastic/syntastic'  " Syntax Checking
@@ -17,4 +16,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'ryanoasis/vim-devicons'   " Add icons to NERDTree
   Plug 'jiangmiao/auto-pairs'     " Insert or delete brackets, parens, quotes in pair
   Plug 'airblade/vim-gitgutter'   " Shows git diff markers in the sign column
+  Plug 'lervag/vimtex'
 call plug#end()

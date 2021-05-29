@@ -62,7 +62,10 @@ nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
 " Borra automáticamente los espacios sobrantes al final de la línea
 autocmd BufWritePre * %s/\s\+$//e
 
-" Habilita el modo HARD ASS
+" Abrir la ayuda de vim (vim help) en una ventana vertical
+autocmd FileType help wincmd L
+
+" HARD ASS MODE
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
 	exec 'noremap' key '<Nop>'
 	exec 'inoremap' key '<Nop>'
@@ -82,8 +85,9 @@ autocmd FileType python nnoremap <buffer><silent><f5> :!python %<cr>
 autocmd FileType css    setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType html   setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd Filetype tex    setlocal expandtab tabstop=2 shiftwidth=2
 
 " Define la longitud de una linea de texto en archivos de texto.
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
-autocmd BufRead,BufNewFile *.md  setlocal textwidth=90
-autocmd BufRead,BufNewFile *.tex setlocal textwidth=90
+autocmd BufRead,BufNewFile *.md  setlocal textwidth=79
+autocmd BufRead,BufNewFile *.tex setlocal textwidth=79

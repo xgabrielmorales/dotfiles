@@ -8,9 +8,9 @@ let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 let NERDTreeQuitOnOpen=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
-      \ && b:NERDTree.isTabTree()) | q | endif
-autocmd BufWinEnter * silent NERDTreeMirror
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
+"      \ && b:NERDTree.isTabTree()) | q | endif
+"autocmd BufWinEnter * silent NERDTreeMirror
 "+===============================================================================+
 " LIGHTLINE.VIM
 "+===============================================================================+
@@ -42,3 +42,8 @@ let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_modified_removed = ''
+"+===============================================================================+
+" VIMTEX
+"+===============================================================================+
+let g:vimtex_compiler_latexmk = {'build_dir' : 'build'}
+let g:vimtex_view_method = 'zathura'
