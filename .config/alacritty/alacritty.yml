@@ -19,26 +19,26 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: Hack Nerd Font
+    family: Mononoki Nerd Font
     style: regular
 
   # Blod font face
   bold:
-    family: Hack Nerd Font
+    family: Mononoki Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    family: Hack Nerd Font
+    family: Mononoki Nerd Font
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: Hack
+    family: Mononoki Nerd Font
     style: Bold Italic
 
   # Point size
-  size: 10.0
+  size: 12.0
 
 # Colors theme
 colors:
@@ -74,7 +74,6 @@ colors:
         blue:    '#61AFEF'
         magenta: '#C678DD'
         cyan:    '#56B6C2'
-        white:   '#D8D8D8'
 
 key_bindings:
   - { key: Paste,                                action: Paste          }

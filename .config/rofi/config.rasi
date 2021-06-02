@@ -9,17 +9,22 @@ configuration {
 
 * {
 	/*Colors*/
-	dark-gray: #0d0d0d;
-	gray:      #bfbfbf;
-	white:     #fafafa;
+	new-white:   #C8CCD4;
+	new-blue:    rgb(40,44,52, 0.6);
+	new-black:   #0d0d0d;
 
-	font: "hack 9";
-	color: @dark-gray;
-	background-color: @white;
+
+	font: "Mononoki\ NF 11";
+	color: @new-white;
+	background-color: @new-blue;
 }
 
 window {
-	width: 30%;
+	width: 25%;
+}
+
+inputbar {
+	background-color: @new-blue;
 }
 
 inputbar,
@@ -28,8 +33,8 @@ element {
 }
 
 element selected {
-	color: @dark-gray;
-	background-color: @gray;
+	color: @new-black;
+	background-color: @new-white;
 }
 
 element-icon {

@@ -33,7 +33,7 @@ fi
 #+====================================================+
 
 # Extrae cualquier archivo comprimido
-ext(){
+ext() {
 	if [ -f $1 ]; then
 		case $1 in
 			*.tar.bz2) tar xjf $1     ;;
@@ -53,4 +53,7 @@ ext(){
 	else
 		echo "'$1' no es un archivo valido."
 	fi
+}
+mem() {
+    ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{printf $1/1024 "MB"; $1=""; print }'
 }
