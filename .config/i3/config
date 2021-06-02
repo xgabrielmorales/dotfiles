@@ -10,20 +10,22 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
-# [en] Change borders
-# [es] Cambia los bordes de las ventanas
+# [en] Change borders { borderless by default }
+# [es] Cambia los bordes de las ventanas { Sin bordes por defecto }
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+bindsym $mod+y border pixel
+bindsym $mod+p border normal
 
 # [en] Configure border style <normal|1pixel|pixel xx|none|pixel>
 # [es] Configura el diseño de los bordes de las ventanas <normal|1pixel|pixel xx|none|pixel>¬
-default_border pixel 0
-default_floating_border none
+default_border pixel 4
+default_floating_border pixel 4
 
 # [en] Hide borders
 # [es] Esconde los bordes
-hide_edge_borders none
+hide_edge_borders smart
+
+# for_window [class=".*"] border pixel 0
 
 # [en] Font for window titles. Will also be used by the bar unless a different font
 # [es] Fuente tipografica para los titulos de las ventanas. Tambien será usada para la barra a no ser que uses otra fuente
@@ -49,10 +51,10 @@ bindsym $mod+z exec --no-startup-id rofi -show window
 
 # [en] Change focus
 # [es] Fija otra ventana
-bindsym $mod+j      focus left
-bindsym $mod+k      focus down
-bindsym $mod+l      focus up
-bindsym $mod+ntilde focus right
+bindsym $mod+h      focus left
+bindsym $mod+j      focus down
+bindsym $mod+k      focus up
+bindsym $mod+l      focus right
 
 # [en] Alternatively, you can use the cursor keys
 # [es] Tambien puedes usar las flechitas
@@ -63,10 +65,10 @@ bindsym $mod+Right focus right
 
 # [en] Move focused window
 # [es] Mueve la ventana fijada
-bindsym $mod+Shift+j      move left
-bindsym $mod+Shift+k      move down
-bindsym $mod+Shift+l      move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+h      move left
+bindsym $mod+Shift+j      move down
+bindsym $mod+Shift+k      move up
+bindsym $mod+Shift+l      move right
 
 # [en] Alternatively, you can use the cursor keys:
 # [es] Tambien puedes usar las flechitas:
@@ -81,8 +83,8 @@ floating_modifier $mod
 
 # [en] Splits the screen and report the mode
 # [es] Divide la pantalla y notifica el el modo
-bindsym $mod+h split h; exec notify-send "Horizontally"
-bindsym $mod+v split v; exec notify-send "Vertical"
+bindsym $mod+n split h; exec notify-send "Screen Split Mode" "Horizontally"
+bindsym $mod+v split v; exec notify-send "Screen Split Mode" "Vertical"
 bindsym $mod+f fullscreen toggle
 
 # [en] Change container layout (stacked, tabbed, toggle split)
@@ -142,11 +144,10 @@ assign [class="Firefox"]            $ws1
 assign [class="firefox"]            $ws1
 
 assign [class="Alacritty"]          $ws2
+assign [class="Zathura"]            $ws2
 
 assign [class="Discord"]            $ws3
 assign [class="discord"]            $ws3
-
-assign [class="Zathura"]            $ws4
 
 assign [class="VirtualBox Manager"] $ws4
 assign [class="Thunderbird"]        $ws4
@@ -202,6 +203,15 @@ mode "Resize" {
 		bindsym $mod+r mode "default"
 }
 
+# [es] Colores
+# [en] Colors
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #81A1C1
+client.unfocused        #333333 #222222 #888888 #292d2e   #282C34
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #282C34
+client.urgent           #2f343a #900000 #ffffff #900000   #ED7976
+
 # [es] Rezise mode
 # [es] Modo de redimensionado
 bindsym $mod+r mode "Resize"
@@ -214,5 +224,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # [en] Gaps (i3-gaps)
 # [es] Separacion entre ventanas (i3-gaps)
-for_window [class=".*"] border pixel 0
 gaps inner 10
