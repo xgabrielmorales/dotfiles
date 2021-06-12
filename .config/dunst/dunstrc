@@ -40,7 +40,7 @@
 
     # [en] The transparency of the window.  Range: [0; 100]
     # [es] Transparencia de la ventana. Rango: [0, 100]
-    transparency = 10
+    transparency = 0
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -82,7 +82,7 @@
 
     ### Text ###
 
-    font = Hack 8
+    font = mononoki Nerd Font 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -151,7 +151,7 @@
     hide_duplicate_count = true
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = false
 
     ### Icons ###
 
@@ -282,7 +282,7 @@
     foreground = "#0d0d0d"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = /home/xgm/dotfiles/.config/dunst/notification_dark.png
 
 [urgency_critical]
     background = "#E85858"
