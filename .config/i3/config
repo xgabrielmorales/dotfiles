@@ -1,20 +1,12 @@
-# [en] i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference
-# [es] Arcivo de configuración de i3wm (v4)
-# Ve a https://i3wm.org/docs/userguide.html para ver la guia de uso.
-
 # [en] Set mod key (Mod1=<Alt>, Mod4=<Super/window>)
 # [es] Asigna la tecla de mod (Mod1=<alt>, Mod4=<Super/window>)
 set $mod Mod4
-
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
 
 # [en] Change borders { borderless by default }
 # [es] Cambia los bordes de las ventanas { Sin bordes por defecto }
 bindsym $mod+u border none
 bindsym $mod+y border pixel
-bindsym $mod+p border normal
+#bindsym $mod+p border normal
 
 # [en] Configure border style <normal|1pixel|pixel xx|none|pixel>
 # [es] Configura el diseño de los bordes de las ventanas <normal|1pixel|pixel xx|none|pixel>¬
@@ -29,7 +21,7 @@ hide_edge_borders smart
 
 # [en] Font for window titles. Will also be used by the bar unless a different font
 # [es] Fuente tipografica para los titulos de las ventanas. Tambien será usada para la barra a no ser que uses otra fuente
-font pango:ubuntu 10
+font pango:mononoki Nerd Font 12
 
 # [en] default terminal
 # [es] Terminal por defecto
@@ -37,17 +29,11 @@ set $myTerm alacritty
 
 # [en] Start a terminal
 # [es] Terminal a ejecutar
-bindsym $mod+Return exec $myTerm; workspace $ws2
+bindsym $mod+Return exec $myTerm; workspace $ws1
 
 # [en] Kill focused window
 # [es] Cierra la ventana fijada
 bindsym $mod+Shift+q kill
-
-# [en] Start rofi (a program launcher)
-# [es] Abre rofi (un program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+x exec --no-startup-id rofi -show run
-bindsym $mod+z exec --no-startup-id rofi -show window
 
 # [en] Change focus
 # [es] Fija otra ventana
@@ -140,11 +126,11 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # [en] Open application on specific workspaces
 # [es] Abre estas aplicaciones en workspaces especficios
-assign [class="Firefox"]            $ws1
-assign [class="firefox"]            $ws1
+assign [class="Alacritty"]          $ws1
+assign [class="Zathura"]            $ws1
 
-assign [class="Alacritty"]          $ws2
-assign [class="Zathura"]            $ws2
+assign [class="Firefox"]            $ws2
+assign [class="firefox"]            $ws2
 
 assign [class="Discord"]            $ws3
 assign [class="discord"]            $ws3
@@ -184,17 +170,10 @@ bindsym $mod+Shift+r restart
 mode "Resize" {
 		# [en] Use the j,k,l,ñ keys to rezise
 		# [es] Usas las letras j,k,l,ñ para dedimensionar
-		bindsym j      resize shrink width  10 px or 10 ppt
-		bindsym k      resize grow height   10 px or 10 ppt
-		bindsym l      resize shrink height 10 px or 10 ppt
-		bindsym ntilde resize grow width    10 px or 10 ppt
-
-		# [en] Same bindings, but for the arrow keys
-		# [es] Lo mismo pero con las flechitas
-		bindsym Left   resize shrink width  10 px or 10 ppt
-		bindsym Down   resize grow height   10 px or 10 ppt
-		bindsym Up     resize shrink height 10 px or 10 ppt
-		bindsym Right  resize grow width    10 px or 10 ppt
+		bindsym h      resize shrink width  10 px or 10 ppt
+		bindsym j      resize grow height   10 px or 10 ppt
+		bindsym k      resize shrink height 10 px or 10 ppt
+		bindsym l      resize grow width    10 px or 10 ppt
 
 		# [en] Back to normal: Enter or Escape or $mod+r
 		# [es] Regresa a la normalidad: Enter o Escape o $mod+r
@@ -212,16 +191,26 @@ client.unfocused        #333333 #222222 #888888 #292d2e   #282C34
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #282C34
 client.urgent           #2f343a #900000 #ffffff #900000   #ED7976
 
+# [en] Gaps (i3-gaps)
+# [es] Separacion entre ventanas (i3-gaps)
+gaps inner 10
+smart_gaps on
+
 # [es] Rezise mode
 # [es] Modo de redimensionado
 bindsym $mod+r mode "Resize"
 
+# Polybar
+exec_always --no-startup-id /home/xgm/.config/polybar/blocks/launch.sh
+
+# [en] Lockscreen
+# [es] Bloqueo de pantalla
 bindsym $mod+shift+x exec betterlockscreen --lock
 
-# [en] Bar info (Polybar)
-# [es] La barra de información (Polybar)
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# [en] Gaps (i3-gaps)
-# [es] Separacion entre ventanas (i3-gaps)
-gaps inner 10
+# [en] Start rofi (a program launcher)
+# [es] Abre rofi (un program launcher)
+bindsym $mod+d exec --no-startup-id bash ~/.config/polybar/blocks/scripts/launcher.sh
+bindsym $mod+m exec --no-startup-id ~/Documents/dev/rofi-mpd/rofi-mpd.sh > /dev/null
+bindsym $mod+x exec --no-startup-id rofi -show run
+bindsym $mod+z exec --no-startup-id rofi -show window
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip -selection clipboard" > /dev/null
