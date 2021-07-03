@@ -28,6 +28,10 @@ if command -v tmux >/dev/null 2>&1 && [ "${DISPLAY}" ]; then
     [ -z "${TMUX}" ] && (tmux attach >/dev/null 2>&1 || tmux)
 fi
 
+if [ -n "$RANGER_LEVEL" ]; then
+	export PS1="(ranger) $PS1";
+fi
+
 #+====================================================+
 # FUNCIONES
 #+====================================================+
