@@ -5,7 +5,7 @@ mi maquina principal. Sientete libre de navegar entre ellos y tomar lo
 que gustes. Ten encuenta que los archvios aquí presentados reflejan mis
 preferencias. Revisa bien que copias, podrías romper algo. Ahora sí, adelante.
 
-[[https://i.imgur.com/O4M27fk.png]]
+[[https://i.imgur.com/5NkH9jn.png]]
 
 ** Lista de archivos de configuración
 - [[file:.config/alacritty][Alactritty]]
