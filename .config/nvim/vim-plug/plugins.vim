@@ -17,4 +17,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'jiangmiao/auto-pairs'     " Insert or delete brackets, parens, quotes in pair
   Plug 'airblade/vim-gitgutter'   " Shows git diff markers in the sign column
   Plug 'lervag/vimtex'
+  Plug 'ap/vim-css-color'
 call plug#end()

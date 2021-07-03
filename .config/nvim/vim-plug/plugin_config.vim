@@ -38,10 +38,10 @@ nnoremap <F2> :SyntasticCheck<CR>
 "+===============================================================================+
 let g:gitgutter_map_keys = 0
 set updatetime=100
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_modified = ''
-let g:gitgutter_sign_removed = ''
-let g:gitgutter_sign_modified_removed = ''
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_modified_removed = ''
 "+===============================================================================+
 " VIMTEX
 "+===============================================================================+

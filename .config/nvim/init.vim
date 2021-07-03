@@ -89,5 +89,5 @@ autocmd Filetype tex    setlocal expandtab tabstop=2 shiftwidth=2
 
 " Define la longitud de una linea de texto en archivos de texto.
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
-autocmd BufRead,BufNewFile *.md  setlocal textwidth=79
-autocmd BufRead,BufNewFile *.tex setlocal textwidth=79
+autocmd BufRead,BufNewFile *.md  setlocal textwidth=72
+autocmd BufRead,BufNewFile *.tex setlocal textwidth=72
