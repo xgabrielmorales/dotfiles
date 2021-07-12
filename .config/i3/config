@@ -152,6 +152,8 @@ for_window [class="Lxappearance"]       floating enable sticky enable normal
 for_window [class="Gpicview"]           floating enable sticky enable normal
 for_window [class="Pavucontrol"]        floating enable sticky enable normal
 for_window [class="SpeedCrunch"]        floating enable sticky enable normal
+for_window [class="Viewnior"]           floating enable sticky enable normal
+for_window [class="Gucharmap"]          floating enable sticky enable normal
 
 # [en] Switch to workspace with urgent window automatically
 # [es] Cambia al workspace de la ventana emergente automaticamente
@@ -207,10 +209,24 @@ exec_always --no-startup-id /home/xgm/.config/polybar/blocks/launch.sh
 # [es] Bloqueo de pantalla
 bindsym $mod+shift+x exec betterlockscreen --lock
 
+# [en] Take a screenshot
+# [es] Toma capturas de pantalla
+bindsym Print exec maim | tee ~/Pictures/Screenshots/ss.$(date +'%d-%m-%y.%H-%M-%S').png | xclip -selection clipboard -target image/png -in
+bindsym $mod+s exec maim --select --hidecursor | xclip -selection clipboard -target image/png -in
+
+# [es] Teclas Multimedia
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioMute        exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioPrev        exec mpc prev
+bindsym XF86AudioNext        exec mpc next
+bindsym XF86AudioPlay        exec mpc toggle
+bindsym XF86AudioStop        exec mpc stop
+
 # [en] Start rofi (a program launcher)
 # [es] Abre rofi (un program launcher)
-bindsym $mod+d exec --no-startup-id bash ~/.config/polybar/blocks/scripts/launcher.sh
-bindsym $mod+m exec --no-startup-id ~/Documents/dev/rofi-mpd/rofi-mpd.sh > /dev/null
+bindsym $mod+d exec --no-startup-id ~/.config/polybar/blocks/scripts/launcher.sh
+bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
 bindsym $mod+x exec --no-startup-id rofi -show run
 bindsym $mod+z exec --no-startup-id rofi -show window
 bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip -selection clipboard" > /dev/null
