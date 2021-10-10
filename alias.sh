@@ -15,6 +15,10 @@ alias la="ls -og"
 alias ld="ls -lAF | grep '^d'"
 alias ls="ls -FXAhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
 
+alias man="man --locale=es"
+alias cat="bat"
+alias clip="xclip -selection clipboard"
+alias cnext="calcurse --next"
 #+====================================================+
 #  ATAJOS DE NAVEGACIÓN
 #+====================================================+
@@ -27,3 +31,4 @@ alias vimconfig="cd ~/.config/nvim/ && ls -l"
 alias chrome="cd ~/.mozilla/firefox/rszqgpto.default-release/chrome && ls -l"
 alias dev="cd ~/Documents/dev && ls -l"
 alias math="cd ~/Documents/math && ls -l"
+alias pyenv="source .env/bin/activate"
