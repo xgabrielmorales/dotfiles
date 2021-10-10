@@ -3,14 +3,17 @@
 "+===============================================================================+
 map <C-f> :NERDTreeToggle <CR>
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeMinimalMenu=1
 let NERDTreeSortOrder=['[[extension]]']
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 let NERDTreeQuitOnOpen=1
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
-"      \ && b:NERDTree.isTabTree()) | q | endif
-"autocmd BufWinEnter * silent NERDTreeMirror
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
+      \ && b:NERDTree.isTabTree()) | q | endif
+autocmd BufWinEnter * silent NERDTreeMirror
 "+===============================================================================+
 " LIGHTLINE.VIM
 "+===============================================================================+
@@ -45,5 +48,11 @@ let g:gitgutter_sign_modified_removed = ''
 "+===============================================================================+
 " VIMTEX
 "+===============================================================================+
-let g:vimtex_compiler_latexmk = {'build_dir' : 'build'}
+let g:vimtex_compiler_latexmk = {'build_dir' : '/home/xgm/data/latex/build'}
 let g:vimtex_view_method = 'zathura'
+"+===============================================================================+
+" UltSnips
+"+===============================================================================+
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
