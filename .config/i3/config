@@ -1,98 +1,117 @@
-# [en] Set mod key (Mod1=<Alt>, Mod4=<Super/window>)
-# [es] Asigna la tecla de mod (Mod1=<alt>, Mod4=<Super/window>)
+# NOTA:
+# Este archivo refleja mis preferencias personales en cuanto al manejo
+# de i3 y puede (o no) cumplir con tus necesidades, por lo que te
+# recomiendo mirarlo bien antes de hacer uso de el.
+
+# Documentación de i3: https://i3wm.org/docs/userguide.html
+
+# ======================================================================
+# FUNDAMENTAL
+# ======================================================================
+# Asigna la tecla de mod (Mod1=<alt>, Mod4=<Super/window>)
 set $mod Mod4
 
-# [en] Change borders { borderless by default }
-# [es] Cambia los bordes de las ventanas { Sin bordes por defecto }
-bindsym $mod+u border none
-bindsym $mod+y border pixel
-#bindsym $mod+p border normal
+# Emulador de Terminal
+set $myTerm st
+# ======================================================================
+# COSTMÉTICO
+# ======================================================================
+# Fuente tipografica para los titulos de las ventanas.
+# Esta fuente será usada también para i3bar (opcional)
+font pango:Mononoki Nerd Font 12
 
-# [en] Configure border style <normal|1pixel|pixel xx|none|pixel>
-# [es] Configura el diseño de los bordes de las ventanas <normal|1pixel|pixel xx|none|pixel>¬
+# Configura el estilo de los bordes de las ventanas
+# Opciones: <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 4
-default_floating_border pixel 4
 
-# [en] Hide borders
-# [es] Esconde los bordes
+# Asigna los bordes dinámicamente
+# Opciones: <none|vertical|horizontal|both|smart>
 hide_edge_borders smart
 
-# for_window [class=".*"] border pixel 0
+# Alineado del título del modo de borde <normal>
+# Opciones: <left|center|right>
+title_align center
 
-# [en] Font for window titles. Will also be used by the bar unless a different font
-# [es] Fuente tipografica para los titulos de las ventanas. Tambien será usada para la barra a no ser que uses otra fuente
-font pango:mononoki Nerd Font 12
+# Separacion entre ventanas
+# Se requiere i3-gaps. Consulte: https://github.com/Airblader/i3
+gaps inner 10
+smart_gaps on
 
-# [en] default terminal
-# [es] Terminal por defecto
-set $myTerm alacritty
+# Tamaño máximo de una ventana flotante
+floating_maximum_size 1600 x 900
 
-# [en] Start a terminal
-# [es] Terminal a ejecutar
+# Redimensionado de las ventanas
+mode "Resize" {
+	# Usas las letras h,j,k,l para dedimensionar
+	bindsym h resize shrink width  10 px or 10 ppt
+	bindsym j resize grow   height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow   width  10 px or 10 ppt
+
+	# Salir del modo Resize
+	bindsym Escape mode "default"
+}
+# Activar el mode de redimensionado
+bindsym $mod+r mode "Resize"
+
+# Colores
+# Class                 border  backgr. text    indicator child_border
+client.focused          #49515f #2f343f #D5D7D6 #2e9ef4   #81A1C1
+client.unfocused        #282C34 #282C34 #D5D7D6 #292d2e   #282C34
+client.focused_inactive #2F343F #2F343F #C4C7C5 #484e50   #282C34
+client.urgent           #EC7875 #EC7875 #ffffff #900000   #ED7976
+# ======================================================================
+# ATAJOS DE TECLADO
+# ======================================================================
+# Abre un Terminal
 bindsym $mod+Return exec $myTerm; workspace $ws1
 
-# [en] Kill focused window
-# [es] Cierra la ventana fijada
+# Cierra la ventana en foco
 bindsym $mod+Shift+q kill
 
-# [en] Change focus
-# [es] Fija otra ventana
-bindsym $mod+h      focus left
-bindsym $mod+j      focus down
-bindsym $mod+k      focus up
-bindsym $mod+l      focus right
-
-# [en] Alternatively, you can use the cursor keys
-# [es] Tambien puedes usar las flechitas
-bindsym $mod+Left  focus left
-bindsym $mod+Down  focus down
-bindsym $mod+Up    focus up
-bindsym $mod+Right focus right
-
-# [en] Move focused window
-# [es] Mueve la ventana fijada
-bindsym $mod+Shift+h      move left
-bindsym $mod+Shift+j      move down
-bindsym $mod+Shift+k      move up
-bindsym $mod+Shift+l      move right
-
-# [en] Alternatively, you can use the cursor keys:
-# [es] Tambien puedes usar las flechitas:
-bindsym $mod+Shift+Left  move left
-bindsym $mod+Shift+Down  move down
-bindsym $mod+Shift+Up    move up
-bindsym $mod+Shift+Right move right
-
-# [en] Use Mouse+$mod to drag floating windows to their wanted position
-# [es] Usa la tecla super y el mouse para mover las ventanas flotantes
-floating_modifier $mod
-
-# [en] Splits the screen and report the mode
-# [es] Divide la pantalla y notifica el el modo
-bindsym $mod+n split h; exec notify-send "Screen Split Mode" "Horizontally"
-bindsym $mod+v split v; exec notify-send "Screen Split Mode" "Vertical"
-bindsym $mod+f fullscreen toggle
-
-# [en] Change container layout (stacked, tabbed, toggle split)
-# [es] Cambia el diseño de las ventanas (apiladas, en pestañas, divididas)
-#bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# [en] Toggle tiling / floating
-# [es] Cambia a ventana flotante/completa
+# Cambia el foco de ventana entre <flotante/completa>
+bindsym $mod+space focus mode_toggle
+# Cambia el modo de ventana entre <flotante/completa>
 bindsym $mod+Shift+space floating toggle
 
-# [en] Change focus between tiling / floating windows
-# [es] Cambia la fijacion de la ventana flotante/completa
-bindsym $mod+space focus mode_toggle
+# Cambia el foco de ventana
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-# [en] Focus the parent container
-# [es] Fija al contenedor principal
-bindsym $mod+a focus parent
+# Mueve la ventana en foco
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-# [en] Define names for default workspaces for which we configure key bindings later on.
-# [es] Define vairables con los nombres de los workspaces para luego usarlas en la configuracion de los workspaces
+# Mueve la ventana flotante
+floating_modifier $mod
+
+# Cambia el modo de división de las ventanas <Vertical/Horizontal/Pantalla Completa>
+# Enviará una notificación (*Se necesita un daemon de notificaciones*)
+bindsym $mod+n split h; exec notify-send "i3wm" "Screen Split Mode: <b>Horizontally</b>" --expire-time 1200
+bindsym $mod+v split v; exec notify-send "i3wm" "Screen Split Mode: <b>Vertical</b>"     --expire-time 1200
+bindsym $mod+f fullscreen toggle
+
+# Cambia el diseño de las ventanas (Apiladas, Vertical; Dididas, Horizontal; En pestañas)
+bindsym $mod+w layout tabbed; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
+bindsym $mod+e layout splith; exec notify-send "i3wm" "Container layout: <b>Splith</b>" --expire-time 1200
+#bindsym $mod+? layout stacking ; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
+
+# Cambia el estilo de los bordes de las ventanas
+#
+bindsym $mod+u border none;   exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
+bindsym $mod+i border pixel;  exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
+bindsym $mod+p border normal; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
+# Actualiza el archivo de configuración de i3
+bindsym $mod+Shift+r reload; exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
+
+# Reinicia el Window Manager (Se conservará la sesión)
+bindsym $mod+Shift+c restart
+
+# Define variables con los nombres de los workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -102,8 +121,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 
-# [en] Switch to workspace
-# [es] Cambia de workspace
+# Cambia de workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -113,8 +131,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
-# [en] Move focused container to workspace
-# [es] Mueve la ventana en foco al workspace
+# Mueve la ventana en foco un workspace específico
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -124,109 +141,71 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# [en] Open application on specific workspaces
-# [es] Abre estas aplicaciones en workspaces especficios
+# Rofi
+bindsym $mod+x exec --no-startup-id rofi -show run -theme ~/.config/rofi/config.rasi
+bindsym $mod+z exec --no-startup-id rofi -show window -theme ~/.config/rofi/config.rasi
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
+bindsym $mod+c exec --no-startup-id ~/.config/rofi/bin/rofi-calc/rofi-calc.sh
+bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
+
+# Teclas Multimedia
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioMute        exec pactl set-sink-mute 0 toggle
+
+bindsym XF86AudioPrev        exec mpc prev
+bindsym XF86AudioNext        exec mpc next
+
+bindsym XF86AudioPlay        exec mpc toggle
+bindsym XF86AudioStop        exec mpc stop
+
+bindsym $mod+XF86AudioPrev   exec mpc seek -5
+bindsym $mod+XF86AudioNext   exec mpc seek +5
+
+# Silencia (o no) el Microfono
+bindsym $mod+XF86AudioMute exec ~/Documents/scripts/microphone.sh
+# Cambia (o no) entre las salidas de audio (Line out/Headphones)
+bindsym $mod+o exec ~/Documents/scripts/audio.sh
+
+# Toma capturas de pantalla
+bindsym Print exec ~/Documents/scripts/screenshots.sh "Screen"
+bindsym $mod+s exec ~/Documents/scripts/screenshots.sh "Selection"
+
+# Bloqueo de pantalla
+bindsym $mod+shift+x exec betterlockscreen --lock
+# ======================================================================
+# VARIABLES Y ASIGNACIONES
+# ======================================================================
+# Cambia al workspace de la ventana emergente automaticamente
+for_window [urgent=latest] focus
+
+# Asigna un Workspace a una aplicación específica
 assign [class="Alacritty"]          $ws1
-assign [class="Zathura"]            $ws1
+assign [class="st-256color"]        $ws1
 
 assign [class="Firefox"]            $ws2
 assign [class="firefox"]            $ws2
 
-assign [class="Discord"]            $ws3
-assign [class="discord"]            $ws3
+assign [class="Emacs"]              $ws3
 
-assign [class="VirtualBox Manager"] $ws4
-assign [class="Thunderbird"]        $ws4
-assign [class="Gimp-2.10"]          $ws4
-assign [class="obs"]                $ws4
+assign [class="mpv"]                $ws4
+assign [class="Zathura"]            $ws4
+assign [class="MyPaint"]            $ws4
+assign [class="Viewnior"]           $ws4
+assign [class="Inkscape"]           $ws4
 
-# [en] Open specific application in floating mode
-# [es] Abre estas aplicaciones en modo ventala flotante
-for_window [class="Nitrogen"]           floating enable sticky enable normal
-for_window [class="Gnome-calculator"]   floating enable sticky enable normal
-for_window [class="Gnome-screenshot"]   floating enable sticky enable normal
-for_window [class="XTerm"]              floating enable sticky enable normal
-for_window [class="Tk"]                 floating enable sticky enable normal
-for_window [class="Matplotlib"]         floating enable sticky enable normal
-for_window [class="Lxappearance"]       floating enable sticky enable normal
-for_window [class="Gpicview"]           floating enable sticky enable normal
-for_window [class="Pavucontrol"]        floating enable sticky enable normal
-for_window [class="SpeedCrunch"]        floating enable sticky enable normal
-for_window [class="Viewnior"]           floating enable sticky enable normal
-for_window [class="Gucharmap"]          floating enable sticky enable normal
+assign [class="obs"]                $ws5
+assign [class="Discord"]            $ws5
+assign [class="discord"]            $ws5
+assign [class="Gimp-2.10"]          $ws5
+assign [class="VirtualBox Manager"] $ws5
 
-# [en] Switch to workspace with urgent window automatically
-# [es] Cambia al workspace de la ventana emergente automaticamente
-for_window [urgent=latest] focus
-
-# [en] Reload the configuration file
-# [es] Actualiza el archivo de configuración de i3
-bindsym $mod+Shift+c reload
-
-# [en] Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# [es] Reinicia i3 (conserva la sesión, puede usarse para actualizar i3)
-bindsym $mod+Shift+r restart
-
-# [en] Resize window
-# [es] Redimensiona las ventanas
-mode "Resize" {
-		# [en] Use the j,k,l,ñ keys to rezise
-		# [es] Usas las letras j,k,l,ñ para dedimensionar
-		bindsym h      resize shrink width  10 px or 10 ppt
-		bindsym j      resize grow height   10 px or 10 ppt
-		bindsym k      resize shrink height 10 px or 10 ppt
-		bindsym l      resize grow width    10 px or 10 ppt
-
-		# [en] Back to normal: Enter or Escape or $mod+r
-		# [es] Regresa a la normalidad: Enter o Escape o $mod+r
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
-		bindsym $mod+r mode "default"
-}
-
-# [es] Colores
-# [en] Colors
-
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #81A1C1
-client.unfocused        #333333 #222222 #888888 #292d2e   #282C34
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #282C34
-client.urgent           #2f343a #900000 #ffffff #900000   #ED7976
-
-# [en] Gaps (i3-gaps)
-# [es] Separacion entre ventanas (i3-gaps)
-gaps inner 10
-smart_gaps on
-
-# [es] Rezise mode
-# [es] Modo de redimensionado
-bindsym $mod+r mode "Resize"
-
+# Abre las aplicaciones especificadas en modo flotante
+for_window [class="Gucharmap"]    floating enable
+for_window [class="Pavucontrol"]  floating enable
+for_window [class="Lxappearance"] floating enable
+# ======================================================================
+# OTROS
+# ======================================================================
 # Polybar
 exec_always --no-startup-id /home/xgm/.config/polybar/blocks/launch.sh
-
-# [en] Lockscreen
-# [es] Bloqueo de pantalla
-bindsym $mod+shift+x exec betterlockscreen --lock
-
-# [en] Take a screenshot
-# [es] Toma capturas de pantalla
-bindsym Print exec maim | tee ~/Pictures/Screenshots/ss.$(date +'%d-%m-%y.%H-%M-%S').png | xclip -selection clipboard -target image/png -in
-bindsym $mod+s exec maim --select --hidecursor | xclip -selection clipboard -target image/png -in
-
-# [es] Teclas Multimedia
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioMute        exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioPrev        exec mpc prev
-bindsym XF86AudioNext        exec mpc next
-bindsym XF86AudioPlay        exec mpc toggle
-bindsym XF86AudioStop        exec mpc stop
-
-# [en] Start rofi (a program launcher)
-# [es] Abre rofi (un program launcher)
-bindsym $mod+d exec --no-startup-id ~/.config/polybar/blocks/scripts/launcher.sh
-bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
-bindsym $mod+x exec --no-startup-id rofi -show run
-bindsym $mod+z exec --no-startup-id rofi -show window
-bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip -selection clipboard" > /dev/null
