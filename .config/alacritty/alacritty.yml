@@ -20,19 +20,16 @@ scrolling:
 font:
   normal:
     family: Mononoki Nerd Font
-    style: regular
+    style: Regular
 
-  # Blod font face
   bold:
     family: Mononoki Nerd Font
     style: Bold
 
-  # Italic font face
   italic:
     family: Mononoki Nerd Font
     style: Italic
 
-  # Bold italic font face
   bold_italic:
     family: Mononoki Nerd Font
     style: Bold Italic
@@ -76,21 +73,8 @@ colors:
         cyan:    '#56B6C2'
 
 key_bindings:
-  - { key: Paste,                                action: Paste          }
-  - { key: Copy,                                 action: Copy           }
-  - { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
-  - { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
-  - { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
-  - { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
-
-  # (Windows, Linux, and BSD only)
   - { key: V,              mods: Control|Shift,           action: Paste            }
   - { key: C,              mods: Control|Shift,           action: Copy             }
-  - { key: F,              mods: Control|Shift,           action: SearchForward    }
-  - { key: B,              mods: Control|Shift,           action: SearchBackward   }
-
   - { key: Equals,         mods: Control,                 action: IncreaseFontSize }
   - { key: Plus,           mods: Control,                 action: IncreaseFontSize }
-  - { key: NumpadAdd,      mods: Control,                 action: IncreaseFontSize }
   - { key: Minus,          mods: Control,                 action: DecreaseFontSize }
-  - { key: NumpadSubtract, mods: Control,                 action: DecreaseFontSize }
