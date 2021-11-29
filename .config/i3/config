@@ -163,13 +163,13 @@ bindsym $mod+XF86AudioPrev   exec mpc seek -5
 bindsym $mod+XF86AudioNext   exec mpc seek +5
 
 # Silencia (o no) el Microfono
-bindsym $mod+XF86AudioMute exec ~/Documents/scripts/microphone.sh
+bindsym $mod+XF86AudioMute exec ~/dotfiles/scripts/microphone-general.sh
 # Cambia (o no) entre las salidas de audio (Line out/Headphones)
-bindsym $mod+o exec ~/Documents/scripts/audio.sh
+bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output.sh
 
 # Toma capturas de pantalla
-bindsym Print exec ~/Documents/scripts/screenshots.sh "Screen"
-bindsym $mod+s exec ~/Documents/scripts/screenshots.sh "Selection"
+bindsym Print exec ~/dotfiles/scripts/screenshots.sh "Screen"
+bindsym $mod+s exec ~/dotfiles/scripts/screenshots.sh "Selection"
 
 # Bloqueo de pantalla
 bindsym $mod+shift+x exec betterlockscreen --lock
@@ -209,4 +209,4 @@ for_window [class="(?i)firefox" window_role="^(?!browser).*"] floating enable
 # AUTORUN
 # ======================================================================
 # Polybar
-exec_always --no-startup-id /home/xgm/.config/polybar/blocks/launch.sh
+exec_always --no-startup-id /home/xgm/.config/polybar/launch.sh
