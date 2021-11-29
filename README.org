@@ -2,24 +2,17 @@
 
 Este repositorio contiene algunos de los archivos de configuración de
 mi maquina principal. Sientete libre de navegar entre ellos y tomar lo
-que gustes. Ten encuenta que los archvios aquí presentados reflejan mis
-preferencias. Revisa bien que copias, podrías romper algo. Ahora sí, adelante.
+que gustes. Ten encuenta que los archvios aquí presentados reflejan
+mis preferencias. Revisa bien que copias, podrías romper algo. Ahora
+sí, adelante.
 
 [[https://i.imgur.com/5NkH9jn.png]]
 
 ** Lista de archivos de configuración
-- [[file:.config/alacritty][Alactritty]]
+- [[file:.config/i3/config][i3wm]]
 - [[file:.config/nvim/][Nvim]]
-- [[file:.emacs.d/][Emacs]] /(Próximamente)/
+- [[file:.config/alacritty/alacritty.yml][Alactritty]]
+- [[file:.tmux.conf][Tmux]]
+- [[https://github.com/xgabrielmorales/emacs][Emacs]]
 - [[file:.config/ranger][Ranger]]
-- [[file:.config/i3][i3wm]]
-
-** Fuentes Tipográficas
-| Fuente             | Origen                                      |
-|--------------------+---------------------------------------------|
-| Ubuntu             | [[https://design.ubuntu.com/font/]]             |
-| Hacker Nerd Font   | [[https://www.nerdfonts.com/font-downloads]]    |
-| Powerline Fonts    | [[https://github.com/powerline/fonts]]          |
-| Font Awesome       | [[https://github.com/FortAwesome/Font-Awesome]] |
-| Icomoon Feather    | [[https://feathericons.com/]]                   |
-| Mononoki Nerd Font | [[https://www.nerdfonts.com/font-downloads]]    |
+- [[file:.config/zathura/zathurarc][Zathura]]
