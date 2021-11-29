@@ -183,8 +183,7 @@ for_window [urgent=latest] focus
 assign [class="Alacritty"]          $ws1
 assign [class="st-256color"]        $ws1
 
-assign [class="Firefox"]            $ws2
-assign [class="firefox"]            $ws2
+assign [class="(?i)firefox"]        $ws2
 
 assign [class="Emacs"]              $ws3
 
@@ -195,17 +194,19 @@ assign [class="Viewnior"]           $ws4
 assign [class="Inkscape"]           $ws4
 
 assign [class="obs"]                $ws5
-assign [class="Discord"]            $ws5
-assign [class="discord"]            $ws5
+assign [class="(?i)Discord"]        $ws5
 assign [class="Gimp-2.10"]          $ws5
 assign [class="VirtualBox Manager"] $ws5
 
 # Abre las aplicaciones especificadas en modo flotante
-for_window [class="Gucharmap"]    floating enable
-for_window [class="Pavucontrol"]  floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Gucharmap"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="(?i)firefox" window_role="^(?!browser).*"] floating enable
 # ======================================================================
-# OTROS
+# AUTORUN
 # ======================================================================
 # Polybar
 exec_always --no-startup-id /home/xgm/.config/polybar/blocks/launch.sh
