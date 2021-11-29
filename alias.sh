@@ -1,4 +1,4 @@
-export TERM=xterm-256color
+#export TERM=xterm-256color
 export EDITOR=nvim
 export VISUAL=nvim
 export READER=zathura
@@ -17,8 +17,11 @@ alias ls="ls -FXAhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --c
 
 alias man="man --locale=es"
 alias cat="bat"
-alias clip="xclip -selection clipboard"
+alias cbcopy="xclip -selection clipboard"
+alias cbpaste="xclip -selection clipboard -o"
 alias cnext="calcurse --next"
+
+alias radio="curl https://coderadio-relay-blr.freecodecamp.org/radio/8010/radio.mp3 | mpg123 - 2> /dev/null"
 #+====================================================+
 #  ATAJOS DE NAVEGACIÓN
 #+====================================================+
