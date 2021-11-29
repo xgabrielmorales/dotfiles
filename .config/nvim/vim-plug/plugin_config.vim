@@ -46,13 +46,13 @@ let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_modified_removed = ''
 "+===============================================================================+
-" VIMTEX
+" Ctrlp
 "+===============================================================================+
-let g:vimtex_compiler_latexmk = {'build_dir' : '/home/xgm/data/latex/build'}
-let g:vimtex_view_method = 'zathura'
-"+===============================================================================+
-" UltSnips
-"+===============================================================================+
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:ctrlp_map = '<M-f>'
+
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn|env)$',
+	\ 'file': '\v\.(exe|so|dll|sqlite3)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
