@@ -1,0 +1,20 @@
+set selection-clipboard clipboard
+
+set scroll-step 100
+
+set default-bg  "#282c34"
+
+set inputbar-bg "#fafafa"
+set inputbar-fg "#0d0d0d"
+
+set statusbar-bg "#c8ccd4"
+set statusbar-fg "#0d0d0d"
+
+set notification-error-bg "#ED7976"
+
+set recolor-lightcolor \#282c34
+
+set font "mononoki Nerd Font 12"
+
+set window-title-basename
+set statusbar-basename
