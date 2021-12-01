@@ -67,14 +67,10 @@ inoremap <F4> <C-O>:set wrap!<cr>
 
 " Borra el resaltado de la búsqueda
 nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
-"==========================================================================
-"  OTRAS CONFIGURACIONES
-"==========================================================================
-" Borra automáticamente los espacios sobrantes al final de la línea
-autocmd BufWritePre * %s/\s\+$//e
 
-" Abrir la ayuda de vim (vim help) en una ventana vertical
-autocmd FileType help wincmd L
+" Abre y cierra los plieges de texto con la barra de espaciadora.
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 " HARD ASS MODE
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
@@ -93,10 +89,14 @@ cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
+"==========================================================================
+"  OTRAS CONFIGURACIONES
+"==========================================================================
+" Borra automáticamente los espacios sobrantes al final de la línea
+autocmd BufWritePre * %s/\s\+$//e
 
-" Abre y cierra los plieges de texto con la barra de espaciadora.
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
+" Abrir la ayuda de vim (vim help) en una ventana vertical
+autocmd FileType help wincmd L
 
 " Define la longitud de una linea de texto en archivos de texto.
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
