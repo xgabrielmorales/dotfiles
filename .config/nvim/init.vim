@@ -78,10 +78,21 @@ autocmd FileType help wincmd L
 
 " HARD ASS MODE
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-	exec 'noremap' key '<Nop>'
+	exec 'noremap'  key '<Nop>'
 	exec 'inoremap' key '<Nop>'
-	"exec 'cnoremap' key '<Nop>'
+	exec 'cnoremap' key '<Nop>'
 endfor
+
+" Vim no tiene otra forma, además de las flechas, de moverse entre el
+" texto en modo comando, así que mejor usar las de Emacs.
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
 
 " Abre y cierra los plieges de texto con la barra de espaciadora.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
