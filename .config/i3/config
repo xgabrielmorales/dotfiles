@@ -98,13 +98,13 @@ bindsym $mod+f fullscreen toggle
 # Cambia el diseño de las ventanas (Apiladas, Vertical; Dididas, Horizontal; En pestañas)
 bindsym $mod+w layout tabbed; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
 bindsym $mod+e layout splith; exec notify-send "i3wm" "Container layout: <b>Splith</b>" --expire-time 1200
-#bindsym $mod+? layout stacking ; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
+#bindsym $mod+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
 
 # Cambia el estilo de los bordes de las ventanas
-#
-bindsym $mod+u border none;   exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
-bindsym $mod+i border pixel;  exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
-bindsym $mod+p border normal; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
+bindsym $mod+y border none;   exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
+bindsym $mod+u border pixel;  exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
+bindsym $mod+i border normal4; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
+
 # Actualiza el archivo de configuración de i3
 bindsym $mod+Shift+r reload; exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
 
