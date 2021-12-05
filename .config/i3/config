@@ -62,6 +62,9 @@ client.focused_inactive #2F343F #2F343F #C4C7C5 #484e50   #282C34
 client.urgent           #EC7875 #EC7875 #ffffff #900000   #ED7976
 # ======================================================================
 # ATAJOS DE TECLADO
+for_window [class="(?i)firefox" window_role="^(?!browser).*"] floating enable
+# ======================================================================
+# KEYBIDINGS
 # ======================================================================
 # Abre un Terminal
 bindsym $mod+Return exec $myTerm; workspace $ws1
