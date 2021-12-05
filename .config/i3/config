@@ -61,7 +61,44 @@ client.unfocused        #282C34 #282C34 #D5D7D6 #292d2e   #282C34
 client.focused_inactive #2F343F #2F343F #C4C7C5 #484e50   #282C34
 client.urgent           #EC7875 #EC7875 #ffffff #900000   #ED7976
 # ======================================================================
-# ATAJOS DE TECLADO
+# WORKSPACES and WINDOWS
+# ======================================================================
+# Define variables con los nombres de los workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+
+# Asigna un Workspace a una aplicación específica
+assign [class="Alacritty"]          $ws1
+assign [class="st-256color"]        $ws1
+
+assign [class="(?i)firefox"]        $ws2
+
+assign [class="Emacs"]              $ws3
+
+assign [class="mpv"]                $ws4
+assign [class="Zathura"]            $ws4
+assign [class="MyPaint"]            $ws4
+assign [class="Viewnior"]           $ws4
+assign [class="Inkscape"]           $ws4
+
+assign [class="obs"]                $ws5
+assign [class="(?i)Discord"]        $ws5
+assign [class="Gimp-2.10"]          $ws5
+assign [class="VirtualBox Manager"] $ws5
+
+# Abre las aplicaciones especificadas en modo flotante
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Gucharmap"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="MEGAsync"] floating enable
 for_window [class="(?i)firefox" window_role="^(?!browser).*"] floating enable
 # ======================================================================
 # KEYBIDINGS
@@ -110,19 +147,8 @@ bindsym $mod+i border normal4; exec notify-send "i3wm" "Border: <b>normal</b>" -
 
 # Actualiza el archivo de configuración de i3
 bindsym $mod+Shift+r reload; exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
-
 # Reinicia el Window Manager (Se conservará la sesión)
 bindsym $mod+Shift+c restart
-
-# Define variables con los nombres de los workspaces
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
 
 # Cambia de workspace
 bindsym $mod+1 workspace $ws1
@@ -176,38 +202,6 @@ bindsym $mod+s exec ~/dotfiles/scripts/screenshots.sh "Selection"
 
 # Bloqueo de pantalla
 bindsym $mod+shift+x exec betterlockscreen --lock
-# ======================================================================
-# VARIABLES Y ASIGNACIONES
-# ======================================================================
-# Cambia al workspace de la ventana emergente automaticamente
-for_window [urgent=latest] focus
-
-# Asigna un Workspace a una aplicación específica
-assign [class="Alacritty"]          $ws1
-assign [class="st-256color"]        $ws1
-
-assign [class="(?i)firefox"]        $ws2
-
-assign [class="Emacs"]              $ws3
-
-assign [class="mpv"]                $ws4
-assign [class="Zathura"]            $ws4
-assign [class="MyPaint"]            $ws4
-assign [class="Viewnior"]           $ws4
-assign [class="Inkscape"]           $ws4
-
-assign [class="obs"]                $ws5
-assign [class="(?i)Discord"]        $ws5
-assign [class="Gimp-2.10"]          $ws5
-assign [class="VirtualBox Manager"] $ws5
-
-# Abre las aplicaciones especificadas en modo flotante
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [class="Gucharmap"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="(?i)firefox" window_role="^(?!browser).*"] floating enable
 # ======================================================================
 # AUTORUN
 # ======================================================================
