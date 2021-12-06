@@ -22,8 +22,9 @@ font pango:Mononoki Nerd Font 12
 
 # Configura el estilo de los bordes de las ventanas
 # Opciones: <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 4
-default_floating_border normal 4
+set $border_width 4
+default_border pixel $border_width
+default_floating_border normal $border_width
 
 # Asigna los bordes dinámicamente
 # Opciones: <none|vertical|horizontal|both|smart>
@@ -142,9 +143,9 @@ bindsym $mod+e layout splith; exec notify-send "i3wm" "Container layout: <b>Spli
 #bindsym $mod+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
 
 # Cambia el estilo de los bordes de las ventanas
-bindsym $mod+y border none;   exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
-bindsym $mod+u border pixel;  exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
-bindsym $mod+i border normal4; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
+bindsym $mod+y border none;                 exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
+bindsym $mod+u border pixel  $border_width; exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
+bindsym $mod+i border normal $border_width; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
 
 # Actualiza el archivo de configuración de i3
 bindsym $mod+Shift+r reload; exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
