@@ -42,6 +42,8 @@ poder mostrar los iconos, recuerda que aquí todo es texto plano. Las
 fuentes son [[https://github.com/AT-UI/feather-font][Feather Font]] y [[https://madmalik.github.io/mononoki/][Mononoki]] o su versión con el parche de las
 [[https://github.com/ryanoasis/nerd-fonts/][Nerd Fonts]].
 
+[[https://i.postimg.cc/jd0wQDSN/ss-12-17-21-06-00-39.png]]
+
 *** Window Switcher - Rofi
 Mi Window Swicher de preferencia, más por lo estético, dmenu me parece
 muy /plano/. Pero igualmente ligero, rapido y simple, que es lo que se
@@ -70,6 +72,8 @@ terminal en una misma ventana, sin el mayor esfuerzo posible.
 
 Mi configuración, como siempre la puedes, encontrar aquí: [[file:.tmux.conf][Tmux]].
 
+[[https://i.postimg.cc/vH1RMvFF/ss-12-17-21-06-16-56.png]]
+
 *** File Manager - Ranger
 Ranger es mi file manager para todo, excepto para esos casos en lo que
 me toca arrastrar un archivo al browser. Es simple, es rápido, utiliza
@@ -77,6 +81,8 @@ los atajos de teclado de Vim, es muy extensible (está escrito en
 Python).
 
 Mi configuración: [[file:.config/ranger][Ranger]].
+
+[[https://i.postimg.cc/d3tq4cpb/ss-12-17-21-06-08-04.png]]
 
 ** Editor de Texto - NeoVim/Emacs
 Mi parte favorita, pero seré breve. Cuando de editores de texto se
@@ -87,6 +93,8 @@ utilizo Neovim y cuando necesito tomar notas o hacer algún documento
 utilizando LaTeX o un README como justo ahora, entonces uso Emacs.
 
 Mi configuración: [[file:.config/nvim/][Nvim]] y [[https://github.com/xgabrielmorales/emacs][Emacs]].
+
+[[https://i.postimg.cc/GmpXrgnb/ss-12-17-21-06-10-04.png]]
 
 ** Otras
 - Document viewer: [[https://wiki.archlinux.org/title/Zathura][Zathura]]
