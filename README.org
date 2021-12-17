@@ -4,7 +4,7 @@ Este repositorio contiene los archivos de configuración de mi maquina
 con *Arch Linux*. Eres libre de ver, tomar y modificar lo que gustes,
 sin embargo, ten en cuenta que lo que aquí se muestra son mis
 preferencias personales y lo que se busca es la simpleza y comodidad,
-intento depositar mi vida configurando cosas, por tal razón puede que
+intento no depositar mi vida configurando cosas, por tal razón puede que
 no cumplan con tus necesidades, te sugeriría que revises bien lo que
 tomes antes de adjuntarlo a tu arsenal.
 
@@ -20,9 +20,9 @@ esfuerzo resulta increíblemente satisfactorio tener un OS ajusto al
 milímetro a tus necesidades.
 
 ** Window Manager - i3WM
-i3 Ha sido, desde siempre, mi WM y no tengo intenciones de cambiarlo,
+i3 ha sido, desde siempre, mi WM y no tengo intenciones de cambiarlo,
 por lo menos no a corto plazo, y aunque puede no ser el más amado,
-cumple con su función, es ligero y lo suficiente mente customizable
+cumple con su función, es ligero y lo suficientemente customizable
 para alguien que no quiere pasar toda una vida configurando cosas.
 
 Mi configuración la puedes encontrar aquí: [[file:.config/i3/config][i3wm]].
@@ -55,7 +55,7 @@ propone.
 
 *** Emulador de Terminal - St
 En mi búsqueda de la simpleza, he utilizado muchos emuladores de
-terminal pero solo con dos he encontrado lo que busco, [[Alacritty y últimamente ][Alacritty]] y
+terminal pero solo con dos he encontrado lo que busco, [[https://alacritty.org/][Alacritty]] y
 últimamente [[https://st.suckless.org/][st]]. Alacritty fue durante mucho tiempo mi emulador de
 terminal principal pero con st tengo justo lo que necesito y nada más,
 lo que lo hace ULTRA ligero, por contra no se tendrán agregados que
@@ -85,10 +85,10 @@ Mi configuración: [[file:.config/ranger][Ranger]].
 [[https://i.postimg.cc/d3tq4cpb/ss-12-17-21-06-08-04.png]]
 
 ** Editor de Texto - NeoVim/Emacs
-Mi parte favorita, pero seré breve. Cuando de editores de texto se
-trata, solo pienso en Neovim y en Emacs. No hay espacio en mi corazón
+Mi parte favorita, pero seré breve. Cuando me hablan de editores de
+texto, solo pienso en Neovim y en Emacs. No hay espacio en mi corazón
 para nadie más, con esos dos editores tengo todo lo que necesito, sin
-embargo no tienen el mismo propósito. Cuando de programar se trata
+embargo, no tienen el mismo propósito. Cuando de programar se trata
 utilizo Neovim y cuando necesito tomar notas o hacer algún documento
 utilizando LaTeX o un README como justo ahora, entonces uso Emacs.
 
