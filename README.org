@@ -1,18 +1,95 @@
 * ~/dotfiles
 
-Este repositorio contiene algunos de los archivos de configuración de
-mi maquina principal. Sientete libre de navegar entre ellos y tomar lo
-que gustes. Ten encuenta que los archvios aquí presentados reflejan
-mis preferencias. Revisa bien que copias, podrías romper algo. Ahora
-sí, adelante.
+Este repositorio contiene los archivos de configuración de mi maquina
+con *Arch Linux*. Eres libre de ver, tomar y modificar lo que gustes,
+sin embargo, ten en cuenta que lo que aquí se muestra son mis
+preferencias personales y lo que se busca es la simpleza y comodidad,
+intento depositar mi vida configurando cosas, por tal razón puede que
+no cumplan con tus necesidades, te sugeriría que revises bien lo que
+tomes antes de adjuntarlo a tu arsenal.
 
 [[https://i.imgur.com/5NkH9jn.png]]
 
-** Lista de archivos de configuración
-- [[file:.config/i3/config][i3wm]]
-- [[file:.config/nvim/][Nvim]]
-- [[file:.config/alacritty/alacritty.yml][Alactritty]]
-- [[file:.tmux.conf][Tmux]]
-- [[https://github.com/xgabrielmorales/emacs][Emacs]]
-- [[file:.config/ranger][Ranger]]
-- [[file:.config/zathura/zathurarc][Zathura]]
+** Distro de Linux - Arch Linux
+Mi preferencia siempre han sido distros basadas en Arch, en este caso
+uso un *Arch Linux* puro y podría enumerar mil razones por las que las
+prefiero pero en el fondo se reducen a el administrador de paquetes y
+la buena documentación, lo que me hacen no querer moverme de aquí. Y
+aunque pintar en un lienzo en blanco puede ser intimidante, luego de
+esfuerzo resulta increíblemente satisfactorio tener un OS ajusto al
+milímetro a tus necesidades.
+
+** Window Manager - i3WM
+i3 Ha sido, desde siempre, mi WM y no tengo intenciones de cambiarlo,
+por lo menos no a corto plazo, y aunque puede no ser el más amado,
+cumple con su función, es ligero y lo suficiente mente customizable
+para alguien que no quiere pasar toda una vida configurando cosas.
+
+Mi configuración la puedes encontrar aquí: [[file:.config/i3/config][i3wm]].
+
+*** Status Bars - Poylbar
+Aquí no hay mucho que presentar. Polybar es la status bar que utilizo,
+es ligera, fácil de configurar y puedes llegar a ser lo suficiente
+atractiva y simple como para no pensar en otra más.
+
+En este caso los créditos de la configuración no me pertenecen,
+utilizo un tema hecho por [[https://github.com/adi1090x][adi1090x]] llamado [[https://github.com/adi1090x/polybar-themes#blocks][blocks]] con mis respectivos
+retoques. Sin embargo, mis modificaciones a su tema las puedes
+encontrar aquí: Polybar.
+
+Para usar mi configuración necesitarás las fuentes necesarias para
+poder mostrar los iconos, recuerda que aquí todo es texto plano. Las
+fuentes son [[https://github.com/AT-UI/feather-font][Feather Font]] y [[https://madmalik.github.io/mononoki/][Mononoki]] o su versión con el parche de las
+[[https://github.com/ryanoasis/nerd-fonts/][Nerd Fonts]].
+
+*** Window Switcher - Rofi
+Mi Window Swicher de preferencia, más por lo estético, dmenu me parece
+muy /plano/. Pero igualmente ligero, rapido y simple, que es lo que se
+busca.
+
+Los creditos del la configuración también le pertenecen a [[https://github.com/adi1090x][adi1090x]] con
+su tema llamado [[https://github.com/adi1090x/polybar-themes#blocks][blocks]]. Mi configuración es exactamente la que el
+propone.
+
+*** Emulador de Terminal - St
+En mi búsqueda de la simpleza, he utilizado muchos emuladores de
+terminal pero solo con dos he encontrado lo que busco, [[Alacritty y últimamente ][Alacritty]] y
+últimamente [[https://st.suckless.org/][st]]. Alacritty fue durante mucho tiempo mi emulador de
+terminal principal pero con st tengo justo lo que necesito y nada más,
+lo que lo hace ULTRA ligero, por contra no se tendrán agregados que
+comúnmente se encuentran en los emuladores de terminal más populares,
+como múltiples pestañas o paneles dentro de una misma instancia. Pero
+ese problema se soluciona sin problemas como a continuación explico.
+
+Mi configuración de la puedes encontrar aquí: [[file:.config/alacritty/alacritty.yml][Alactritty]], st.
+
+**** Terminal Multiplexer - Tmux
+¿Cómo se soluciona la ausencia de pestañas y paneles en Alacritty y
+St? Tmux es la respuesta. Tmux te permite tener múltiples sesiones de
+terminal en una misma ventana, sin el mayor esfuerzo posible.
+
+Mi configuración, como siempre la puedes, encontrar aquí: [[file:.tmux.conf][Tmux]].
+
+*** File Manager - Ranger
+Ranger es mi file manager para todo, excepto para esos casos en lo que
+me toca arrastrar un archivo al browser. Es simple, es rápido, utiliza
+los atajos de teclado de Vim, es muy extensible (está escrito en
+Python).
+
+Mi configuración: [[file:.config/ranger][Ranger]].
+
+** Editor de Texto - NeoVim/Emacs
+Mi parte favorita, pero seré breve. Cuando de editores de texto se
+trata, solo pienso en Neovim y en Emacs. No hay espacio en mi corazón
+para nadie más, con esos dos editores tengo todo lo que necesito, sin
+embargo no tienen el mismo propósito. Cuando de programar se trata
+utilizo Neovim y cuando necesito tomar notas o hacer algún documento
+utilizando LaTeX o un README como justo ahora, entonces uso Emacs.
+
+Mi configuración: [[file:.config/nvim/][Nvim]] y [[https://github.com/xgabrielmorales/emacs][Emacs]].
+
+** Otras
+- Document viewer: [[https://wiki.archlinux.org/title/Zathura][Zathura]]
+- Browser: [[https://www.mozilla.org/en-US/firefox/][Firefox]]
+- Media Player: [[https://wiki.archlinux.org/title/Mpv][Mpv]]
+- Music Player: [[https://wiki.archlinux.org/title/Music_Player_Daemon][Mpd]] + Mpc + [[https://github.com/xgabrielmorales/rofi-mpd][Rofi MPD]] (Mi propio script)
