@@ -11,10 +11,10 @@ tomes antes de adjuntarlo a tu arsenal.
 [[https://i.imgur.com/5NkH9jn.png]]
 
 ** Distro de Linux - Arch Linux
-Mi preferencia siempre han sido distros basadas en Arch, en este caso
-uso un *Arch Linux* puro y podría enumerar mil razones por las que las
-prefiero pero en el fondo se reducen a el administrador de paquetes y
-la buena documentación, lo que me hacen no querer moverme de aquí. Y
+Mis preferencias siempre han sido distros basadas en Arch, en este
+caso uso un *Arch Linux* puro y podría enumerar mil razones, pero en
+el fondo se reducen a el administrador de paquetes y la buena
+documentación lo que me hacen no querer cambiar a otra distro. Y
 aunque pintar en un lienzo en blanco puede ser intimidante, luego de
 esfuerzo resulta increíblemente satisfactorio tener un OS ajusto al
 milímetro a tus necesidades.
@@ -29,7 +29,7 @@ Mi configuración la puedes encontrar aquí: [[file:.config/i3/config][i3wm]].
 
 *** Status Bars - Poylbar
 Aquí no hay mucho que presentar. Polybar es la status bar que utilizo,
-es ligera, fácil de configurar y puedes llegar a ser lo suficiente
+es ligera, fácil de configurar y puede llegar a ser lo suficiente
 atractiva y simple como para no pensar en otra más.
 
 En este caso los créditos de la configuración no me pertenecen,
@@ -39,8 +39,7 @@ encontrar aquí: Polybar.
 
 Para usar mi configuración necesitarás las fuentes necesarias para
 poder mostrar los iconos, recuerda que aquí todo es texto plano. Las
-fuentes son [[https://github.com/AT-UI/feather-font][Feather Font]] y [[https://madmalik.github.io/mononoki/][Mononoki]] o su versión con el parche de las
-[[https://github.com/ryanoasis/nerd-fonts/][Nerd Fonts]].
+fuentes son [[https://github.com/AT-UI/feather-font][Feather Font]] y [[https://madmalik.github.io/mononoki/][Mononoki]].
 
 [[https://i.postimg.cc/jd0wQDSN/ss-12-17-21-06-00-39.png]]
 
@@ -55,13 +54,13 @@ propone.
 
 *** Emulador de Terminal - St
 En mi búsqueda de la simpleza, he utilizado muchos emuladores de
-terminal pero solo con dos he encontrado lo que busco, [[https://alacritty.org/][Alacritty]] y
+terminal pero solo con dos he encontrado lo que busco: [[https://alacritty.org/][Alacritty]] y
 últimamente [[https://st.suckless.org/][st]]. Alacritty fue durante mucho tiempo mi emulador de
 terminal principal pero con st tengo justo lo que necesito y nada más,
 lo que lo hace ULTRA ligero, por contra no se tendrán agregados que
 comúnmente se encuentran en los emuladores de terminal más populares,
 como múltiples pestañas o paneles dentro de una misma instancia. Pero
-ese problema se soluciona sin problemas como a continuación explico.
+ese problema se soluciona como a continuación explico.
 
 Mi configuración de la puedes encontrar aquí: [[file:.config/alacritty/alacritty.yml][Alactritty]], st.
 
@@ -70,7 +69,7 @@ Mi configuración de la puedes encontrar aquí: [[file:.config/alacritty/alacrit
 St? Tmux es la respuesta. Tmux te permite tener múltiples sesiones de
 terminal en una misma ventana, sin el mayor esfuerzo posible.
 
-Mi configuración, como siempre la puedes, encontrar aquí: [[file:.tmux.conf][Tmux]].
+Mi configuración, como siempre, la puedes encontrar aquí: [[file:.tmux.conf][Tmux]].
 
 [[https://i.postimg.cc/vH1RMvFF/ss-12-17-21-06-16-56.png]]
 
@@ -86,7 +85,7 @@ Mi configuración: [[file:.config/ranger][Ranger]].
 
 ** Editor de Texto - NeoVim/Emacs
 Mi parte favorita, pero seré breve. Cuando me hablan de editores de
-texto, solo pienso en Neovim y en Emacs. No hay espacio en mi corazón
+texto solo pienso en Neovim y en Emacs. No hay espacio en mi corazón
 para nadie más, con esos dos editores tengo todo lo que necesito, sin
 embargo, no tienen el mismo propósito. Cuando de programar se trata
 utilizo Neovim y cuando necesito tomar notas o hacer algún documento
