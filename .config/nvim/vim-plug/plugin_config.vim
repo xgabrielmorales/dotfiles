@@ -1,21 +1,5 @@
 let mapleader = ","
 "+===============================================================================+
-" NERDTREE
-"+===============================================================================+
-map <C-f> :NERDTreeToggle <CR>
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
-let NERDTreeMinimalMenu=1
-let NERDTreeSortOrder=['[[extension]]']
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
-let NERDTreeQuitOnOpen=1
-
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
-      \ && b:NERDTree.isTabTree()) | q | endif
-autocmd BufWinEnter * silent NERDTreeMirror
-"+===============================================================================+
 " LIGHTLINE.VIM
 "+===============================================================================+
 let g:lightline = {
