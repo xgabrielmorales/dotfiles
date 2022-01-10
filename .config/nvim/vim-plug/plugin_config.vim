@@ -63,3 +63,10 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\v\.(exe|so|dll|sqlite3)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
+"+===============================================================================+
+" Ultisnips
+"+===============================================================================+
+let g:UltiSnipsExpandTrigger = "<M-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<M-tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+let g:UltiSnipsListSnippets="<M-t>"

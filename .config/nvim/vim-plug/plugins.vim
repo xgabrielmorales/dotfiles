@@ -14,4 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-gitgutter'  " Shows git diff markers in the sign column
   Plug 'jiangmiao/auto-pairs'    " Insert or delete brackets, parens, quotes in pair
   Plug 'tpope/vim-fugitive'      " Git integration whinin vim
+  " Snippets
+  Plug 'SirVer/ultisnips',   {'for': 'html'} " Snippets engine
+  Plug 'honza/vim-snippets', {'for': 'html'} " Snippets privider
 call plug#end()
