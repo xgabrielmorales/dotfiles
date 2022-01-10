@@ -8,6 +8,11 @@ plugins=( zsh-syntax-highlighting colored-man-pages )
 source $ZSH/oh-my-zsh.sh
 
 #+====================================================+
+# PATH
+#+====================================================+
+export PATH="$HOME/.local/bin:$PATH"
+
+#+====================================================+
 # ALIASES
 #+====================================================+
 source $HOME/dotfiles/alias.sh
