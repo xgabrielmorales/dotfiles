@@ -33,6 +33,8 @@ let g:onedark_hide_endofbuffer = 1
 " SYNTASTIC
 "+===============================================================================+
 nnoremap <F2> :SyntasticCheck<CR>
+let g:syntastic_echo_current_error = 1
+let g:syntastic_check_on_open = 1
 "+===============================================================================+
 " VIM GITGUTTER
 "+===============================================================================+
@@ -52,6 +54,8 @@ nnoremap <leader>gp :GitGutterPrevHunk<cr>
 " Ctrlp
 "+===============================================================================+
 let g:ctrlp_map = '<M-f>'
+nnoremap <leader>t :CtrlPTag<cr>
+nnoremap <leader>b :CtrlPBuffer<cr>
 
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
