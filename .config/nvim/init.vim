@@ -27,12 +27,10 @@ set tabstop=4           " Espacios de indentación en modo insertar
 set shiftwidth=4        " Espacios de indentación en modo normal
 set softtabstop=0
 
-" Redefine la indentación de acuerdo al tipo de archivo
-autocmd FileType css    setlocal expandtab tabstop=4 shiftwidth=4
-autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
-autocmd Filetype tex    setlocal expandtab tabstop=2 shiftwidth=2
-autocmd FileType html   setlocal expandtab tabstop=2 shiftwidth=2
-autocmd FileType htmldjango setlocal expandtab tabstop=2 shiftwidth=2
+" Redefine la indentación (a espacios) de acuerdo al tipo de archivo
+autocmd FileType css    setlocal expandtab softtabstop=4
+autocmd FileType html   setlocal expandtab softtabstop=4
+autocmd FileType python setlocal expandtab softtabstop=4
 "==========================================================================
 " CONFIGURACIÓN PRINCIPAL
 "==========================================================================
