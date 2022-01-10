@@ -18,7 +18,7 @@ set $myTerm st
 # ======================================================================
 # Fuente tipografica para los titulos de las ventanas.
 # Esta fuente será usada también para i3bar (opcional)
-font pango:Mononoki Nerd Font 12
+font pango:Mononoki 12
 
 # Configura el estilo de los bordes de las ventanas
 # Opciones: <normal|1pixel|pixel xx|none|pixel>
@@ -58,8 +58,8 @@ bindsym $mod+r mode "Resize"
 
 # Colores
 # Class                 border  backgr. text    indicator child_border
-client.focused          #49515f #2f343f #D5D7D6 #2e9ef4   #81A1C1
-client.unfocused        #282C34 #282C34 #D5D7D6 #292d2e   #282C34
+client.focused          #2f343f #2f343f #D5D7D6 #2e9ef4   #81A1C1
+client.unfocused        #282C34 #20232A #D5D7D6 #292d2e   #282C34
 client.focused_inactive #2F343F #2F343F #C4C7C5 #484e50   #282C34
 client.urgent           #EC7875 #EC7875 #ffffff #900000   #ED7976
 # ======================================================================
@@ -150,8 +150,8 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Rofi
-bindsym $mod+x exec --no-startup-id rofi -show run -theme ~/.config/rofi/config.rasi
-bindsym $mod+z exec --no-startup-id rofi -show window -theme ~/.config/rofi/config.rasi
+bindsym $mod+x exec --no-startup-id rofi -show run -theme xgm
+bindsym $mod+z exec --no-startup-id rofi -show window -theme xgm
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/bin/rofi-calc/rofi-calc.sh
 bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
@@ -179,10 +179,10 @@ bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output.sh
 bindsym Print exec ~/dotfiles/scripts/screenshots.sh "Screen"
 bindsym $mod+s exec ~/dotfiles/scripts/screenshots.sh "Selection"
 
-# Bloqueo de pantalla
-bindsym $mod+shift+x exec betterlockscreen --lock
+# Envía en una notificación el ping que se tiene con 8.8.8.8
+bindsym $mod+p exec ~/dotfiles/scripts/network-status.sh
 # ======================================================================
 # AUTORUN
 # ======================================================================
 # Polybar
-exec_always --no-startup-id /home/xgm/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
