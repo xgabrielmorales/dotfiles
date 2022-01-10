@@ -17,12 +17,11 @@ source $HOME/dotfiles/alias.sh
 #+====================================================+
 
 # Abre tmux automáticamente al abrir una terminal
-if command -v tmux >/dev/null 2>&1 && [ "${DISPLAY}" ]; then
-    # if not inside a tmux session,
-	# and if no session is started,
-	# start a new session
-    [ -z "${TMUX}" ] && (tmux attach >/dev/null 2>&1 || tmux)
-fi
+#if command -v tmux >/dev/null 2>&1 && [ "${DISPLAY}" ]; then
+#	# if not inside a tmux session and no session
+#	# is started, then start a new session.
+#    [ -z "${TMUX}" ] && (tmux attach >/dev/null 2>&1 || tmux)
+#fi
 
 if [ -n "$RANGER_LEVEL" ]; then
 	export PS1="(ranger) $PS1";
