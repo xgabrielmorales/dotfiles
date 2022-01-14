@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
-function toogle_mic() {
-	pacmd list-sources | \
-		grep -oP 'index: \d+' | \
-		awk '{ print $2 }' | \
-		xargs -I{} pactl set-source-mute {} toggle
+toogle_mic() {
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 }
 
-function mic_status() {
-	 status=$(pacmd list-sources | grep -P "muted: " | awk '{print $2}' | head -n1)
-
-	 [[ $status == "yes" ]] && echo   || echo ;
+mic_status() {
+	DEFAULT_SOURCE=$(pactl info | grep "Default Source" | cut -f3 -d" ")
+	status=$(pactl list sources | grep -A 10 $DEFAULT_SOURCE | grep -o "Mute: yes")
+	[[ $status == "Mute: yes" ]] && echo  || echo ;
 }
 
 case $1 in
