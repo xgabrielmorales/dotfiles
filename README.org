@@ -91,7 +91,7 @@ embargo, no tienen el mismo propósito. Cuando de programar se trata
 utilizo Neovim y cuando necesito tomar notas o hacer algún documento
 utilizando LaTeX o un README como justo ahora, entonces uso Emacs.
 
-Mi configuración: [[file:.config/nvim/][Nvim]] y [[https://github.com/xgabrielmorales/emacs][Emacs]].
+Mi configuración: [[file:.config/nvim/][Nvim]] y [[file:.emacs.d/][Emacs]].
 
 [[https://i.postimg.cc/GmpXrgnb/ss-12-17-21-06-10-04.png]]
 
