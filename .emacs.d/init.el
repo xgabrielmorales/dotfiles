@@ -134,15 +134,17 @@
 ;; y/n for answering yes/no questions
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Undo
-(global-set-key (kbd "C-z") 'undo-only)
-;; Prevent accidents
-(global-unset-key (kbd "C-x C-c"))
-
 ;; Delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; Replace highlighted text
 (delete-selection-mode 1)
+
+;; Undo
+(global-set-key (kbd "C-z") 'undo-only)
+;; Prevent accidents
+(global-unset-key (kbd "C-x C-c"))
+;; Kill current buffer (inseat of asking first buffer name)
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
 
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
