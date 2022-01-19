@@ -70,6 +70,9 @@ nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
+" Regresa al modo Normal en la Terminal
+tnoremap <Esc> <C-\><C-n>
+
 " HARD ASS MODE
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
 	exec 'noremap'  key '<Nop>'
@@ -95,6 +98,9 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Abrir la ayuda de vim (vim help) en una ventana vertical
 autocmd FileType help wincmd L
+
+" Deshabilita la enumeración de las líneas en la terminal
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 " Define la longitud de una linea de texto en archivos de texto.
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
