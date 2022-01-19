@@ -55,13 +55,11 @@ set shortmess+=F
 "==========================================================================
 " ATAJOS DE TECLADO
 "==========================================================================
+" Deshabilita el Ex-Mode
+ nnoremap Q <Nop>
+
 " Activa y desactiva la corrección ortográfica con F3
 nnoremap <F3> :set spell!<cr>
-inoremap <F3> <C-O> :set spell!<cr>
-
-" Activa o desactiva el Text Wraping (Ajuste de texto)
-nnoremap <F4> :set wrap!<cr>
-inoremap <F4> <C-O>:set wrap!<cr>
 
 " Borra el resaltado de la búsqueda
 nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
