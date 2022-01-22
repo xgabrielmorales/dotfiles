@@ -197,38 +197,34 @@
 (defun insert-current-date () (interactive)
        (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
 
+(defun find-config ()
+  "Edit config.org"
+  (interactive)
+  (find-file "~/.emacs.d/init.org"))
+
+(global-set-key (kbd "C-c I") 'find-config)
+
 (use-package org
-  :mode ("\\.org" . org-mode)
-  :hook
-  (org-mode . auto-fill-mode)
   :config
-  (setq org-startup-indented t)
-
-  (setq org-hide-leading-stars t)
-  ;;(setq org-hide-emphasis-markers t)
-
-  (setq org-image-actual-width nil)
-
-  (setq org-display-inline-images t)
-  (setq org-redisplay-inline-images t)
-  (setq org-startup-with-inline-images "inlineimages")
-
-  ;; Press RET to follow the link
-  (setq org-return-follows-link t)
-
   (setq org-ellipsis "")
+  (setq org-startup-indented t)
+  (setq org-hide-leading-stars t)
+  (setq org-return-follows-link t)
+  (setq org-startup-folded t)
+  (setq org-src-window-setup t)
 
-  ;;(setq org-hide-emphasis-markers t)
-
+  ;; AGENDA
+  ;; ===========
   ;; List of files or directories to be used for agenda
   (setq org-agenda-files '("~/Org/Agenda/"))
-  ;; A week starts on Sunday as opposed to Monday
-  (setq org-agenda-start-on-weekday 0)
+  ;; Max number of days to show in agenda (Two Weeks)
+  (setq org-agenda-span 14)
+  ;; A week starts on the current day
+  (setq org-agenda-start-on-weekday nil)
   ;; Use 12-hour clock instead of 24-hour in agenda view
   (setq org-agenda-timegrid-use-ampm t)
 
-  (setq org-todo-keywords
-    '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")))
-
-  (setq org-log-done 'time)
-  (setq org-log-into-drawer t))
+  ;; Use my date format by default
+  (setq-default org-display-custom-times t)
+  (setq org-time-stamp-custom-formats
+	'("<%a, %d %b %Y>" . "<%a, %d %b %Y %H:%M>")))
