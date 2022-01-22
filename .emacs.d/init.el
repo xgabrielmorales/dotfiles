@@ -40,9 +40,13 @@
 
 (use-package ispell
   :ensure t
-  :bind
-  (("<f3>" . flyspell-mode)
-   ("<f4>" . ispell-word))
+  :preface
+  (defun flyspell-spanish ()
+    (interactive)
+    (ispell-change-dictionary "es_CO"))
+  (defun flyspell-english ()
+    (interactive)
+    (ispell-change-dictionary "en_US"))
   :config
   (setq ispell-program-name "/usr/bin/hunspell")
   (setq ispell-dictionary "es_CO"))
