@@ -14,20 +14,6 @@
   ;; packages are loaded before you start trying to modify them.
   (package-initialize)
 #+END_SRC
-** Theme (doom-one)
-#+BEGIN_SRC emacs-lisp
-  (use-package doom-themes
-    :ensure t
-    :config
-    (load-theme 'doom-one t))
-#+END_SRC
-** Magit
-#+BEGIN_SRC emacs-lisp
-  ;; Git integration for Emacs
-  (use-package magit
-    :ensure t
-    :bind ("C-x g" . magit-status))
-#+END_SRC
 ** LaTeX
 *** AUCTeX
 #+BEGIN_SRC emacs-lisp
@@ -116,6 +102,30 @@
     :custom ((dired-listing-switches "-XAhgo --group-directories-first")))
 #+END_SRC
 ** Programming
+*** Git
+**** Magit
+#+BEGIN_SRC emacs-lisp
+  ;; Git integration for Emacs
+  (use-package magit
+    :ensure t
+    :bind ("C-x g" . magit-status))
+#+END_SRC
+**** Git Gutter
+#+BEGIN_SRC emacs-lisp
+  (use-package git-gutter
+    :bind (("C-x C-g p" . git-gutter:previous-hunk)
+           ("C-x C-g n" . git-gutter:next-hunk)
+           ("C-x C-g s" . git-gutter:stage-hunk)
+           ("C-x C-g u" . git-gutter:revert-hunk)
+           ("C-x C-g i" . git-gutter:popup-hunk))
+    :hook ((prog-mode . git-gutter-mode)
+           (text-mode . git-gutter-mode))
+    :config
+    (setq git-gutter:added-sign "")
+    (setq git-gutter:deleted-sign "")
+    (setq git-gutter:modified-sign "")
+    (setq git-gutter:window-width 2))
+#+END_SRC
 *** Python
 **** Elpy
 #+BEGIN_SRC emacs-lisp

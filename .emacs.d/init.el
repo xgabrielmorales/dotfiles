@@ -8,16 +8,6 @@
 ;; packages are loaded before you start trying to modify them.
 (package-initialize)
 
-(use-package doom-themes
-  :ensure t
-  :config
-  (load-theme 'doom-one t))
-
-;; Git integration for Emacs
-(use-package magit
-  :ensure t
-  :bind ("C-x g" . magit-status))
-
 (use-package tex
   :ensure auctex
   :hook
@@ -91,6 +81,25 @@
   (put 'dired-find-alternate-file 'disabled nil)
 
   :custom ((dired-listing-switches "-XAhgo --group-directories-first")))
+
+;; Git integration for Emacs
+(use-package magit
+  :ensure t
+  :bind ("C-x g" . magit-status))
+
+(use-package git-gutter
+  :bind (("C-x C-g p" . git-gutter:previous-hunk)
+         ("C-x C-g n" . git-gutter:next-hunk)
+         ("C-x C-g s" . git-gutter:stage-hunk)
+         ("C-x C-g u" . git-gutter:revert-hunk)
+         ("C-x C-g i" . git-gutter:popup-hunk))
+  :hook ((prog-mode . git-gutter-mode)
+         (text-mode . git-gutter-mode))
+  :config
+  (setq git-gutter:added-sign "")
+  (setq git-gutter:deleted-sign "")
+  (setq git-gutter:modified-sign "")
+  (setq git-gutter:window-width 2))
 
 (use-package elpy
   :ensure t
