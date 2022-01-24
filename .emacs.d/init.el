@@ -8,39 +8,6 @@
 ;; packages are loaded before you start trying to modify them.
 (package-initialize)
 
-(use-package tex
-  :ensure auctex
-  :hook
-  (LaTeX-mode . auto-fill-mode)
-  (TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
-  :config
-  (setq TeX-auto-save t)
-  (setq TeX-parse-self t)
-  ;; AUCTeX will ask for the master file
-  (setq-default TeX-master nil)
-  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))))
-
-(use-package pdf-tools
-  :ensure t
-  :mode ("\\.pdf\\'" . pdf-view-mode)
-  :config
-  (pdf-tools-install)
-  ;; Open PDFs scalen to fit page
-  (setq-default pdf-view-display-size 'fit-width))
-
-(use-package ispell
-  :ensure t
-  :preface
-  (defun flyspell-spanish ()
-    (interactive)
-    (ispell-change-dictionary "es_CO"))
-  (defun flyspell-english ()
-    (interactive)
-    (ispell-change-dictionary "en_US"))
-  :config
-  (setq ispell-program-name "/usr/bin/hunspell")
-  (setq ispell-dictionary "es_CO"))
-
 (use-package ido
   :config
   ;; This makes ido work vertically
@@ -65,13 +32,6 @@
 (global-set-key (kbd "C-x b")   'ibuffer)
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
-(use-package which-key
-  :ensure t
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config
-  (setq which-key-idle-delay 3))
-
 (use-package dired
   :ensure nil
   :hook
@@ -81,6 +41,33 @@
   (put 'dired-find-alternate-file 'disabled nil)
 
   :custom ((dired-listing-switches "-XAhgo --group-directories-first")))
+
+(use-package which-key
+  :ensure t
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 3))
+
+(use-package tex
+  :ensure auctex
+  :hook
+  (LaTeX-mode . auto-fill-mode)
+  (TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
+  :config
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  ;; AUCTeX will ask for the master file
+  (setq-default TeX-master nil)
+  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))))
+
+(use-package pdf-tools
+  :ensure t
+  :mode ("\\.pdf\\'" . pdf-view-mode)
+  :config
+  (pdf-tools-install)
+  ;; Open PDFs scalen to fit page
+  (setq-default pdf-view-display-size 'fit-width))
 
 ;; Git integration for Emacs
 (use-package magit
@@ -111,64 +98,65 @@
 ;; FUNDAMENTAL
 ;; ===========
 
-(menu-bar-mode   0) ;; Disable tool bar
-(tool-bar-mode   0) ;; Disable menu bar
-(scroll-bar-mode 0) ;; Disable scroll bar
-
 (setq inhibit-startup-message t)     ;; No startup message
 (setq initial-scratch-message nil)   ;; No message in scratch buffer
 (setq initial-major-mode 'text-mode) ;; Text mode is the initial mode.
 
-(setq default-frame-alist
-      (list '(font . "Roboto Mono 11")
-            '(internal-border-width . 10)
-            '(vertical-scroll-bars  . nil)))
+(global-hl-line-mode t) ;; Show cursoline
+(column-number-mode t)  ;; Show column number in the mode line
+(blink-cursor-mode 0)   ;; No blink cursor
 
-(global-hl-line-mode t)   ;; Show cursoline
-(column-number-mode)      ;; Show column number in the mode line
-(blink-cursor-mode 0)     ;; No blink cursor
+(delete-selection-mode t) ;; Replace highlighted text
 
-;; Show lines numbers only in programming modes
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-
-;; BASIC
-;; ===========
-
-(setq-default fill-column 72)
+(setq auto-save-default nil) ;; Do not autosave
+(setq make-backup-files nil) ;; Do not backup files
 
 ;; Synchronizes the clipboard with X11
 (setq x-select-enable-clipboard t)
 
-;; Do not autosave
-(setq auto-save-default nil)
-;; Do not backup files
-(setq make-backup-files nil)
+;; Fill column at 72
+(setq-default fill-column 72)
+
+;; No cursor in intactive windows
+(setq cursor-in-non-selected-windows nil)
+
+;; No confirmation for visiting non-existent files
+(setq confirm-nonexistent-file-or-buffer nil)
+
+;; Automatically open read-only files in view-mode
+(setq view-read-only t)
 
 ;; y/n for answering yes/no questions
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-;; Replace highlighted text
-(delete-selection-mode 1)
+;; Show lines numbers only in programming modes
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-;; Undo
-(global-set-key (kbd "C-z") 'undo-only)
-;; Prevent accidents
-(global-unset-key (kbd "C-x C-c"))
-;; Kill current buffer (inseat of asking first buffer name)
-(global-set-key (kbd "C-x k") 'kill-current-buffer)
+;; APPEARANCE
+;; ===========
 
-(setq mouse-wheel-progressive-speed nil)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
-(setq mouse-wheel-follow-mouse 't)
-(setq scroll-step 1)
+(menu-bar-mode   0) ;; Disable tool bar
+(tool-bar-mode   0) ;; Disable menu bar
+(scroll-bar-mode 0) ;; Disable scroll bar
 
-(autoload 'View-scroll-half-page-forward "view")
-(autoload 'View-scroll-half-page-backward "view")
+(setq default-frame-alist
+      (list '(font . "Roboto Mono Light 11")
+            '(internal-border-width . 10)
+            '(vertical-scroll-bars  . nil)))
 
-(global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
-(global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
+;; THEME
+(use-package tango-plus-theme
+  :ensure t
+  :config
+  (load-theme 'tango-plus t))
+
+;; MOOD LINE
+(use-package mood-line
+  :ensure t
+  :config
+  (mood-line-mode))
 
 ;; INDENTATION
 ;; ===========
@@ -207,15 +195,48 @@
 ;; Delay before displaying a matching parenthesis.
 (setq show-paren-delay 0)
 
+;; SCROLLING
+;; ===========
+
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-follow-mouse 't)
+(setq scroll-step 1)
+
+(autoload 'View-scroll-half-page-forward "view")
+(autoload 'View-scroll-half-page-backward "view")
+
+(global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
+(global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
+
+;; SPELL CHECK
+;; ===========
+
+(use-package ispell
+  :ensure t
+  :preface
+  (defun flyspell-spanish ()
+    (interactive)
+    (ispell-change-dictionary "es_CO"))
+  (defun flyspell-english ()
+    (interactive)
+    (ispell-change-dictionary "en_US"))
+  :config
+  (setq ispell-program-name "/usr/bin/hunspell")
+  (setq ispell-dictionary "es_CO"))
+
+;; BINDINGS
+;; ===========
+
+;; Undo
+(global-set-key (kbd "C-z") 'undo-only)
+;; Prevent accidents
+(global-unset-key (kbd "C-x C-c"))
+;; Kill current buffer (inseat of asking first buffer name)
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
+
 (defun insert-current-date () (interactive)
        (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
-
-(defun find-config ()
-  "Edit config.org"
-  (interactive)
-  (find-file "~/.emacs.d/init.org"))
-
-(global-set-key (kbd "C-c I") 'find-config)
 
 (use-package org
   :config
