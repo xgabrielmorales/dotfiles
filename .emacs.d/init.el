@@ -249,20 +249,21 @@
   (setq org-hide-leading-stars t)
   (setq org-return-follows-link t)
   (setq org-startup-folded t)
-  (setq org-src-window-setup t)
+  (setq org-src-window-setup 'current-window)
+  (setq org-hide-emphasis-markers t)
 
   ;; AGENDA
   ;; ===========
-  ;; List of files or directories to be used for agenda
-  (setq org-agenda-files '("~/Org/Agenda/"))
-  ;; Max number of days to show in agenda (Two Weeks)
-  (setq org-agenda-span 14)
-  ;; A week starts on the current day
-  (setq org-agenda-start-on-weekday nil)
-  ;; Use 12-hour clock instead of 24-hour in agenda view
-  (setq org-agenda-timegrid-use-ampm t)
+  (global-set-key (kbd "C-c A") #'org-agenda)
 
+  ;; List of files to be used for agenda
+  (setq org-agenda-files '("~/org/agenda/"))
+  (setq org-archive-location (concat org-directory "/archive.org::"))
+  ;; Do not show deadlines when the item is done.
+  (setq org-agenda-skip-deadline-if-done t)
   ;; Use my date format by default
   (setq-default org-display-custom-times t)
   (setq org-time-stamp-custom-formats
-	'("<%a, %d %b %Y>" . "<%a, %d %b %Y %H:%M>")))
+        '("<%a, %d %b %Y>" . "<%a, %d %b %Y %H:%M>"))
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)" "CANCELED(c@)" "ARCHIVED(a@)"))))
