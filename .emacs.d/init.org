@@ -61,6 +61,12 @@
     (setq which-key-idle-delay 3))
 #+END_SRC
 ** LaTeX
+*** Setup
+#+BEGIN_SRC emacs-lisp
+  (use-package latex
+    :config
+    (setq font-latex-fontify-sectioning 1.0))
+#+END_SRC
 *** AUCTeX
 #+BEGIN_SRC emacs-lisp
   (use-package tex

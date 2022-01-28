@@ -49,6 +49,10 @@
   :config
   (setq which-key-idle-delay 3))
 
+(use-package latex
+  :config
+  (setq font-latex-fontify-sectioning 1.0))
+
 (use-package tex
   :ensure auctex
   :hook
