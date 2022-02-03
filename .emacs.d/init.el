@@ -108,7 +108,6 @@
 
 (global-hl-line-mode t) ;; Show cursoline
 (column-number-mode t)  ;; Show column number in the mode line
-(blink-cursor-mode 0)   ;; No blink cursor
 
 (delete-selection-mode t) ;; Replace highlighted text
 
@@ -146,21 +145,31 @@
 (scroll-bar-mode 0) ;; Disable scroll bar
 
 (setq default-frame-alist
-      (list '(font . "Roboto Mono Light 11")
-            '(internal-border-width . 10)
-            '(vertical-scroll-bars  . nil)))
+      (list '(font . "Iosevka Term 12")
+	    '(internal-border-width . 10)
+	    '(width  . 78) '(height . 40)
+	    '(vertical-scroll-bars  . nil)))
+
+;; Line cursor
+(set-default 'cursor-type  '(bar . 2))
+;; No blink cursor
+(blink-cursor-mode 0)
 
 ;; THEME
-(use-package tango-plus-theme
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'tango-plus t))
+  (setq doom-themes-enable-bold t)
+  (setq doom-themes-enable-italic t)
+  (load-theme 'doom-one-light t))
 
-;; MOOD LINE
-(use-package mood-line
+;; MODE LINE
+(use-package doom-modeline
   :ensure t
+  :init (doom-modeline-mode 1)
   :config
-  (mood-line-mode))
+  (setq doom-modeline-icon nil)
+  (setq doom-modeline-minor-modes nil))
 
 ;; INDENTATION
 ;; ===========
