@@ -159,6 +159,12 @@
   ;; Automatically open read-only files in view-mode
   (setq view-read-only t)
 
+  ;; Revert buffer automaticaly if changed on disk
+  (global-auto-revert-mode t)
+
+  ;; Truncate lines
+  (set-default 'truncate-lines t)
+
   ;; y/n for answering yes/no questions
   (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -280,11 +286,18 @@
   (global-unset-key (kbd "C-x C-c"))
   ;; Kill current buffer (inseat of asking first buffer name)
   (global-set-key (kbd "C-x k") 'kill-current-buffer)
+  ;; Kill buffer and frame at the same time
+  (global-set-key (kbd "C-x K") 'kill-buffer-and-window)
+  ;; Buffers
+  (global-set-key (kbd "C-x b") 'ibuffer)
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+  ;; Toggle truncate lines
+  (global-set-key (kbd "C-c $") 'toggle-truncate-lines)
 #+END_SRC
 ** Utilities
 #+BEGIN_SRC emacs-lisp
   (defun insert-current-date () (interactive)
-         (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
+	 (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
 #+END_SRC
 * Org Mode
 ** Basic configuration
