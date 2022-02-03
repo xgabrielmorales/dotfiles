@@ -49,16 +49,14 @@
   :config
   (setq which-key-idle-delay 3))
 
-(use-package latex
-  :config
-  (setq font-latex-fontify-sectioning 1.0))
-
 (use-package tex
   :ensure auctex
   :hook
-  (LaTeX-mode . auto-fill-mode)
+  ;;(LaTeX-mode . auto-fill-mode)
+  (LaTeX-mode . visual-line-mode)
   (TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
   :config
+  (setq font-latex-fontify-sectioning 1.0)
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
   ;; AUCTeX will ask for the master file
@@ -260,12 +258,18 @@
 (use-package org
   :config
   (setq org-ellipsis "")
-  (setq org-startup-indented t)
-  (setq org-hide-leading-stars t)
+  (setq org-startup-indented nil)
+  (setq org-hide-leading-stars nil)
   (setq org-return-follows-link t)
   (setq org-startup-folded t)
   (setq org-src-window-setup 'current-window)
   (setq org-hide-emphasis-markers t)
+  (setq org-file-apps
+        '((auto-mode . emacs)
+          (directory . emacs)
+          ("\\.mm\\'" . default)
+          ("\\.x?html?\\'" . default)
+          ("\\.pdf\\'" . emacs)))
 
   ;; AGENDA
   ;; ===========
