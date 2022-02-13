@@ -14,11 +14,11 @@ set $mod Mod4
 # Emulador de Terminal
 set $myTerm st
 # ======================================================================
-# COSTMÉTICO
+# APARIENCIA
 # ======================================================================
-# Fuente tipografica para los titulos de las ventanas.
+# Fuente tipográfica para los títulos de las ventanas.
 # Esta fuente será usada también para i3bar (opcional)
-font pango:Mononoki 12
+font pango:Iosevka 11
 
 # Configura el estilo de los bordes de las ventanas
 # Opciones: <normal|1pixel|pixel xx|none|pixel>
@@ -34,17 +34,17 @@ hide_edge_borders smart
 # Opciones: <left|center|right>
 title_align center
 
-# Separacion entre ventanas
+# Separación entre ventanas
 # Se requiere i3-gaps. Consulte: https://github.com/Airblader/i3
-gaps inner 10
-smart_gaps on
+#gaps inner 10
+#smart_gaps on
 
 # Tamaño máximo de una ventana flotante
 floating_maximum_size 1600 x 900
 
-# Redimensionado de las ventanas
+# Re-dimensionado de las ventanas
 mode "Resize" {
-	# Usas las letras h,j,k,l para dedimensionar
+	# Usas las letras h,j,k,l para re-dimensionar
 	bindsym h resize shrink width  10 px or 10 ppt
 	bindsym j resize grow   height 10 px or 10 ppt
 	bindsym k resize shrink height 10 px or 10 ppt
@@ -53,7 +53,7 @@ mode "Resize" {
 	# Salir del modo Resize
 	bindsym Escape mode "default"
 }
-# Activar el mode de redimensionado
+# Activar el modo de re-dimensionado
 bindsym $mod+r mode "Resize"
 
 # Colores
@@ -83,7 +83,7 @@ include assignments.conf
 # KEYBIDINGS
 # ======================================================================
 # Abre un Terminal
-bindsym $mod+Return exec $myTerm; workspace $ws1
+bindsym $mod+Return exec $myTerm; workspace $ws2
 
 # Cierra la ventana en foco
 bindsym $mod+Shift+q kill
@@ -114,7 +114,7 @@ bindsym $mod+n split h; exec notify-send "i3wm" "Screen Split Mode: <b>Horizonta
 bindsym $mod+v split v; exec notify-send "i3wm" "Screen Split Mode: <b>Vertical</b>"     --expire-time 1200
 bindsym $mod+f fullscreen toggle
 
-# Cambia el diseño de las ventanas (Apiladas, Vertical; Dididas, Horizontal; En pestañas)
+# Cambia el diseño de las ventanas (Apiladas, Vertical; Divididas, Horizontal; En pestañas)
 bindsym $mod+w layout tabbed; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
 bindsym $mod+e layout splith; exec notify-send "i3wm" "Container layout: <b>Splith</b>" --expire-time 1200
 #bindsym $mod+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
@@ -170,7 +170,7 @@ bindsym XF86AudioStop        exec mpc stop
 bindsym $mod+XF86AudioPrev   exec mpc seek -5
 bindsym $mod+XF86AudioNext   exec mpc seek +5
 
-# Silencia (o no) el Microfono
+# Silencia (o no) el Micrófono
 bindsym $mod+XF86AudioMute exec ~/dotfiles/scripts/microphone-general.sh
 # Cambia (o no) entre las salidas de audio (Line out/Headphones)
 bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output.sh
