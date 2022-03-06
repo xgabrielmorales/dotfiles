@@ -8,10 +8,11 @@ source $HOME/.config/nvim/vim-plug/plugin_config.vim
 "==========================================================================
 source $HOME/.config/nvim/compile.vim
 "==========================================================================
-" CONFIGURACIÓN DE COLOR DE VIM
+" APARIENCIA
 "==========================================================================
-set nocompatible
-colorscheme onedark
+colorscheme one
+set background=dark
+
 if exists('+termguicolors')
 	set termguicolors
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -79,7 +80,7 @@ for key in ['<Up>', '<Down>', '<Left>', '<Right>']
 endfor
 
 " Vim no tiene otra forma, además de las flechas, de moverse entre el
-" texto en modo comando, así que mejor usar las de Emacs.
+" texto en modo comando, así que mejor usar los atajos de Emacs.
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-p> <Up>
