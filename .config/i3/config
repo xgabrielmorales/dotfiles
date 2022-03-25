@@ -13,6 +13,11 @@ set $mod Mod4
 
 # Emulador de Terminal
 set $myTerm st
+
+# El foco sigue al mouse
+# Opciones: <yes|no>
+focus_follows_mouse no
+
 # ======================================================================
 # APARIENCIA
 # ======================================================================
@@ -34,10 +39,14 @@ hide_edge_borders smart
 # Opciones: <left|center|right>
 title_align center
 
+# Habilita los iconos en la barra de título
+# Opciones: <yes|no> - padding <px>
+for_window [all] title_window_icon padding 5px
+
 # Separación entre ventanas
 # Se requiere i3-gaps. Consulte: https://github.com/Airblader/i3
-#gaps inner 10
-#smart_gaps on
+gaps inner 10
+smart_gaps on
 
 # Tamaño máximo de una ventana flotante
 floating_maximum_size 1600 x 900
@@ -58,9 +67,9 @@ bindsym $mod+r mode "Resize"
 
 # Colores
 # Class                 border  backgr. text    indicator child_border
-client.focused          #2f343f #2f343f #D5D7D6 #2e9ef4   #81A1C1
-client.unfocused        #282C34 #20232A #D5D7D6 #292d2e   #282C34
-client.focused_inactive #2F343F #2F343F #C4C7C5 #484e50   #282C34
+client.focused          #2f343f #2f343f #D5D7D6 #81a1c1   #81a1c1
+client.unfocused        #282C34 #282C34 #D5D7D6 #81a1c1   #282C34
+client.focused_inactive #282C34 #282C34 #D5D7D6 #81a1c1   #282C34
 client.urgent           #EC7875 #EC7875 #ffffff #900000   #ED7976
 # ======================================================================
 # WORKSPACES and WINDOWS
@@ -99,6 +108,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# Cambia el foco al contenedor adyacente
+# Mod1 = Alt = Meta
+bindsym Mod1+Tab       focus next
+bindsym Mod1+Shift+Tab focus prev
+
 # Mueve la ventana en foco
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -107,6 +121,9 @@ bindsym $mod+Shift+l move right
 
 # Mueve la ventana flotante
 floating_modifier $mod
+
+bindsym $mod+Control+i move scratchpad
+bindsym $mod+Control+s scratchpad show
 
 # Cambia el modo de división de las ventanas <Vertical/Horizontal/Pantalla Completa>
 # Enviará una notificación (*Se necesita un daemon de notificaciones*)
@@ -117,7 +134,7 @@ bindsym $mod+f fullscreen toggle
 # Cambia el diseño de las ventanas (Apiladas, Vertical; Divididas, Horizontal; En pestañas)
 bindsym $mod+w layout tabbed; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
 bindsym $mod+e layout splith; exec notify-send "i3wm" "Container layout: <b>Splith</b>" --expire-time 1200
-#bindsym $mod+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
+#bindsym $mod+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Stacking</b>" --expire-time 1200
 
 # Cambia el estilo de los bordes de las ventanas
 bindsym $mod+y border none;                 exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
@@ -149,8 +166,12 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
+# Cambiar al siguiente workspace abierto
+bindsym $mod+Tab       workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # Rofi
-bindsym $mod+x exec --no-startup-id rofi -show run -theme xgm
+bindsym $mod+x exec --no-startup-id rofi -show run    -theme xgm
 bindsym $mod+z exec --no-startup-id rofi -show window -theme xgm
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/bin/rofi-calc/rofi-calc.sh
@@ -161,17 +182,17 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
 
-bindsym XF86AudioPrev        exec mpc prev
-bindsym XF86AudioNext        exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
 
-bindsym XF86AudioPlay        exec mpc toggle
-bindsym XF86AudioStop        exec mpc stop
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioStop exec mpc stop
 
-bindsym $mod+XF86AudioPrev   exec mpc seek -5
-bindsym $mod+XF86AudioNext   exec mpc seek +5
+bindsym $mod+XF86AudioPrev exec mpc seek -5
+bindsym $mod+XF86AudioNext exec mpc seek +5
 
 # Silencia (o no) el Micrófono
-bindsym $mod+XF86AudioMute exec ~/dotfiles/scripts/microphone-general.sh
+bindsym $mod+Control+m exec ~/dotfiles/scripts/microphone-polybar.sh --toogle
 # Cambia (o no) entre las salidas de audio (Line out/Headphones)
 bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output.sh
 
@@ -179,7 +200,7 @@ bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output.sh
 bindsym Print exec ~/dotfiles/scripts/screenshots.sh "Screen"
 bindsym $mod+s exec ~/dotfiles/scripts/screenshots.sh "Selection"
 
-# Envía en una notificación el ping que se tiene con 8.8.8.8
+# Envía en una notificación con el ping que se tiene a 8.8.8.8
 bindsym $mod+p exec ~/dotfiles/scripts/network-status.sh
 # ======================================================================
 # AUTORUN
