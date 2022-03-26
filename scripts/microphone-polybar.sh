@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEFAULT_SOURCE=$(pactl info | grep "Default Source" | cut -f3 -d" ")
+DEFAULT_SOURCE=$(pactl get-default-source)
 
 mic_status() {
 	status=$(pactl list sources | grep -A 10 $DEFAULT_SOURCE | grep -o "Mute: yes")
