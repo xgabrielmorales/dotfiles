@@ -122,8 +122,8 @@ bindsym $mod+Shift+l move right
 # Mueve la ventana flotante
 floating_modifier $mod
 
-bindsym $mod+Control+i move scratchpad
-bindsym $mod+Control+s scratchpad show
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus scratchpad show
 
 # Cambia el modo de división de las ventanas <Vertical/Horizontal/Pantalla Completa>
 # Enviará una notificación (*Se necesita un daemon de notificaciones*)
@@ -206,4 +206,10 @@ bindsym $mod+p exec ~/dotfiles/scripts/network-status.sh
 # AUTORUN
 # ======================================================================
 # Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
+# Compositor
+exec --no-startup-id picom
+# Notification daemon
+exec --no-startup-id dunst
+# Desktop background
+exec --no-startup-id nitrogen --restore
