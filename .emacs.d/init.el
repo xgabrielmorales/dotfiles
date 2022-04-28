@@ -1,12 +1,16 @@
-;; Require and initialize 'package'.
 (require 'package)
 
-;; Add 'melp' a to 'package-archives'.
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(setq package-archives
+	  '(("GNU ELPA" . "https://elpa.gnu.org/packages/")
+		("MELPA" . "https://melpa.org/packages/")))
 
-;; Load and activate emacs packages. Do this first so that the
-;; packages are loaded before you start trying to modify them.
 (package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
 
 (use-package ido
   :config

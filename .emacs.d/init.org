@@ -1,17 +1,29 @@
 #+PROPERTY: header-args :tangle init.el
 
-* Plugins
+* Packages
 ** Setup
+The configuration needed to select the repositories where the packages
+will be collected.
 #+BEGIN_SRC emacs-lisp
-  ;; Require and initialize 'package'.
   (require 'package)
 
-  ;; Add 'melp' a to 'package-archives'.
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+  (setq package-archives
+		'(("GNU ELPA" . "https://elpa.gnu.org/packages/")
+		  ("MELPA" . "https://melpa.org/packages/")))
 
-  ;; Load and activate emacs packages. Do this first so that the
-  ;; packages are loaded before you start trying to modify them.
   (package-initialize)
+#+END_SRC
+
+Installing packages manually in Emacs is not an option anymore. With
+[[https://github.com/jwiegley/use-package][use-package]] package things are more easy. This will be the only package
+that I am going to install manually, the rest will be installed with
+use-package.
+#+BEGIN_SRC emacs-lisp
+  (unless (package-installed-p 'use-package)
+	(package-refresh-contents)
+	(package-install 'use-package))
+
+  (require 'use-package)
 #+END_SRC
 ** Ido
 #+BEGIN_SRC emacs-lisp
