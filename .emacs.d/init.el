@@ -19,25 +19,23 @@
   :config
   ;; This makes ido work vertically
   (use-package ido-vertical-mode
-    :ensure t
-    :config
-    (ido-vertical-mode 1))
+	:ensure t
+	:config
+	(ido-vertical-mode 1))
 
-  (setq ido-enable-flex-matching nil)
+  (setq ido-everywhere t)
+  (setq ido-enable-flex-matching t)
   (setq ido-default-buffer-method 'selected-window)
 
   ;; IGNORE BUFFERS
   (setq my-unignored-buffers '(""))
   (defun my-ido-ignore-func (name)
-    (and (string-match "^\*" name)
-         (not (member name my-unignored-buffers))))
+	(and (string-match "^\*" name)
+		 (not (member name my-unignored-buffers))))
 
   (setq ido-ignore-buffers '("\\` " my-ido-ignore-func))
 
   (ido-mode t))
-
-(global-set-key (kbd "C-x b")   'ibuffer)
-(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
 (use-package dired
   :ensure nil
