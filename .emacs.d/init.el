@@ -12,6 +12,9 @@
 
 (require 'use-package)
 
+(use-package diminish
+  :ensure t)
+
 (use-package ido
   :config
   ;; This makes ido work vertically
