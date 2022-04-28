@@ -54,27 +54,8 @@
   :config
   (setq which-key-idle-delay 3))
 
-(use-package tex
-  :ensure auctex
-  :hook
-  ;;(LaTeX-mode . auto-fill-mode)
-  (LaTeX-mode . visual-line-mode)
-  (TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
-  :config
-  (setq font-latex-fontify-sectioning 1.0)
-  (setq TeX-auto-save t)
-  (setq TeX-parse-self t)
-  ;; AUCTeX will ask for the master file
-  (setq-default TeX-master nil)
-  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))))
-
-(use-package pdf-tools
   :ensure t
-  :mode ("\\.pdf\\'" . pdf-view-mode)
   :config
-  (pdf-tools-install)
-  ;; Open PDFs scalen to fit page
-  (setq-default pdf-view-display-size 'fit-width))
 
 ;; Git integration for Emacs
 (use-package magit

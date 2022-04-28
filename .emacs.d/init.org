@@ -77,23 +77,6 @@ with use-packge.
     :config
     (setq which-key-idle-delay 3))
 #+END_SRC
-** LaTeX
-*** AUCTeX
-#+BEGIN_SRC emacs-lisp
-  (use-package tex
-    :ensure auctex
-    :hook
-    ;;(LaTeX-mode . auto-fill-mode)
-    (LaTeX-mode . visual-line-mode)
-    (TeX-after-compilation-finished-functions . TeX-revert-document-buffer)
-    :config
-    (setq font-latex-fontify-sectioning 1.0)
-    (setq TeX-auto-save t)
-    (setq TeX-parse-self t)
-    ;; AUCTeX will ask for the master file
-    (setq-default TeX-master nil)
-    (setq TeX-view-program-selection '((output-pdf "PDF Tools"))))
-#+END_SRC
 *** PDF-tools
 #+BEGIN_SRC emacs-lisp
   (use-package pdf-tools
