@@ -63,18 +63,20 @@
   :bind ("C-x g" . magit-status))
 
 (use-package git-gutter
+  :init
+  (global-git-gutter-mode t)
+  :diminish git-gutter-mode
   :bind (("C-x C-g p" . git-gutter:previous-hunk)
-         ("C-x C-g n" . git-gutter:next-hunk)
-         ("C-x C-g s" . git-gutter:stage-hunk)
-         ("C-x C-g u" . git-gutter:revert-hunk)
-         ("C-x C-g i" . git-gutter:popup-hunk))
-  :hook ((prog-mode . git-gutter-mode)
-         (text-mode . git-gutter-mode))
+		 ("C-x C-g n" . git-gutter:next-hunk)
+		 ("C-x C-g s" . git-gutter:stage-hunk)
+		 ("C-x C-g u" . git-gutter:revert-hunk)
+		 ("C-x C-g i" . git-gutter:popup-hunk))
   :config
   (setq git-gutter:added-sign "")
   (setq git-gutter:deleted-sign "")
   (setq git-gutter:modified-sign "")
-  (setq git-gutter:window-width 2))
+  (setq git-gutter:window-width 2)
+  (setq git-gutter:update-interval 2))
 
 (use-package elpy
   :ensure t
