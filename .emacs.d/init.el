@@ -48,8 +48,14 @@
   :config
   (setq which-key-idle-delay 3))
 
+(use-package projectile
   :ensure t
+  :diminish projectile-mode
+  :bind-keymap ("C-c p" . projectile-command-map)
   :config
+  (projectile-mode)
+  (projectile-add-known-project "~/dotfiles")
+  (setq projectile-project-search-path '("~/Documents/projects")))
 
 ;; Git integration for Emacs
 (use-package magit

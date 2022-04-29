@@ -71,15 +71,16 @@ with use-packge.
     :config
     (setq which-key-idle-delay 3))
 #+END_SRC
-*** PDF-tools
+** Projectile
 #+BEGIN_SRC emacs-lisp
-  (use-package pdf-tools
-    :ensure t
-    :mode ("\\.pdf\\'" . pdf-view-mode)
-    :config
-    (pdf-tools-install)
-    ;; Open PDFs scalen to fit page
-    (setq-default pdf-view-display-size 'fit-width))
+  (use-package projectile
+	:ensure t
+	:diminish projectile-mode
+	:bind-keymap ("C-c p" . projectile-command-map)
+	:config
+	(projectile-mode)
+	(projectile-add-known-project "~/dotfiles")
+	(setq projectile-project-search-path '("~/Documents/projects")))
 #+END_SRC
 ** Programming
 *** Git
