@@ -85,6 +85,12 @@
   :init
   (elpy-enable))
 
+(use-package elcord
+  :ensure t
+  :config
+  (elcord-mode)
+  (setq elcord-quiet t))
+
 ;; FUNDAMENTAL
 ;; ===========
 

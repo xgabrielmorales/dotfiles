@@ -121,6 +121,16 @@ Git Gutter show information about files in a git repository.
     :init
     (elpy-enable))
 #+END_SRC
+** Elcord
+elcord uses Discord RPC to push as your game status whatever you are
+editing.
+#+BEGIN_SRC emacs-lisp
+  (use-package elcord
+	:ensure t
+	:config
+	(elcord-mode)
+	(setq elcord-quiet t))
+#+END_SRC
 * Emacs
 ** Fundamental
 #+BEGIN_SRC emacs-lisp
