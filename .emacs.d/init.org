@@ -59,14 +59,8 @@ with use-packge.
 ** Dired
 #+BEGIN_SRC emacs-lisp
   (use-package dired
-    :ensure nil
-    :hook
-    (dired-mode . (lambda () (define-key dired-mode-map (kbd "^")
-                               (lambda () (interactive) (find-alternate-file "..")))))
-    :init
-    (put 'dired-find-alternate-file 'disabled nil)
-
-    :custom ((dired-listing-switches "-XAhgo --group-directories-first")))
+	:custom
+	(dired-listing-switches "-FXAhgov --group-directories-first"))
 #+END_SRC
 ** Which Key
 #+BEGIN_SRC emacs-lisp
