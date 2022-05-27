@@ -15,10 +15,6 @@ set $mod_keycode 133
 # Emulador de Terminal
 set $myTerm st
 
-# El foco sigue al mouse
-# Opciones: <yes|no>
-focus_follows_mouse no
-
 # ======================================================================
 # APARIENCIA
 # ======================================================================
@@ -85,6 +81,13 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 
+# El foco sigue al mouse
+# Opciones: <yes|no>
+focus_follows_mouse yes
+
+# Centra las ventanas flotantes
+for_window [floating] move position center
+
 # Abre las ventanas listadas en workspaces específicos
 # Abre las ventanas listadas en modo flotante
 include assignments.conf
@@ -109,19 +112,23 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# Mueve la ventana en foco
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
+
+# Muevete entre workspaces
+bindsym $mod+Shift+l workspace next
+bindsym $mod+Shift+h workspace prev
+
+# Mueve la ventana flotante
+floating_modifier $mod
+
 # Cambia el foco al contenedor adyacente
 # Mod1 = Alt = Meta
 bindsym Mod1+Tab       focus next
 bindsym Mod1+Shift+Tab focus prev
-
-# Mueve la ventana en foco
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# Mueve la ventana flotante
-floating_modifier $mod
 
 bindsym $mod+minus move scratchpad
 bindsym $mod+plus scratchpad show
