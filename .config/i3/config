@@ -8,8 +8,9 @@
 # ======================================================================
 # FUNDAMENTAL
 # ======================================================================
-# Asigna la tecla de mod (Mod1=<alt>, Mod4=<Super/window>)
+# Tecla mod (Mod1=<Alt_L/64>, Mod4=<Super_L/133>)
 set $mod Mod4
+set $mod_keycode 133
 
 # Emulador de Terminal
 set $myTerm st
@@ -173,9 +174,9 @@ bindsym $mod+Shift+Tab workspace prev
 # Rofi
 bindsym $mod+x exec --no-startup-id rofi -show run    -theme xgm
 bindsym $mod+z exec --no-startup-id rofi -show window -theme xgm
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/bin/rofi-calc/rofi-calc.sh
 bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
+bindcode $mod_keycode --release exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
 
 # Teclas Multimedia
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
