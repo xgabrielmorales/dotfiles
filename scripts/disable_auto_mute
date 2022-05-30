@@ -1,0 +1,3 @@
+#!/bin/bash
+
+amixer -c 1 sset "Auto-Mute Mode" Disabled

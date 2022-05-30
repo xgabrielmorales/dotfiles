@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-DEFAULT_SOURCE=$(pactl get-default-source)
-
 mic_status() {
-	status=$(pactl list sources | grep -A 10 $DEFAULT_SOURCE | grep -o "Mute: yes")
-	volume=$(pactl list sources | grep -A 10 $DEFAULT_SOURCE | grep 'Volume:' -m 1 | awk '{print $5}')
+	status=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -o "Mute: yes")
+	volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}')
 	[[ $status == "Mute: yes" ]] && echo  || echo " $volume";
 }
 

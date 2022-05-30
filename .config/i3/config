@@ -195,16 +195,16 @@ bindsym $mod+XF86AudioPrev exec mpc seek -5
 bindsym $mod+XF86AudioNext exec mpc seek +5
 
 # Silencia (o no) el Micrófono
-bindsym $mod+Control+m exec ~/dotfiles/scripts/microphone-polybar.sh --toogle
+bindsym $mod+Control+m exec ~/dotfiles/scripts/polybar_microphone_module --toogle
 # Cambia (o no) entre las salidas de audio (Line out/Headphones)
-bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output.sh
+bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output
 
 # Toma capturas de pantalla
-bindsym Print exec ~/dotfiles/scripts/screenshots.sh "Screen"
-bindsym $mod+s exec ~/dotfiles/scripts/screenshots.sh "Selection"
+bindsym Print exec ~/dotfiles/scripts/screenshots "Screen"
+bindsym $mod+s exec ~/dotfiles/scripts/screenshots "Selection"
 
 # Envía en una notificación con el ping que se tiene a 8.8.8.8
-bindsym $mod+p exec ~/dotfiles/scripts/network-status.sh
+bindsym $mod+p exec ~/dotfiles/scripts/network-status
 # ======================================================================
 # AUTORUN
 # ======================================================================

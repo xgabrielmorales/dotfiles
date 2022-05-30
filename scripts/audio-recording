@@ -1,7 +1,9 @@
 #!/bin/bash
 
 arecord \
-	--format="cd" \
+	--format="S16_LE" \
+	--channels=1 \
+	--rate=16000 \
 	--device="hw:2,0" \
 	--duration=0 \
 	$HOME/Recordings/rc.$(date +'%m-%d-%y.%H-%M-%S').wav

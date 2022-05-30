@@ -3,7 +3,7 @@
 case $1 in
 	"Screen")
 		maim | \
-		tee ~/Pictures/Screenshots/ss.$(date +'%m-%d-%y.%H-%M-%S').png | \
+		tee ~/Pictures/Screenshots/ss.$(date +'%y-%m-%d.%H-%M-%S').png | \
 		xclip -selection clipboard \
 			-target image/png \
 			-in
@@ -11,7 +11,7 @@ case $1 in
 	"Selection")
 		maim --select \
 			--hidecursor |
-		tee ~/Pictures/Screenshots/ss.$(date +'%m-%d-%y.%H-%M-%S').png | \
+		tee ~/Pictures/Screenshots/ss.$(date +'%y-%d-%m.%H-%M-%S').png | \
 		xclip -selection clipboard \
 			-target image/png \
 			-in

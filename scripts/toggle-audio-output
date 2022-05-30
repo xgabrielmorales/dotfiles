@@ -1,0 +1,14 @@
+#!/bin/bash
+
+POLYBAR_PATH="$HOME/.config/polybar/modules.ini"
+output=$(pacmd list | awk '{if(/active port:/) print $3}' | head -n 1)
+
+if [ "$output" = "<analog-output-headphones>" ]; then
+	pacmd set-sink-port alsa_output.pci-0000_38_00.6.analog-stereo analog-output-lineout
+	sed --in-place --expression 's/ramp-volume-0\ =\ /ramp-volume-0 = /' $POLYBAR_PATH
+	polybar-msg cmd restart
+elif [ "$output" = "<analog-output-lineout>" ]; then
+	pacmd set-sink-port alsa_output.pci-0000_38_00.6.analog-stereo analog-output-headphones
+	sed --in-place --expression 's/ramp-volume-0\ =\ /ramp-volume-0 = /' $POLYBAR_PATH
+	polybar-msg cmd restart
+fi
