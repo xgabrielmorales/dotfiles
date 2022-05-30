@@ -40,11 +40,6 @@ title_align center
 # Opciones: <yes|no> - padding <px>
 for_window [all] title_window_icon padding 5px
 
-# Separación entre ventanas
-# Se requiere i3-gaps. Consulte: https://github.com/Airblader/i3
-gaps inner 10
-smart_gaps on
-
 # Tamaño máximo de una ventana flotante
 floating_maximum_size 1600 x 900
 
