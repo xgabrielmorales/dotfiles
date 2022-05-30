@@ -21,11 +21,12 @@ endif
 "==========================================================================
 " INDENTACIÓN
 "==========================================================================
-set autoindent          " Copia la sangría de la línea anterior
-set smartindent         " Inserta automáticamente un nivel de sangría extra
-set noexpandtab         " No expande los tabs a espacios
-set tabstop=4           " Espacios de indentación en modo insertar
-set shiftwidth=4        " Espacios de indentación en modo normal
+set autoindent
+set smartindent
+set noexpandtab
+
+set tabstop=4
+set shiftwidth=4
 set softtabstop=0
 
 " Redefine la indentación (a espacios) de acuerdo al tipo de archivo
