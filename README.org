@@ -10,13 +10,17 @@ a tú configuración.
 Uso [[https://archlinux.org/][Arch Linux]] como única distro principal. Me gusta la simpleza de la
 distro; me gusta la riqueza de paquetes de [[https://archlinux.org/packages/][Pacman]] y [[https://aur.archlinux.org/][AUR]]; me gusta la
 buena y completa documentación que tiene consigo.
-** Window Manager: i3WM
-[[https://i3wm.org/][I3wm]] es suficiente para mi, y aunque tengo intenciones de cambiarlo a
-futuro, cumple con mis necesidades. Es fácil de configurar y fácil de
-usar, sin embargo, quizá un poco limitado en cuanto a que tanto puedes
-hacer con el.
+** Window Manager: Openbox
+[[http://openbox.org][Openbox]] es un, y mi actual, /floating/ window manager. Es una excelente
+opción a un desktop environment ya trae lo justo para funcionar y no
+adiciona ningún tipo blodware que nadie pidió.
 
-Mi configuración la puedes encontrar aquí: [[file:.config/i3/config][i3wm]].
+[[https://i3wm.org/][I3wm]] es, cunado tengo ganas, el /tiling/ window manager que
+uso. suficiente para mi, cumple con mis necesidades. Es fácil de
+configurar y fácil de usar, sin embargo, quizá un poco limitado en
+cuanto a que tanto puedes hacer con el.
+
+Mi configuración la puedes encontrar aquí: [[file:.config/i3/][i3wm]], [[file:.config/openbox/][Openbox]]
 
 ** Status Bars: Poylbar
 [[https://polybar.github.io/][Polybar]], una status bar sencilla, fácil de usar, fácil de configurar. No

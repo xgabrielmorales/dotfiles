@@ -1,0 +1,12 @@
+# Wallpaper
+nitrogen --restore &
+# Status bar
+~/.config/polybar/launch.sh &
+# Notification daemon
+dunst &
+# Compositor
+picom &
+# Remap keys
+~/dotfiles/scripts/remap_keys &
+# Disable auto-mute
+~/dotfiles/scripts/disable_auto_mute &
