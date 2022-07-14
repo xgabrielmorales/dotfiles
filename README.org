@@ -12,7 +12,7 @@ distro; me gusta la riqueza de paquetes de [[https://archlinux.org/packages/][Pa
 buena y completa documentación que tiene consigo.
 ** Window Manager: Openbox
 [[http://openbox.org][Openbox]] es un, y mi actual, /floating/ window manager. Es una excelente
-opción a un desktop environment ya trae lo justo para funcionar y no
+opción a un desktop environment ya que trae lo justo para funcionar y no
 adiciona ningún tipo blodware que nadie pidió.
 
 [[https://i3wm.org/][I3wm]] es, cunado tengo ganas, el /tiling/ window manager que
