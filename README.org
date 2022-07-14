@@ -64,8 +64,15 @@ archivos de texto. Aunque a veces me siento tentando al pecado y utilizo
 Emacs para programar.
 
 Mi configuración: [[file:.config/nvim/][Nvim]] y [[file:.emacs.d/][Emacs]].
-** Otras
-- Document viewer: [[https://wiki.archlinux.org/title/Zathura][Zathura]]
+** Otro
+Paquetes no listados:
+
 - Browser: [[https://www.mozilla.org/en-US/firefox/][Firefox]]
+- Document viewer: [[https://wiki.archlinux.org/title/Zathura][Zathura]]
 - Media Player: [[https://wiki.archlinux.org/title/Mpv][Mpv]]
 - Music Player: [[https://wiki.archlinux.org/title/Music_Player_Daemon][Mpd]] + Mpc + [[https://github.com/xgabrielmorales/rofi-mpd][Rofi MPD]] (Mi propio script)
+
+*** Fuentes tipográficas
+- Iconos: [[https://github.com/AT-UI/feather-font][Feather]]
+- Monoespaciada: [[https://www.jetbrains.com/lp/mono/][JetBrains Mono Nerd Font]]
+- Proporcional: [[https://developer.apple.com/fonts/][SF Pro]]
