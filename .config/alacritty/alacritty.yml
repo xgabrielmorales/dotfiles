@@ -1,80 +1,88 @@
+env:
+  TERM: xterm-256color
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
 window:
-  # Window dimensions (changes require restart)
   dimensions:
     columns: 85
     lines: 16
 
-  # Window padding (changes require restart)
   padding:
     x: 8
     y: 9
 
-  # Window title
   title: Alacritty
+
+  dynamic_title: false
+
+  startup_mode: Maximized
 
 scrolling:
   history: 10000
   multiplier: 3
 
-# Font configuration
 font:
   normal:
-    family: Mononoki Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
 
   bold:
-    family: Mononoki Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
 
   italic:
-    family: Mononoki Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: Mononoki Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
 
-  # Point size
-  size: 12.0
+  size: 11.5
 
-# Colors theme
 colors:
     primary:
-        background: '#282c34'
-        foreground: '#D8D8D8'
+        background: "#1e2128"
+        foreground: "#D8D8D8"
     cursor:
-        text:    '#1C1B1D'
-        cursor:  '#D8D8D8'
+        text:    "#1C1B1D"
+        cursor:  "#cccccc"
     normal:
-        black:   '#24272a'
-        red:     '#E06C75'
-        green:   '#98C379'
-        yellow:  '#E5C07B'
-        blue:    '#61AFEF'
-        magenta: '#C678DD'
-        cyan:    '#56B6C2'
-        white:   '#D8D8D8'
+        black:   "#1E2127"
+        red:     "#E06C75"
+        green:   "#98C379"
+        yellow:  "#E5C07B"
+        blue:    "#61AFEF"
+        magenta: "#C678DD"
+        cyan:    "#56B6C2"
+        white:   "#D8D8D8"
     bright:
-        black:   '#D8D8D8'
-        red:     '#E06C75'
-        green:   '#98C379'
-        yellow:  '#E5C07B'
-        blue:    '#61AFEF'
-        magenta: '#C678DD'
-        cyan:    '#56B6C2'
-        white:   '#D8D8D8'
+        black:   "#5C6370"
+        red:     "#E06C75"
+        green:   "#98C379"
+        yellow:  "#E5C07B"
+        blue:    "#61AFEF"
+        magenta: "#C678DD"
+        cyan:    "#56B6C2"
+        white:   "#FFFFFF"
     dim:
-        black:   '#24272a'
-        red:     '#E06C75'
-        green:   '#98C379'
-        yellow:  '#E5C07B'
-        blue:    '#61AFEF'
-        magenta: '#C678DD'
-        cyan:    '#56B6C2'
+        black:   "#24272a"
+        red:     "#E06C75"
+        green:   "#98C379"
+        yellow:  "#E5C07B"
+        blue:    "#61AFEF"
+        magenta: "#C678DD"
+        cyan:    "#56B6C2"
 
 key_bindings:
-  - { key: V,              mods: Control|Shift,           action: Paste            }
-  - { key: C,              mods: Control|Shift,           action: Copy             }
-  - { key: Equals,         mods: Control,                 action: IncreaseFontSize }
-  - { key: Plus,           mods: Control,                 action: IncreaseFontSize }
-  - { key: Minus,          mods: Control,                 action: DecreaseFontSize }
+  - { key: V,              mods: Alt|Shift,           action: Paste            }
+  - { key: C,              mods: Alt|Shift,           action: Copy             }
+  - { key: Home,           mods: Alt|Shift,           action: ResetFontSize    }
+  - { key: PageUp,         mods: Alt|Shift,           action: IncreaseFontSize }
+  - { key: PageDown,       mods: Alt|Shift,           action: DecreaseFontSize }
