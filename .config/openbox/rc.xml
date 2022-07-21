@@ -274,7 +274,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>st</command>
+        <command>~/dotfiles/scripts/alacritty.sh</command>
       </action>
     </keybind>
     <!-- Rofi -->
