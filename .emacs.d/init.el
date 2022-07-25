@@ -5,6 +5,15 @@
 		("MELPA" . "https://melpa.org/packages/")))
 
 (package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Initialize use-package on non-Linux platforms
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -12,99 +21,131 @@
 
 (require 'use-package)
 
-(use-package diminish
-  :ensure t)
-
-(use-package ido
-  :config
-  ;; This makes ido work vertically
-  (use-package ido-vertical-mode
-	:ensure t
-	:config
-	(ido-vertical-mode 1))
-
-  (setq ido-everywhere t)
-  (setq ido-enable-flex-matching t)
-  (setq ido-default-buffer-method 'selected-window)
-
-  ;; IGNORE BUFFERS
-  (setq my-unignored-buffers '(""))
-  (defun my-ido-ignore-func (name)
-	(and (string-match "^\*" name)
-		 (not (member name my-unignored-buffers))))
-
-  (setq ido-ignore-buffers '("\\` " my-ido-ignore-func))
-
-  (ido-mode t))
+(use-package diminish)
 
 (use-package dired
-  :custom
-  (dired-listing-switches "-FXAhgov --group-directories-first"))
+  :ensure nil
+  :commands (dired dired-jump)
+  :bind (("C-x C-j" . dired-jump))
+  :custom (dired-listing-switches "-FXAhgov --group-directories-first")
+  :config)
+
+(use-package dired-single)
 
 (use-package which-key
-  :ensure t
   :init (which-key-mode)
   :diminish which-key-mode
   :config
-  (setq which-key-idle-delay 3))
+  (setq which-key-idle-delay 1))
+
+(use-package tree-siter)
+
+(use-package helm
+  :diminish helm-mode
+  :init (helm-mode t)
+  :bind (("M-x" . helm-M-x)
+		 ("C-x C-f" . helm-find-files)
+		 ("C-x b" . helm-buffers-list)
+		 ("C-h a" . helm-apropos)
+		 ("M-y" . helm-show-kill-ring)
+		 ("C-c C-o" . helm-occur))
+  :config
+  (add-to-list 'helm-boring-buffer-regexp-list "\\*\\'")
+  '(helm-display-buffer-default-height 10))
 
 (use-package projectile
-  :ensure t
   :diminish projectile-mode
+  :config	(projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map)
-  :config
-  (projectile-mode)
-  (projectile-add-known-project "~/dotfiles")
-  (setq projectile-project-search-path '("~/Documents/projects")))
+  :init
+  (when (file-directory-p "~/Documents/projects")
+	(setq projectile-project-search-path '("~/Documents/projects"))))
 
-;; Git integration for Emacs
-(use-package magit
+(use-package helm-projectile
   :ensure t
-  :bind ("C-x g" . magit-status))
+  :after projectile helm
+  :config
+  (helm-projectile-on)
+  (setq projectile-completion-system 'helm))
+
+(use-package magit
+  :bind (("C-c g" . magit-status)
+		 ("C-c M-g" . magit-dispatch)))
 
 (use-package git-gutter
-  :init
-  (global-git-gutter-mode t)
   :diminish git-gutter-mode
-  :bind (("C-x C-g p" . git-gutter:previous-hunk)
-		 ("C-x C-g n" . git-gutter:next-hunk)
-		 ("C-x C-g s" . git-gutter:stage-hunk)
-		 ("C-x C-g u" . git-gutter:revert-hunk)
-		 ("C-x C-g i" . git-gutter:popup-hunk))
+  :init (global-git-gutter-mode t)
+  :bind (("C-c C-g p" . git-gutter:previous-hunk)
+		 ("C-c C-g n" . git-gutter:next-hunk)
+		 ("C-c C-g s" . git-gutter:stage-hunk)
+		 ("C-c C-g u" . git-gutter:revert-hunk)
+		 ("C-c C-g i" . git-gutter:popup-hunk))
   :config
-  (setq git-gutter:added-sign "")
-  (setq git-gutter:deleted-sign "")
-  (setq git-gutter:modified-sign "")
+  (setq git-gutter:added-sign "+")
+  (setq git-gutter:deleted-sign "x")
+  (setq git-gutter:modified-sign "-")
   (setq git-gutter:window-width 2)
-  (setq git-gutter:update-interval 2))
+  (setq git-gutter:update-interval 2)
+  (setq git-gutter:hide-gutter t))
 
-(use-package elpy
+(use-package lsp-mode
+  :init (setq lsp-keymap-prefix "C-c l")
+  :commands (lsp lsp-deferred))
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :bind (:map lsp-ui-mode-map ("M-?" . #'lsp-ui-peek-find-references)))
+
+(use-package helm-lsp
   :ensure t
+  :commands helm-lsp-workspace-symbol)
+
+(global-eldoc-mode -1)
+
+(use-package python-mode
   :hook
-  (elpy-mode . (lambda() (highlight-indentation-mode 0)))
-  :init
-  (elpy-enable))
+  (python-mode . lsp-deferred)
+  (python-mode . tree-sitter-hl-mode))
 
-(use-package elcord
-  :ensure t
+(use-package pyvenv
   :config
-  (elcord-mode)
-  (setq elcord-quiet t))
+  (pyvenv-mode 1))
+
+(use-package company
+  :after lsp-mode
+  :hook (lsp-mode . company-mode)
+  :bind (:map company-active-map
+		 ("<tab>" . company-complete-selection))
+		(:map lsp-mode-map
+		 ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package ace-window
+  :ensure t
+  :bind (("C-x o" . ace-window)))
 
 ;; FUNDAMENTAL
 ;; ===========
 
-(setq inhibit-startup-message t)     ;; No startup message
-(setq initial-scratch-message nil)   ;; No message in scratch buffer
-(setq initial-major-mode 'text-mode) ;; Text mode is the initial mode.
+;; No startup message
+(setq inhibit-startup-message t)
+;; No message in scratch buffer
+(setq initial-scratch-message nil)
+;; Text mode is the initial mode.
+(setq initial-major-mode 'text-mode)
 
-(global-hl-line-mode t) ;; Show cursoline
-(column-number-mode t)  ;; Show column number in the mode line
+;; In the mode line show:
+(line-number-mode)
+(column-number-mode)
 
-(delete-selection-mode t) ;; Replace highlighted text
+ ;; Replace highlighted text
+(delete-selection-mode t)
 
-(setq auto-save-default nil) ;; Do not autosave
-(setq make-backup-files nil) ;; Do not backup files
+;; Backup files
+(setq auto-save-default nil)
+(setq make-backup-files nil)
 
 ;; Synchronizes the clipboard with X11
 (setq x-select-enable-clipboard t)
@@ -113,7 +154,7 @@
 (setq-default fill-column 72)
 
 ;; No cursor in intactive windows
-(setq cursor-in-non-selected-windows nil)
+(setq-default cursor-in-non-selected-windows nil)
 
 ;; No confirmation for visiting non-existent files
 (setq confirm-nonexistent-file-or-buffer nil)
@@ -130,38 +171,46 @@
 ;; y/n for answering yes/no questions
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Delete trailing whitespace on save
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; Show lines numbers only in programming modes
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; Delete trailing whitespace on save
+;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; APPEARANCE
 ;; ===========
 
-(menu-bar-mode   0) ;; Disable tool bar
-(tool-bar-mode   0) ;; Disable menu bar
-(scroll-bar-mode 0) ;; Disable scroll bar
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
 
 (setq default-frame-alist
-      (list '(font . "Iosevka Term 12")
-	    '(internal-border-width . 10)
-	    '(width  . 78) '(height . 40)
-	    '(vertical-scroll-bars  . nil)))
+  (list '(font . "JetBrainsMono Nerd Font 11")
+		'(internal-border-width . 10)
+		'(width  . 126) '(height . 47)
+		'(vertical-scroll-bars  . nil)))
 
+;; Show cursoline
+(global-hl-line-mode t)
 ;; Line cursor
-(set-default 'cursor-type  '(bar . 2))
+(set-default 'cursor-type '(bar . 2))
 ;; No blink cursor
 (blink-cursor-mode 0)
 
-;; THEME
+(setq whitespace-style
+	  '(face spaces tabs newline space-mark tab-mark newline-mark))
+(setq whitespace-display-mappings
+	  '((newline-mark 10 [182 10]) ;; Use [¶] for EOL
+		(tab-mark 9 [33 9])        ;; Use [!] for tabs
+		(space-mark 32 [183])))    ;; Use [·] for spaces
+
 (use-package doom-themes
   :ensure t
   :config
   (setq doom-themes-enable-bold t)
   (setq doom-themes-enable-italic t)
-  (load-theme 'doom-one-light t))
+  (load-theme 'doom-one t))
 
-;; MODE LINE
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
@@ -172,8 +221,8 @@
 ;; INDENTATION
 ;; ===========
 
-;; Our Custom Variable
-(setq custom-tab-width 4)
+;; How wide a tab is, default 8.
+(setq-default tab-width 4)
 
 ;; Two Callable functions for enabling/disabling tabs in Emacs
 (defun disable-tabs ()
@@ -181,12 +230,12 @@
 
 (defun enable-tabs ()
   (local-set-key (kbd "TAB") 'tab-to-tab-stop)
-  (setq indent-tabs-mode t)
-  (setq tab-width custom-tab-width))
+  (setq indent-tabs-mode t))
 
 ;; Hooks to Enable Tabs
-(add-hook 'c++-mode-hook        'enable-tabs)
-(add-hook 'c-mode-hook          'enable-tabs)
+(add-hook 'c++-mode-hook 'enable-tabs)
+(add-hook 'c-mode-hook   'enable-tabs)
+(add-hook 'sh-mode-hook  'enable-tabs)
 ;; Hooks to Disable Tabs
 (add-hook 'lisp-mode-hook       'disable-tabs)
 (add-hook 'python-mode-hook     'disable-tabs)
@@ -203,17 +252,10 @@
 (electric-pair-mode t)
 ;; Any matching parenthesis is highlighted.
 (show-paren-mode t)
-;; Delay before displaying a matching parenthesis.
 (setq show-paren-delay 0)
 
 ;; SCROLLING
 ;; ===========
-
-(setq mouse-wheel-progressive-speed nil)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
-(setq mouse-wheel-follow-mouse 't)
-(setq scroll-step 1)
-
 (autoload 'View-scroll-half-page-forward "view")
 (autoload 'View-scroll-half-page-backward "view")
 
@@ -232,51 +274,53 @@
 ;; BINDINGS
 ;; ===========
 
-;; Undo
+;; UTILITIES
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-r"))
 (global-set-key (kbd "C-z") 'undo-only)
-;; Prevent accidents
-(global-unset-key (kbd "C-x C-c"))
-;; Kill current buffer (inseat of asking first buffer name)
-(global-set-key (kbd "C-x k") 'kill-current-buffer)
-;; Kill buffer and frame at the same time
-(global-set-key (kbd "C-x K") 'kill-buffer-and-window)
-;; Buffers
-(global-set-key (kbd "C-x b") 'ibuffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-;; Toggle truncate lines
-(global-set-key (kbd "C-c $") 'toggle-truncate-lines)
+(global-set-key (kbd "C-r") 'undo-redo)
 
+;; BUFFERS
+;;(global-unset-key (kbd "C-x b"))
+;;(global-set-key (kbd "C-x b") 'ibuffer)
+;;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
+(global-set-key (kbd "C-x K") 'kill-buffer-and-window)
+
+;; DIRED
+(global-unset-key (kbd "C-x d"))
+(global-set-key (kbd "C-x C-d") 'ido-dired)
+
+;; FUNCTIONS
+;; ===========
 (defun insert-current-date () (interactive)
-       (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
+   (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
 
 (use-package org
   :config
   (setq org-ellipsis "")
   (setq org-startup-indented nil)
+  (setq org-adapt-indentation nil)
   (setq org-hide-leading-stars nil)
   (setq org-return-follows-link t)
   (setq org-startup-folded t)
   (setq org-src-window-setup 'current-window)
   (setq org-hide-emphasis-markers t)
-  (setq org-file-apps
-        '((auto-mode . emacs)
-          (directory . emacs)
-          ("\\.mm\\'" . default)
-          ("\\.x?html?\\'" . default)
-          ("\\.pdf\\'" . emacs)))
+  (setq org-image-actual-width '(500))
 
   ;; AGENDA
   ;; ===========
-  (global-set-key (kbd "C-c A") #'org-agenda)
 
   ;; List of files to be used for agenda
-  (setq org-agenda-files '("~/org/agenda/"))
+  (setq org-agenda-files '("~/org/agenda/" "~/org/agenda/trabajo/"))
   (setq org-archive-location (concat org-directory "/archive.org::"))
   ;; Do not show deadlines when the item is done.
   (setq org-agenda-skip-deadline-if-done t)
   ;; Use my date format by default
   (setq-default org-display-custom-times t)
   (setq org-time-stamp-custom-formats
-        '("<%a, %d %b %Y>" . "<%a, %d %b %Y %H:%M>"))
+	'("<%a, %d %b %Y>" . "<%a, %d %b %Y %H:%M>"))
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)" "CANCELED(c@)" "ARCHIVED(a@)"))))
+		'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)" "CANCELED(c@)" "ARCHIVED(a@)")
+		  (sequence "TO COMPLETE(c)" "PRACTICE AGAIN(p)" "|" "UNDERSTOOD(u)"))))
