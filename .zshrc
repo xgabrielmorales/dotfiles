@@ -7,8 +7,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="xgm"
 
 plugins=(
-	zsh-syntax-highlighting
 	colored-man-pages
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -21,18 +22,8 @@ export VISUAL=nvim
 export READER=zathura
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
 if [ -n "$RANGER_LEVEL" ]; then
 	export PS1="[ RANGER] $PS1";
-fi
-
-if [ "${DISPLAY}" ]; then
-	if command -v tmux > /dev/null && [ -z "${TMUX}" ]; then
-		[ "$TERM" = "st-256color" ] && (tmux attach 2> /dev/null || tmux)
-	fi
 fi
 
 #+====================================================+
@@ -71,10 +62,8 @@ alias dotfiles="cd ~/dotfiles && ls -l"
 alias vim="nvim"
 alias cp="cp -i"
 alias rm="rm -I"
-alias ls="ls -FXAhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
+alias ls="ls -FXAvhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
 # Utilidades
 alias cbcopy="xclip -selection clipboard"
 alias cbpaste="xclip -selection clipboard -o"
-alias pyenv="source .env/bin/activate"
-# Otros
-alias radio="curl https://coderadio-relay-blr.freecodecamp.org/radio/8010/radio.mp3 | mpg123 - 2> /dev/null"
+alias pyvenv="source .env/bin/activate"
