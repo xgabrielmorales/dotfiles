@@ -1,8 +1,36 @@
+let mapleader = ","
 "==========================================================================
 "  PLUGINS
 "==========================================================================
-source $HOME/.config/nvim/vim-plug/plugin_config.vim
-source $HOME/.config/nvim/vim-plug/plugins.vim
+call plug#begin('~/.config/nvim/autoload/plugged')
+  " --- Appearenace ---
+  Plug 'joshdick/onedark.vim'    " Colorscheme
+  Plug 'itchyny/lightline.vim'   " Status line
+  Plug 'ap/vim-css-color'        " Preview colours in source code
+  " --- Utilities ---
+  Plug 'ctrlpvim/ctrlp.vim'      " Quick file search
+  Plug 'preservim/nerdtree'      " File system explorer
+  Plug 'jiangmiao/auto-pairs'    " Insert or delete brackets, parens, quotes in pair
+  Plug 'preservim/tagbar'        " Browse the tags of the current file
+  " --- Git ---
+  Plug 'tpope/vim-fugitive'      " Git integration whinin Neovim
+  Plug 'f-person/git-blame.nvim' " Git blame integration whinin Neovim
+  Plug 'airblade/vim-gitgutter'  " Shows git diff markers in the sign column
+  " -- Python ---
+  Plug 'Vimjas/vim-python-pep8-indent'
+  " --- Lua Plugins ---
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+call plug#end()
+
+lua <<EOF
+  require("lsp")
+  require("treesitter")
+EOF
+
+for f in glob('~/.config/nvim/plugins/*.vim', 0, 1)
+    execute 'source' f
+endfor
 "==========================================================================
 "  EXTRA
 "==========================================================================
@@ -10,14 +38,8 @@ source $HOME/.config/nvim/compile.vim
 "==========================================================================
 " APARIENCIA
 "==========================================================================
-colorscheme one
-set background=dark
-
-if exists('+termguicolors')
-	set termguicolors
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
+set termguicolors
+colorscheme onedark
 "==========================================================================
 " INDENTACIÓN
 "==========================================================================
@@ -30,15 +52,19 @@ set shiftwidth=4
 set softtabstop=0
 
 " Redefine la indentación (a espacios) de acuerdo al tipo de archivo
+autocmd FileType sh     setlocal expandtab softtabstop=4
+autocmd FileType xml    setlocal expandtab softtabstop=4
 autocmd FileType css    setlocal expandtab softtabstop=4
 autocmd FileType html   setlocal expandtab softtabstop=4
 autocmd FileType python setlocal expandtab softtabstop=4
+autocmd FileType lua    setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType vim    setlocal expandtab tabstop=2 shiftwidth=2
 "==========================================================================
 " CONFIGURACIÓN PRINCIPAL
 "==========================================================================
 set cursorline        " Muestra la ubicación de la linea cursor
 set number            " Enumera las líneas
-set relativenumber    " Enumera las líneas relativo a la posición del cursorline
+set relativenumber    " Enumera las líneas relativo a la linea cursor
 set laststatus=2      " Muestra la línea de estado
 
 set nobackup          " Evita que Vim haga backups
@@ -47,6 +73,7 @@ set foldmethod=manual " Define el método de pliegues
 set showtabline=1     " Muestra la tabline solo cunado hay más de una pestaña
 
 set spelllang=es      " Idioma del corrector ortográfico
+set mouse=niv         " Habilita el uso de mouse
 
 set list
 set listchars=tab:!·,trail:-,eol:¶
@@ -57,11 +84,16 @@ set shortmess+=F
 "==========================================================================
 " ATAJOS DE TECLADO
 "==========================================================================
-" Deshabilita el Ex-Mode
- nnoremap Q <Nop>
 
-" Activa y desactiva la corrección ortográfica con F3
-nnoremap <F3> :set spell!<cr>
+" HARD ASS MODE
+for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exec 'noremap'  key '<Nop>'
+    exec 'inoremap' key '<Nop>'
+    exec 'cnoremap' key '<Nop>'
+endfor
+
+nnoremap Q <Nop>     " Disable Ex-Mode
+nnoremap <M-.> <C-]> " Go to definition
 
 " Borra el resaltado de la búsqueda
 nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
@@ -70,18 +102,11 @@ nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
-" Regresa al modo Normal en la Terminal
+" TERMINAL
+autocmd TermOpen * setlocal nonumber norelativenumber
 tnoremap <Esc> <C-\><C-n>
 
-" HARD ASS MODE
-for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-	exec 'noremap'  key '<Nop>'
-	exec 'inoremap' key '<Nop>'
-	exec 'cnoremap' key '<Nop>'
-endfor
-
-" Vim no tiene otra forma, además de las flechas, de moverse entre el
-" texto en modo comando, así que mejor usar los atajos de Emacs.
+" Emacs keybindings in Command Mode
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-p> <Up>
@@ -90,17 +115,16 @@ cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
+cnoremap <C-d> <Del>
+"==========================================================================
+" SNIPPETS
+"==========================================================================
+autocmd FileType python noremap <silent> <leader>dpy :read ~/.config/nvim/.snippets/.debuger.py<CR>
 "==========================================================================
 "  OTRAS CONFIGURACIONES
 "==========================================================================
 " Borra automáticamente los espacios sobrantes al final de la línea
-autocmd BufWritePre * %s/\s\+$//e
-
-" Abrir la ayuda de vim (vim help) en una ventana vertical
-autocmd FileType help wincmd L
-
-" Deshabilita la enumeración de las líneas en la terminal
-autocmd TermOpen * setlocal nonumber norelativenumber
+"autocmd BufWritePre * %s/\s\+$//e
 
 " Define la longitud de una linea de texto en archivos de texto.
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
