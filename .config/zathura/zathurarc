@@ -14,7 +14,9 @@ set notification-error-bg "#ED7976"
 
 set recolor-lightcolor \#282c34
 
-set font "mononoki Nerd Font 12"
+set font "JetBrainsMono Nerd Font Mono 11"
 
-set window-title-basename
-set statusbar-basename
+set window-title-basename true
+set statusbar-basename true
+set statusbar-home-tilde true
+set window-title-home-tilde true
