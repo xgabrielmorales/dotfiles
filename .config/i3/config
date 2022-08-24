@@ -59,12 +59,12 @@ bindsym $mod+r mode "Resize"
 
 # Colores
 # Class                 border  backgr. text    indicator child_border
-client.focused          #2f343f #2f343f #D5D7D6 #81a1c1   #81a1c1
+client.focused          #282C34 #2f343f #D5D7D6 #81a1c1   #81a1c1
 client.unfocused        #282C34 #282C34 #D5D7D6 #81a1c1   #282C34
 client.focused_inactive #282C34 #282C34 #D5D7D6 #81a1c1   #282C34
 client.urgent           #EC7875 #EC7875 #ffffff #900000   #ED7976
 # ======================================================================
-# WORKSPACES and WINDOWS
+# WORKSPACES & WINDOWS
 # ======================================================================
 # Define variables con los nombres de los workspaces
 set $ws1 "1"
@@ -88,7 +88,7 @@ for_window [floating] move position center
 include assignments.conf
 
 # ======================================================================
-# KEYBIDINGS
+# KEYBINDS
 # ======================================================================
 # Abre un Terminal
 bindsym $mod+Return exec $myTerm; workspace $ws2
@@ -97,7 +97,7 @@ bindsym $mod+Return exec $myTerm; workspace $ws2
 bindsym $mod+Shift+q kill
 
 # Cambia el foco de ventana entre <flotante/completa>
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 # Cambia el modo de ventana entre <flotante/completa>
 bindsym $mod+Shift+space floating toggle
 
@@ -120,10 +120,14 @@ bindsym $mod+Shift+h workspace prev
 # Mueve la ventana flotante
 floating_modifier $mod
 
-# Cambia el foco al contenedor adyacente
+# Cambia el foco al siguiente/previo contenedor
 # Mod1 = Alt = Meta
 bindsym Mod1+Tab       focus next
 bindsym Mod1+Shift+Tab focus prev
+
+# Muevete al siguiente/previo workspace
+bindsym $mod+Tab       workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 bindsym $mod+minus move scratchpad
 bindsym $mod+plus scratchpad show
@@ -169,16 +173,17 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# Cambiar al siguiente workspace abierto
-bindsym $mod+Tab       workspace next
-bindsym $mod+Shift+Tab workspace prev
+
+# ======================================================================
+# ATAJOS DE TECLADO EXTERNOS
+# ======================================================================
 
 # Rofi
 bindsym $mod+x exec --no-startup-id rofi -show run    -theme xgm
 bindsym $mod+z exec --no-startup-id rofi -show window -theme xgm
 bindsym $mod+c exec --no-startup-id ~/.config/rofi/bin/rofi-calc/rofi-calc.sh
 bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
-bindcode $mod_keycode --release exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
+bindsym $mod+space exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
 
 # Teclas Multimedia
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -216,3 +221,5 @@ exec --no-startup-id picom
 exec --no-startup-id dunst
 # Desktop background
 exec --no-startup-id nitrogen --restore
+# Remap Keys
+exec --no-startup-id ~/dotfiles/scripts/remap_keys
