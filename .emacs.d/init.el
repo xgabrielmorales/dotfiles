@@ -48,7 +48,10 @@
 		 ("C-x b" . helm-buffers-list)
 		 ("C-h a" . helm-apropos)
 		 ("M-y" . helm-show-kill-ring)
-		 ("C-c C-o" . helm-occur))
+		 ("C-c C-o" . helm-occur)
+		 :map helm-map
+		 ("<tab>" . 'helm-execute-persistent-action)
+		 ("<C-i" . 'helm-select-action))
   :config
   (add-to-list 'helm-boring-buffer-regexp-list "\\*\\'")
   '(helm-display-buffer-default-height 10))
@@ -90,11 +93,16 @@
 
 (use-package lsp-mode
   :init (setq lsp-keymap-prefix "C-c l")
-  :commands (lsp lsp-deferred))
+  :commands (lsp lsp-deferred)
+  :config
+  (setq lsp-signature-render-documentation nil)
+  (setq lsp-headerline-breadcrumb-enable nil))
 
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
-  :bind (:map lsp-ui-mode-map ("M-?" . #'lsp-ui-peek-find-references)))
+  :bind (:map lsp-ui-mode-map ("M-?" . #'lsp-ui-peek-find-references))
+  :config
+  (setq lsp-ui-doc-enable nil))
 
 (use-package helm-lsp
   :ensure t
@@ -324,3 +332,16 @@
   (setq org-todo-keywords
 		'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)" "CANCELED(c@)" "ARCHIVED(a@)")
 		  (sequence "TO COMPLETE(c)" "PRACTICE AGAIN(p)" "|" "UNDERSTOOD(u)"))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(tree-siter which-key visual-fill-column use-package tree-sitter-langs pyvenv python-mode magit lsp-ui ido-vertical-mode helpful helm-projectile helm-lsp git-gutter flatui-theme flatland-theme doom-themes doom-modeline dired-single diminish company ace-window)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

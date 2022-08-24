@@ -71,7 +71,10 @@ with use-packge.
 		   ("C-x b" . helm-buffers-list)
 		   ("C-h a" . helm-apropos)
 		   ("M-y" . helm-show-kill-ring)
-		   ("C-c C-o" . helm-occur))
+		   ("C-c C-o" . helm-occur)
+		   :map helm-map
+		   ("<tab>" . 'helm-execute-persistent-action)
+		   ("<C-i" . 'helm-select-action))
 	:config
 	(add-to-list 'helm-boring-buffer-regexp-list "\\*\\'")
 	'(helm-display-buffer-default-height 10))
@@ -119,11 +122,16 @@ with use-packge.
 #+BEGIN_SRC emacs-lisp
   (use-package lsp-mode
 	:init (setq lsp-keymap-prefix "C-c l")
-	:commands (lsp lsp-deferred))
+	:commands (lsp lsp-deferred)
+	:config
+	(setq lsp-signature-render-documentation nil)
+	(setq lsp-headerline-breadcrumb-enable t))
 
   (use-package lsp-ui
 	:hook (lsp-mode . lsp-ui-mode)
-	:bind (:map lsp-ui-mode-map ("M-?" . #'lsp-ui-peek-find-references)))
+	:bind (:map lsp-ui-mode-map ("M-?" . #'lsp-ui-peek-find-references))
+	:config
+	(setq lsp-ui-doc-enable nil))
 
   (use-package helm-lsp
 	:ensure t
@@ -158,7 +166,7 @@ with use-packge.
 	(company-minimum-prefix-length 1)
 	(company-idle-delay 0.0))
 #+END_SRC
-** ace-window
+** Ace-window
 #+BEGIN_SRC emacs-lisp
   (use-package ace-window
 	:ensure t
