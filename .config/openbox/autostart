@@ -1,12 +1,16 @@
 # Wallpaper
 nitrogen --restore &
 # Status bar
-~/.config/polybar/launch.sh &
-# Notification daemon
-dunst &
+$HOME/.config/polybar/launch.sh &
 # Compositor
 picom &
 # Remap keys
-~/dotfiles/scripts/remap_keys &
+$HOME/dotfiles/scripts/remap_keys &
 # Disable auto-mute
-~/dotfiles/scripts/disable_auto_mute &
+$HOME/dotfiles/scripts/disable_auto_mute &
+# Polkit
+/usr/lib/xfce-polkit/xfce-polkit &
+# Notification daemon
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+# Microphone (Noise suprresion)
+$HOME/dotfiles/scripts/noise_suppresion &

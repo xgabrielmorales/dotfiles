@@ -15,11 +15,11 @@
   <placement>
     <policy>Smart</policy>
     <center>yes</center>
-    <monitor>Mouse</monitor>
+    <monitor>Primary</monitor>
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>Arc-Darker</name>
+    <name>Arc Darker</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -31,7 +31,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>JetBrainsMono Nerd Font Mono</name>
@@ -70,6 +70,7 @@
       <slant>Normal</slant>
     </font>
   </theme>
+
   <desktops>
     <number>5</number>
     <firstdesk>1</firstdesk>
@@ -82,6 +83,7 @@
     </names>
     <popupTime>0</popupTime>
   </desktops>
+
   <resize>
     <drawContents>yes</drawContents>
     <popupShow>Always</popupShow>
@@ -91,40 +93,20 @@
       <y>10</y>
     </popupFixedPosition>
   </resize>
-  <!-- You can reserve a portion of your screen where windows will not cover when
-     they are maximized, or when they are initially placed.
-     Many programs reserve space automatically, but you can use this in other
-     cases. -->
+
   <margins>
     <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
-  <dock>
-    <position>TopLeft</position>
-    <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
-    <floatingX>0</floatingX>
-    <floatingY>0</floatingY>
-    <noStrut>no</noStrut>
-    <stacking>Above</stacking>
-    <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
-    <!-- 'Vertical' or 'Horizontal' -->
-    <autoHide>no</autoHide>
-    <hideDelay>300</hideDelay>
-    <!-- in milliseconds (1000 = 1 second) -->
-    <showDelay>300</showDelay>
-    <!-- in milliseconds (1000 = 1 second) -->
-    <moveButton>Middle</moveButton>
-    <!-- 'Left', 'Middle', 'Right' -->
-  </dock>
+
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Openbox -->
     <keybind key="W-S-r">
       <action name="Reconfigure">
-	</action>
+  </action>
     </keybind>
     <keybind key="W-q">
       <action name="Close"/>
@@ -231,24 +213,53 @@
     </keybind>
     <!-- Window Tiling: Snap feature -->
     <keybind key="W-h">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
+      <action name="Unmaximize"/>
       <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
         <width>50%</width>
       </action>
-      <action name="MoveToEdgeWest"/>
     </keybind>
+
+    <keybind key="W-j">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>-0</y>
+        <height>50%</height>
+        <width>100%</width>
+      </action>
+    </keybind>
+
+    <keybind key="W-k">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>50%</height>
+        <width>100%</width>
+      </action>
+    </keybind>
+
     <keybind key="W-l">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
+      <action name="Unmaximize"/>
       <action name="MoveResizeTo">
-        <width>50%</width>
+      <x>-0</x>
+      <y>0</y>
+      <height>100%</height>
+      <width>50%</width>
       </action>
-      <action name="MoveToEdgeEast"/>
     </keybind>
+
     <keybind key="W-S-space">
       <action name="ToggleMaximizeFull"/>
-      <action name="MoveToCenter"/>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+        <width>80%</width>
+        <height>80%</height>
+      </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-S-Right">
@@ -274,7 +285,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>~/dotfiles/scripts/alacritty.sh</command>
+        <command>~/dotfiles/scripts/recycle.sh alacritty Alacritty</command>
       </action>
     </keybind>
     <!-- Rofi -->
@@ -305,10 +316,9 @@
     </keybind>
     <keybind key="Pause">
       <action name="Execute">
-        <command>~/dotfiles/scripts/polybar_microphone_module --toogle</command>
+        <command>~/dotfiles/scripts/polybar_microphone_module --toggle</command>
       </action>
     </keybind>
-
     <!-- Media Controls-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -327,22 +337,22 @@
     </keybind>
     <keybind key="XF86AudioStop">
       <action name="Execute">
-        <command>mpc stop</command>
+        <command>playerctl stop</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPlay">
       <action name="Execute">
-        <command>mpc toggle</command>
+        <command>playerctl toggle</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPrev">
       <action name="Execute">
-        <command>mpc prev</command>
+        <command>playerctl prev</command>
       </action>
     </keybind>
     <keybind key="XF86AudioNext">
       <action name="Execute">
-        <command>mpc next</command>
+        <command>playerctl next</command>
       </action>
     </keybind>
     <!-- Screenshot Keys -->
@@ -367,6 +377,9 @@
       <mousebind action="Drag" button="W-Left">
         <action name="Move"/>
       </mousebind>
+      <mousebind action="Drag" button="A-Left">
+        <action name="Move"/>
+      </mousebind>
       <mousebind action="Drag" button="W-S-Right">
         <action name="Resize"/>
       </mousebind>
@@ -377,12 +390,15 @@
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
+      <mousebind action="Press" button="Right">
+    <action name="MoveToCenter"/>
+      </mousebind>
       <mousebind action="Drag" button="A-Left">
         <action name="Move"/>
       </mousebind>
       <mousebind action="Drag" button="Left">
         <action name="if">
-          <maximizedvertical>yes</maximizedvertical>
+          <maximized>yes</maximized>
           <then>
             <action name="Unmaximize"/>
             <direction>vertical</direction>
@@ -392,24 +408,14 @@
             </action>
             <action name="Move"/>
           </then>
-         <else>
+          <else>
             <action name="Move"/>
-         </else>
+          </else>
         </action>
       </mousebind>
       <mousebind action="DoubleClick" button="Left">
         <action name="ToggleMaximizeFull"/>
-		<action name="MoveToCenter"/>
-      </mousebind>
-      <mousebind action="DoubleClick" button="A-Left">
-		<action name="MoveToCenter"/>
-      </mousebind>
-      <mousebind action="Press" button="Right">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
+        <action name="MoveToCenter"/>
       </mousebind>
     </context>
 
@@ -418,13 +424,6 @@
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
-      </mousebind>
-      <mousebind action="Press" button="Right">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
       </mousebind>
     </context>
 
@@ -499,17 +498,6 @@
       </mousebind>
     </context>
 
-    <context name="Icon">
-      <mousebind action="Press" button="Right">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
-      </mousebind>
-    </context>
-
     <context name="AllDesktops">
       <mousebind action="Click" button="Left">
         <action name="ToggleOmnipresent"/>
@@ -550,30 +538,8 @@
         <action name="Focus"/>
       </mousebind>
     </context>
-
-    <context name="Root">
-      <mousebind action="Press" button="A-Right">
-        <action name="ShowMenu">
-          <menu>client-list-combined-menu</menu>
-        </action>
-      </mousebind>
-      <mousebind action="Press" button="Right">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
-    </context>
   </mouse>
 
-  <menu>
-    <file>menu.xml</file>
-    <hideDelay>200</hideDelay>
-    <middle>no</middle>
-    <submenuShowDelay>100</submenuShowDelay>
-    <submenuHideDelay>400</submenuHideDelay>
-    <showIcons>yes</showIcons>
-    <manageDesktops>yes</manageDesktops>
-  </menu>
   <applications>
     <application class="*">
       <focus>yes</focus>
