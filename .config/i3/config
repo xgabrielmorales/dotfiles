@@ -20,7 +20,7 @@ set $myTerm st
 # ======================================================================
 # Fuente tipográfica para los títulos de las ventanas.
 # Esta fuente será usada también para i3bar (opcional)
-font pango:Iosevka 11
+font pango:JetBrainsMono Nerd Font 10
 
 # Configura el estilo de los bordes de las ventanas
 # Opciones: <normal|1pixel|pixel xx|none|pixel>
@@ -75,6 +75,18 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
+
+# Primary Monitor (Display Port)
+workspace $ws1 output DP-0
+workspace $ws2 output DP-0
+workspace $ws3 output DP-0
+
+# Secondary Monitor (HDMI)
+workspace $ws4 output HDMI-0
+workspace $ws5 output HDMI-0
+workspace $ws6 output HDMI-0
+workspace $ws7 output HDMI-0
+workspace $ws8 output HDMI-0
 
 # El foco sigue al mouse
 # Opciones: <yes|no>
@@ -154,9 +166,12 @@ bindsym $mod+Shift+r reload; exec notify-send "i3wm" "Configuration file updated
 bindsym $mod+Shift+c restart
 
 # Cambia de workspace
+
+# Primary Monitor (Display Port)
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
+# Secondary Monitor (HDMI)
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
@@ -164,9 +179,12 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
 # Mueve la ventana en foco un workspace específico
+
+# Primary Monitor (Display Port)
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+# Secondary Monitor (HDMI)
 bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
@@ -181,9 +199,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Rofi
 bindsym $mod+x exec --no-startup-id rofi -show run    -theme xgm
 bindsym $mod+z exec --no-startup-id rofi -show window -theme xgm
-bindsym $mod+c exec --no-startup-id ~/.config/rofi/bin/rofi-calc/rofi-calc.sh
-bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
-bindsym $mod+space exec --no-startup-id ~/.config/rofi/bin/rofi-launcher/launcher.sh
+bindsym $mod+c exec --no-startup-id $HOME/.config/rofi/bin/rofi-calc/rofi-calc.sh
+bindsym $mod+m exec --no-startup-id $HOME/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
+bindsym $mod+space exec --no-startup-id $HOME/.config/rofi/bin/rofi-launcher/launcher.sh
 
 # Teclas Multimedia
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -200,16 +218,13 @@ bindsym $mod+XF86AudioPrev exec mpc seek -5
 bindsym $mod+XF86AudioNext exec mpc seek +5
 
 # Silencia (o no) el Micrófono
-bindsym $mod+Control+m exec ~/dotfiles/scripts/polybar_microphone_module --toogle
+bindsym Pause exec $HOME/dotfiles/scripts/polybar_microphone_module --toggle
 # Cambia (o no) entre las salidas de audio (Line out/Headphones)
-bindsym $mod+o exec ~/dotfiles/scripts/toggle-audio-output
+bindsym $mod+o exec $HOME/dotfiles/scripts/toggle-audio-output
 
 # Toma capturas de pantalla
-bindsym Print exec ~/dotfiles/scripts/screenshots "Screen"
-bindsym $mod+s exec ~/dotfiles/scripts/screenshots "Selection"
-
-# Envía en una notificación con el ping que se tiene a 8.8.8.8
-bindsym $mod+p exec ~/dotfiles/scripts/network-status
+bindsym Print exec $HOME/dotfiles/scripts/screenshots "Screen"
+bindsym $mod+s exec $HOME/dotfiles/scripts/screenshots "Selection"
 # ======================================================================
 # AUTORUN
 # ======================================================================
