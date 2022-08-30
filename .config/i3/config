@@ -229,12 +229,18 @@ bindsym $mod+s exec $HOME/dotfiles/scripts/screenshots "Selection"
 # AUTORUN
 # ======================================================================
 # Polybar
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 # Compositor
-exec --no-startup-id picom
+exec --no-startup-id picom &
 # Notification daemon
-exec --no-startup-id dunst
+exec --no-startup-id dunst &
 # Desktop background
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id nitrogen --restore &
 # Remap Keys
-exec --no-startup-id ~/dotfiles/scripts/remap_keys
+exec --no-startup-id $HOME/dotfiles/scripts/remap_keys &
+# Polkit
+exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit &
+# Notification daemon
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+# Microphone (Noise suprresion)
+exec --no-startup-id $HOME/dotfiles/scripts/noise_suppresion &
