@@ -9,8 +9,11 @@
 # FUNDAMENTAL
 # ======================================================================
 # Tecla mod (Mod1=<Alt_L/64>, Mod4=<Super_L/133>)
-set $mod Mod4
-set $mod_keycode 133
+set $Alt Mod1
+set $Alt_keycode 64
+
+set $Super Mod4
+set $Super_keycode 133
 
 # Emulador de Terminal
 set $myTerm st
@@ -55,7 +58,7 @@ mode "Resize" {
 	bindsym Escape mode "default"
 }
 # Activar el modo de re-dimensionado
-bindsym $mod+r mode "Resize"
+bindsym $Super+r mode "Resize"
 
 # Colores
 # Class                 border  backgr. text    indicator child_border
@@ -103,93 +106,92 @@ include assignments.conf
 # KEYBINDS
 # ======================================================================
 # Abre un Terminal
-bindsym $mod+Return exec $myTerm; workspace $ws2
+bindsym $Super+Return exec $myTerm; workspace $ws2
 
 # Cierra la ventana en foco
-bindsym $mod+Shift+q kill
+bindsym $Super+Shift+q kill
 
 # Cambia el foco de ventana entre <flotante/completa>
-# bindsym $mod+space focus mode_toggle
+# bindsym $Super+space focus mode_toggle
 # Cambia el modo de ventana entre <flotante/completa>
-bindsym $mod+Shift+space floating toggle
+bindsym $Super+Shift+space floating toggle
 
 # Cambia el foco de ventana
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $Super+h focus left
+bindsym $Super+j focus down
+bindsym $Super+k focus up
+bindsym $Super+l focus right
 
 # Mueve la ventana en foco
-bindsym $mod+Ctrl+h move left
-bindsym $mod+Ctrl+j move down
-bindsym $mod+Ctrl+k move up
-bindsym $mod+Ctrl+l move right
+bindsym $Super+Shift+h move left
+bindsym $Super+Shift+j move down
+bindsym $Super+Shift+k move up
+bindsym $Super+Shift+l move right
 
 # Muevete entre workspaces
-bindsym $mod+Shift+l workspace next
-bindsym $mod+Shift+h workspace prev
+bindsym $Super+Ctrl+l workspace next
+bindsym $Super+Ctrl+h workspace prev
 
 # Mueve la ventana flotante
-floating_modifier $mod
+floating_modifier $Super
 
 # Cambia el foco al siguiente/previo contenedor
-# Mod1 = Alt = Meta
-bindsym Mod1+Tab       focus next
-bindsym Mod1+Shift+Tab focus prev
+bindsym $Alt+Tab       focus next
+bindsym $Alt+Shift+Tab focus prev
 
 # Muevete al siguiente/previo workspace
-bindsym $mod+Tab       workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $Super+Tab       workspace next
+bindsym $Super+Shift+Tab workspace prev
 
-bindsym $mod+minus move scratchpad
-bindsym $mod+plus scratchpad show
+bindsym $Super+minus move scratchpad
+bindsym $Super+plus scratchpad show
 
 # Cambia el modo de división de las ventanas <Vertical/Horizontal/Pantalla Completa>
 # Enviará una notificación (*Se necesita un daemon de notificaciones*)
-bindsym $mod+n split h; exec notify-send "i3wm" "Screen Split Mode: <b>Horizontally</b>" --expire-time 1200
-bindsym $mod+v split v; exec notify-send "i3wm" "Screen Split Mode: <b>Vertical</b>"     --expire-time 1200
-bindsym $mod+f fullscreen toggle
+bindsym $Super+n split h; exec notify-send "i3wm" "Screen Split Mode: <b>Horizontally</b>" --expire-time 1200
+bindsym $Super+v split v; exec notify-send "i3wm" "Screen Split Mode: <b>Vertical</b>"     --expire-time 1200
+bindsym $Super+f fullscreen toggle
 
 # Cambia el diseño de las ventanas (Apiladas, Vertical; Divididas, Horizontal; En pestañas)
-bindsym $mod+w layout tabbed; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
-bindsym $mod+e layout splith; exec notify-send "i3wm" "Container layout: <b>Splith</b>" --expire-time 1200
-#bindsym $mod+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Stacking</b>" --expire-time 1200
+bindsym $Super+w layout tabbed; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
+bindsym $Super+e layout splith; exec notify-send "i3wm" "Container layout: <b>Splith</b>" --expire-time 1200
+#bindsym $Super+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Stacking</b>" --expire-time 1200
 
 # Cambia el estilo de los bordes de las ventanas
-bindsym $mod+y border none;                 exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
-bindsym $mod+u border pixel  $border_width; exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
-bindsym $mod+i border normal $border_width; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
+bindsym $Super+y border none;                 exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
+bindsym $Super+u border pixel  $border_width; exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
+bindsym $Super+i border normal $border_width; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
 
 # Actualiza el archivo de configuración de i3
-bindsym $mod+Shift+r reload; exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
+bindsym $Super+Shift+r reload; exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
 # Reinicia el Window Manager (Se conservará la sesión)
-bindsym $mod+Shift+c restart
+bindsym $Super+Shift+c restart
 
 # Cambia de workspace
 
 # Primary Monitor (Display Port)
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
+bindsym $Super+1 workspace $ws1
+bindsym $Super+2 workspace $ws2
+bindsym $Super+3 workspace $ws3
 # Secondary Monitor (HDMI)
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
+bindsym $Super+4 workspace $ws4
+bindsym $Super+5 workspace $ws5
+bindsym $Super+6 workspace $ws6
+bindsym $Super+7 workspace $ws7
+bindsym $Super+8 workspace $ws8
 
 # Mueve la ventana en foco un workspace específico
 
 # Primary Monitor (Display Port)
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $Super+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $Super+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $Super+Shift+3 move container to workspace $ws3; workspace $ws3
 # Secondary Monitor (HDMI)
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $Super+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $Super+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $Super+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $Super+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $Super+Shift+8 move container to workspace $ws8; workspace $ws8
 
 
 # ======================================================================
@@ -197,11 +199,11 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # ======================================================================
 
 # Rofi
-bindsym $mod+x exec --no-startup-id rofi -show run    -theme xgm
-bindsym $mod+z exec --no-startup-id rofi -show window -theme xgm
-bindsym $mod+c exec --no-startup-id $HOME/.config/rofi/bin/rofi-calc/rofi-calc.sh
-bindsym $mod+m exec --no-startup-id $HOME/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
-bindsym $mod+space exec --no-startup-id $HOME/.config/rofi/bin/rofi-launcher/launcher.sh
+bindsym $Super+x exec --no-startup-id rofi -show run    -theme xgm
+bindsym $Super+z exec --no-startup-id rofi -show window -theme xgm
+bindsym $Super+c exec --no-startup-id $HOME/.config/rofi/bin/rofi-calc/rofi-calc.sh
+bindsym $Super+m exec --no-startup-id $HOME/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
+bindsym $Super+space exec --no-startup-id $HOME/.config/rofi/bin/rofi-launcher/launcher.sh
 
 # Teclas Multimedia
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -214,17 +216,17 @@ bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 
-bindsym $mod+XF86AudioPrev exec mpc seek -5
-bindsym $mod+XF86AudioNext exec mpc seek +5
+bindsym $Super+XF86AudioPrev exec mpc seek -5
+bindsym $Super+XF86AudioNext exec mpc seek +5
 
 # Silencia (o no) el Micrófono
 bindsym Pause exec $HOME/dotfiles/scripts/polybar_microphone_module --toggle
 # Cambia (o no) entre las salidas de audio (Line out/Headphones)
-bindsym $mod+o exec $HOME/dotfiles/scripts/toggle-audio-output
+bindsym $Super+o exec $HOME/dotfiles/scripts/toggle-audio-output
 
 # Toma capturas de pantalla
 bindsym Print exec $HOME/dotfiles/scripts/screenshots "Screen"
-bindsym $mod+s exec $HOME/dotfiles/scripts/screenshots "Selection"
+bindsym $Super+s exec $HOME/dotfiles/scripts/screenshots "Selection"
 # ======================================================================
 # AUTORUN
 # ======================================================================
