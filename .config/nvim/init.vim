@@ -120,13 +120,3 @@ cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
 cnoremap <C-d> <Del>
-"==========================================================================
-"  OTRAS CONFIGURACIONES
-"==========================================================================
-" Borra automáticamente los espacios sobrantes al final de la línea
-" autocmd BufWritePre * %s/\s\+$//e
-
-" Define la longitud de una linea de texto en archivos de texto.
-" Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
-autocmd BufRead,BufNewFile *.md  setlocal textwidth=72
-autocmd BufRead,BufNewFile *.tex setlocal textwidth=72
