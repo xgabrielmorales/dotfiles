@@ -128,10 +128,6 @@ cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
 cnoremap <C-d> <Del>
 "==========================================================================
-" SNIPPETS
-"==========================================================================
-autocmd FileType python noremap <silent> <leader>dpy :read $HOME/.config/nvim/.snippets/.debuger.py<CR>
-"==========================================================================
 "  OTRAS CONFIGURACIONES
 "==========================================================================
 " Borra automáticamente los espacios sobrantes al final de la línea
