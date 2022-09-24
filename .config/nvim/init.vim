@@ -4,24 +4,22 @@ let mapleader = ","
 "==========================================================================
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
-  Plug 'joshdick/onedark.vim'    " Colorscheme
-  Plug 'itchyny/lightline.vim'   " Status line
-  Plug 'ap/vim-css-color'        " Preview colours in source code
+  Plug 'joshdick/onedark.vim'
+  Plug 'itchyny/lightline.vim'
+  Plug 'ap/vim-css-color'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " --- Utilities ---
-  Plug 'ctrlpvim/ctrlp.vim'       " Quick file search
-
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-
-  Plug 'kyazdani42/nvim-tree.lua' " File system explorer
-  Plug 'jiangmiao/auto-pairs'     " Insert or delete brackets, parens, quotes in pair
-  Plug 'preservim/tagbar'         " Browse the tags of the current file
+  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'preservim/tagbar'
   " --- Git ---
-  Plug 'tpope/vim-fugitive'      " Git integration whinin Neovim
-  Plug 'f-person/git-blame.nvim' " Git blame integration whinin Neovim
-  Plug 'airblade/vim-gitgutter'  " Shows git diff markers in the sign column
+  Plug 'tpope/vim-fugitive'
+  Plug 'f-person/git-blame.nvim'
+  Plug 'airblade/vim-gitgutter'
   " -- Python ---
   Plug 'Vimjas/vim-python-pep8-indent'
   " --- LSP ---
@@ -42,10 +40,6 @@ EOF
 for f in glob('$HOME/.config/nvim/plugins/*.vim', 0, 1)
   execute 'source' f
 endfor
-"==========================================================================
-"  EXTRA
-"==========================================================================
-source $HOME/.config/nvim/compile.vim
 "==========================================================================
 " APARIENCIA
 "==========================================================================
