@@ -18,7 +18,11 @@ require("nvim-tree").setup({
         { key = "<BS>", action = "close_node" },
         { key = "W",    action = "collapse_all" },
 
+        { key = "ss", action = "split" },
+        { key = "sv", action = "vsplit" },
+
         { key = "r", action = "rename" },
+        { key = "a", action = "create" },
 
         { key = "R", action = "refresh" },
         { key = "<C-h>", action = "toggle_dotfiles"},

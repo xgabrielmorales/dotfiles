@@ -56,42 +56,35 @@ colorscheme onedark
 "==========================================================================
 set autoindent
 set smartindent
-set noexpandtab
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0
-
-" Redefine la indentación (a espacios) de acuerdo al tipo de archivo
-autocmd FileType sh     setlocal expandtab softtabstop=4
-autocmd FileType xml    setlocal expandtab softtabstop=4
-autocmd FileType css    setlocal expandtab softtabstop=4
-autocmd FileType html   setlocal expandtab softtabstop=4
-autocmd FileType python setlocal expandtab softtabstop=4
-autocmd FileType lua    setlocal expandtab tabstop=2 shiftwidth=2
-autocmd FileType vim    setlocal expandtab tabstop=2 shiftwidth=2
+set noexpandtab
 "==========================================================================
 " CONFIGURACIÓN PRINCIPAL
 "==========================================================================
-set cursorline        " Muestra la ubicación de la linea cursor
-set number            " Enumera las líneas
-set relativenumber    " Enumera las líneas relativo a la linea cursor
-set laststatus=2      " Muestra la línea de estado
+set number
+set relativenumber
+set cursorline
 
-set nobackup          " Evita que Vim haga backups
-set noswapfile        " Evita que Vim cree swapfiles
-set foldmethod=manual " Define el método de pliegues
-set showtabline=1     " Muestra la tabline solo cunado hay más de una pestaña
+set laststatus=3
+set showtabline=1
 
-set spelllang=es      " Idioma del corrector ortográfico
-set mouse=niv         " Habilita el uso de mouse
+set noshowcmd
+set noshowmode
+
+set nobackup
+set noswapfile
 
 set list
 set listchars=tab:!·,trail:-,eol:¶
-set clipboard=unnamedplus
-set noshowmode
-set noshowcmd
+
 set shortmess+=F
+
+set mouse=niv
+set spelllang=es
+set clipboard=unnamedplus
 "==========================================================================
 " ATAJOS DE TECLADO
 "==========================================================================
