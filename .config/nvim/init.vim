@@ -2,34 +2,45 @@ let mapleader = ","
 "==========================================================================
 "  PLUGINS
 "==========================================================================
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
   Plug 'joshdick/onedark.vim'    " Colorscheme
   Plug 'itchyny/lightline.vim'   " Status line
   Plug 'ap/vim-css-color'        " Preview colours in source code
+  Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " --- Utilities ---
-  Plug 'ctrlpvim/ctrlp.vim'      " Quick file search
-  Plug 'preservim/nerdtree'      " File system explorer
-  Plug 'jiangmiao/auto-pairs'    " Insert or delete brackets, parens, quotes in pair
-  Plug 'preservim/tagbar'        " Browse the tags of the current file
+  Plug 'ctrlpvim/ctrlp.vim'       " Quick file search
+
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
+  Plug 'kyazdani42/nvim-tree.lua' " File system explorer
+  Plug 'jiangmiao/auto-pairs'     " Insert or delete brackets, parens, quotes in pair
+  Plug 'preservim/tagbar'         " Browse the tags of the current file
   " --- Git ---
   Plug 'tpope/vim-fugitive'      " Git integration whinin Neovim
   Plug 'f-person/git-blame.nvim' " Git blame integration whinin Neovim
   Plug 'airblade/vim-gitgutter'  " Shows git diff markers in the sign column
   " -- Python ---
   Plug 'Vimjas/vim-python-pep8-indent'
-  " --- Lua Plugins ---
+  " --- LSP ---
   Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " --- Completion ---
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp'
 call plug#end()
 
 lua <<EOF
-  require("lsp")
-  require("treesitter")
+  require("_lsp")
+  require("_treesitter")
+  require("_cmp")
+  require("_nvim-tree")
+  require("_telescope")
 EOF
 
-for f in glob('~/.config/nvim/plugins/*.vim', 0, 1)
-    execute 'source' f
+for f in glob('$HOME/.config/nvim/plugins/*.vim', 0, 1)
+  execute 'source' f
 endfor
 "==========================================================================
 "  EXTRA
@@ -87,13 +98,13 @@ set shortmess+=F
 
 " HARD ASS MODE
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-    exec 'noremap'  key '<Nop>'
-    exec 'inoremap' key '<Nop>'
-    exec 'cnoremap' key '<Nop>'
+  exec 'noremap'  key '<Nop>'
+  exec 'inoremap' key '<Nop>'
+  exec 'cnoremap' key '<Nop>'
 endfor
 
-nnoremap Q <Nop>     " Disable Ex-Mode
-nnoremap <M-.> <C-]> " Go to definition
+" Disable Ex-Mode
+nnoremap Q <Nop>
 
 " Borra el resaltado de la búsqueda
 nnoremap <silent> <Esc><Esc> :nohlsearch <CR>
@@ -119,12 +130,12 @@ cnoremap <C-d> <Del>
 "==========================================================================
 " SNIPPETS
 "==========================================================================
-autocmd FileType python noremap <silent> <leader>dpy :read ~/.config/nvim/.snippets/.debuger.py<CR>
+autocmd FileType python noremap <silent> <leader>dpy :read $HOME/.config/nvim/.snippets/.debuger.py<CR>
 "==========================================================================
 "  OTRAS CONFIGURACIONES
 "==========================================================================
 " Borra automáticamente los espacios sobrantes al final de la línea
-"autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\s\+$//e
 
 " Define la longitud de una linea de texto en archivos de texto.
 " Nota: Con el shortcut 'gq' re-formateamos una linea previamente seleccionada.
