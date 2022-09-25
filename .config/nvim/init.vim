@@ -10,7 +10,6 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " --- Utilities ---
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   Plug 'kyazdani42/nvim-tree.lua'
@@ -18,8 +17,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'simrat39/symbols-outline.nvim'
   " --- Git ---
   Plug 'tpope/vim-fugitive'
-  Plug 'f-person/git-blame.nvim'
-  Plug 'airblade/vim-gitgutter'
+  Plug 'lewis6991/gitsigns.nvim'
   " -- Python ---
   Plug 'Vimjas/vim-python-pep8-indent'
   " --- LSP ---
@@ -38,12 +36,8 @@ lua <<EOF
   require("_symbols-outline")
   require("_lualine")
   require("_onedark")
-  require("_git-blame")
+  require("_gitsigns")
 EOF
-
-for f in glob('$HOME/.config/nvim/plugins/*.vim', 0, 1)
-  execute 'source' f
-endfor
 "==========================================================================
 " APARIENCIA
 "==========================================================================
