@@ -15,7 +15,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'preservim/tagbar'
+  Plug 'simrat39/symbols-outline.nvim'
   " --- Git ---
   Plug 'tpope/vim-fugitive'
   Plug 'f-person/git-blame.nvim'
@@ -35,6 +35,7 @@ lua <<EOF
   require("_cmp")
   require("_nvim-tree")
   require("_telescope")
+  require("_symbols-outline")
 EOF
 
 for f in glob('$HOME/.config/nvim/plugins/*.vim', 0, 1)
