@@ -5,7 +5,7 @@ let mapleader = ","
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
   Plug 'joshdick/onedark.vim'
-  Plug 'itchyny/lightline.vim'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'ap/vim-css-color'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -36,6 +36,7 @@ lua <<EOF
   require("_nvim-tree")
   require("_telescope")
   require("_symbols-outline")
+  require("_lualine")
 EOF
 
 for f in glob('$HOME/.config/nvim/plugins/*.vim', 0, 1)
@@ -63,7 +64,7 @@ set number
 set relativenumber
 set cursorline
 
-set laststatus=3
+set laststatus=2
 set showtabline=1
 
 set noshowcmd
