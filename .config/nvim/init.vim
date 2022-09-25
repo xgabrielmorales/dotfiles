@@ -6,14 +6,12 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
   Plug 'navarasu/onedark.nvim'
   Plug 'nvim-lualine/lualine.nvim'
-  Plug 'ap/vim-css-color'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " --- Utilities ---
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'simrat39/symbols-outline.nvim'
   " --- Git ---
   Plug 'tpope/vim-fugitive'
