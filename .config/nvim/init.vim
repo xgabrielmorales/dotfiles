@@ -4,7 +4,7 @@ let mapleader = ","
 "==========================================================================
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
-  Plug 'joshdick/onedark.vim'
+  Plug 'navarasu/onedark.nvim'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'ap/vim-css-color'
   Plug 'lukas-reineke/indent-blankline.nvim'
@@ -37,6 +37,7 @@ lua <<EOF
   require("_telescope")
   require("_symbols-outline")
   require("_lualine")
+  require("_onedark")
 EOF
 
 for f in glob('$HOME/.config/nvim/plugins/*.vim', 0, 1)
