@@ -22,17 +22,24 @@ local on_attach = function(client, bufnr)
   })
 end
 
-require('lspconfig').pyright.setup{
+require('lspconfig').pylsp.setup({
   on_attach = on_attach,
-  single_file_support = true,
-  filetypes = { "python" },
   settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = false
+    pylsp = {
+      plugins = {
+        -- Style checking
+        pydocstyle = { enabled = false },
+        pycodestyle = { enabled = true },
+        -- Error checking
+        pylint = { enabled = false },
+        flake8 = { enabled = false },
+        pyflakes = { enabled = true },
+        -- Code formatting
+        autopep8 = { enabled = false },
+        yapf = { enabled = false },
+        -- Complexity checking
+        mccabe = { enabled = false },
       }
     }
   }
-}
+})
