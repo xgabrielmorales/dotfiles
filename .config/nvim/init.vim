@@ -38,6 +38,7 @@ lua <<EOF
   require("_symbols-outline")
   require("_lualine")
   require("_onedark")
+  require("_git-blame")
 EOF
 
 for f in glob('$HOME/.config/nvim/plugins/*.vim', 0, 1)
