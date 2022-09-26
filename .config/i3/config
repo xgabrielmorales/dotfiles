@@ -106,7 +106,7 @@ include assignments.conf
 # KEYBINDS
 # ======================================================================
 # Abre un Terminal
-bindsym $Super+Return exec $myTerm; workspace $ws2
+bindsym $Super+Return exec $myTerm
 
 # Cierra la ventana en foco
 bindsym $Super+Shift+q kill
