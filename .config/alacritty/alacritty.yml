@@ -47,42 +47,42 @@ font:
   size: 11.5
 
 colors:
-    primary:
-        background: "#1e2128"
-        foreground: "#D8D8D8"
-    cursor:
-        text:    "#1C1B1D"
-        cursor:  "#cccccc"
-    normal:
-        black:   "#1E2127"
-        red:     "#E06C75"
-        green:   "#98C379"
-        yellow:  "#E5C07B"
-        blue:    "#61AFEF"
-        magenta: "#C678DD"
-        cyan:    "#56B6C2"
-        white:   "#D8D8D8"
-    bright:
-        black:   "#5C6370"
-        red:     "#E06C75"
-        green:   "#98C379"
-        yellow:  "#E5C07B"
-        blue:    "#61AFEF"
-        magenta: "#C678DD"
-        cyan:    "#56B6C2"
-        white:   "#FFFFFF"
-    dim:
-        black:   "#24272a"
-        red:     "#E06C75"
-        green:   "#98C379"
-        yellow:  "#E5C07B"
-        blue:    "#61AFEF"
-        magenta: "#C678DD"
-        cyan:    "#56B6C2"
+  primary:
+    background: "#1E2128"
+    foreground: "#D8D8D8"
+  cursor:
+    text:    "#1C1B1D"
+    cursor:  "#CCCCCC"
+  normal:
+    black:   "#1E2128"
+    red:     "#E06C75"
+    green:   "#98C379"
+    yellow:  "#E5C07B"
+    blue:    "#61AFEF"
+    magenta: "#C678DD"
+    cyan:    "#56B6C2"
+    white:   "#D8D8D8"
+  bright:
+    black:   "#5C6370"
+    red:     "#E06C75"
+    green:   "#98C379"
+    yellow:  "#E5C07B"
+    blue:    "#61AFEF"
+    magenta: "#C678DD"
+    cyan:    "#56B6C2"
+    white:   "#FFFFFF"
+  dim:
+    black:   "#24272a"
+    red:     "#E06C75"
+    green:   "#98C379"
+    yellow:  "#E5C07B"
+    blue:    "#61AFEF"
+    magenta: "#C678DD"
+    cyan:    "#56B6C2"
 
 key_bindings:
-  - { key: V,              mods: Alt|Shift,           action: Paste            }
-  - { key: C,              mods: Alt|Shift,           action: Copy             }
-  - { key: Home,           mods: Alt|Shift,           action: ResetFontSize    }
-  - { key: PageUp,         mods: Alt|Shift,           action: IncreaseFontSize }
-  - { key: PageDown,       mods: Alt|Shift,           action: DecreaseFontSize }
+  - { key: V,        mods: Alt|Shift, action: Paste            }
+  - { key: C,        mods: Alt|Shift, action: Copy             }
+  - { key: Home,     mods: Alt|Shift, action: ResetFontSize    }
+  - { key: PageUp,   mods: Alt|Shift, action: IncreaseFontSize }
+  - { key: PageDown, mods: Alt|Shift, action: DecreaseFontSize }
