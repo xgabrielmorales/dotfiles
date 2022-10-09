@@ -16,7 +16,7 @@ set $Super Mod4
 set $Super_keycode 133
 
 # Emulador de Terminal
-set $myTerm st
+set $myTerm $HOME/dotfiles/scripts/recycle.sh alacritty Alacritty
 
 # ======================================================================
 # APARIENCIA
@@ -28,18 +28,18 @@ font pango:JetBrainsMono Nerd Font 10
 # Configura el estilo de los bordes de las ventanas
 # Opciones: <normal|1pixel|pixel xx|none|pixel>
 set $border_width 2
-default_border normal $border_width
-default_floating_border normal $border_width
+default_border pixel $border_width
+default_floating_border pixel $border_width
 
 # Asigna los bordes dinámicamente
 # Opciones: <none|vertical|horizontal|both|smart>
 hide_edge_borders smart
 
-# Alineado del título del modo de borde <normal>
+# Alineado del título dela titlebar
 # Opciones: <left|center|right>
 title_align center
 
-# Habilita los iconos en la barra de título
+# Habilita los iconos en la titlebar
 # Opciones: <yes|no> - padding <px>
 for_window [all] title_window_icon padding 5px
 
@@ -48,24 +48,22 @@ floating_maximum_size 1600 x 900
 
 # Re-dimensionado de las ventanas
 mode "Resize" {
-	# Usas las letras h,j,k,l para re-dimensionar
-	bindsym h resize shrink width  10 px or 10 ppt
-	bindsym j resize grow   height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow   width  10 px or 10 ppt
+    bindsym h resize shrink width  10 px or 10 ppt
+    bindsym j resize grow   height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow   width  10 px or 10 ppt
 
-	# Salir del modo Resize
-	bindsym Escape mode "default"
+    bindsym Escape mode "default"
 }
 # Activar el modo de re-dimensionado
 bindsym $Super+r mode "Resize"
 
 # Colores
-# Class                 border  backgr. text    indicator child_border
-client.focused          #282C34 #282C34 #D5D7D6 #81a1c1   #282C34
-client.unfocused        #282C34 #282C34 #989A99 #81a1c1   #282C34
-client.focused_inactive #282C34 #282C34 #989A99 #81a1c1   #282C34
-client.urgent           #EC7875 #EC7875 #ffffff #900000   #ED7976
+# Class                 border. backgr. text.   indica. child_border.
+client.focused          #282C34 #282C34 #D5D7D6 #81a1c1 #282C34
+client.unfocused        #282C34 #282C34 #989A99 #81a1c1 #282C34
+client.focused_inactive #282C34 #282C34 #989A99 #81a1c1 #282C34
+client.urgent           #EC7875 #EC7875 #ffffff #900000 #ED7976
 # ======================================================================
 # WORKSPACES & WINDOWS
 # ======================================================================
@@ -111,8 +109,6 @@ bindsym $Super+Return exec $myTerm
 # Cierra la ventana en foco
 bindsym $Super+Shift+q kill
 
-# Cambia el foco de ventana entre <flotante/completa>
-# bindsym $Super+space focus mode_toggle
 # Cambia el modo de ventana entre <flotante/completa>
 bindsym $Super+Shift+space floating toggle
 
@@ -146,24 +142,24 @@ bindsym $Super+Shift+Tab workspace prev
 bindsym $Super+minus move scratchpad
 bindsym $Super+plus scratchpad show
 
-# Cambia el modo de división de las ventanas <Vertical/Horizontal/Pantalla Completa>
-# Enviará una notificación (*Se necesita un daemon de notificaciones*)
-bindsym $Super+n split h; exec notify-send "i3wm" "Screen Split Mode: <b>Horizontally</b>" --expire-time 1200
-bindsym $Super+v split v; exec notify-send "i3wm" "Screen Split Mode: <b>Vertical</b>"     --expire-time 1200
 bindsym $Super+f fullscreen toggle
 
-# Cambia el diseño de las ventanas (Apiladas, Vertical; Divididas, Horizontal; En pestañas)
-bindsym $Super+w layout tabbed; exec notify-send "i3wm" "Container layout: <b>Tabbed</b>" --expire-time 1200
-bindsym $Super+e layout splith; exec notify-send "i3wm" "Container layout: <b>Splith</b>" --expire-time 1200
-#bindsym $Super+q layout stacking ; exec notify-send "i3wm" "Container layout: <b>Stacking</b>" --expire-time 1200
-
+# Cambia el modo de división de las ventanas
+# Opciones <Vertical|Horizontal>
+bindsym $Super+t split toggle;
+    exec notify-send "i3wm" "Screen Split Mode: <b>toggle</b>" --expire-time 1200
+# Cambia el diseño de las ventanas
+# Opciones <default|tabbed|stacking|splitv|splith> o <toggle>
+bindsym $Super+i layout toggle stacking tabbed splith; \
+    exec notify-send "i3wm" "Container layout: <b>toggle</b>" --expire-time 1200
 # Cambia el estilo de los bordes de las ventanas
-bindsym $Super+y border none;                 exec notify-send "i3wm" "Border: <b>none</b>"   --expire-time 1200
-bindsym $Super+u border pixel  $border_width; exec notify-send "i3wm" "Border: <b>pixel</b>"  --expire-time 1200
-bindsym $Super+i border normal $border_width; exec notify-send "i3wm" "Border: <b>normal</b>" --expire-time 1200
+# Opciones: <normal|pixel|toggle>
+bindsym $Super+b border toggle;
+    exec notify-send "i3wm" "Border: <b>toggle</b>" --expire-time 1200
 
 # Actualiza el archivo de configuración de i3
-bindsym $Super+Shift+r reload; exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
+bindsym $Super+Shift+r reload;
+    exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
 # Reinicia el Window Manager (Se conservará la sesión)
 bindsym $Super+Shift+c restart
 
@@ -200,7 +196,7 @@ bindsym $Super+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Rofi
 bindsym $Super+x exec --no-startup-id rofi -show run    -theme xgm
-bindsym $Super+z exec --no-startup-id rofi -show window -theme xgm
+bindsym $Super+w exec --no-startup-id rofi -show window -theme xgm
 bindsym $Super+c exec --no-startup-id $HOME/.config/rofi/bin/rofi-calc/rofi-calc.sh
 bindsym $Super+m exec --no-startup-id $HOME/.config/rofi/bin/rofi-mpd/rofi-mpd.sh
 bindsym $Super+space exec --no-startup-id $HOME/.config/rofi/bin/rofi-launcher/launcher.sh
@@ -221,8 +217,6 @@ bindsym $Super+XF86AudioNext exec mpc seek +5
 
 # Silencia (o no) el Micrófono
 bindsym Pause exec $HOME/dotfiles/scripts/polybar_microphone_module --toggle
-# Cambia (o no) entre las salidas de audio (Line out/Headphones)
-bindsym $Super+o exec $HOME/dotfiles/scripts/toggle-audio-output
 
 # Toma capturas de pantalla
 bindsym Print exec $HOME/dotfiles/scripts/screenshots "Screen"
@@ -232,8 +226,6 @@ bindsym $Super+s exec $HOME/dotfiles/scripts/screenshots "Selection"
 # ======================================================================
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-# Compositor
-exec --no-startup-id picom &
 # Notification daemon
 exec --no-startup-id dunst &
 # Desktop background
@@ -244,7 +236,5 @@ exec --no-startup-id $HOME/dotfiles/scripts/remap_keys &
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit &
 # Notification daemon
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-# Microphone (Noise suprresion)
-exec --no-startup-id $HOME/dotfiles/scripts/noise_suppresion &
 # Keyring
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
