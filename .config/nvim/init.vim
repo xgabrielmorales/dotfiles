@@ -13,6 +13,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'simrat39/symbols-outline.nvim'
+  Plug 'gpanders/editorconfig.nvim'
   " --- Git ---
   Plug 'tpope/vim-fugitive'
   Plug 'lewis6991/gitsigns.nvim'
@@ -46,11 +47,6 @@ colorscheme onedark
 "==========================================================================
 set autoindent
 set smartindent
-
-set tabstop=4
-set shiftwidth=4
-set softtabstop=0
-set noexpandtab
 "==========================================================================
 " CONFIGURACIÓN PRINCIPAL
 "==========================================================================
