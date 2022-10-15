@@ -12,5 +12,5 @@ $HOME/dotfiles/scripts/disable_auto_mute &
 /usr/lib/xfce-polkit/xfce-polkit &
 # Notification daemon
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
-# Microphone (Noise suprresion)
-$HOME/dotfiles/scripts/noise_suppresion &
+# Keyring
+/usr/bin/gnome-keyring-daemon --start --components=secrets &

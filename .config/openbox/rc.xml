@@ -174,7 +174,7 @@
       </action>
     </keybind>
     <!-- Keybindings for windows -->
-    <keybind key="A-F4">
+    <keybind key="W-S-q">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -188,7 +188,7 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
-    <keybind key="W-Tab">
+    <keybind key="A-Tab">
       <action name="NextWindow">
         <allDesktops>no</allDesktops>
         <raise>yes</raise>
@@ -200,7 +200,7 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="A-Tab">
+    <keybind key="W-Tab">
       <action name="NextWindow">
         <allDesktops>yes</allDesktops>
         <!-- Hide black border around windows -->
@@ -212,7 +212,7 @@
       </action>
     </keybind>
     <!-- Window Tiling: Snap feature -->
-    <keybind key="W-h">
+    <keybind key="W-S-h">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -222,7 +222,7 @@
       </action>
     </keybind>
 
-    <keybind key="W-j">
+    <keybind key="W-S-j">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -232,7 +232,7 @@
       </action>
     </keybind>
 
-    <keybind key="W-k">
+    <keybind key="W-S-k">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -242,7 +242,7 @@
       </action>
     </keybind>
 
-    <keybind key="W-l">
+    <keybind key="W-S-l">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
       <x>-0</x>
@@ -262,22 +262,22 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
+    <keybind key="W-l">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Left">
+    <keybind key="W-h">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Up">
+    <keybind key="W-k">
       <action name="DirectionalCycleWindows">
         <direction>up</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Down">
+    <keybind key="W-j">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
@@ -342,17 +342,17 @@
     </keybind>
     <keybind key="XF86AudioPlay">
       <action name="Execute">
-        <command>playerctl toggle</command>
+        <command>mpc toggle</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPrev">
       <action name="Execute">
-        <command>playerctl prev</command>
+        <command>mpc prev</command>
       </action>
     </keybind>
     <keybind key="XF86AudioNext">
       <action name="Execute">
-        <command>playerctl next</command>
+        <command>mpc next</command>
       </action>
     </keybind>
     <!-- Screenshot Keys -->
@@ -367,6 +367,7 @@
       </action>
     </keybind>
   </keyboard>
+
   <mouse>
     <dragThreshold>4</dragThreshold>
     <doubleClickTime>400</doubleClickTime>
