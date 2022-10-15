@@ -20,6 +20,7 @@ require('telescope').setup({
     buffers = {
       sort_mru = true,
       ignore_current_buffer = true,
+      previewer = false,
       mappings = {
         i = { ["<c-d>"] = actions.delete_buffer },
       },
@@ -29,3 +30,8 @@ require('telescope').setup({
 
 vim.keymap.set('n', '<leader>f', ':Telescope git_files<CR>', { silent = true })
 vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>', { silent = true })
+
+-- GIT
+vim.keymap.set('n', '<leader>gC', ':Telescope git_commits<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gB', ':Telescope git_branches<CR>', { silent = true })
+vim.keymap.set('n', '<leader>gS', ':Telescope git_status<CR>', { silent = true })

@@ -22,6 +22,7 @@ local on_attach = function(client, bufnr)
   })
 end
 
+-- Python
 require('lspconfig').pylsp.setup({
   on_attach = on_attach,
   settings = {
@@ -42,4 +43,8 @@ require('lspconfig').pylsp.setup({
       }
     }
   }
+})
+-- Rust
+require('lspconfig').rust_analyzer.setup({
+  on_attach = on_attach,
 })
