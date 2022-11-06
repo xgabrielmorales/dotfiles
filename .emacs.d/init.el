@@ -1,3 +1,6 @@
+(setq read-process-output-max (* 1024 1024 3)) ;; 3MiB
+(setq gc-cons-threshold (* 1024 1024 100)) ;; 100 MiB
+
 (require 'package)
 
 (setq package-archives
@@ -305,6 +308,15 @@
 (defun insert-current-date () (interactive)
    (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
 
+(defun xgm/display-startup-time ()
+  (message "Emacs loaded in %s with %d garbage collections."
+		   (format "%.2f seconds"
+				   (float-time
+				   (time-subtract after-init-time before-init-time)))
+		   gcs-done))
+
+(add-hook 'emacs-startup-hook #'xgm/display-startup-time)
+
 (use-package org
   :config
   (setq org-ellipsis "")
@@ -332,16 +344,3 @@
   (setq org-todo-keywords
 		'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)" "CANCELED(c@)" "ARCHIVED(a@)")
 		  (sequence "TO COMPLETE(c)" "PRACTICE AGAIN(p)" "|" "UNDERSTOOD(u)"))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(tree-siter which-key visual-fill-column use-package tree-sitter-langs pyvenv python-mode magit lsp-ui ido-vertical-mode helpful helm-projectile helm-lsp git-gutter flatui-theme flatland-theme doom-themes doom-modeline dired-single diminish company ace-window)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

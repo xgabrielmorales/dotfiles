@@ -1,5 +1,10 @@
 #+PROPERTY: header-args :tangle init.el
 
+* Performance
+#+BEGIN_SRC emacs-lisp
+  (setq read-process-output-max (* 1024 1024 3)) ;; 3MiB
+  (setq gc-cons-threshold (* 1024 1024 100)) ;; 100 MiB
+#+END_SRC
 * Packages
 ** Setup
 #+BEGIN_SRC emacs-lisp
@@ -357,6 +362,17 @@ with use-packge.
   ;; ===========
   (defun insert-current-date () (interactive)
 	 (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
+#+END_SRC
+** Diagnostic
+#+BEGIN_SRC emacs-lisp
+  (defun xgm/display-startup-time ()
+	(message "Emacs loaded in %s with %d garbage collections."
+			 (format "%.2f seconds"
+					 (float-time
+					 (time-subtract after-init-time before-init-time)))
+			 gcs-done))
+
+  (add-hook 'emacs-startup-hook #'xgm/display-startup-time)
 #+END_SRC
 * Org Mode
 ** Basic configuration
