@@ -95,6 +95,10 @@
   (setq git-gutter:update-interval 2)
   (setq git-gutter:hide-gutter t))
 
+(use-package editorconfig
+  :hook (prog-mode . editorconfig-mode)
+  :diminish editorconfig-mode)
+
 (use-package lsp-mode
   :init (setq lsp-keymap-prefix "C-l")
   :hook (lsp-mode . xgm/lsp-mode-setup)
@@ -126,34 +130,6 @@
   :custom
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
-
-(use-package python-mode
-  :hook
-  (python-mode . lsp-deferred)
-  (python-mode . xgm/python-global-lsp-setup)
-  (python-mode . xgm/pylsp-setup)
-  (python-mode . tree-sitter-hl-mode))
-
-(use-package pyvenv
-  :config
-  (pyvenv-mode 1))
-
-(defun xgm/python-global-lsp-setup ()
- (setq lsp-diagnostics-provider :none))
-
-(defun xgm/pylsp-setup ()
-  ;; Style checking
-  (setq lsp-pylsp-plugins-pydocstyle-enabled nil)
-  (setq lsp-pylsp-plugins-pycodestyle-enabled t)
-  ;; Error checkers
-  (setq lsp-pylsp-plugins-pylint-enabled nil)
-  (setq lsp-pylsp-plugins-flake8-enabled nil)
-  (setq lsp-pylsp-plugins-pyflakes-enabled t)
-  ;; Code formating
-  (setq lsp-pylsp-plugins-autopep8-enabled nil)
-  (setq lsp-pylsp-plugins-yapf-enabled nil)
-  ;; Complexity checking
-  (setq lsp-pylsp-plugins-mccabe-enabled nil))
 
 (use-package ace-window
   :ensure t
@@ -243,9 +219,6 @@
   (setq doom-modeline-icon nil)
   (setq doom-modeline-minor-modes nil))
 
-;; INDENTATION
-;; ===========
-
 ;; How wide a tab is, default 8.
 (setq-default tab-width 4)
 
@@ -257,21 +230,9 @@
   (local-set-key (kbd "TAB") 'tab-to-tab-stop)
   (setq indent-tabs-mode t))
 
-;; Hooks to Enable Tabs
-(add-hook 'c++-mode-hook 'enable-tabs)
-(add-hook 'c-mode-hook   'enable-tabs)
-(add-hook 'sh-mode-hook  'enable-tabs)
-;; Hooks to Disable Tabs
-(add-hook 'lisp-mode-hook       'disable-tabs)
-(add-hook 'python-mode-hook     'disable-tabs)
-(add-hook 'emacs-lisp-mode-hook 'disable-tabs)
-
 ;; Make the backspace properly erase the tab instead of removing one
 ;; space at a time.
 (setq backward-delete-char-untabify-method 'hungry)
-
-;; Indentation config for C/C++
-(setq c-default-style "java")
 
 ;; Insert brackets, parens, quotes in pair.
 (electric-pair-mode t)
@@ -279,8 +240,6 @@
 (show-paren-mode t)
 (setq show-paren-delay 0)
 
-;; SCROLLING
-;; ===========
 (autoload 'View-scroll-half-page-forward "view")
 (autoload 'View-scroll-half-page-backward "view")
 
@@ -293,29 +252,24 @@
   (setq ispell-program-name "/usr/bin/hunspell")
   (setq ispell-dictionary "es_CO"))
 
-;; UTILITIES
-
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-r"))
 (global-set-key (kbd "C-z") 'undo-only)
 (global-set-key (kbd "C-r") 'undo-redo)
 
-;; BUFFERS
-;;(global-unset-key (kbd "C-x b"))
-;;(global-set-key (kbd "C-x b") 'ibuffer)
-;;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
 (global-set-key (kbd "C-x K") 'kill-buffer-and-window)
 
-;; DIRED
 (global-unset-key (kbd "C-x d"))
 (global-set-key (kbd "C-x C-d") 'ido-dired)
 
-;; FUNCTIONS
-;; ===========
 (defun insert-current-date () (interactive)
    (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
+
+(defun xgm/clean ()
+  (interactive)
+  (progn (mapc 'kill-buffer (buffer-list))
+		 (delete-other-windows)))
 
 (defun xgm/display-startup-time ()
   (message "Emacs loaded in %s with %d garbage collections."
@@ -325,6 +279,32 @@
 		   gcs-done))
 
 (add-hook 'emacs-startup-hook #'xgm/display-startup-time)
+
+(use-package python-mode
+  :hook
+  (python-mode . lsp-deferred)
+  (python-mode . xgm/pylsp-setup)
+  (python-mode . tree-sitter-hl-mode))
+
+(use-package pyvenv
+  :config
+  (pyvenv-mode 1))
+
+(defun xgm/pylsp-setup ()
+  ;; Style checking
+  (setq lsp-pylsp-plugins-pydocstyle-enabled nil)
+  (setq lsp-pylsp-plugins-pycodestyle-enabled t)
+  ;; Error checkers
+  (setq lsp-pylsp-plugins-pylint-enabled nil)
+  (setq lsp-pylsp-plugins-flake8-enabled nil)
+  (setq lsp-pylsp-plugins-pyflakes-enabled t)
+  ;; Code formating
+  (setq lsp-pylsp-plugins-autopep8-enabled nil)
+  (setq lsp-pylsp-plugins-yapf-enabled nil)
+  ;; Complexity checking
+  (setq lsp-pylsp-plugins-mccabe-enabled nil))
+
+(setq c-default-style "java")
 
 (use-package org
   :config

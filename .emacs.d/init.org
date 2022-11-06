@@ -125,6 +125,12 @@ with use-packge.
 	(setq git-gutter:update-interval 2)
 	(setq git-gutter:hide-gutter t))
 #+END_SRC
+** Editorconfig
+#+BEGIN_SRC emacs-lisp
+  (use-package editorconfig
+	:hook (prog-mode . editorconfig-mode)
+	:diminish editorconfig-mode)
+#+END_SRC
 ** Language Server Protocol
 #+BEGIN_SRC emacs-lisp
   (use-package lsp-mode
@@ -161,37 +167,6 @@ with use-packge.
 	:custom
 	(company-minimum-prefix-length 1)
 	(company-idle-delay 0.0))
-#+END_SRC
-** Programing Languages
-*** Python
-#+BEGIN_SRC emacs-lisp
-  (use-package python-mode
-	:hook
-	(python-mode . lsp-deferred)
-	(python-mode . xgm/python-global-lsp-setup)
-	(python-mode . xgm/pylsp-setup)
-	(python-mode . tree-sitter-hl-mode))
-
-  (use-package pyvenv
-	:config
-	(pyvenv-mode 1))
-
-  (defun xgm/python-global-lsp-setup ()
-   (setq lsp-diagnostics-provider :none))
-
-  (defun xgm/pylsp-setup ()
-	;; Style checking
-	(setq lsp-pylsp-plugins-pydocstyle-enabled nil)
-	(setq lsp-pylsp-plugins-pycodestyle-enabled t)
-	;; Error checkers
-	(setq lsp-pylsp-plugins-pylint-enabled nil)
-	(setq lsp-pylsp-plugins-flake8-enabled nil)
-	(setq lsp-pylsp-plugins-pyflakes-enabled t)
-	;; Code formating
-	(setq lsp-pylsp-plugins-autopep8-enabled nil)
-	(setq lsp-pylsp-plugins-yapf-enabled nil)
-	;; Complexity checking
-	(setq lsp-pylsp-plugins-mccabe-enabled nil))
 #+END_SRC
 ** Ace-window
 #+BEGIN_SRC emacs-lisp
@@ -290,9 +265,6 @@ with use-packge.
 #+END_SRC
 ** Indentation
 #+BEGIN_SRC emacs-lisp
-  ;; INDENTATION
-  ;; ===========
-
   ;; How wide a tab is, default 8.
   (setq-default tab-width 4)
 
@@ -304,21 +276,9 @@ with use-packge.
 	(local-set-key (kbd "TAB") 'tab-to-tab-stop)
 	(setq indent-tabs-mode t))
 
-  ;; Hooks to Enable Tabs
-  (add-hook 'c++-mode-hook 'enable-tabs)
-  (add-hook 'c-mode-hook   'enable-tabs)
-  (add-hook 'sh-mode-hook  'enable-tabs)
-  ;; Hooks to Disable Tabs
-  (add-hook 'lisp-mode-hook       'disable-tabs)
-  (add-hook 'python-mode-hook     'disable-tabs)
-  (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
-
   ;; Make the backspace properly erase the tab instead of removing one
   ;; space at a time.
   (setq backward-delete-char-untabify-method 'hungry)
-
-  ;; Indentation config for C/C++
-  (setq c-default-style "java")
 
   ;; Insert brackets, parens, quotes in pair.
   (electric-pair-mode t)
@@ -328,8 +288,6 @@ with use-packge.
 #+END_SRC
 ** Scrolling
 #+BEGIN_SRC emacs-lisp
-  ;; SCROLLING
-  ;; ===========
   (autoload 'View-scroll-half-page-forward "view")
   (autoload 'View-scroll-half-page-backward "view")
 
@@ -346,31 +304,26 @@ with use-packge.
 #+END_SRC
 ** Bindings
 #+BEGIN_SRC emacs-lisp
-  ;; UTILITIES
-
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-r"))
   (global-set-key (kbd "C-z") 'undo-only)
   (global-set-key (kbd "C-r") 'undo-redo)
 
-  ;; BUFFERS
-  ;;(global-unset-key (kbd "C-x b"))
-  ;;(global-set-key (kbd "C-x b") 'ibuffer)
-  ;;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-
   (global-set-key (kbd "C-x k") 'kill-current-buffer)
   (global-set-key (kbd "C-x K") 'kill-buffer-and-window)
 
-  ;; DIRED
   (global-unset-key (kbd "C-x d"))
   (global-set-key (kbd "C-x C-d") 'ido-dired)
 #+END_SRC
 ** Functions
 #+BEGIN_SRC emacs-lisp
-  ;; FUNCTIONS
-  ;; ===========
   (defun insert-current-date () (interactive)
 	 (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
+
+  (defun xgm/clean ()
+	(interactive)
+	(progn (mapc 'kill-buffer (buffer-list))
+		   (delete-other-windows)))
 #+END_SRC
 ** Diagnostic
 #+BEGIN_SRC emacs-lisp
@@ -382,6 +335,37 @@ with use-packge.
 			 gcs-done))
 
   (add-hook 'emacs-startup-hook #'xgm/display-startup-time)
+#+END_SRC
+** Programing Languages
+*** Python
+#+BEGIN_SRC emacs-lisp
+  (use-package python-mode
+	:hook
+	(python-mode . lsp-deferred)
+	(python-mode . xgm/pylsp-setup)
+	(python-mode . tree-sitter-hl-mode))
+
+  (use-package pyvenv
+	:config
+	(pyvenv-mode 1))
+
+  (defun xgm/pylsp-setup ()
+	;; Style checking
+	(setq lsp-pylsp-plugins-pydocstyle-enabled nil)
+	(setq lsp-pylsp-plugins-pycodestyle-enabled t)
+	;; Error checkers
+	(setq lsp-pylsp-plugins-pylint-enabled nil)
+	(setq lsp-pylsp-plugins-flake8-enabled nil)
+	(setq lsp-pylsp-plugins-pyflakes-enabled t)
+	;; Code formating
+	(setq lsp-pylsp-plugins-autopep8-enabled nil)
+	(setq lsp-pylsp-plugins-yapf-enabled nil)
+	;; Complexity checking
+	(setq lsp-pylsp-plugins-mccabe-enabled nil))
+#+END_SRC
+*** C/C++
+#+BEGIN_SRC emacs-lisp
+  (setq c-default-style "java")
 #+END_SRC
 * Org Mode
 ** Basic configuration
