@@ -41,7 +41,8 @@
   :config
   (setq which-key-idle-delay 1))
 
-(use-package tree-siter)
+(use-package tree-sitter)
+(use-package tree-sitter-langs)
 
 (use-package helm
   :diminish helm-mode
@@ -95,32 +96,25 @@
   (setq git-gutter:hide-gutter t))
 
 (use-package lsp-mode
-  :init (setq lsp-keymap-prefix "C-c l")
-  :commands (lsp lsp-deferred)
-  :config
-  (setq lsp-signature-render-documentation nil)
-  (setq lsp-headerline-breadcrumb-enable nil))
+  :init (setq lsp-keymap-prefix "C-l")
+  :hook (lsp-mode . xgm/lsp-mode-setup)
+  :commands (lsp lsp-deferred))
 
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
-  :bind (:map lsp-ui-mode-map ("M-?" . #'lsp-ui-peek-find-references))
   :config
-  (setq lsp-ui-doc-enable nil))
+  (setq lsp-log-io nil)
+  (setq lsp-use-plists t)
+  (setq lsp-ui-doc-enable nil)
+  (setq lsp-ui-doc-show-with-cursor nil)
+  (setq lsp-ui-doc-show-with-mouse nil)
+  (setq lsp-ui-doc-position 'at-point))
 
-(use-package helm-lsp
-  :ensure t
-  :commands helm-lsp-workspace-symbol)
-
-(global-eldoc-mode -1)
-
-(use-package python-mode
-  :hook
-  (python-mode . lsp-deferred)
-  (python-mode . tree-sitter-hl-mode))
-
-(use-package pyvenv
-  :config
-  (pyvenv-mode 1))
+(defun xgm/lsp-mode-setup ()
+  (setq lsp-eldoc-enable-hover nil)
+  (setq lsp-enable-symbol-highlighting nil)
+	(setq lsp-headerline-breadcrumb-segments '(symbols))
+  (lsp-headerline-breadcrumb-mode))
 
 (use-package company
   :after lsp-mode
@@ -133,12 +127,37 @@
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
 
+(use-package python-mode
+  :hook
+  (python-mode . lsp-deferred)
+  (python-mode . xgm/python-global-lsp-setup)
+  (python-mode . xgm/pylsp-setup)
+  (python-mode . tree-sitter-hl-mode))
+
+(use-package pyvenv
+  :config
+  (pyvenv-mode 1))
+
+(defun xgm/python-global-lsp-setup ()
+ (setq lsp-diagnostics-provider :none))
+
+(defun xgm/pylsp-setup ()
+  ;; Style checking
+  (setq lsp-pylsp-plugins-pydocstyle-enabled nil)
+  (setq lsp-pylsp-plugins-pycodestyle-enabled t)
+  ;; Error checkers
+  (setq lsp-pylsp-plugins-pylint-enabled nil)
+  (setq lsp-pylsp-plugins-flake8-enabled nil)
+  (setq lsp-pylsp-plugins-pyflakes-enabled t)
+  ;; Code formating
+  (setq lsp-pylsp-plugins-autopep8-enabled nil)
+  (setq lsp-pylsp-plugins-yapf-enabled nil)
+  ;; Complexity checking
+  (setq lsp-pylsp-plugins-mccabe-enabled nil))
+
 (use-package ace-window
   :ensure t
   :bind (("C-x o" . ace-window)))
-
-;; FUNDAMENTAL
-;; ===========
 
 ;; No startup message
 (setq inhibit-startup-message t)
@@ -188,9 +207,6 @@
 ;; Delete trailing whitespace on save
 ;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; APPEARANCE
-;; ===========
-
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -215,12 +231,10 @@
 		(tab-mark 9 [33 9])        ;; Use [!] for tabs
 		(space-mark 32 [183])))    ;; Use [·] for spaces
 
-(use-package doom-themes
+(use-package flatland-theme
   :ensure t
   :config
-  (setq doom-themes-enable-bold t)
-  (setq doom-themes-enable-italic t)
-  (load-theme 'doom-one t))
+  (load-theme 'flatland t))
 
 (use-package doom-modeline
   :ensure t
@@ -273,19 +287,14 @@
 (global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
 (global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
 
-;; SPELL CHECK
-;; ===========
-
 (use-package ispell
   :ensure t
   :config
   (setq ispell-program-name "/usr/bin/hunspell")
   (setq ispell-dictionary "es_CO"))
 
-;; BINDINGS
-;; ===========
-
 ;; UTILITIES
+
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-r"))
 (global-set-key (kbd "C-z") 'undo-only)
