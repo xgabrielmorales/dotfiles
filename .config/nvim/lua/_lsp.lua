@@ -22,7 +22,11 @@ local on_attach = function(client, bufnr)
   })
 end
 
--- Python
+--------------------------------
+-- Python LSP Config
+--------------------------------
+-- Pyslp
+-- https://github.com/python-lsp/python-lsp-server
 require('lspconfig').pylsp.setup({
   on_attach = on_attach,
   settings = {
@@ -44,7 +48,40 @@ require('lspconfig').pylsp.setup({
     }
   }
 })
--- Rust
+-- Pyright
+-- https://github.com/microsoft/pyright
+require('lspconfig').pyright.setup{
+  on_attach = on_attach,
+  settings = {
+    python = {
+      analysis = {
+        diagnosticMode = "workspace",
+        typeCheckingMode = "basic",
+        diagnosticSeverityOverrides = {
+          -- Unused
+          reportUnusedClass = "information",
+          reportUnusedImport = "information",
+          reportUnusedFunction = "information",
+          reportUnusedVariable = "information",
+          -- Optional
+          reportOptionalOperand = "none",
+          reportOptionalIterable = "none",
+          reportOptionalSubscript = "none",
+          reportOptionalMemberAccess = "none",
+          -- Others
+          reportMissingImports = "none",
+          reportUnboundVariable = "error",
+          reportGeneralTypeIssues = "none",
+          reportDuplicateImport = "information",
+        }
+      }
+    }
+  }
+}
+--------------------------------
+-- Rust LSP Config
+--------------------------------
+-- Rust Analyzer
 require('lspconfig').rust_analyzer.setup({
   on_attach = on_attach,
 })
