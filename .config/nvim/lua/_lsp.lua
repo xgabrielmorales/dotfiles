@@ -50,12 +50,12 @@ require('lspconfig').pylsp.setup({
 })
 -- Pyright
 -- https://github.com/microsoft/pyright
-require('lspconfig').pyright.setup{
+local pyright_settings = ({
   on_attach = on_attach,
   settings = {
     python = {
       analysis = {
-        diagnosticMode = "workspace",
+        diagnosticMode = "openFilesOnly",
         typeCheckingMode = "basic",
         diagnosticSeverityOverrides = {
           -- Unused
@@ -77,7 +77,7 @@ require('lspconfig').pyright.setup{
       }
     }
   }
-}
+})
 --------------------------------
 -- Rust LSP Config
 --------------------------------
