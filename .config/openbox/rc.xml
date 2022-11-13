@@ -288,6 +288,12 @@
         <command>~/dotfiles/scripts/recycle.sh alacritty Alacritty</command>
       </action>
     </keybind>
+    <!-- Toggle audio output -->
+    <keybind key="W-o">
+      <action name="Execute">
+        <command>~/dotfiles/scripts/toggle-audio-output</command>
+      </action>
+    </keybind>
     <!-- Rofi -->
     <keybind key="W-space">
       <action name="Execute">
@@ -391,7 +397,7 @@
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind action="Press" button="Right">
+      <mousebind action="Press" button="Middle">
     <action name="MoveToCenter"/>
       </mousebind>
       <mousebind action="Drag" button="A-Left">
@@ -402,7 +408,6 @@
           <maximized>yes</maximized>
           <then>
             <action name="Unmaximize"/>
-            <direction>vertical</direction>
             <action name="MoveResizeTo">
               <x>center</x>
               <y>current</y>
