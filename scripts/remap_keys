@@ -1,4 +1,0 @@
-#!/bin/bash
-
-setxkbmap -layout latam -option lv3:menu_switch # Alt-Gr (swap) Menu
-setxkbmap -layout latam -option ctrl:ralt_rctrl # R-Ctrl (swap) Alt-Gr

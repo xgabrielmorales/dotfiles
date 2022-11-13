@@ -1,9 +1,0 @@
-#!/bin/bash
-
-arecord \
-	--format="S16_LE" \
-	--channels=1 \
-	--rate=48000 \
-	--device="hw:Microphone,0" \
-	--duration=0 \
-	$HOME/Recordings/rc.$(date +'%m-%d-%y.%H-%M-%S').wav

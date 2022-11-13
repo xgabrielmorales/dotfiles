@@ -1,0 +1,64 @@
+#!/usr/bin/python
+
+import os
+import json
+import subprocess
+from subprocess import CompletedProcess
+from typing import Optional
+
+
+ROFI_THEME_PATH = f"{os.environ['HOME']}/.config/rofi/default/rofi-mpd.rasi"
+ROFI = ["rofi", "-theme", f"{ROFI_THEME_PATH}", "-i", "-dmenu", "-p", "Output"]
+
+
+def get_avalible_sinks() -> dict[str, str]:
+    """Get the list of sinks available from pactl.
+
+    Return:
+        A dictionary with a description of the sink and the sink itself.
+    """
+
+    pactl_sinks: CompletedProcess[str] = subprocess.run(
+        ["pactl", "--format=json", "list", "sinks"],
+        capture_output=True,
+        text=True
+    )
+
+    sinks: list[dict] = json.loads(pactl_sinks.stdout)
+
+    avalible_sinks: dict[str, str] = {}
+    for sink in sinks:
+        avalible_sinks.update({sink['description']: sink['name']})
+
+    return avalible_sinks
+
+
+def display_to_rofi(sinks_data: dict[str, str]) -> Optional[str]:
+
+    sinks_description: str = "\n".join(sinks_data.keys())
+
+    kwargs: dict = {}
+    kwargs['stdout'] = subprocess.PIPE
+    kwargs['universal_newlines'] = True
+    rofi = subprocess.run(ROFI, input=sinks_description, **kwargs)
+
+    return sinks_data.get(rofi.stdout.strip())
+
+
+def set_default_sink(sink: Optional[str]) -> None:
+    if sink is None:
+        return
+
+    subprocess.run(["pactl", "set-default-sink", f"{sink}"])
+
+
+def main() -> int:
+    avalible_sinks: dict[str, str] = get_avalible_sinks()
+    selected_sink: Optional[str] = display_to_rofi(avalible_sinks)
+    set_default_sink(selected_sink)
+
+    return 0
+
+
+if __name__ == "__main__":
+    main()
