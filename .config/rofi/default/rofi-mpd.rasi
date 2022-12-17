@@ -1,0 +1,21 @@
+configuration {
+	normalize-match: true;
+    matching:        "regex";
+}
+
+@import "../xgm.rasi"
+
+window {
+	height: 255px;
+	width:  450px;
+}
+
+listview {
+    columns:  2;
+    lines:    5;
+}
+
+element {
+    children: [ element-text ];
+    padding: 8px;
+}
