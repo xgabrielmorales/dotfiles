@@ -78,6 +78,20 @@ local pyright_settings = ({
     }
   }
 })
+-- Jedi Language Server
+-- https://github.com/pappasam/jedi-language-server
+local jedi_lsp_settings = ({
+  on_attach = on_attach,
+  init_options = {
+    diagnostics = {
+      enable = true,
+      didOpen = true,
+      didChange = false,
+      didSave = true
+    },
+  },
+})
+
 --------------------------------
 -- Rust LSP Config
 --------------------------------

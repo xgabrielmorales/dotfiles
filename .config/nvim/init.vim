@@ -14,6 +14,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'simrat39/symbols-outline.nvim'
   Plug 'gpanders/editorconfig.nvim'
+  Plug 'windwp/nvim-autopairs'
   " --- Git ---
   Plug 'tpope/vim-fugitive'
   Plug 'lewis6991/gitsigns.nvim'
@@ -36,6 +37,7 @@ lua <<EOF
   require("_lualine")
   require("_onedark")
   require("_gitsigns")
+  require("_autopairs")
 EOF
 "==========================================================================
 " CONFIGURACIÓN PRINCIPAL
@@ -64,8 +66,11 @@ set shortmess+=F
 set mouse=niv
 set spelllang=es
 set clipboard=unnamedplus
+
+set nowrap
 "==========================================================================
 " ATAJOS DE TECLADO
 "==========================================================================
 nnoremap Q <Nop>
 nnoremap <Esc><Esc> :nohlsearch<CR>
+tnoremap <Esc> <C-\><C-n>
