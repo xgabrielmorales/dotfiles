@@ -10,8 +10,8 @@ shell:
 
 window:
   dimensions:
-    columns: 85
-    lines: 16
+    columns: 180
+    lines: 40
 
   padding:
     x: 8
@@ -48,7 +48,7 @@ font:
 
 colors:
   primary:
-    background: "#1E2128"
+    background: "#282c34"
     foreground: "#D8D8D8"
   cursor:
     text:    "#1C1B1D"
