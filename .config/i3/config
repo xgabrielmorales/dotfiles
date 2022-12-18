@@ -228,8 +228,6 @@ bindsym $Super+s exec $HOME/dotfiles/scripts/screenshots "Selection"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 # Compositor
 exec --no-startup-id picom &
-# Notification daemon
-exec --no-startup-id dunst &
 # Desktop background
 exec --no-startup-id nitrogen --restore &
 # Remap Keys
