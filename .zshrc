@@ -23,7 +23,7 @@ export READER=zathura
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
 if [ -n "$RANGER_LEVEL" ]; then
-	export PS1="[ RANGER] $PS1";
+	export PS1="[RANGER] $PS1";
 fi
 
 #+====================================================+
