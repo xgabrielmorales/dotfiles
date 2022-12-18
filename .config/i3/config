@@ -146,7 +146,7 @@ bindsym $Super+f fullscreen toggle
 
 # Cambia el modo de división de las ventanas
 # Opciones <Vertical|Horizontal>
-bindsym $Super+t split toggle;
+bindsym $Super+t split toggle; \
     exec notify-send "i3wm" "Screen Split Mode: <b>toggle</b>" --expire-time 1200
 # Cambia el diseño de las ventanas
 # Opciones <default|tabbed|stacking|splitv|splith> o <toggle>
@@ -154,11 +154,11 @@ bindsym $Super+i layout toggle stacking tabbed splith; \
     exec notify-send "i3wm" "Container layout: <b>toggle</b>" --expire-time 1200
 # Cambia el estilo de los bordes de las ventanas
 # Opciones: <normal|pixel|toggle>
-bindsym $Super+b border toggle;
+bindsym $Super+b border toggle; \
     exec notify-send "i3wm" "Border: <b>toggle</b>" --expire-time 1200
 
 # Actualiza el archivo de configuración de i3
-bindsym $Super+Shift+r reload;
+bindsym $Super+Shift+r reload; \
     exec notify-send "i3wm" "Configuration file updated" --expire-time 1200
 # Reinicia el Window Manager (Se conservará la sesión)
 bindsym $Super+Shift+c restart
