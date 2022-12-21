@@ -1,0 +1,7 @@
+.config/ranger/*
+.config/cmus/*
+.config/nvim/*
+!.config/nvim/init.vim
+!.config/nvim/vim-plug/
+!.config/nvim/lua/
+!.config/nvim/plugins/
