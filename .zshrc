@@ -67,3 +67,11 @@ alias ls="ls -FXAvhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --
 alias cbcopy="xclip -selection clipboard"
 alias cbpaste="xclip -selection clipboard -o"
 alias pyvenv="source .env/bin/activate"
+
+if [ "$XDG_SESSION_TYPE" = "x11" ]; then
+	alias cbcopy="xclip -selection clipboard"
+	alias cbpaste="xclip -selection clipboard -o"
+elif [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+	alias cbcopy="wl-copy"
+	alias cbpaste="wl-paste"
+fi
