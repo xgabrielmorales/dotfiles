@@ -1,0 +1,34 @@
+[user]
+    name = Gabriel Morales
+    email = gabrielmorales1@pm.me
+
+[init]
+    defaultBranch = trunk
+
+[core]
+    editor = nvim
+
+[alias]
+    s = status
+    ss = status --short
+    # Show Staged files
+    staged = diff --staged
+    # Show log decorated
+    lod = log --graph --pretty=format:'%C(yellow)%h%Creset%Cred%d%Creset %Cgreen%cr%Creset %s ' --abbrev-commit  --date=relative
+    # Shou current branch
+    current-branch = rev-parse --abbrev-ref HEAD
+    # List branches ordered by change time
+    branch-ordered = !git for-each-ref --format='%(committerdate:relative),%(authorname),%(refname:short)' --sort=committerdate refs/heads/ | column -t -s ','
+
+[push]
+    autoSetupRemote = true
+
+[color]
+    diff = auto
+    branch = auto
+    status = auto
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
