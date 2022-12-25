@@ -22,6 +22,10 @@ export VISUAL=nvim
 export READER=zathura
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [ -n "$RANGER_LEVEL" ]; then
 	export PS1="[RANGER] $PS1";
 fi
@@ -54,16 +58,21 @@ ext() {
 #====================================================
 # ALIASES
 #====================================================
-# Navigation
 alias dl="cd ~/Downloads && ls -l"
 alias doc="cd ~/Documents && ls -l"
 alias dotfiles="cd ~/dotfiles && ls -l"
-# Reasignaciones
+
 alias vim="nvim"
 alias cp="cp -i"
 alias rm="rm -I"
 alias ls="ls -FXAvhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
-# Utilidades
-alias cbcopy="xclip -selection clipboard"
-alias cbpaste="xclip -selection clipboard -o"
+
 alias pyvenv="source .env/bin/activate"
+
+if [ "$XDG_SESSION_TYPE" = "x11" ]; then
+	alias cbcopy="xclip -selection clipboard"
+	alias cbpaste="xclip -selection clipboard -o"
+elif [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+	alias cbcopy="wl-copy"
+	alias cbpaste="wl-paste"
+fi
