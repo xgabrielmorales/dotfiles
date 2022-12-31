@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FILE="/home/xgm/.config/rofi/colors.rasi"
+FILE="$HOME/.config/rofi/colors.rasi"
 
 # random accent color
 COLORS=('#bf616a' '#d08770' '#ebcb8b' '#a3be8c' '#b48ead' '#88c0d0')
