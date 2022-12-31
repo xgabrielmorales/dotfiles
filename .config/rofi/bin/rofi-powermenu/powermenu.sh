@@ -22,24 +22,24 @@ options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 chosen="$(echo -e "$options" | $rofi_command -p "$uptime" -dmenu)"
 
 case $chosen in
-	$shutdown)
-		mpc --quiet clear
-		systemctl poweroff
-	;;
-	$reboot)
-		mpc --quiet clear
-		systemctl reboot
-	;;
-	$lock)
-		mpc --quiet pause
-		betterlockscreen -l
-	;;
-	$suspend)
-		mpc --quiet pause
-		systemctl suspend
-	;;
-	$logout)
-		mpc --quiet clear
-		i3-msg exit || openbox --exit
-	;;
+    $shutdown)
+        mpc --quiet clear
+        systemctl poweroff
+    ;;
+    $reboot)
+        mpc --quiet clear
+        systemctl reboot
+    ;;
+    $lock)
+        mpc --quiet pause
+        betterlockscreen -l
+    ;;
+    $suspend)
+        mpc --quiet pause
+        systemctl suspend
+    ;;
+    $logout)
+        mpc --quiet clear
+        i3-msg exit || openbox --exit
+    ;;
 esac

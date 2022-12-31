@@ -87,7 +87,7 @@ listview {
     cycle:               true;
     dynamic:             true;
     layout:              vertical;
-	scrollbar:           false;
+    scrollbar:           false;
 }
 
 element {
@@ -110,7 +110,7 @@ element-text {
     vertical-align:      0.5;
     margin:              0px 2.5px 0px 2.5px;
     background-color:    @al;
-	text-color:          @fga;
+    text-color:          @fga;
 }
 
 element selected {
