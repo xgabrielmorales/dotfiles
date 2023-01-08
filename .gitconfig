@@ -23,6 +23,9 @@
 [push]
     autoSetupRemote = true
 
+[fetch]
+    prune = true
+
 [color]
     diff = auto
     branch = auto
