@@ -1,0 +1,6 @@
+@import "../xgm.rasi"
+
+window {
+    width: 650px;
+    height: 387px;
+}

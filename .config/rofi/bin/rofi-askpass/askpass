@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+THEME="$HOME/.config/rofi/default/rofi-askpass.rasi"
+
+rofi -theme $THEME -i -dmenu -password -no-fixed-num-lines -p "Password:"
