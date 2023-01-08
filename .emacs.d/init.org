@@ -68,24 +68,6 @@ with use-packge.
   (use-package tree-sitter)
   (use-package tree-sitter-langs)
 #+END_SRC
-** Helm
-#+BEGIN_SRC emacs-lisp
-  (use-package helm
-	:diminish helm-mode
-	:init (helm-mode t)
-	:bind (("M-x" . helm-M-x)
-		   ("C-x C-f" . helm-find-files)
-		   ("C-x b" . helm-buffers-list)
-		   ("C-h a" . helm-apropos)
-		   ("M-y" . helm-show-kill-ring)
-		   ("C-c C-o" . helm-occur)
-		   :map helm-map
-		   ("<tab>" . 'helm-execute-persistent-action)
-		   ("<C-i" . 'helm-select-action))
-	:config
-	(add-to-list 'helm-boring-buffer-regexp-list "\\*\\'")
-	'(helm-display-buffer-default-height 10))
-#+END_SRC
 ** Projectile
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
@@ -131,7 +113,8 @@ with use-packge.
 	:hook (prog-mode . editorconfig-mode)
 	:diminish editorconfig-mode)
 #+END_SRC
-** Language Server Protocol
+** Autocompletion
+*** Language Server Protocol
 #+BEGIN_SRC emacs-lisp
   (use-package lsp-mode
 	:init (setq lsp-keymap-prefix "C-l")
@@ -155,7 +138,7 @@ with use-packge.
 	(lsp-headerline-breadcrumb-mode))
 
 #+END_SRC
-** Company
+*** Company
 #+BEGIN_SRC emacs-lisp
   (use-package company
 	:after lsp-mode
@@ -223,7 +206,18 @@ with use-packge.
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
   ;; Delete trailing whitespace on save
-  ;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+  ;; Disable *Messages* buffer
+  (setq-default message-log-max nil)
+  (kill-buffer "*Messages*")
+
+  ;; Disabled *Completions* buffer
+  (add-hook 'minibuffer-exit-hook
+        '(lambda ()
+           (let ((buffer "*Completions*"))
+             (and (get-buffer buffer)
+              (kill-buffer buffer)))))
 #+END_SRC
 ** Appearance
 #+BEGIN_SRC emacs-lisp
@@ -232,10 +226,10 @@ with use-packge.
   (scroll-bar-mode 0)
 
   (setq default-frame-alist
-	(list '(font . "JetBrainsMono Nerd Font 11")
-		  '(internal-border-width . 10)
-		  '(width  . 126) '(height . 47)
-		  '(vertical-scroll-bars  . nil)))
+    (list '(font . "JetBrainsMono Nerd Font 11")
+          '(internal-border-width . 10)
+          '(width  . 126) '(height . 47)
+          '(vertical-scroll-bars  . nil)))
 
   ;; Show cursoline
   (global-hl-line-mode t)
@@ -245,23 +239,23 @@ with use-packge.
   (blink-cursor-mode 0)
 
   (setq whitespace-style
-		'(face spaces tabs newline space-mark tab-mark newline-mark))
+        '(face spaces tabs newline space-mark tab-mark newline-mark))
   (setq whitespace-display-mappings
-		'((newline-mark 10 [182 10]) ;; Use [¶] for EOL
-		  (tab-mark 9 [33 9])        ;; Use [!] for tabs
-		  (space-mark 32 [183])))    ;; Use [·] for spaces
+        '((newline-mark 10 [182 10]) ;; Use [¶] for EOL
+          (tab-mark 9 [33 9])        ;; Use [!] for tabs
+          (space-mark 32 [183])))    ;; Use [·] for spaces
 
   (use-package flatland-theme
-	:ensure t
-	:config
-	(load-theme 'flatland t))
+    :ensure t
+    :config
+    (load-theme 'flatland t))
 
   (use-package doom-modeline
-	:ensure t
-	:init (doom-modeline-mode 1)
-	:config
-	(setq doom-modeline-icon nil)
-	(setq doom-modeline-minor-modes nil))
+    :ensure t
+    :init (doom-modeline-mode 1)
+    :config
+    (setq doom-modeline-icon nil)
+    (setq doom-modeline-minor-modes nil))
 #+END_SRC
 ** Indentation
 #+BEGIN_SRC emacs-lisp
@@ -270,11 +264,11 @@ with use-packge.
 
   ;; Two Callable functions for enabling/disabling tabs in Emacs
   (defun disable-tabs ()
-	(setq indent-tabs-mode nil))
+    (setq indent-tabs-mode nil))
 
   (defun enable-tabs ()
-	(local-set-key (kbd "TAB") 'tab-to-tab-stop)
-	(setq indent-tabs-mode t))
+    (local-set-key (kbd "TAB") 'tab-to-tab-stop)
+    (setq indent-tabs-mode t))
 
   ;; Make the backspace properly erase the tab instead of removing one
   ;; space at a time.
@@ -318,21 +312,21 @@ with use-packge.
 ** Functions
 #+BEGIN_SRC emacs-lisp
   (defun insert-current-date () (interactive)
-	 (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
+     (insert (shell-command-to-string "echo -n $(date +'%a, %d %b %Y')")))
 
   (defun xgm/clean ()
-	(interactive)
-	(progn (mapc 'kill-buffer (buffer-list))
-		   (delete-other-windows)))
+    (interactive)
+    (progn (mapc 'kill-buffer (buffer-list))
+           (delete-other-windows)))
 #+END_SRC
 ** Diagnostic
 #+BEGIN_SRC emacs-lisp
   (defun xgm/display-startup-time ()
-	(message "Emacs loaded in %s with %d garbage collections."
-			 (format "%.2f seconds"
-					 (float-time
-					 (time-subtract after-init-time before-init-time)))
-			 gcs-done))
+    (message "Emacs loaded in %s with %d garbage collections."
+             (format "%.2f seconds"
+                     (float-time
+                     (time-subtract after-init-time before-init-time)))
+             gcs-done))
 
   (add-hook 'emacs-startup-hook #'xgm/display-startup-time)
 #+END_SRC
@@ -340,32 +334,28 @@ with use-packge.
 *** Python
 #+BEGIN_SRC emacs-lisp
   (use-package python-mode
-	:hook
-	(python-mode . lsp-deferred)
-	(python-mode . xgm/pylsp-setup)
-	(python-mode . tree-sitter-hl-mode))
+    :hook
+    (python-mode . lsp-deferred)
+    (python-mode . xgm/pylsp-setup)
+    (python-mode . tree-sitter-hl-mode))
 
   (use-package pyvenv
-	:config
-	(pyvenv-mode 1))
+    :config
+    (pyvenv-mode 1))
 
   (defun xgm/pylsp-setup ()
-	;; Style checking
-	(setq lsp-pylsp-plugins-pydocstyle-enabled nil)
-	(setq lsp-pylsp-plugins-pycodestyle-enabled t)
-	;; Error checkers
-	(setq lsp-pylsp-plugins-pylint-enabled nil)
-	(setq lsp-pylsp-plugins-flake8-enabled nil)
-	(setq lsp-pylsp-plugins-pyflakes-enabled t)
-	;; Code formating
-	(setq lsp-pylsp-plugins-autopep8-enabled nil)
-	(setq lsp-pylsp-plugins-yapf-enabled nil)
-	;; Complexity checking
-	(setq lsp-pylsp-plugins-mccabe-enabled nil))
-#+END_SRC
-*** C/C++
-#+BEGIN_SRC emacs-lisp
-  (setq c-default-style "java")
+    ;; Style checking
+    (setq lsp-pylsp-plugins-pydocstyle-enabled nil)
+    (setq lsp-pylsp-plugins-pycodestyle-enabled t)
+    ;; Error checkers
+    (setq lsp-pylsp-plugins-pylint-enabled nil)
+    (setq lsp-pylsp-plugins-flake8-enabled nil)
+    (setq lsp-pylsp-plugins-pyflakes-enabled t)
+    ;; Code formating
+    (setq lsp-pylsp-plugins-autopep8-enabled nil)
+    (setq lsp-pylsp-plugins-yapf-enabled nil)
+    ;; Complexity checking
+    (setq lsp-pylsp-plugins-mccabe-enabled nil))
 #+END_SRC
 * Org Mode
 ** Basic configuration

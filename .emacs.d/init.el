@@ -44,22 +44,6 @@
 (use-package tree-sitter)
 (use-package tree-sitter-langs)
 
-(use-package helm
-  :diminish helm-mode
-  :init (helm-mode t)
-  :bind (("M-x" . helm-M-x)
-		 ("C-x C-f" . helm-find-files)
-		 ("C-x b" . helm-buffers-list)
-		 ("C-h a" . helm-apropos)
-		 ("M-y" . helm-show-kill-ring)
-		 ("C-c C-o" . helm-occur)
-		 :map helm-map
-		 ("<tab>" . 'helm-execute-persistent-action)
-		 ("<C-i" . 'helm-select-action))
-  :config
-  (add-to-list 'helm-boring-buffer-regexp-list "\\*\\'")
-  '(helm-display-buffer-default-height 10))
-
 (use-package projectile
   :diminish projectile-mode
   :config	(projectile-mode)
@@ -181,7 +165,21 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Delete trailing whitespace on save
-;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Don't show *Buffer list* when opening multiple files at the same time.
+;; (setq inhibit-startup-buffer-menu t)
+
+;; Disable *Messages* buffer
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+
+;; Disabled *Completions* buffer
+(add-hook 'minibuffer-exit-hook
+      '(lambda ()
+         (let ((buffer "*Completions*"))
+           (and (get-buffer buffer)
+            (kill-buffer buffer)))))
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
