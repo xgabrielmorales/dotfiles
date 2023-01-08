@@ -22,7 +22,8 @@ require("nvim-tree").setup({
         { key = "sv", action = "vsplit" },
 
         { key = "r", action = "rename" },
-        { key = "a", action = "create" },
+        { key = "+", action = "create" },
+        { key = "d", action = "remove" },
 
         { key = "R", action = "refresh" },
         { key = "<C-h>", action = "toggle_dotfiles"},
