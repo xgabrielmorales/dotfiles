@@ -63,6 +63,9 @@ alias vim="nvim"
 alias cp="cp -i"
 alias rm="rm -I"
 alias ls="ls -FXAvhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
+# Trabajo
+alias work="cd ~/Documents/Work/runer-api"
+
 # Utilidades
 alias cbcopy="xclip -selection clipboard"
 alias cbpaste="xclip -selection clipboard -o"
