@@ -81,14 +81,6 @@
   :hook (lsp-mode . xgm/lsp-mode-setup)
   :commands (lsp lsp-deferred))
 
-(use-package lsp-ui
-  :hook (lsp-mode . lsp-ui-mode)
-  :config
-  (setq lsp-ui-doc-enable nil)
-  (setq lsp-ui-doc-show-with-cursor nil)
-  (setq lsp-ui-doc-show-with-mouse nil)
-  (setq lsp-ui-doc-position 'at-point))
-
 (defun xgm/lsp-mode-setup ()
   ;; Performance
   (setq lsp-log-io nil)
