@@ -49,34 +49,27 @@
   :config	(projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map)
   :init
-  (when (file-directory-p "~/Documents/projects")
-	(setq projectile-project-search-path '("~/Documents/projects"))))
-
-(use-package helm-projectile
-  :ensure t
-  :after projectile helm
-  :config
-  (helm-projectile-on)
-  (setq projectile-completion-system 'helm))
+  (when (file-directory-p "~/Documents")
+    (setq projectile-project-search-opath '("~/Documents"))))
 
 (use-package magit
-  :bind (("C-c g" . magit-status)
+  :bind (("C-c C-g" . magit-status)
 		 ("C-c M-g" . magit-dispatch)))
 
 (use-package git-gutter
   :diminish git-gutter-mode
   :init (global-git-gutter-mode t)
-  :bind (("C-c C-g p" . git-gutter:previous-hunk)
-		 ("C-c C-g n" . git-gutter:next-hunk)
-		 ("C-c C-g s" . git-gutter:stage-hunk)
-		 ("C-c C-g u" . git-gutter:revert-hunk)
-		 ("C-c C-g i" . git-gutter:popup-hunk))
+  :bind (("C-c g p" . git-gutter:previous-hunk)
+		 ("C-c g n" . git-gutter:next-hunk)
+		 ("C-c g s" . git-gutter:stage-hunk)
+		 ("C-c g u" . git-gutter:revert-hunk)
+		 ("C-c g i" . git-gutter:popup-hunk))
   :config
   (setq git-gutter:added-sign "+")
   (setq git-gutter:deleted-sign "x")
   (setq git-gutter:modified-sign "-")
   (setq git-gutter:window-width 2)
-  (setq git-gutter:update-interval 2)
+  (setq git-gutter:update-interval 0)
   (setq git-gutter:hide-gutter t))
 
 (use-package editorconfig
@@ -167,9 +160,6 @@
 ;; Delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; Don't show *Buffer list* when opening multiple files at the same time.
-;; (setq inhibit-startup-buffer-menu t)
-
 ;; Disable *Messages* buffer
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
@@ -205,10 +195,13 @@
 		(tab-mark 9 [33 9])        ;; Use [!] for tabs
 		(space-mark 32 [183])))    ;; Use [·] for spaces
 
-(use-package flatland-theme
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'flatland t))
+  (setq doom-themes-enable-bold t)
+  (setq doom-themes-enable-italic t)
+  (load-theme 'doom-one t)
+  (doom-themes-org-config))
 
 (use-package doom-modeline
   :ensure t
@@ -267,14 +260,14 @@
 (defun xgm/clean ()
   (interactive)
   (progn (mapc 'kill-buffer (buffer-list))
-		 (delete-other-windows)))
+         (delete-other-windows)))
 
 (defun xgm/display-startup-time ()
   (message "Emacs loaded in %s with %d garbage collections."
-		   (format "%.2f seconds"
-				   (float-time
-				   (time-subtract after-init-time before-init-time)))
-		   gcs-done))
+           (format "%.2f seconds"
+                   (float-time
+                   (time-subtract after-init-time before-init-time)))
+           gcs-done))
 
 (add-hook 'emacs-startup-hook #'xgm/display-startup-time)
 
@@ -301,8 +294,6 @@
   (setq lsp-pylsp-plugins-yapf-enabled nil)
   ;; Complexity checking
   (setq lsp-pylsp-plugins-mccabe-enabled nil))
-
-(setq c-default-style "java")
 
 (use-package org
   :config

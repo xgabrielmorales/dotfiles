@@ -71,40 +71,33 @@ with use-packge.
 ** Projectile
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
-	:diminish projectile-mode
-	:config	(projectile-mode)
-	:bind-keymap ("C-c p" . projectile-command-map)
-	:init
-	(when (file-directory-p "~/Documents/projects")
-	  (setq projectile-project-search-path '("~/Documents/projects"))))
-
-  (use-package helm-projectile
-	:ensure t
-	:after projectile helm
-	:config
-	(helm-projectile-on)
-	(setq projectile-completion-system 'helm))
+    :diminish projectile-mode
+    :config	(projectile-mode)
+    :bind-keymap ("C-c p" . projectile-command-map)
+    :init
+    (when (file-directory-p "~/Documents")
+      (setq projectile-project-search-opath '("~/Documents"))))
 #+END_SRC
 ** Git
 #+BEGIN_SRC emacs-lisp
   (use-package magit
-	:bind (("C-c g" . magit-status)
+	:bind (("C-c C-g" . magit-status)
 		   ("C-c M-g" . magit-dispatch)))
 
   (use-package git-gutter
 	:diminish git-gutter-mode
 	:init (global-git-gutter-mode t)
-	:bind (("C-c C-g p" . git-gutter:previous-hunk)
-		   ("C-c C-g n" . git-gutter:next-hunk)
-		   ("C-c C-g s" . git-gutter:stage-hunk)
-		   ("C-c C-g u" . git-gutter:revert-hunk)
-		   ("C-c C-g i" . git-gutter:popup-hunk))
+	:bind (("C-c g p" . git-gutter:previous-hunk)
+		   ("C-c g n" . git-gutter:next-hunk)
+		   ("C-c g s" . git-gutter:stage-hunk)
+		   ("C-c g u" . git-gutter:revert-hunk)
+		   ("C-c g i" . git-gutter:popup-hunk))
 	:config
 	(setq git-gutter:added-sign "+")
 	(setq git-gutter:deleted-sign "x")
 	(setq git-gutter:modified-sign "-")
 	(setq git-gutter:window-width 2)
-	(setq git-gutter:update-interval 2)
+	(setq git-gutter:update-interval 0)
 	(setq git-gutter:hide-gutter t))
 #+END_SRC
 ** Editorconfig
@@ -226,10 +219,10 @@ with use-packge.
   (scroll-bar-mode 0)
 
   (setq default-frame-alist
-    (list '(font . "JetBrainsMono Nerd Font 11")
-          '(internal-border-width . 10)
-          '(width  . 126) '(height . 47)
-          '(vertical-scroll-bars  . nil)))
+	(list '(font . "JetBrainsMono Nerd Font 11")
+		  '(internal-border-width . 10)
+		  '(width  . 126) '(height . 47)
+		  '(vertical-scroll-bars  . nil)))
 
   ;; Show cursoline
   (global-hl-line-mode t)
@@ -239,23 +232,26 @@ with use-packge.
   (blink-cursor-mode 0)
 
   (setq whitespace-style
-        '(face spaces tabs newline space-mark tab-mark newline-mark))
+		'(face spaces tabs newline space-mark tab-mark newline-mark))
   (setq whitespace-display-mappings
-        '((newline-mark 10 [182 10]) ;; Use [¶] for EOL
-          (tab-mark 9 [33 9])        ;; Use [!] for tabs
-          (space-mark 32 [183])))    ;; Use [·] for spaces
+		'((newline-mark 10 [182 10]) ;; Use [¶] for EOL
+		  (tab-mark 9 [33 9])        ;; Use [!] for tabs
+		  (space-mark 32 [183])))    ;; Use [·] for spaces
 
-  (use-package flatland-theme
-    :ensure t
-    :config
-    (load-theme 'flatland t))
+  (use-package doom-themes
+	:ensure t
+	:config
+	(setq doom-themes-enable-bold t)
+	(setq doom-themes-enable-italic t)
+	(load-theme 'doom-one t)
+	(doom-themes-org-config))
 
   (use-package doom-modeline
-    :ensure t
-    :init (doom-modeline-mode 1)
-    :config
-    (setq doom-modeline-icon nil)
-    (setq doom-modeline-minor-modes nil))
+	:ensure t
+	:init (doom-modeline-mode 1)
+	:config
+	(setq doom-modeline-icon nil)
+	(setq doom-modeline-minor-modes nil))
 #+END_SRC
 ** Indentation
 #+BEGIN_SRC emacs-lisp
