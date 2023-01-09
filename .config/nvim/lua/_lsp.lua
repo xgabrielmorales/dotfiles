@@ -27,7 +27,7 @@ end
 --------------------------------
 -- Pyslp
 -- https://github.com/python-lsp/python-lsp-server
-require('lspconfig').pylsp.setup({
+local pylsp_settings = ({
   on_attach = on_attach,
   settings = {
     pylsp = {
@@ -80,11 +80,11 @@ local pyright_settings = ({
 })
 -- Jedi Language Server
 -- https://github.com/pappasam/jedi-language-server
-local jedi_lsp_settings = ({
+require('lspconfig').jedi_language_server.setup({
   on_attach = on_attach,
   init_options = {
     diagnostics = {
-      enable = true,
+      enable = false,
       didOpen = true,
       didChange = false,
       didSave = true
@@ -92,6 +92,11 @@ local jedi_lsp_settings = ({
   },
 })
 
+-- Ruff Language Server
+-- https://github.com/charliermarsh/ruff-lsp
+require('lspconfig').ruff_lsp.setup {
+  on_attach = on_attach,
+}
 --------------------------------
 -- Rust LSP Config
 --------------------------------
