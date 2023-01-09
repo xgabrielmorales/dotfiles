@@ -151,6 +151,14 @@ with use-packge.
     (company-minimum-prefix-length 1)
     (company-idle-delay 0.0))
 #+END_SRC
+*** Flycheck: Syntax checking
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+    :config
+    (setq flycheck-check-syntax-automatically '(save))
+    (setq flycheck-indication-mode 'left-fringe)
+    (setq flycheck-standard-error-navigation nil))
+#+END_SRC
 ** Ace-window
 #+BEGIN_SRC emacs-lisp
   (use-package ace-window

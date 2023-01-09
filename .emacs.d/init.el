@@ -116,6 +116,12 @@
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
 
+(use-package flycheck
+  :config
+  (setq flycheck-check-syntax-automatically '(save))
+  (setq flycheck-indication-mode 'left-fringe)
+  (setq flycheck-standard-error-navigation nil))
+
 (use-package ace-window
   :ensure t
   :bind (("C-x o" . ace-window)))
