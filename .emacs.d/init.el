@@ -84,26 +84,34 @@
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode)
   :config
-  (setq lsp-log-io nil)
-  (setq lsp-use-plists t)
   (setq lsp-ui-doc-enable nil)
   (setq lsp-ui-doc-show-with-cursor nil)
   (setq lsp-ui-doc-show-with-mouse nil)
   (setq lsp-ui-doc-position 'at-point))
 
 (defun xgm/lsp-mode-setup ()
+  ;; Performance
+  (setq lsp-log-io nil)
+  (setq lsp-use-plists t)
+  (setq lsp-idle-delay 0.500)
+  ;; Do not show documentaion.
   (setq lsp-eldoc-enable-hover nil)
+  (setq lsp-signature-auto-activate nil)
+  (setq lsp-signature-render-documentation nil)
+  ;; Do not highlight tokens.
   (setq lsp-enable-symbol-highlighting nil)
-	(setq lsp-headerline-breadcrumb-segments '(symbols))
+  ;; Show only symbols.
+  (setq lsp-headerline-breadcrumb-icons-enable t)
+  (setq lsp-headerline-breadcrumb-segments '(symbols))
   (lsp-headerline-breadcrumb-mode))
 
 (use-package company
   :after lsp-mode
   :hook (lsp-mode . company-mode)
   :bind (:map company-active-map
-		 ("<tab>" . company-complete-selection))
-		(:map lsp-mode-map
-		 ("<tab>" . company-indent-or-complete-common))
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
   :custom
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
