@@ -13,6 +13,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>dr', vim.diagnostic.reset)
   vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float)
 
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+
   vim.diagnostic.config({
     signs = true,
     underline = true,
@@ -94,9 +96,9 @@ require('lspconfig').jedi_language_server.setup({
 
 -- Ruff Language Server
 -- https://github.com/charliermarsh/ruff-lsp
-require('lspconfig').ruff_lsp.setup {
+require('lspconfig').ruff_lsp.setup({
   on_attach = on_attach,
-}
+})
 --------------------------------
 -- Rust LSP Config
 --------------------------------
