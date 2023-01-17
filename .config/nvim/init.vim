@@ -15,6 +15,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'simrat39/symbols-outline.nvim'
   Plug 'gpanders/editorconfig.nvim'
   Plug 'windwp/nvim-autopairs'
+  Plug 'numToStr/FTerm.nvim'
   " --- Git ---
   Plug 'tpope/vim-fugitive'
   Plug 'lewis6991/gitsigns.nvim'
@@ -38,6 +39,7 @@ lua <<EOF
   require("_onedark")
   require("_gitsigns")
   require("_autopairs")
+  require("_fterm")
 EOF
 "==========================================================================
 " CONFIGURACIÓN PRINCIPAL
