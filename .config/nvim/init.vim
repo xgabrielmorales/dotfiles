@@ -75,4 +75,3 @@ set nowrap
 "==========================================================================
 nnoremap Q <Nop>
 nnoremap <Esc><Esc> :nohlsearch<CR>
-tnoremap <Esc> <C-\><C-n>
