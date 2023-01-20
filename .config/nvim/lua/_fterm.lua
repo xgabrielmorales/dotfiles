@@ -27,5 +27,5 @@ end)
 
 
 -- keybindings
-vim.keymap.set('n', '<leader>t', function() fterm.toggle() end)
-vim.keymap.set('n', '<leader>G', function() lazygit:toggle() end)
+vim.keymap.set({'n', 't'}, '<leader>t', function() fterm.toggle() end)
+vim.keymap.set({'n', 't'}, '<leader>G', function() lazygit:toggle() end)
