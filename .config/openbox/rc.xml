@@ -190,9 +190,7 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <allDesktops>no</allDesktops>
-        <raise>yes</raise>
-        <!-- Hide black border around windows -->
+        <allDesktops>yes</allDesktops>
         <bar>no</bar>
         <finalactions>
           <action name="Focus"/>
@@ -202,8 +200,7 @@
     </keybind>
     <keybind key="W-Tab">
       <action name="NextWindow">
-        <allDesktops>yes</allDesktops>
-        <!-- Hide black border around windows -->
+        <allDesktops>No</allDesktops>
         <bar>no</bar>
         <finalactions>
           <action name="focus"/>
@@ -264,21 +261,25 @@
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-l">
       <action name="DirectionalCycleWindows">
+        <bar>no</bar>
         <direction>right</direction>
       </action>
     </keybind>
     <keybind key="W-h">
       <action name="DirectionalCycleWindows">
+        <bar>no</bar>
         <direction>left</direction>
       </action>
     </keybind>
     <keybind key="W-k">
       <action name="DirectionalCycleWindows">
+        <bar>no</bar>
         <direction>up</direction>
       </action>
     </keybind>
     <keybind key="W-j">
       <action name="DirectionalCycleWindows">
+        <bar>no</bar>
         <direction>down</direction>
       </action>
     </keybind>
