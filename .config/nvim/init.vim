@@ -5,6 +5,7 @@ let mapleader = ","
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
   Plug 'navarasu/onedark.nvim'
+  Plug 'nvim-tree/nvim-web-devicons'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
