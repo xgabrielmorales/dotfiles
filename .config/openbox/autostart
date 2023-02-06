@@ -1,12 +1,9 @@
 #!/usr/bin/bash
 
-killall -q -9 picom polybar plank
+killall -q -9 polybar plank
 
 # Restore Wallpaper
 /usr/bin/nitrogen --restore &
-
-# Compositor Manager
-/usr/bin/picom &
 
 # Status bar (Polybar)
 $HOME/.config/polybar/launch.sh &
