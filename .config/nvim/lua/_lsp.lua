@@ -1,5 +1,5 @@
 local on_attach = function(client, bufnr)
-  vim.keymap.set('n', 'gn',    vim.lsp.buf.rename)
+  vim.keymap.set('n', 'gr',    vim.lsp.buf.rename)
   vim.keymap.set('n', '<M-.>', vim.lsp.buf.definition)
 
   vim.keymap.set('n', 'K',     vim.lsp.buf.hover)
