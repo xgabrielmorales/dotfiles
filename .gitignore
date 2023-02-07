@@ -1,7 +1,14 @@
+# Ranger
 .config/ranger/*
-.config/cmus/*
+
+# Neovim
 .config/nvim/*
 !.config/nvim/init.vim
 !.config/nvim/vim-plug/
 !.config/nvim/lua/
 !.config/nvim/plugins/
+
+# Emacs
+.emacs.d/*
+!.emacs.d/init.el
+!.emacs.d/init.org
