@@ -2,12 +2,25 @@ local actions = require("telescope.actions")
 
 require('telescope').setup({
   defaults = {
+    prompt_prefix = "   ",
+    selection_caret = "  ",
+    entry_prefix = "  ",
     borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-    layout_config = { height = 0.95, width = 0.4 },
     initial_mode = "insert",
     mappings = {
       n = { ["q"] = actions.close },
       i = { ["<esc>"] = actions.close },
+    },
+    layout_config = {
+      horizontal = {
+        preview_width = 0.55,
+        results_width = 0.8,
+      },
+      vertical = {
+        mirror = false,
+      },
+      width = 0.87,
+      height = 0.80,
     },
   },
   pickers = {
