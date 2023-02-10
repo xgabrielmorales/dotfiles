@@ -1,4 +1,7 @@
-local fterm = require("FTerm")
+local ok, fterm = pcall(require, "FTerm")
+if not ok then
+  return
+end
 
 fterm.setup({
   border = 'single',

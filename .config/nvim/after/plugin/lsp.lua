@@ -1,3 +1,9 @@
+local ok, lspconfig = pcall(require, "lspconfig")
+if not ok then
+  return
+end
+
+
 local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<M-.>',      vim.lsp.buf.definition)
   vim.keymap.set('n', '<leader>gr', vim.lsp.buf.rename)
@@ -82,7 +88,7 @@ local pyright_settings = ({
 })
 -- Jedi Language Server
 -- https://github.com/pappasam/jedi-language-server
-require('lspconfig').jedi_language_server.setup({
+lspconfig.jedi_language_server.setup({
   on_attach = on_attach,
   init_options = {
     diagnostics = {
@@ -96,13 +102,13 @@ require('lspconfig').jedi_language_server.setup({
 
 -- Ruff Language Server
 -- https://github.com/charliermarsh/ruff-lsp
-require('lspconfig').ruff_lsp.setup({
+lspconfig.ruff_lsp.setup({
   on_attach = on_attach,
 })
 --------------------------------
 -- Rust LSP Config
 --------------------------------
 -- Rust Analyzer
-require('lspconfig').rust_analyzer.setup({
+lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
 })

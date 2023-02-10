@@ -1,4 +1,9 @@
-require("symbols-outline").setup({
+local ok, symbols_outline = pcall(require, "symbols-outline")
+if not ok then
+  return
+end
+
+symbols_outline.setup({
   width = 25,
   show_symbol_details = false,
   autofold_depth = 1,

@@ -1,6 +1,5 @@
 let mapleader = ","
-"==========================================================================
-"  PLUGINS
+
 "==========================================================================
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
@@ -29,21 +28,6 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'hrsh7th/cmp-nvim-lsp'
 call plug#end()
 
-lua <<EOF
-  require("_lsp")
-  require("_treesitter")
-  require("_cmp")
-  require("_nvim-tree")
-  require("_telescope")
-  require("_symbols-outline")
-  require("_lualine")
-  require("_onedark")
-  require("_gitsigns")
-  require("_autopairs")
-  require("_fterm")
-EOF
-"==========================================================================
-" CONFIGURACIÓN PRINCIPAL
 "==========================================================================
 set termguicolors
 colorscheme onedark
@@ -71,8 +55,7 @@ set spelllang=es
 set clipboard=unnamedplus
 
 set nowrap
-"==========================================================================
-" ATAJOS DE TECLADO
+
 "==========================================================================
 nnoremap Q <Nop>
 nnoremap <Esc><Esc> :nohlsearch<CR>
