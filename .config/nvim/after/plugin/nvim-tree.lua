@@ -7,7 +7,7 @@ nvim_tree.setup({
   sort_by = "case_sensitive",
   view = {
     width = 25,
-    side = "left",
+    side = "right",
     adaptive_size = true,
     hide_root_folder = true,
 

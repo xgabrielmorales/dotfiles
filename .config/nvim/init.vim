@@ -9,7 +9,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'nvim-treesitter/nvim-treesitter'
   " --- Utilities ---
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+  Plug 'nvim-telescope/telescope.nvim'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'gpanders/editorconfig.nvim'
   Plug 'windwp/nvim-autopairs'
