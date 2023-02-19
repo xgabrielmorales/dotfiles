@@ -4,20 +4,16 @@ let mapleader = ","
 call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Appearenace ---
   Plug 'navarasu/onedark.nvim'
-  Plug 'nvim-tree/nvim-web-devicons'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter'
   " --- Utilities ---
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'simrat39/symbols-outline.nvim'
   Plug 'gpanders/editorconfig.nvim'
   Plug 'windwp/nvim-autopairs'
-  Plug 'numToStr/FTerm.nvim'
   " --- Git ---
-  Plug 'tpope/vim-fugitive'
   Plug 'lewis6991/gitsigns.nvim'
   " -- Python ---
   Plug 'Vimjas/vim-python-pep8-indent'
