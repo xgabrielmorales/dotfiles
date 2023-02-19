@@ -26,7 +26,6 @@ call plug#end()
 
 "==========================================================================
 set termguicolors
-colorscheme onedark
 
 set number
 set relativenumber

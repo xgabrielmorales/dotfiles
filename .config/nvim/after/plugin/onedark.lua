@@ -4,7 +4,7 @@ if not ok then
 end
 
 onedark.setup({
-  style = 'dark',
+  style = 'darker',
   code_style = {
     comments = 'italic',
     keywords = 'none',
@@ -13,3 +13,5 @@ onedark.setup({
     variables = 'none'
   },
 })
+
+onedark.load()

@@ -48,7 +48,7 @@ font:
 
 colors:
   primary:
-    background: "#282c34"
+    background: "#1e2128"
     foreground: "#D8D8D8"
   cursor:
     text:    "#1C1B1D"
