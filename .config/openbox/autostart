@@ -1,12 +1,19 @@
 #!/usr/bin/bash
 
-killall -q -9 polybar plank
+killall -q -9 polybar picom plank
+
 
 # Restore Wallpaper
 /usr/bin/nitrogen --restore &
 
 # Status bar (Polybar)
 $HOME/.config/polybar/launch.sh &
+
+# Plank
+/usr/bin/plank &
+
+# Compositor
+/usr/bin/picom &
 
 # Remap keys
 /usr/bin/setxkbmap -layout latam -option lv3:menu_switch # Alt-Gr -> Menu
@@ -20,9 +27,6 @@ $HOME/.config/polybar/launch.sh &
 
 # Keyring
 /usr/bin/gnome-keyring-daemon --start --components=secrets &
-
-# Plank
-/usr/bin/plank &
 
 # Polkit
 if [[ ! $(pidof xfce-polkit) ]]; then
