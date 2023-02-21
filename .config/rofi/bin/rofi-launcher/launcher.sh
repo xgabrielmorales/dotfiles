@@ -11,4 +11,4 @@ echo $AC
 sed --in-place --expression "s/ac: .*/ac:   ${AC}FF;/g" "$FILE"
 sed --in-place --expression "s/se: .*/se:   ${AC}40;/g" "$FILE"
 
-rofi -no-config -no-lazy-grab -show drun -modi drun -theme xgm
+rofi -show drun -theme xgm

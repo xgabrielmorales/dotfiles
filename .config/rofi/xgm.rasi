@@ -1,18 +1,20 @@
 configuration {
-    font:                "JetBrains Mono Nerd Font 10";
-    show-icons:          true;
-    icon-theme:          "Papirus";
+    modi: "drun,run,filebrowser,window,ssh";
+    font: "JetBrains Mono Nerd Font 11.5";
 
-    display-drun:        "";
+    show-icons: true;
+
+    display-ssh: "";
+    display-run: "";
+    display-drun: "";
+    display-window: "";
+    display-filebrowser: "";
+
+    window-format: "{c} - {t}";
     drun-display-format: "{name}";
 
-    display-window:      "";
-    window-format:       " {c} - {t}";
-
-    display-run: "";
-
-    sidebar-mode:        false;
-    disable-history:     false;
+    sidebar-mode: false;
+    disable-history: false;
 }
 
 @import "colors.rasi"
@@ -20,13 +22,14 @@ configuration {
 window {
     transparency:        "real";
     background-color:    @bg;
-    border:              0px 0px 0px 0px;
-    border-color:        @ac;
-    border-radius:       0px;
-    width:               550px;
     location:            center;
     x-offset:            0;
     y-offset:            0;
+    width: 650px;
+
+    border: 1px solid;
+    border-color: @bga;
+    border-radius: 5px;
 }
 
 mainbox {
@@ -34,11 +37,12 @@ mainbox {
     border:              0px;
     border-radius:       0px;
     border-color:        @ac;
-    children:            [ inputbar, message, listview ];
+    children:            [ "mode-switcher", "listview",  "message", "inputbar" ];
     spacing:             6px;
     padding:             6px;
 }
 
+/* --------- Inputbar --------- */
 inputbar {
     children:            [ prompt, entry ];
     background-color:    @bga;
@@ -56,7 +60,6 @@ prompt {
     padding:             6px 7px 4px 7px;
     background-color:    @ac;
     text-color:          @fg;
-    font:                "JetBrains Mono Nerd Font 11";
 }
 
 entry {
@@ -69,25 +72,17 @@ entry {
     blink:               false;
 }
 
-message {
-    padding:             6px;
-    background-color:    @bga;
-}
-
-textbox {
-    background-color:    @bga;
-}
-
+/* --------- listview --------- */
 listview {
     background-color:    @al;
     padding:             0px;
     columns:             2;
-    lines:               8;
+    lines: 10;
     spacing:             6px;
-    cycle:               true;
+    cycle: false;
     dynamic:             true;
     layout:              vertical;
-    scrollbar:           false;
+    scrollbar: false;
 }
 
 element {
@@ -99,9 +94,9 @@ element {
 }
 
 element-icon {
-    size:                24px;
-    border:              0px;
-    background-color:    @al;
+    size: 24px;
+    text-color: inherit;
+    background-color: transparent;
 }
 
 element-text {
@@ -119,4 +114,34 @@ element selected {
     border:              0px 0px 0px 0px;
     border-radius:       0px;
     border-color:        @ac;
+}
+
+/* --------- Message --------- */
+message {
+    enabled: true;
+    padding: 6px;
+    background-color: @bga;
+}
+
+textbox {
+    background-color: @bga;
+}
+
+/* --------- Mode Switcher --------- */
+mode-switcher {
+    enabled: true;
+    background-color: @bg;
+}
+
+button {
+    padding: 5px;
+    cursor: pointer;
+
+    text-color: @fg;
+    background-color: @bga;
+}
+
+button selected {
+    text-color: @fg;
+    background-color: @ac;
 }
