@@ -1,6 +1,6 @@
 configuration {
     modi: "drun,run,window,ssh";
-    font: "JetBrains Mono Nerd Font 10";
+    font: "JetBrains Mono Nerd Font 11.5";
 
     show-icons: true;
 
@@ -15,6 +15,7 @@ configuration {
 
     sidebar-mode: false;
     disable-history: false;
+    parse-known-hosts: false;
 }
 
 @import "colors.rasi"
