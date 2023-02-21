@@ -25,8 +25,6 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
 call plug#end()
 
 "==========================================================================
-set termguicolors
-
 set number
 set relativenumber
 set cursorline

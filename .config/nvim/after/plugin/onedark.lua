@@ -4,13 +4,18 @@ if not ok then
 end
 
 onedark.setup({
-  style = 'darker',
+  style = 'dark',
+  term_colors = true,
+  transparent = true,
   code_style = {
-    comments = 'italic',
+    comments = 'none',
     keywords = 'none',
     functions = 'none',
     strings = 'none',
     variables = 'none'
+  },
+  lualine = {
+      transparent = true,
   },
 })
 
