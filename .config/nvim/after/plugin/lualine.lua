@@ -23,7 +23,7 @@ lualine.setup({
     lualine_a = {'mode'},
     lualine_b = {'filename'},
     lualine_c = {'diff', 'diagnostics'},
-    lualine_x = {'branch', 'fileformat', 'encoding', 'filetype'},
+    lualine_x = {'branch', 'filesize', 'fileformat', 'encoding', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
