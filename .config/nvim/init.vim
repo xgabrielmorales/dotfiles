@@ -40,6 +40,7 @@ set noswapfile
 
 set list
 set listchars=tab:!·,trail:-,eol:¶
+set fileformat=unix
 
 set shortmess+=F
 
