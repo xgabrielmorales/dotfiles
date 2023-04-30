@@ -311,26 +311,18 @@
 (use-package python-mode
   :hook
   (python-mode . lsp-deferred)
-  (python-mode . xgm/pylsp-setup)
   (python-mode . tree-sitter-hl-mode))
 
 (use-package pyvenv
   :config
   (pyvenv-mode 1))
 
-(defun xgm/pylsp-setup ()
-  ;; Style checking
-  (setq lsp-pylsp-plugins-pydocstyle-enabled nil)
-  (setq lsp-pylsp-plugins-pycodestyle-enabled t)
-  ;; Error checkers
-  (setq lsp-pylsp-plugins-pylint-enabled nil)
-  (setq lsp-pylsp-plugins-flake8-enabled nil)
-  (setq lsp-pylsp-plugins-pyflakes-enabled t)
-  ;; Code formating
-  (setq lsp-pylsp-plugins-autopep8-enabled nil)
-  (setq lsp-pylsp-plugins-yapf-enabled nil)
-  ;; Complexity checking
-  (setq lsp-pylsp-plugins-mccabe-enabled nil))
+(use-package lsp-jedi
+  :ensure t
+  :config
+  (setq lsp-jedi-diagnostics-did-open t)
+  (setq lsp-jedi-diagnostics-did-save t)
+  (setq lsp-jedi-diagnostics-did-change nil))
 
 (use-package org
   :config

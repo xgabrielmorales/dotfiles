@@ -110,25 +110,25 @@ with use-packge.
 *** Language Server Protocol
 #+BEGIN_SRC emacs-lisp
   (use-package lsp-mode
-    :init (setq lsp-keymap-prefix "C-l")
-    :hook (lsp-mode . xgm/lsp-mode-setup)
-    :commands (lsp lsp-deferred))
+	:init (setq lsp-keymap-prefix "C-l")
+	:hook (lsp-mode . xgm/lsp-mode-setup)
+	:commands (lsp lsp-deferred))
 
   (defun xgm/lsp-mode-setup ()
-    ;; Performance
-    (setq lsp-log-io nil)
-    (setq lsp-use-plists t)
-    (setq lsp-idle-delay 0.500)
-    ;; Do not show documentaion.
-    (setq lsp-eldoc-enable-hover nil)
-    (setq lsp-signature-auto-activate nil)
-    (setq lsp-signature-render-documentation nil)
-    ;; Do not highlight tokens.
-    (setq lsp-enable-symbol-highlighting nil)
-    ;; Show only symbols.
-    (setq lsp-headerline-breadcrumb-icons-enable t)
-    (setq lsp-headerline-breadcrumb-segments '(symbols))
-    (lsp-headerline-breadcrumb-mode))
+	;; Performance
+	(setq lsp-log-io nil)
+	(setq lsp-use-plists t)
+	(setq lsp-idle-delay 0.500)
+	;; Do not show documentaion.
+	(setq lsp-eldoc-enable-hover nil)
+	(setq lsp-signature-auto-activate nil)
+	(setq lsp-signature-render-documentation nil)
+	;; Do not highlight tokens.
+	(setq lsp-enable-symbol-highlighting nil)
+	;; Show only symbols.
+	(setq lsp-headerline-breadcrumb-icons-enable t)
+	(setq lsp-headerline-breadcrumb-segments '(symbols))
+	(lsp-headerline-breadcrumb-mode))
 #+END_SRC
 *** Company
 #+BEGIN_SRC emacs-lisp
@@ -373,26 +373,18 @@ with use-packge.
   (use-package python-mode
     :hook
     (python-mode . lsp-deferred)
-    (python-mode . xgm/pylsp-setup)
     (python-mode . tree-sitter-hl-mode))
 
   (use-package pyvenv
     :config
     (pyvenv-mode 1))
 
-  (defun xgm/pylsp-setup ()
-    ;; Style checking
-    (setq lsp-pylsp-plugins-pydocstyle-enabled nil)
-    (setq lsp-pylsp-plugins-pycodestyle-enabled t)
-    ;; Error checkers
-    (setq lsp-pylsp-plugins-pylint-enabled nil)
-    (setq lsp-pylsp-plugins-flake8-enabled nil)
-    (setq lsp-pylsp-plugins-pyflakes-enabled t)
-    ;; Code formating
-    (setq lsp-pylsp-plugins-autopep8-enabled nil)
-    (setq lsp-pylsp-plugins-yapf-enabled nil)
-    ;; Complexity checking
-    (setq lsp-pylsp-plugins-mccabe-enabled nil))
+  (use-package lsp-jedi
+    :ensure t
+    :config
+    (setq lsp-jedi-diagnostics-did-open t)
+    (setq lsp-jedi-diagnostics-did-save t)
+    (setq lsp-jedi-diagnostics-did-change nil))
 #+END_SRC
 * Org Mode
 ** Basic configuration
