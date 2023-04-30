@@ -13,6 +13,6 @@ tab_width = 4
 indent_style = space
 indent_size = 2
 
-[*.{py,sh,rs,el,lisp,org,toml}]
+[*.{py,sh,rs,el,lisp,org,toml,sql}]
 indent_style = space
 indent_size = 4
