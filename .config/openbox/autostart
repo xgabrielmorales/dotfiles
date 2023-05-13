@@ -28,6 +28,9 @@ $HOME/.config/polybar/launch.sh &
 # Keyring
 /usr/bin/gnome-keyring-daemon --start --components=secrets &
 
+# Key repeat delay
+/usr/bin/xset r rate 300 25
+
 # Polkit
 if [[ ! $(pidof xfce-polkit) ]]; then
     /usr/lib/xfce-polkit/xfce-polkit &
