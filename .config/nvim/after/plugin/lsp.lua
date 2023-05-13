@@ -5,21 +5,27 @@ end
 
 
 local on_attach = function(client, bufnr)
-  vim.keymap.set('n', '<M-.>',      vim.lsp.buf.definition)
-  vim.keymap.set('n', '<leader>gr', vim.lsp.buf.rename)
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+
+  vim.keymap.set('n', '<M-.>',      vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', '<leader>gr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>gR', vim.lsp.buf.references, bufopts)
 
-  vim.keymap.set('n', 'K',     vim.lsp.buf.hover)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
+  vim.keymap.set('n', 'K',     vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 
-  vim.keymap.set('n', '<leader>dr', vim.diagnostic.reset)
-  vim.keymap.set('n', '<leader>de', vim.diagnostic.enable)
-  vim.keymap.set('n', '<leader>dd', vim.diagnostic.disable)
-  vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev)
-  vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next)
-  vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float)
+  vim.keymap.set('n', '<leader>dr', vim.diagnostic.reset, bufopts)
+  vim.keymap.set('n', '<leader>de', vim.diagnostic.enable, bufopts)
+  vim.keymap.set('n', '<leader>dd', vim.diagnostic.disable, bufopts)
+  vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, bufopts)
+  vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, bufopts)
+  vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, bufopts)
 
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+
+  vim.keymap.set('n', '<leader>cf', function()
+    vim.lsp.buf.format { async = true, timeout_ms = 3000 }
+  end, bufopts)
 
   vim.diagnostic.config({
     signs = true,
@@ -102,7 +108,7 @@ lspconfig.jedi_language_server.setup({
 
 -- Ruff Language Server
 -- https://github.com/charliermarsh/ruff-lsp
-lspconfig.ruff_lsp.setup({
+local ruff_lsp_settings = ({
   on_attach = on_attach,
 })
 --------------------------------
