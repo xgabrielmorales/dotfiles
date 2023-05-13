@@ -22,6 +22,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   " --- Completion ---
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'jose-elias-alvarez/null-ls.nvim'
 call plug#end()
 
 "==========================================================================
