@@ -323,7 +323,7 @@
     </keybind>
     <keybind key="Pause">
       <action name="Execute">
-        <command>~/dotfiles/scripts/polybar_microphone_module --toggle</command>
+        <command>polybar-msg cmd toggle</command>
       </action>
     </keybind>
     <!-- Media Controls-->
