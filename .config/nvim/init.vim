@@ -54,3 +54,7 @@ set nowrap
 "==========================================================================
 nnoremap Q <Nop>
 nnoremap <Esc><Esc> :nohlsearch<CR>
+
+" Page down/up and center view
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
