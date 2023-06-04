@@ -17,6 +17,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'lewis6991/gitsigns.nvim'
   " -- Python ---
   Plug 'Vimjas/vim-python-pep8-indent'
+  Plug 'm4xshen/smartcolumn.nvim'
   " --- LSP ---
   Plug 'neovim/nvim-lspconfig'
   " --- Completion ---
