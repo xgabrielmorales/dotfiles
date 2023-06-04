@@ -6,7 +6,7 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'navarasu/onedark.nvim'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'm4xshen/smartcolumn.nvim'
   " --- Utilities ---
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
@@ -17,8 +17,8 @@ call plug#begin('$HOME/.config/nvim/autoload/plugged')
   Plug 'lewis6991/gitsigns.nvim'
   " -- Python ---
   Plug 'Vimjas/vim-python-pep8-indent'
-  Plug 'm4xshen/smartcolumn.nvim'
   " --- LSP ---
+  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'neovim/nvim-lspconfig'
   " --- Completion ---
   Plug 'hrsh7th/nvim-cmp'
