@@ -3,7 +3,7 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    onedark = require("onedark")
+    local onedark = require("onedark")
     onedark.setup({
       style = "dark",
       term_colors = true,

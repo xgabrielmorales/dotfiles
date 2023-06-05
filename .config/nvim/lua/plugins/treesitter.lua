@@ -1,7 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   config = function()
-    treesitter = require("nvim-treesitter.configs")
+    local treesitter = require("nvim-treesitter.configs")
     treesitter.setup({
       ensure_installed = {
         "python",
