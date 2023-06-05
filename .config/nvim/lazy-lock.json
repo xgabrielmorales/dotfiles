@@ -13,6 +13,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "9ec2a6bbdae426fc093b71805e7929158ac09411" },
   "onedark.nvim": { "branch": "master", "commit": "8ef51924724d506e515f2d3ac9f959a9eaf38f3d" },
   "plenary.nvim": { "branch": "master", "commit": "499e0743cf5e8075cd32af68baa3946a1c76adf1" },
+  "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "smartcolumn.nvim": { "branch": "main", "commit": "0c572e3eae48874f25b74394a486f38cadb5c958" },
   "telescope.nvim": { "branch": "master", "commit": "6d3fbffe426794296a77bb0b37b6ae0f4f14f807" },
   "venv-selector.nvim": { "branch": "main", "commit": "6f1865aba002ff8aa0d552491a4f24a3d191c830" },
