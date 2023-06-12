@@ -24,8 +24,8 @@ return {
           vertical = {
             mirror = false,
           },
-          width = 0.87,
-          height = 0.80,
+          width = 0.7,
+          height = 0.8,
         },
       },
       pickers = {
@@ -39,7 +39,7 @@ return {
         buffers = {
           sort_mru = true,
           ignore_current_buffer = true,
-          previewer = false,
+          previewer = true,
           mappings = {
             i = { ["<C-d>"] = actions.delete_buffer },
           },
