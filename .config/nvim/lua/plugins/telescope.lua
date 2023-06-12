@@ -1,6 +1,9 @@
 return {
   "nvim-telescope/telescope.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+  },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
@@ -48,8 +51,8 @@ return {
     })
   end,
   keys = {
-    { "<leader>f", "<CMD>Telescope find_files<CR>" },
-    { "<leader>b", "<CMD>Telescope buffers<CR>" },
+    { "<leader>f",  "<CMD>Telescope find_files<CR>" },
+    { "<leader>b",  "<CMD>Telescope buffers<CR>" },
     { "<leader>gf", "<CMD>Telescope git_files<CR>" },
   },
 }
