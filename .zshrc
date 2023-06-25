@@ -64,7 +64,7 @@ alias cp="cp -i"
 alias rm="rm -I"
 alias ls="ls -FXAvhc --group-directories-first --time-style=+'%H:%M %d/%m/%y' --color=auto"
 # Trabajo
-alias work="cd ~/Documents/Work/runer-api"
+alias work="cd ~/Documents/Work/Backend"
 
 # Utilidades
 alias cbcopy="xclip -selection clipboard"
