@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 local on_attach = require("xgm.lsp.attach")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 --------------------------------
 -- Python LSP Config
@@ -8,6 +9,7 @@ local on_attach = require("xgm.lsp.attach")
 -- https://github.com/pappasam/jedi-language-server
 lspconfig.jedi_language_server.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
   init_options = {
     diagnostics = {
       enable = false,
@@ -25,6 +27,7 @@ lspconfig.jedi_language_server.setup({
 -- https://github.com/rust-lang/rust-analyzer
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
 })
 
 --------------------------------
@@ -32,8 +35,9 @@ lspconfig.rust_analyzer.setup({
 --------------------------------
 --  Lua Language Server
 -- https://github.com/LuaLS/lua-language-server
-require("lspconfig").lua_ls.setup({
+lspconfig.lua_ls.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       telemetry = { enable = false },
