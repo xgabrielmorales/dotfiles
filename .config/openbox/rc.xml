@@ -254,8 +254,8 @@
       <action name="MoveResizeTo">
         <x>center</x>
         <y>center</y>
-        <width>90%</width>
-        <height>90%</height>
+        <width>95%</width>
+        <height>95%</height>
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
@@ -405,8 +405,8 @@
         <action name="MoveResizeTo">
           <x>center</x>
           <y>center</y>
-          <width>90%</width>
-          <height>90%</height>
+          <width>95%</width>
+          <height>95%</height>
         </action>
       </mousebind>
       <mousebind action="Drag" button="A-Left">
