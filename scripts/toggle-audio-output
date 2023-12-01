@@ -131,7 +131,10 @@ def set_default_sink_port(sink: AvailableSink) -> None:
 def main() -> int:
     avalible_sinks: list[AvailableSink] = get_avalible_sinks()
 
-    selected_sink: Optional[AvailableSink] = display_to_rofi(avalible_sinks)
+    if len(avalible_sinks) == 1:
+        selected_sink: AvailableSink = next(iter(avalible_sinks))
+    else:
+        selected_sink: Optional[AvailableSink] = display_to_rofi(avalible_sinks)
 
     if not selected_sink:
         return 1
