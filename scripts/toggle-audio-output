@@ -1,53 +1,92 @@
 #!/usr/bin/python
 
-import os
 import json
+import os
 import subprocess
 from subprocess import CompletedProcess
 from typing import Optional
-
 
 ROFI_THEME_PATH = f"{os.environ['HOME']}/.config/rofi/default/rofi-mpd.rasi"
 ROFI = ["rofi", "-theme", f"{ROFI_THEME_PATH}", "-i", "-dmenu", "-p", "Output"]
 
 
-def get_avalible_sinks() -> list[dict]:
-    """Get the list of sinks available from pactl.
+class AvailableSinkPort:
+    name: str
+    description: str
+    type: str
+    priority: str
+    availability_group: str
+    availability: str
 
-    Return:
-        A dictionary with a description of the sink and the sink itself.
+
+class AvailableSink:
+    name: str
+    description: str
+    state: str
+    port: list[AvailableSinkPort]
+
+
+def get_avalible_sinks() -> list[AvailableSink]:
     """
+    Retrieves a list of available sinks from the system.
 
+    Returns:
+        A list of AvailableSink objects representing the available sinks.
+    """
     pactl_sinks: CompletedProcess[str] = subprocess.run(
         ["pactl", "--format=json", "list", "sinks"],
         capture_output=True,
-        text=True
+        text=True,
     )
 
     sinks: list[dict] = json.loads(pactl_sinks.stdout)
 
-    avalible_sinks: list[dict] = []
+    avalible_sinks: list[AvailableSink] = []
     for sink in sinks:
-        avalible_sinks.append({
-            'name': sink['name'],
-            'description': sink['description'],
-            'ports': sink['ports']
-        })
+        available_ports: list[AvailableSinkPort] = []
+        for port in sink["ports"]:
+            if port["availability"].upper() == "AVAILABLE":
+                available_ports.append(port)
+
+        if not available_ports:
+            continue
+
+        if sink["state"].upper() == "RUNNING" and len(available_ports) == 1:
+            continue
+
+        avalible_sinks.append(
+            {
+                "name": sink["name"],
+                "description": sink["description"],
+                "ports": available_ports,
+            }
+        )
 
     return avalible_sinks
 
 
 def display_to_rofi(
     objs: list[dict],
-    field: str = 'description'
+    field: str = "description",
 ) -> Optional[dict]:
+    """
+    Display a list of objects to the Rofi menu and return the selected object based on the specified field.
 
+    Args:
+        objs (list[dict]): A list of dictionaries representing the objects to be displayed.
+        field (str): The field in the dictionaries to be used for displaying the objects.
+
+    Returns:
+        Optional[dict]: The selected object from the Rofi menu, or None if no object was selected.
+    """
     fields: str = "\n".join(obj[field] for obj in objs)
 
-    kwargs: dict = {}
-    kwargs['stdout'] = subprocess.PIPE
-    kwargs['universal_newlines'] = True
-    rofi: CompletedProcess[str] = subprocess.run(ROFI, input=fields, **kwargs)
+    rofi: CompletedProcess[str] = subprocess.run(
+        ROFI,
+        input=fields,
+        stdout=subprocess.PIPE,
+        universal_newlines=True,
+    )
 
     for obj in objs:
         if obj[field] == rofi.stdout.strip():
@@ -55,28 +94,48 @@ def display_to_rofi(
 
     return None
 
-def set_default_sink(sink: Optional[dict]) -> None:
-    if not sink:
-        return
 
-    if len(sink['ports']) < 2:
-        subprocess.run(["pactl", "set-default-sink", sink['name']])
+def set_default_sink(sink: AvailableSink) -> None:
+    """
+    Set the default sink for audio output.
 
-    return set_default_sink_port(sink)
+    Args:
+        sink (AvailableSink): The sink object containing information about the sink.
+    """
+    if len(sink["ports"]) > 1:
+        return set_default_sink_port(sink)
+
+    subprocess.run(["pactl", "set-default-sink", sink["name"]])
 
 
-def set_default_sink_port(sink: Optional[dict]) -> None:
-    selected_port: Optional[dict] = display_to_rofi(sink['ports'])
+def set_default_sink_port(sink: AvailableSink) -> None:
+    """
+    Sets the default sink port for a given sink.
+
+    Args:
+        sink (AvailableSink): The sink object for which the default port needs to be set.
+    """
+    selected_port: Optional[AvailableSinkPort] = display_to_rofi(sink["ports"])
 
     if not selected_port:
         return None
 
-    subprocess.run(["pactl", "set-sink-port", sink['name'], selected_port['name']])
+    subprocess.run(
+        ["pactl", "set-default-sink", sink["name"]],
+    )
+    subprocess.run(
+        ["pactl", "set-sink-port", sink["name"], selected_port["name"]],
+    )
 
 
 def main() -> int:
-    avalible_sinks: list[dict] = get_avalible_sinks()
-    selected_sink: Optional[dict] = display_to_rofi(avalible_sinks)
+    avalible_sinks: list[AvailableSink] = get_avalible_sinks()
+
+    selected_sink: Optional[AvailableSink] = display_to_rofi(avalible_sinks)
+
+    if not selected_sink:
+        return 1
+
     set_default_sink(selected_sink)
 
     return 0
