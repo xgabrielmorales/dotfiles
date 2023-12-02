@@ -12,3 +12,9 @@
 .emacs.d/*
 !.emacs.d/init.el
 !.emacs.d/init.org
+
+# Environments
+.env*
+.venv
+env/
+venv/
