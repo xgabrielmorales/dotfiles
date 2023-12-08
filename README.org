@@ -28,23 +28,24 @@ Mi configuración la puedes encontrar aquí: [[file:.config/i3/][i3wm]], [[file:
 es especial en nada pero cumple.
 
 En este caso los créditos de la configuración no me pertenecen, utilizo
-un tema hecho por un usuario llamado [[https://github.com/adi1090x][adi1090x]] llamado [[https://github.com/adi1090x/polybar-themes#blocks][blocks]] con mis
-respectivos retoques.
+un tema hecho por [[https://github.com/adi1090x][adi1090x]] llamado [[https://github.com/adi1090x/polybar-themes#blocks][blocks]] con mis respectivos retoques.
+
+Mi configuración se puede encontrar aquí: [[file:.config/polybar][Polybar]].
 
 ** Window Switcher: Rofi
 Mi window swicher de preferencia, más por lo estético, dmenu me parece
 muy /plano/. Pero igualmente ligero, rápido y simple, que es lo que se
 busca.
 
-Los créditos del la configuración también le pertenecen a [[https://github.com/adi1090x][adi1090x]] con
-su tema llamado [[https://github.com/adi1090x/polybar-themes#blocks][blocks]]. Mi configuración es exactamente la que el
-propone.
+Mi configuración usa como base el tema [[https://github.com/adi1090x/polybar-themes#blocks][blocks]] de [[https://github.com/adi1090x][adi109x]] y se puede
+encontrar aquí: [[file:.config/rofi][Rofi]].
 
 ** Emulador de Terminal: Alacritty
 En mi búsqueda de la simpleza, he utilizado muchos emuladores de
-terminal pero solo con dos he encontrado lo que busco: [[https://alacritty.org/][Alacritty]] y [[https://st.suckless.org/][st]]
+terminal pero solo con dos he encontrado lo que busco: [[https://alacritty.org/][Alacritty]] y [[https://st.suckless.org/][st]].
 
 Mi configuración la puedes encontrar aquí: [[file:.config/alacritty/alacritty.yml][Alactritty]], [[#][st]].
+
 *** Terminal Multiplexer: Tmux
 Un paquete fundamental ya que [[https://st.suckless.org/][st]] no cuenta ni con paneles ni pestañas.
 Tmux te permite tener múltiples sesiones de terminal en una misma
@@ -54,16 +55,17 @@ Mi configuración, como siempre, la puedes encontrar aquí: [[file:.tmux.conf][T
 ** File Manager - Ranger
 Ranger es mi file manager para todo, excepto para esos casos en lo que
 me toca arrastrar un archivo al browser. Es simple, es rápido, utiliza
-los atajos de teclado de Vim, es muy extensible (está escrito en
-Python).
+los atajos de teclado de Vim y es muy extensible.
 
 Mi configuración la puedes encontrar aquí: [[file:.config/ranger][Ranger]].
+
 ** Editor de Texto - NeoVim/Emacs
-Uso [[https://neovim.io/][Neovim]] para programar, [[https://www.gnu.org/software/emacs/][Emacs]] para el resto de tareas que involucran
+Uso [[https://neovim.io/][Neovim]] para programar. [[https://www.gnu.org/software/emacs/][Emacs]] para el resto de tareas que involucran
 archivos de texto. Aunque a veces me siento tentando y utilizo Emacs
 para programar.
 
 Mi configuración: [[file:.config/nvim/][Nvim]] y [[file:.emacs.d/][Emacs]].
+
 ** Otro
 Paquetes no listados:
 
