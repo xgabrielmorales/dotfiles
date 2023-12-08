@@ -394,13 +394,16 @@
     </context>
 
     <context name="Titlebar">
+
       <mousebind action="Press" button="Left">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
+
       <mousebind action="Press" button="Middle">
         <action name="MoveToCenter"/>
       </mousebind>
+
       <mousebind action="Press" button="Right">
         <action name="MoveResizeTo">
           <x>center</x>
@@ -409,9 +412,20 @@
           <height>95%</height>
         </action>
       </mousebind>
+
+      <mousebind action="Press" button="A-Right">
+        <action name="MoveResizeTo">
+          <x>center</x>
+          <y>center</y>
+          <width>80%</width>
+          <height>100%</height>
+        </action>
+      </mousebind>
+
       <mousebind action="Drag" button="A-Left">
         <action name="Move"/>
       </mousebind>
+
       <mousebind action="Drag" button="Left">
         <action name="if">
           <maximized>yes</maximized>
@@ -428,10 +442,12 @@
           </else>
         </action>
       </mousebind>
+
       <mousebind action="DoubleClick" button="Left">
         <action name="ToggleMaximizeFull"/>
         <action name="MoveToCenter"/>
       </mousebind>
+
     </context>
 
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
