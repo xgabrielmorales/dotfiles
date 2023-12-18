@@ -48,37 +48,38 @@ font:
 
 colors:
   primary:
-    background: "#1e2128"
+    background: "#1E2128"
     foreground: "#D8D8D8"
   cursor:
-    text:    "#1C1B1D"
     cursor:  "#CCCCCC"
+    text:    "#1C1B1D"
   normal:
     black:   "#1E2128"
-    red:     "#E06C75"
-    green:   "#98C379"
-    yellow:  "#E5C07B"
     blue:    "#61AFEF"
-    magenta: "#C678DD"
     cyan:    "#56B6C2"
+    green:   "#98C379"
+    magenta: "#C678DD"
+    red:     "#E06C75"
     white:   "#D8D8D8"
+    yellow:  "#E5C07B"
   bright:
     black:   "#5C6370"
-    red:     "#E06C75"
-    green:   "#98C379"
-    yellow:  "#E5C07B"
     blue:    "#61AFEF"
-    magenta: "#C678DD"
     cyan:    "#56B6C2"
+    green:   "#98C379"
+    magenta: "#C678DD"
+    red:     "#E06C75"
     white:   "#FFFFFF"
-  dim:
-    black:   "#24272a"
-    red:     "#E06C75"
-    green:   "#98C379"
     yellow:  "#E5C07B"
+  dim:
+    black:   "#24272A"
     blue:    "#61AFEF"
-    magenta: "#C678DD"
     cyan:    "#56B6C2"
+    green:   "#98C379"
+    magenta: "#C678DD"
+    red:     "#E06C75"
+
+    yellow:  "#E5C07B"
 
 key_bindings:
   - { key: V,        mods: Alt|Shift, action: Paste            }
