@@ -308,7 +308,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>rofi -show window -theme xgm</command>
+        <command>~/dotfiles/scripts/task-switcher-launcher</command>
       </action>
     </keybind>
     <keybind key="W-c">

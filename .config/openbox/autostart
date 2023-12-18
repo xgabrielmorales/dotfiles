@@ -15,6 +15,9 @@ $HOME/.config/polybar/launch.sh &
 # Compositor
 /usr/bin/picom &
 
+# Task Switcher
+/usr/bin/skippy-xd --start-daemon &
+
 # Remap keys
 /usr/bin/setxkbmap -layout latam -option lv3:menu_switch # Alt-Gr -> Menu
 /usr/bin/setxkbmap -layout latam -option ctrl:ralt_rctrl # R-Ctrl -> Alt-Gr

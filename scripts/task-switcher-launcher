@@ -1,0 +1,5 @@
+#!/bin/bash
+
+num_active_windows=$(wmctrl -l | awk '{ if ($2 == 0) { print $2,$3} }' | wc -l)
+
+[[ "$num_active_windows" -gt 1 ]] && skippy-xd --expose
