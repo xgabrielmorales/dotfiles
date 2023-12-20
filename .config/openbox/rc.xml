@@ -105,12 +105,9 @@
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Openbox -->
     <keybind key="W-S-r">
-      <action name="Reconfigure">
-  </action>
+      <action name="Reconfigure"/>
     </keybind>
-    <keybind key="W-q">
-      <action name="Close"/>
-    </keybind>
+
     <!-- Mueve la venta en foco a un workspace específico -->
     <keybind key="W-S-1">
       <action name="SendToDesktop">
@@ -142,6 +139,7 @@
         <to>6</to>
       </action>
     </keybind>
+
     <!-- Cambia de workspace -->
     <keybind key="W-1">
       <action name="GoToDesktop">
@@ -173,20 +171,14 @@
         <to>6</to>
       </action>
     </keybind>
+
     <!-- Keybindings for windows -->
-    <keybind key="W-S-q">
-      <action name="Close"/>
-    </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="A-space">
-      <action name="ShowMenu">
-        <menu>client-menu</menu>
-      </action>
-    </keybind>
+
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
@@ -208,6 +200,7 @@
         </finalactions>
       </action>
     </keybind>
+
     <!-- Window Tiling: Snap feature -->
     <keybind key="W-S-h">
       <action name="Unmaximize"/>
@@ -251,38 +244,8 @@
 
     <keybind key="W-S-space">
       <action name="ToggleMaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>center</x>
-        <y>center</y>
-        <width>95%</width>
-        <height>95%</height>
-      </action>
     </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-l">
-      <action name="DirectionalCycleWindows">
-        <bar>no</bar>
-        <direction>right</direction>
-      </action>
-    </keybind>
-    <keybind key="W-h">
-      <action name="DirectionalCycleWindows">
-        <bar>no</bar>
-        <direction>left</direction>
-      </action>
-    </keybind>
-    <keybind key="W-k">
-      <action name="DirectionalCycleWindows">
-        <bar>no</bar>
-        <direction>up</direction>
-      </action>
-    </keybind>
-    <keybind key="W-j">
-      <action name="DirectionalCycleWindows">
-        <bar>no</bar>
-        <direction>down</direction>
-      </action>
-    </keybind>
+
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
@@ -398,6 +361,12 @@
       <mousebind action="Press" button="Left">
         <action name="Focus"/>
         <action name="Raise"/>
+        <action name="Unshade"/>
+      </mousebind>
+
+      <mousebind action="DoubleClick" button="Left">
+        <action name="ToggleMaximizeFull"/>
+        <action name="MoveToCenter"/>
       </mousebind>
 
       <mousebind action="Press" button="Middle">
@@ -405,20 +374,22 @@
       </mousebind>
 
       <mousebind action="Press" button="Right">
-        <action name="MoveResizeTo">
-          <x>center</x>
-          <y>center</y>
-          <width>95%</width>
-          <height>95%</height>
-        </action>
-      </mousebind>
-
-      <mousebind action="Press" button="A-Right">
+        <action name="Unmaximize"/>
         <action name="MoveResizeTo">
           <x>center</x>
           <y>center</y>
           <width>80%</width>
-          <height>100%</height>
+          <height>99%</height>
+        </action>
+      </mousebind>
+
+      <mousebind action="DoubleClick" button="Right">
+        <action name="Unmaximize"/>
+        <action name="MoveResizeTo">
+          <x>center</x>
+          <y>center</y>
+          <width>55%</width>
+          <height>75%</height>
         </action>
       </mousebind>
 
@@ -443,19 +414,8 @@
         </action>
       </mousebind>
 
-      <mousebind action="DoubleClick" button="Left">
-        <action name="ToggleMaximizeFull"/>
-        <action name="MoveToCenter"/>
-      </mousebind>
 
-    </context>
 
-    <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
-      <mousebind action="Press" button="Left">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
     </context>
 
     <context name="Top">
