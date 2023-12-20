@@ -88,15 +88,15 @@ miwMouse1 = focus
 miwMouse2 = close-ewmh
 miwMouse3 = iconify
 
-keysDown = Down s
-keysLeft = Left a
-keysRight = Right d
-keysUp = Up w
+keysDown = Down s j
+keysLeft = Left a h
+keysRight = Right d l
+keysUp = Up w k
 
 keysNext = n f
 keysPrev = p b
 
 keysExitCancelOnPress = Escape
 keysExitCancelOnRelease =
-keysExitSelectOnPress = Return
+keysExitSelectOnPress = Return space
 keysExitSelectOnRelease =
