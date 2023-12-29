@@ -1,0 +1,105 @@
+[colors.bright]
+black = "#5C6370"
+blue = "#61AFEF"
+cyan = "#56B6C2"
+green = "#98C379"
+magenta = "#C678DD"
+red = "#E06C75"
+white = "#FFFFFF"
+yellow = "#E5C07B"
+
+[colors.cursor]
+cursor = "#CCCCCC"
+text = "#1C1B1D"
+
+[colors.dim]
+black = "#24272A"
+blue = "#61AFEF"
+cyan = "#56B6C2"
+green = "#98C379"
+magenta = "#C678DD"
+red = "#E06C75"
+yellow = "#E5C07B"
+
+[colors.normal]
+black = "#1E2128"
+blue = "#61AFEF"
+cyan = "#56B6C2"
+green = "#98C379"
+magenta = "#C678DD"
+red = "#E06C75"
+white = "#D8D8D8"
+yellow = "#E5C07B"
+
+[colors.primary]
+background = "#1E2128"
+foreground = "#D8D8D8"
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.08"
+
+[font]
+size = 12
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Home"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "PageUp"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "PageDown"
+mods = "Alt|Shift"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+args = ["-l", "-c", "tmux attach || tmux"]
+program = "/bin/zsh"
+
+[window]
+dynamic_title = false
+startup_mode = "Maximized"
+title = "Alacritty"
+
+[window.dimensions]
+columns = 180
+lines = 40
+
+[window.padding]
+x = 8
+y = 9
