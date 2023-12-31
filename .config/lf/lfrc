@@ -1,0 +1,94 @@
+# Basic Settings
+set drawbox true
+set mouse true
+set ratios 1:1
+set sixel true
+set icons true
+set cursorpreviewfmt "\033[7m"
+
+# Mappings
+map d
+map dT trash
+map dD console delete
+
+map <enter>
+map <enter> open
+
+map <backspace>
+map <backspace> set hidden!
+
+map r
+map r :rename; cmd-end
+map a rename
+
+map ,
+map ,dl  cd ~/Downloads
+map ,doc cd ~/Documents
+map ,dot cd ~/dotfiles
+map ,pic cd ~/Pictures
+map ,wa  cd ~/Documents/Work/Ambientes
+map ,wb  cd ~/Documents/Work/Backend
+map ,lf edit-config
+
+
+map O push :open-with-gui<space>
+map o push :open-with-cli<space>
+
+map t
+map th tmux-split-horizontal-window
+map tv tmux-split-vertical-window
+
+map y
+map yp yank-path
+map yb yank-name
+
+# Custom Functions
+cmd open ${{
+    case $(file --mime-type -Lb $f) in
+        text/*) nvim $fx;;
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+cmd edit-config ${{
+    $EDITOR ~/.config/lf/lfrc
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+cmd mkdir %{{
+    IFS=" "
+    mkdir -p -- "$*"
+    lf -remote "send $id select \"$*\""
+}}
+
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+cmd touch %touch "$@"
+
+cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
+cmd yank-name $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
+
+cmd tmux-split-horizontal-window &$@ tmux split-window -h -c $dirname
+cmd tmux-split-vertical-window &$@ tmux split-window -v -c $dirname
