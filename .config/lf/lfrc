@@ -9,7 +9,7 @@ set cursorpreviewfmt "\033[7m"
 # Mappings
 map d
 map dT trash
-map dD console delete
+map dD delete
 
 map <enter>
 map <enter> open
@@ -20,6 +20,9 @@ map <backspace> set hidden!
 map r
 map r :rename; cmd-end
 map a rename
+
+map R
+map R reload
 
 map ,
 map ,dl  cd ~/Downloads
