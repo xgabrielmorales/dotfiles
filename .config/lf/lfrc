@@ -14,8 +14,8 @@ map dD delete
 map <enter>
 map <enter> open
 
-map <backspace>
-map <backspace> set hidden!
+map <c-backspace>
+map <c-backspace> set hidden!
 
 map r
 map r :rename; cmd-end
@@ -42,6 +42,7 @@ map th tmux-split-horizontal-window
 map tv tmux-split-vertical-window
 
 map y
+map yy copy
 map yp yank-path
 map yb yank-name
 
