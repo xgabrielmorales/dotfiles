@@ -47,3 +47,15 @@ lspconfig.lua_ls.setup({
     },
   },
 })
+
+
+--------------------------------
+-- Bash LSP Config
+--------------------------------
+--  Lua Language Server
+-- https://github.com/bash-lsp/bash-language-server
+lspconfig.bashls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {},
+})

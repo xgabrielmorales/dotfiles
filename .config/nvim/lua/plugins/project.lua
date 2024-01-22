@@ -4,9 +4,9 @@ return {
     local project_nvim = require("project_nvim")
 
     project_nvim.setup({
-      detection_methods = { "pattern" },
-      patterns = { ".git" },
-      silent_chdir = false,
+      detection_methods = { "lsp", "pattern" },
+      patterns = { ".git", "pyproject.toml" },
+      silent_chdir = true,
     })
   end,
 }
