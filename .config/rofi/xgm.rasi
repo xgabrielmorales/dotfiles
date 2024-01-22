@@ -1,6 +1,6 @@
 configuration {
     modi: "drun,run,window,ssh";
-    font: "JetBrains Mono Nerd Font 11.5";
+    font: "JetBrains Mono Nerd Font 13";
 
     show-icons: true;
 
