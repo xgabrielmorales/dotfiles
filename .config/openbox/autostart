@@ -2,7 +2,6 @@
 
 killall -q -9 polybar picom plank
 
-
 # Restore Wallpaper
 /usr/bin/nitrogen --restore &
 
@@ -17,10 +16,6 @@ $HOME/.config/polybar/launch.sh &
 
 # Task Switcher
 /usr/bin/skippy-xd --start-daemon &
-
-# Remap keys
-/usr/bin/setxkbmap -layout latam -option lv3:menu_switch # Alt-Gr -> Menu
-/usr/bin/setxkbmap -layout latam -option ctrl:ralt_rctrl # R-Ctrl -> Alt-Gr
 
 # Disable auto-mute
 /usr/bin/amixer -c 2 sset "Auto-Mute Mode" Disabled &
