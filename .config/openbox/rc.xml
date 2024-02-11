@@ -373,6 +373,10 @@
         <action name="MoveToCenter"/>
       </mousebind>
 
+      <mousebind action="Press" button="A-Middle">
+        <action name="ToggleAlwaysOnTop"/>
+      </mousebind>
+
       <mousebind action="Press" button="Right">
         <action name="Unmaximize"/>
         <action name="MoveResizeTo">
