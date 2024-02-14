@@ -1,12 +1,16 @@
 [user]
     name = Gabriel Morales
     email = dev@darklock.maskmy.id
-
-[init]
-    defaultBranch = trunk
+    signingkey = ~/.ssh/Personal/IdentityFiles/id_rsa.pub
 
 [core]
     editor = nvim
+
+[diff]
+    external = difft
+
+[push]
+    autoSetupRemote = true
 
 [alias]
     s = status
@@ -15,23 +19,15 @@
     staged = diff --staged
     # Show log decorated
     lod = log --graph --pretty=format:'%C(yellow)%h%Creset%Cred%d%Creset %Cgreen%cr%Creset %s ' --abbrev-commit  --date=relative
-    # Shou current branch
-    current-branch = rev-parse --abbrev-ref HEAD
-    # List branches ordered by change time
-    branch-ordered = !git for-each-ref --format='%(committerdate:relative),%(authorname),%(refname:short)' --sort=committerdate refs/heads/ | column -t -s ','
 
-[push]
-    autoSetupRemote = true
+[commit]
+    gpgsign = true
 
-[fetch]
-    prune = true
+[gpg]
+    format = ssh
 
-[color]
-    diff = auto
-    branch = auto
-    status = auto
+[includeIf "gitdir:~/Documents/Work/"]
+    path = ~/Documents/Work/.gitconfig
 
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+[maintenance]
+    repo = /home/xgm/Documents/Work/MonoRepo
