@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-killall -q -9 polybar picom plank
+killall -q -9 polybar picom plank xfce-polkit
 
 # Restore Wallpaper
 /usr/bin/nitrogen --restore &
@@ -24,15 +24,13 @@ $HOME/.config/polybar/launch.sh &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # Keyring
-/usr/bin/gnome-keyring-daemon --start --components=secrets &
+# /usr/bin/gnome-keyring-daemon --start --components=secrets &
 
 # Key repeat delay
-/usr/bin/xset r rate 250 35 &
+/usr/bin/xset r rate 200 30 &
 
 # Polkit
-if [[ ! $(pidof xfce-polkit) ]]; then
-    /usr/lib/xfce-polkit/xfce-polkit &
-fi
+/usr/lib/xfce-polkit/xfce-polkit &
 
 # Redshift
 $HOME/dotfiles/scripts/redshift &
