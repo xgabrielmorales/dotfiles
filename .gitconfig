@@ -20,6 +20,11 @@
     # Show log decorated
     lod = log --graph --pretty=format:'%C(yellow)%h%Creset%Cred%d%Creset %Cgreen%cr%Creset %s ' --abbrev-commit  --date=relative
 
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
 [commit]
     gpgsign = true
 
