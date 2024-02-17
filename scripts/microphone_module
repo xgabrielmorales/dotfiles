@@ -4,26 +4,26 @@ MIC="alsa_input.usb-DCMT_Technology_USB_Condenser_Microphone_214b206000000178-00
 MIC_NOISE_TORCH="nui_mic_remap"
 
 mic_status() {
-	status=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -o "Mute: yes")
-	volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}')
-	[[ $status == "Mute: yes" ]] && echo  || echo " $volume";
+    status=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -o "Mute: yes")
+    volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}')
+    [[ $status == "Mute: yes" ]] && echo  || echo " $volume";
 }
 
 case $1 in
-	"--status")
-			mic_status
-		;;
-	"--toggle")
-			pactl set-source-mute $MIC toggle
-			pactl set-source-mute $MIC_NOISE_TORCH toggle
-			polybar-msg action "#microphone.hook.0"
-		;;
-	"--inc")
-			pactl set-source-volume @DEFAULT_SOURCE@ +5%
-			polybar-msg action "#microphone.hook.0"
-		;;
-	"--dec")
-			pactl set-source-volume @DEFAULT_SOURCE@ -5%
-			polybar-msg action "#microphone.hook.0"
-		;;
+    "--status")
+        mic_status
+        ;;
+    "--toggle")
+        pactl set-source-mute $MIC toggle
+        pactl set-source-mute $MIC_NOISE_TORCH toggle
+        polybar-msg action "#microphone.hook.0"
+        ;;
+    "--inc")
+        pactl set-source-volume @DEFAULT_SOURCE@ +5%
+        polybar-msg action "#microphone.hook.0"
+        ;;
+    "--dec")
+        pactl set-source-volume @DEFAULT_SOURCE@ -5%
+        polybar-msg action "#microphone.hook.0"
+        ;;
 esac
