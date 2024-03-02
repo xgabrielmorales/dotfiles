@@ -1,12 +1,17 @@
-# Basic Settings
+# BASIC SETTINGS
+# ================================
+
 set drawbox true
 set mouse true
 set ratios 1:1
 set sixel true
 set icons true
 set cursorpreviewfmt "\033[7m"
+set period 1
 
-# Mappings
+# MAPPINGS
+# ================================
+
 map d
 map dd cut
 map dT trash
@@ -34,26 +39,23 @@ map ,wa  cd ~/Documents/Work/Ambientes
 map ,wb  cd ~/Documents/Work/Backend
 map ,lf edit-config
 
-
 map O push :open-with-gui<space>
 map o push :open-with-cli<space>
 
 map t
-map th tmux-split-horizontal-window
-map tv tmux-split-vertical-window
+map th tmux-split-h-window
+map tv tmux-split-v-window
 
 map y
 map yy copy
 map yp yank-path
-map yb yank-name
+map yn yank-name
 
-# Custom Functions
-cmd open ${{
-    case $(file --mime-type -Lb $f) in
-        text/*) nvim $fx;;
-        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
-    esac
-}}
+# CUSTOM FUNCTIONS
+# ================================
+
+# https://github.com/gokcehan/lf/wiki/Ranger#file-opener-rifle
+cmd open $set -f; rifle -p 0 "$fx"
 
 cmd edit-config ${{
     $EDITOR ~/.config/lf/lfrc
@@ -95,5 +97,5 @@ cmd touch %touch "$@"
 cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
 cmd yank-name $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
 
-cmd tmux-split-horizontal-window &$@ tmux split-window -h -c $dirname
-cmd tmux-split-vertical-window &$@ tmux split-window -v -c $dirname
+cmd tmux-split-h-window $ tmux split-window -h -c $PWD
+cmd tmux-split-v-window $ tmux split-window -v -c $PWD
