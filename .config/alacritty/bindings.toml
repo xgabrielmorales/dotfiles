@@ -1,0 +1,24 @@
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Home"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "PageUp"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "PageDown"
+mods = "Alt|Shift"
