@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     for f in /etc/X11/xinit/xinitrc.d/?* ; do
@@ -11,11 +11,7 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-xrdb $HOME/.Xresources
-
 export XDG_SESSION_TYPE=x11
-export LSP_USE_PLISTS=true
-export SUDO_ASKPASS="$HOME/.config/rofi/bin/rofi-askpass/askpass"
 
 session="openbox"
 case $session in
