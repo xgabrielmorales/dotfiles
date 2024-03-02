@@ -54,12 +54,6 @@ ext() {
 #====================================================
 # ALIASES
 #====================================================
-
-# Navigation
-alias ambientes="cd ~/Documents/Work/Ambientes"
-alias backend="cd ~/Documents/Work/Backend"
-alias work="cd ~/Documents/Work"
-
 alias dl="cd ~/Downloads && ls -l"
 alias doc="cd ~/Documents && ls -l"
 alias dotfiles="cd ~/dotfiles && ls -l"
