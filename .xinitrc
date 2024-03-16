@@ -13,6 +13,9 @@ fi
 
 export XDG_SESSION_TYPE=x11
 
+
+xrdb $HOME/.Xresources
+
 session="openbox"
 case $session in
     i3|i3wm) exec i3;;
