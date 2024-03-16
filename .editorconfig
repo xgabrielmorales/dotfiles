@@ -9,7 +9,7 @@ charset = utf-8
 indent_style = tab
 tab_width = 4
 
-[*.{html,xml,json,css,lua,vim}]
+[*.{html,xml,json,css,lua,vim,js}]
 indent_style = space
 indent_size = 2
 
