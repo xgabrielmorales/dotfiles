@@ -271,7 +271,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>~/dotfiles/scripts/task-switcher-launcher</command>
+        <command>skippy-xd --expose</command>
       </action>
     </keybind>
     <keybind key="W-c">

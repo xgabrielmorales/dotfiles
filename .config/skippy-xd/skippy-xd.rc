@@ -1,59 +1,78 @@
-[general]
+[system]
 # File path of skippy-xd pipe daemon communication
 pipePath = /tmp/skippy-xd-fifo
-
-# Background picture when skippy-xd is activated
-background =
 
 # Frequency to update pixmaps
 updateFreq = 60.0
 
-# Allow other compositors such as picom handle transparency
-lazyTrans = true
+# Depending on your window manager, you may want to choose between
+# XQueryTree, _NET_CLIENT_LIST, _WIN_CLIENT_LIST
+clientList = XQueryTree
 
-# Move the mouse cursor when skippy is activated
-movePointer = false
+# when compositors such as picom are not used
+# turn on pseudo-transparency
+pseudoTrans = true
+
+[layout]
+
+# Wait time before displaying switch previews
+switchWaitDuration = 100
 
 # Set = 0 to switch off animations
-# for switch, there is never animation
-animationDuration = 0
+# For switch, there is never animation
+animationDuration = 25
 
 # Relative minimal distance between windows
-distance = 10
-
-# Whether to display window frames
-includeFrame = true
-
-# Whether to show the window bigger than its original size
-allowUpscale = false
-
-# Choose whether to show shadow windows:
-# windows that are minimized, shaded, or on other virtual desktops
-showShadow = true
+distance = 25
 
 # exposeLayout=xd uses the same layout as switcher, maximizing screen estate
 # exposeLayout=boxy tends to preserve window positions, thus guiding the eye more
 exposeLayout = xd
 
+# Whether to show the window bigger than its original size
+allowUpscale = false
+
+[filter]
+
+# in multi-monitor setting, whether to filter windows by monitor
+showOnlyCurrentMonitor = false
+
+# Choose whether to show shadow windows:
+# windows that are minimized, shaded, or on other virtual desktops
+showShadow = true
+
 # For switch and expose,
 # Whether to limit window select on current virtual desktop
 # Or allow window selection on all virtual desktops
 # Paging always show all desktops
-switchShowAllDesktops = true
-exposeShowAllDesktops = true
+switchShowAllDesktops = false
+exposeShowAllDesktops = false
+
+[display]
+
+# Background picture when skippy-xd is activated
+# Examples to paint wallpaper, or to tint existing background:
+#   background = /home/richard/screenshots/256.png
+#   background = #00000066
+background =
+
+# Move the mouse cursor when skippy is activated
+movePointer = false
+
+# Whether to display window frames
+includeFrame = true
 
 # Show window previews with rounded corners,
 # with corner radius in pixels
 cornerRadius = 0
 
-# Icon visual parameters
-preferredIconSize = 48
+# Icon parameters
 showIconsOnThumbnails = true
-iconFillSpec = orig mid mid #1e2128
-fillSpec = orig mid mid #FFFFFF
+preferredIconSize = 48
 
-[xinerama]
-showAll = true
+# Display when live preview is not available
+fillSpec = #FFFFFF
+iconFillSpec = mid mid #1e2128
 
 [normal]
 opacity = 255
@@ -71,32 +90,56 @@ tint = #1e2128
 tintOpacity = 0
 
 [tooltip]
-align = center
 background = #1e2128
 border = #C4C7C5
-followsMouse = true
 font = JetBrainsMono Nerd Font-11:weight=Normal
 offsetX = 0
 offsetY = 5
 opacity = 255
 show = true
+showDesktop = false
+showMonitor = false
 text = #C4C7C5
 textShadow = black
+width = 0.8
 
 [bindings]
-miwMouse1 = focus
-miwMouse2 = close-ewmh
-miwMouse3 = iconify
 
-keysDown = Down s j
-keysLeft = Left a h
-keysRight = Right d l
-keysUp = Up w k
+# key* = is a list of valid XWindows KeySym identifiers, case
+# sensitive and <space> seperated list. Run the program 'xev' to find them.
 
 keysNext = n f
 keysPrev = p b
 
-keysExitCancelOnPress = Escape
-keysExitCancelOnRelease =
-keysExitSelectOnPress = Return space
-keysExitSelectOnRelease =
+keysSelect = Return space
+keysCancel = Escape BackSpace x q
+
+keysUp = Up w k
+keysDown = Down s j
+keysLeft = Left a h
+keysRight = Right d l
+
+keysIconify = 
+keysShade = 
+keysClose = 
+
+keysPivotSwitch = Alt_L
+keysPivotExpose = 
+keysPivotPaging = 
+
+# mouse button bindings, options include
+# "no": do nothing
+# "focus": select window
+# "iconify": minimize window
+# "shade-ewmh": toggle window shade
+# "close-icccm": close window with ICCCM method
+# "close-ewmh": lcose window with EWMH method
+# "destroy": forcefully destroy window
+# "keysPrev": focus on previous window
+# "keysNext": focus on next window
+
+miwMouse1 = focus
+miwMouse2 = no
+miwMouse3 = no
+miwMouse4 = no
+miwMouse5 = no
