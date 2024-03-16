@@ -17,14 +17,8 @@ $HOME/.config/polybar/launch.sh &
 # Task Switcher
 /usr/bin/skippy-xd --start-daemon &
 
-# Disable auto-mute
-/usr/bin/amixer -c 2 sset "Auto-Mute Mode" Disabled &
-
 # Notification daemon
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
-
-# Keyring
-# /usr/bin/gnome-keyring-daemon --start --components=secrets &
 
 # Key repeat delay
 /usr/bin/xset r rate 200 30 &
