@@ -1,13 +1,13 @@
 configuration {
-	normalize-match: true;
+    normalize-match: true;
     matching:        "regex";
 }
 
 @import "../xgm.rasi"
 
 window {
-	height: 255px;
-	width:  450px;
+    height: 255px;
+    width:  450px;
 }
 
 listview {
