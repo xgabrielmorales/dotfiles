@@ -1,11 +1,14 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
+    "L3MON4D3/LuaSnip",
     "hrsh7th/cmp-nvim-lsp",
     "windwp/nvim-autopairs",
   },
   config = function()
     local cmp = require("cmp")
+    local luasnip = require("luasnip")
+
     local function border(hl_name)
       return {
         { "┌", hl_name },
@@ -37,7 +40,15 @@ return {
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
-      sources = cmp.config.sources({ { name = "nvim_lsp" } }),
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
+      },
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+      })
     })
   end,
 }
