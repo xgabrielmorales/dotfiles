@@ -6,10 +6,10 @@ killall -q -9 polybar picom plank xfce-polkit
 /usr/bin/nitrogen --restore &
 
 # Status bar (Polybar)
-$HOME/.config/polybar/launch.sh &
+/usr/bin/tint2 &
 
-# Plank
-/usr/bin/plank &
+# Applets
+/usr/bin/volumeicon &
 
 # Compositor
 /usr/bin/picom &

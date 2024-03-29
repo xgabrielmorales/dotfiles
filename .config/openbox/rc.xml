@@ -536,7 +536,7 @@
   </mouse>
 
   <applications>
-    <application class="*">
+    <application class="*" type="normal">
       <focus>yes</focus>
       <decor>yes</decor>
       <position>
