@@ -139,7 +139,7 @@ keysPivotPaging =
 # "keysNext": focus on next window
 
 miwMouse1 = focus
-miwMouse2 = no
+miwMouse2 = close-ewmh
 miwMouse3 = no
 miwMouse4 = no
 miwMouse5 = no
