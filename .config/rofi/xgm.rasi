@@ -30,7 +30,7 @@ window {
 
     border: 1px solid;
     border-color: @bga;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 mainbox {
@@ -50,7 +50,7 @@ inputbar {
     text-color:          @fg;
     expand:              false;
     border:              0px;
-    border-radius:       0px;
+    border-radius:       3px;
     border-color:        @ac;
     margin:              0px;
     padding:             0px;
@@ -114,7 +114,7 @@ element selected {
     background-color:    @se;
     text-color:          @fga;
     border:              0px 0px 0px 0px;
-    border-radius:       0px;
+    border-radius:       3px;
     border-color:        @ac;
 }
 
@@ -138,6 +138,7 @@ mode-switcher {
 button {
     padding: 5px;
     cursor: pointer;
+    border-radius: 3px;
 
     text-color: @fg;
     background-color: @bga;
