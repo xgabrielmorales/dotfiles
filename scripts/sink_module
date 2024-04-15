@@ -1,0 +1,23 @@
+#!/bin/bash
+
+sink_status() {
+    local status=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -o "Mute: yes")
+    local volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')
+
+    [[ $status == "Mute: yes" ]] && echo  || echo " $volume";
+}
+
+case $1 in
+    "--status")
+        sink_status
+        ;;
+    "--toggle")
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+        ;;
+    "--inc")
+        pactl set-sink-volume @DEFAULT_SINK@ +5%
+        ;;
+    "--dec")
+        pactl set-sink-volume @DEFAULT_SINK@ -5%
+        ;;
+esac

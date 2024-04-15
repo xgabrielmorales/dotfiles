@@ -14,14 +14,11 @@ case $1 in
         ;;
     "--toggle")
         pactl set-source-mute "$MIC" toggle
-        polybar-msg action "#microphone.hook.0"
         ;;
     "--inc")
         pactl set-source-volume @DEFAULT_SOURCE@ +5%
-        polybar-msg action "#microphone.hook.0"
         ;;
     "--dec")
         pactl set-source-volume @DEFAULT_SOURCE@ -5%
-        polybar-msg action "#microphone.hook.0"
         ;;
 esac
