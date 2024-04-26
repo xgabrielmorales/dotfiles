@@ -1,71 +1,62 @@
 * ~/dotfiles
 
-Este repositorio contiene los archivos de configuración de Linux. Eres
-libre de ver, tomar y modificar lo que gustes, sin embargo, ten en
-cuenta que lo que aquí se muestra son mis preferencias personales, por
-tal razón te sugeriría que revises bien lo que tomes antes de adjuntarlo
-a tú configuración.
+Este repositorio contiene los archivos de configuración de mi WorkStation. Eres
+libre de tomar y modificar lo que gustes, sin embargo, ten en cuenta que lo que
+aquí se muestra son mis preferencias personales. Por tal razón, te sugeriría que
+revises bien lo que tomes antes de adjuntarlo a tu configuración.
 
 ** Distro: Arch Linux
-Uso [[https://archlinux.org/][Arch Linux]] como única distro principal. Me gusta la simpleza de la
-distro; me gusta la riqueza de paquetes de [[https://archlinux.org/packages/][Pacman]] y [[https://aur.archlinux.org/][AUR]]; me gusta la
-buena y completa documentación que tiene consigo.
+Uso [[https://archlinux.org/][Arch Linux]] como única distro principal. Me gusta la simplicidad de la
+distro; me gusta la riqueza de paquetes de [[https://archlinux.org/packages/][Pacman]] y [[https://aur.archlinux.org/][AUR]]; me gusta la buena y
+completa documentación que la acompaña.
 
 ** Window Manager: Openbox
-[[http://openbox.org][Openbox]] es un, y mi actual, /floating/ window manager. Es una excelente
-opción a un desktop environment ya que trae lo justo para funcionar y no
-adiciona nada de bloatware.
+[[http://openbox.org][Openbox]] es un, y mi actual, /floating/ window manager. Es una excelente opción
+como entorno de escritorio ya que trae lo justo para funcionar.
 
-[[https://i3wm.org/][I3wm]] es, cunado tengo ganas, el /tiling/ window manager que
-uso. suficiente para mi, cumple con mis necesidades. Es fácil de
-configurar y fácil de usar, sin embargo, quizá un poco limitado en
-cuanto a que tanto puedes hacer con el.
+[[https://i3wm.org/][I3wm]] es el /tiling/ window manager que también uso. Es suficiente para mí,
+cumple con mis necesidades. Es fácil de configurar y de usar, sin embargo,
+quizás un poco limitado en cuanto a lo que puedes hacer con él.
 
-Mi configuración la puedes encontrar aquí: [[file:.config/i3/][i3wm]], [[file:.config/openbox/][Openbox]]
+Mi configuración la puedes encontrar aquí: [[file:.config/openbox/][Openbox]], [[file:.config/i3/][i3wm]].
 
-** Status Bars: Poylbar
-[[https://polybar.github.io/][Polybar]], una status bar sencilla, fácil de usar, fácil de configurar. No
-es especial en nada pero cumple.
+** Status Bars: Tint2
+[[https://github.com/o9000/tint2][Tint2]] es mi actual barra de estado. En el pasado, utilizaba [[https://polybar.github.io/][Polybar]]. Ambas son
+fáciles de usar y configurar. No son nada especiales, pero cumplen su función.
 
-En este caso los créditos de la configuración no me pertenecen, utilizo
-un tema hecho por [[https://github.com/adi1090x][adi1090x]] llamado [[https://github.com/adi1090x/polybar-themes#blocks][blocks]] con mis respectivos retoques.
-
-Mi configuración se puede encontrar aquí: [[file:.config/polybar][Polybar]].
+Mi configuración se puede encontrar aquí: [[file:.config/tint2][Tint2]], [[file:.config/polybar][Polybar]].
 
 ** Window Switcher: Rofi
-Mi window swicher de preferencia, más por lo estético, dmenu me parece
-muy /plano/. Pero igualmente ligero, rápido y simple, que es lo que se
-busca.
+Mi window switcher de preferencia, más por lo estético, es Rofi. Dmenu me parece
+muy "plano". Sin embargo, Rofi es igualmente ligero, rápido y simple, que es lo
+que se busca.
 
-Mi configuración usa como base el tema [[https://github.com/adi1090x/polybar-themes#blocks][blocks]] de [[https://github.com/adi1090x][adi109x]] y se puede
-encontrar aquí: [[file:.config/rofi][Rofi]].
+Mi configuración se puede encontrar aquí: [[file:.config/rofi][Rofi]].
 
 ** Emulador de Terminal: Alacritty
-En mi búsqueda de la simpleza, he utilizado muchos emuladores de
-terminal pero solo con dos he encontrado lo que busco: [[https://alacritty.org/][Alacritty]] y [[https://st.suckless.org/][st]].
+En mi búsqueda de la simpleza, he utilizado muchos emuladores de terminal, pero
+solo con [[https://alacritty.org/][Alacritty]] he encontrado lo que busco.
 
-Mi configuración la puedes encontrar aquí: [[file:.config/alacritty/alacritty.yml][Alactritty]], [[#][st]].
+Mi configuración la puedes encontrar aquí: [[file:.config/alacritty/][Alacritty]].
 
 *** Terminal Multiplexer: Tmux
-Un paquete fundamental ya que [[https://st.suckless.org/][st]] no cuenta ni con paneles ni pestañas.
-Tmux te permite tener múltiples sesiones de terminal en una misma
-ventana, con el menor esfuerzo posible.
+Un paquete fundamental ya que Alacritty no cuenta ni con paneles ni pestañas.
+Tmux te permite tener múltiples sesiones de terminal en una misma ventana, con
+el menor esfuerzo posible.
 
-Mi configuración, como siempre, la puedes encontrar aquí: [[file:.tmux.conf][Tmux]].
-** File Manager - Ranger
-Ranger es mi file manager para todo, excepto para esos casos en lo que
-me toca arrastrar un archivo al browser. Es simple, es rápido, utiliza
-los atajos de teclado de Vim y es muy extensible.
+Mi configuración la puedes encontrar aquí: [[file:.tmux.conf][Tmux]].
+** File Manager: Lf
+[[https://github.com/gokcehan/lf][Lf]], antes [[https://github.com/ranger/ranger][Ranger]], es mi gestor de archivos para todo, excepto para esos casos en
+los que necesito arrastrar un archivo a algún sitio. Es simple, es rápido,
+utiliza los atajos de teclado de Vim y es muy extensible.
 
-Mi configuración la puedes encontrar aquí: [[file:.config/ranger][Ranger]].
+Mi configuración la puedes encontrar aquí: [[file:.config/lf][Lf]], [[file:.config/ranger][Ranger]].
 
-** Editor de Texto - NeoVim/Emacs
-Uso [[https://neovim.io/][Neovim]] para programar. [[https://www.gnu.org/software/emacs/][Emacs]] para el resto de tareas que involucran
-archivos de texto. Aunque a veces me siento tentando y utilizo Emacs
-para programar.
+** Editor de Texto - Neovim
+Uso [[https://neovim.io/][Neovim]] para programar, en el pasado usé [[https://www.gnu.org/software/emacs/][Emacs]]. Hoy en día también estoy
+aprendiendo a usar [[https://code.visualstudio.com/][VSCode]]. Intento no depender de un único editor.
 
-Mi configuración: [[file:.config/nvim/][Nvim]] y [[file:.emacs.d/][Emacs]].
-
+Mi configuración la puedes encontrar aquí: [[file:.config/nvim/][Nvim]] y [[file:.emacs.d/][Emacs]].
 ** Otro
 Paquetes no listados:
 
@@ -77,4 +68,4 @@ Paquetes no listados:
 *** Fuentes tipográficas
 - Iconos: [[https://github.com/AT-UI/feather-font][Feather]]
 - Monoespaciada: [[https://www.jetbrains.com/lp/mono/][JetBrains Mono Nerd Font]]
-- Proporcional: [[https://developer.apple.com/fonts/][SF Pro]]
+- Proporcional: [[https://fonts.google.com/specimen/Cantarell][Cantarell]]
