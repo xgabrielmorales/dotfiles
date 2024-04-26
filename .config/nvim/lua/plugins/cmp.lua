@@ -3,7 +3,6 @@ return {
   dependencies = {
     -- Lua Snippets (and completion source)
     "L3MON4D3/LuaSnip",
-    "rafamadriz/friendly-snippets",
     "saadparwaiz1/cmp_luasnip",
     -- LSP (Completion Source)
     "hrsh7th/cmp-nvim-lsp",
@@ -11,8 +10,6 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-
-    require("luasnip.loaders.from_vscode").lazy_load()
 
     local function border(hl_name)
       return {
