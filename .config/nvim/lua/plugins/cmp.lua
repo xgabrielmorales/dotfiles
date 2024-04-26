@@ -1,13 +1,18 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
+    -- Lua Snippets (and completion source)
     "L3MON4D3/LuaSnip",
+    "rafamadriz/friendly-snippets",
+    "saadparwaiz1/cmp_luasnip",
+    -- LSP (Completion Source)
     "hrsh7th/cmp-nvim-lsp",
-    "windwp/nvim-autopairs",
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     local function border(hl_name)
       return {
@@ -38,7 +43,35 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            if luasnip.expandable() then
+              luasnip.expand()
+            else
+              cmp.confirm({ select = true })
+            end
+          else
+            fallback()
+          end
+        end),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.locally_jumpable(1) then
+            luasnip.jump(1)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
       }),
       snippet = {
         expand = function(args)
