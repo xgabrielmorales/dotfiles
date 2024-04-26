@@ -2,11 +2,18 @@ local lspconfig = require("lspconfig")
 local M = require("config.lsp.lsp-config")
 
 local servers = {
-  "bashls",        -- https://github.com/bash-lsp/bash-language-server
-  "dockerls",      -- https://github.com/rcjsuen/dockerfile-language-server-nodejs
-  "ruff_lsp",      -- https://github.com/astral-sh/ruff-lsp
-  "rust_analyzer", -- https://github.com/rust-lang/rust-analyzer
-  "tsserver",      -- https://github.com/typescript-language-server/typescript-language-server
+  -- https://github.com/bash-lsp/bash-language-server
+  "bashls",
+  -- https://github.com/astral-sh/ruff-lsp
+  "ruff_lsp",
+  -- https://github.com/rust-lang/rust-analyzer
+  "rust_analyzer",
+   -- https://github.com/typescript-language-server/typescript-language-server
+  "tsserver",
+  -- https://github.com/rcjsuen/dockerfile-language-server-nodejs
+  "dockerls",
+  -- https://github.com/microsoft/compose-language-service
+  "docker_compose_language_service"
 }
 
 for _, lsp in pairs(servers) do
