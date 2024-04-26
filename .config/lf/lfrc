@@ -8,6 +8,7 @@ set sixel true
 set icons true
 set cursorpreviewfmt "\033[7m"
 set period 1
+set hiddenfiles ".*:lost+found:*.bak:__pycache__"
 
 # MAPPINGS
 # ================================
@@ -50,6 +51,7 @@ map y
 map yy copy
 map yp yank-path
 map yn yank-name
+map p : paste; clear
 
 # CUSTOM FUNCTIONS
 # ================================
