@@ -38,7 +38,7 @@ My configuration can be found here: [Alacritty](.config/alacritty/).
 
 An essential package since Alacritty lacks panels or tabs. Tmux allows you to have multiple terminal sessions in a single window with minimal effort.
 
-My configuration can be found here: [Tmux](.tmux.conf).
+My configuration can be found here: [Tmux](.config/tmux/tmux.conf).
 
 ## File Manager: Lf
 
@@ -50,7 +50,7 @@ My configuration can be found here: [Lf](.config/lf), [Ranger](.config/ranger).
 
 I use [Neovim](https://neovim.io/) for programming; in the past, I used [Emacs](https://www.gnu.org/software/emacs/). Nowadays, I'm also learning to use [VSCode](https://code.visualstudio.com/). I try not to depend on a single editor.
 
-My configuration can be found here: [Nvim](.config/nvim/) and [Emacs](.emacs.d/).
+My configuration can be found here: [Nvim](.config/nvim/) and [Emacs](.config/emacs/).
 
 ## Others
 
