@@ -13,8 +13,7 @@ fi
 
 export XDG_SESSION_TYPE=x11
 
-
-xrdb $HOME/.Xresources
+xrdb "${XDG_CONFIG_HOME:-$HOME/.config}/X11/xresources"
 
 session="openbox"
 case $session in
