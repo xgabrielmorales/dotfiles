@@ -226,7 +226,7 @@ execp_icon_h = 0
 #-------------------------------------
 # Executor 2
 execp = new
-execp_command = ~/dotfiles/scripts/source_module --status
+execp_command = source_module --status
 execp_interval = 1
 execp_has_icon = 0
 execp_cache_icon = 0
@@ -234,11 +234,11 @@ execp_continuous = 0
 execp_markup = 0
 execp_monitor = all
 execp_tooltip = Microphone Volume
-execp_lclick_command = ~/dotfiles/scripts/source_module --toggle
+execp_lclick_command = source_module --toggle
 execp_rclick_command = 
 execp_mclick_command = 
-execp_uwheel_command = ~/dotfiles/scripts/source_module --inc
-execp_dwheel_command = ~/dotfiles/scripts/source_module --dec
+execp_uwheel_command = source_module --inc
+execp_dwheel_command = source_module --dec
 execp_font = JetBrainsMono Nerd Font 12
 execp_font_color = #b4bbc8 100
 execp_padding = 8 0
@@ -250,7 +250,7 @@ execp_icon_h = 0
 #-------------------------------------
 # Executor 3
 execp = new
-execp_command = ~/dotfiles/scripts/sink_module --status
+execp_command = sink_module --status
 execp_interval = 1
 execp_has_icon = 0
 execp_cache_icon = 0
@@ -258,11 +258,11 @@ execp_continuous = 0
 execp_markup = 0
 execp_monitor = all
 execp_tooltip = Audio Volume
-execp_lclick_command = ~/dotfiles/scripts/sink_module --toggle
+execp_lclick_command = sink_module --toggle
 execp_rclick_command = 
 execp_mclick_command = 
-execp_uwheel_command = ~/dotfiles/scripts/sink_module --inc
-execp_dwheel_command = ~/dotfiles/scripts/sink_module --dec
+execp_uwheel_command = sink_module --inc
+execp_dwheel_command = sink_module --dec
 execp_font = JetBrainsMono Nerd Font 12
 execp_font_color = #b4bbc8 100
 execp_padding = 8 0

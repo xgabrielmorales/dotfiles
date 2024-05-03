@@ -11,14 +11,14 @@ mic_status() {
 case $1 in
     "--status")
         mic_status
-        ;;
+    ;;
     "--toggle")
         pactl set-source-mute "$MIC" toggle
-        ;;
+    ;;
     "--inc")
         pactl set-source-volume @DEFAULT_SOURCE@ +5%
-        ;;
+    ;;
     "--dec")
         pactl set-source-volume @DEFAULT_SOURCE@ -5%
-        ;;
+    ;;
 esac
