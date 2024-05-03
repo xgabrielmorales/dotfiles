@@ -1,3 +1,7 @@
 #!/usr/bin/bash
 
-redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | awk 'OFS=":" {print $3,$5}' | tr -d ',}')
+LOCATION_SERVICE="https://location.services.mozilla.com/v1/geolocate?key=geoclue"
+
+coordinates=$(curl --silent "$LOCATION_SERVICE" | jq --raw-output '.location | "\(.lat):\(.lng)"')
+
+redshift -r -l "$coordinates"

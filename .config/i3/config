@@ -16,7 +16,7 @@ set $Super Mod4
 set $Super_keycode 133
 
 # Emulador de Terminal
-set $myTerm $HOME/dotfiles/scripts/recycle.sh alacritty Alacritty
+set $myTerm recycle alacritty Alacritty
 
 # ======================================================================
 # APARIENCIA
