@@ -24,4 +24,4 @@ killall -q -9 polybar picom plank xfce-polkit
 /usr/lib/xfce-polkit/xfce-polkit &
 
 # Redshift
-$HOME/dotfiles/scripts/redshift &
+$HOME/.local/bin/night_light &
