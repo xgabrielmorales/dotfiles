@@ -1,0 +1,18 @@
+#!/bin/bash
+
+file="$HOME/Pictures/Screenshots/ss.$(date +'%Y-%m-%dT%H:%M:%S').png"
+
+trap "rm -f '$file'" INT
+
+case $1 in
+    "-s" | "--screen" | "Screen")
+        maim --nokeyboard \
+        | tee "$file" \
+        | xclip -selection clipboard -target image/png -in
+    ;;
+    "-S" | "--selection" | "Selection")
+        maim --select --hidecursor --nokeyboard \
+        | tee "$file" \
+        | xclip -selection clipboard -target image/png -in
+    ;;
+esac

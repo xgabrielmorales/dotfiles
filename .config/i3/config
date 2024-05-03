@@ -219,8 +219,8 @@ bindsym $Super+XF86AudioNext exec mpc seek +5
 bindsym Pause exec $HOME/dotfiles/scripts/polybar_microphone_module --toggle
 
 # Toma capturas de pantalla
-bindsym Print exec $HOME/dotfiles/scripts/screenshots "Screen"
-bindsym $Super+s exec $HOME/dotfiles/scripts/screenshots "Selection"
+bindsym Print exec screenshot --screen
+bindsym $Super+s exec screenshot --Selection
 # ======================================================================
 # AUTORUN
 # ======================================================================

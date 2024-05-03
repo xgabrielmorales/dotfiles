@@ -328,12 +328,12 @@
     <!-- Screenshot Keys -->
     <keybind key="Print">
       <action name="Execute">
-        <command>~/dotfiles/scripts/screenshots "Screen"</command>
+        <command>screenshot --screen</command>
       </action>
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>~/dotfiles/scripts/screenshots "Selection"</command>
+        <command>screenshot --selection</command>
       </action>
     </keybind>
   </keyboard>
