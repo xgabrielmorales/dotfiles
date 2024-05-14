@@ -1,7 +1,7 @@
 [Default Applications]
 text/plain=text.desktop
-
 application/json=text.desktop
+
 application/pdf=pdf.desktop
 
 video/mp4=video.desktop
