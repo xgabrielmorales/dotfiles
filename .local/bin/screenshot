@@ -11,7 +11,7 @@ case $1 in
         | xclip -selection clipboard -target image/png -in
     ;;
     "-S" | "--selection" | "Selection")
-        maim --select --hidecursor --nokeyboard \
+        maim --select --hidecursor --nokeyboard --bordersize=2 \
         | tee "$file" \
         | xclip -selection clipboard -target image/png -in
     ;;
