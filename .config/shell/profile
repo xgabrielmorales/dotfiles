@@ -1,0 +1,17 @@
+#!/bin/sh
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+export READER="zathura"
+export BROWSER="librewolf"
+
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export HISTORY_IGNORE="(ls|cd|pwd|exit|history|cd -|cd ..)"
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

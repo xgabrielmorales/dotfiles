@@ -1,0 +1,6 @@
+#!/bin/sh
+
+PLUGIN_DIR="/usr/share/zsh/plugins"
+
+source "$PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"

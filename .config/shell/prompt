@@ -1,0 +1,36 @@
+#!/bin/sh
+
+setopt PROMPT_SUBST
+
+autoload -Uz vcs_info
+
+precmd() { vcs_info }
+
+typeset -lA fg=(
+    xgm_cyan   "#56B6C2"
+    xgm_green  "#98c379"
+    xgm_red    "#E06C75"
+    xgm_yellow "#E5C07B"
+)
+
+local formats=" %b%c%u%m"
+local actionformats="${formats} %a"
+
+zstyle ":vcs_info:*" enable git
+zstyle ":vcs_info:*" formats           $formats
+zstyle ":vcs_info:*" actionformats     $actionformats
+zstyle ":vcs_info:*" stagedstr         " %F{${fg[xgm_yellow]}}%f"
+zstyle ":vcs_info:*" unstagedstr       " %F{${fg[xgm_green]}}%f"
+zstyle ":vcs_info:git*+set-message:*"  hooks git-untracked
+zstyle ":vcs_info:*" check-for-changes true
+
++vi-git-untracked() {
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+    git status --porcelain | grep --max-count=1 '^??' &> /dev/null; then
+        hook_com[misc]+=" %F{${fg[xgm_cyan]}}%f"
+    fi
+}
+
+local current_dir="%F{${fg[xgm_yellow]}}%~%f"
+
+PROMPT=$'${current_dir} ${vcs_info_msg_0_}\n⇒ '
