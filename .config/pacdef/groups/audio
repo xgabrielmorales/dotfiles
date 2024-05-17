@@ -1,0 +1,11 @@
+# vim: ft=dosini
+
+[arch]
+bluez
+bluez-utils
+libpulse
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+wireplumber

@@ -1,0 +1,10 @@
+# vim: ft=dosini
+
+[arch]
+openbox
+picom
+rofi
+rofi-calc
+skippy-xd-git
+tint2
+xfce4-notifyd

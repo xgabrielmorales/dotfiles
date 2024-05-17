@@ -1,5 +1,4 @@
-^/scripts
-
+\.config/pacdef
 \.git
 \.gitignore
 \.gitmodules

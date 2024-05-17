@@ -1,0 +1,9 @@
+# vim: ft=dosini
+
+[arch]
+arc-gtk-theme
+lxappearance
+nitrogen
+noto-fonts-cjk
+papirus-icon-theme
+ttf-twemoji

@@ -1,0 +1,15 @@
+# vim: ft=dosini
+
+[arch]
+ansible
+datagrip
+datagrip-jre
+difftastic
+docker
+docker-compose
+git
+git-extras-git
+postman-bin
+python-pip
+python-pipx
+ruff

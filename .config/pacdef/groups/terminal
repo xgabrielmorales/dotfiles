@@ -1,0 +1,16 @@
+# vim: ft=dosini
+
+[arch]
+alacritty
+bat
+csvlens
+htop
+jq
+lf
+maim
+ncdu
+ranger
+tmux
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
