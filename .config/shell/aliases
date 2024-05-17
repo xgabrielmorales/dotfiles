@@ -1,9 +1,14 @@
 #!/bin/sh
 
 # Directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 alias dl="cd ~/Downloads && ls -l"
 alias doc="cd ~/Documents && ls -l"
 alias dotfiles="cd ~/dotfiles && ls -l"
+alias work="cd ~/Documents/Work && ls -la"
 
 # Clipboard
 alias cbcopy="xclip -selection clipboard"
