@@ -271,7 +271,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>skippy-xd --expose</command>
+        <command>skippy-xd</command>
       </action>
     </keybind>
     <keybind key="W-c">
