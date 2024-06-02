@@ -4,6 +4,8 @@
 
 This repository contains the configuration files for my WorkStation. Feel free to take and modify whatever you like; however, keep in mind that what is shown here reflects my personal preferences. Therefore, I would suggest thoroughly reviewing what you take before incorporating it into your configuration.
 
+![rice](https://github.com/xgabrielmorales/dotfiles/assets/50029987/ee183470-b255-4df0-a72e-0c7b33920406)
+
 ## Distro: Arch Linux
 
 I use [Arch Linux](https://archlinux.org/) as my primary and only distribution. I appreciate the simplicity of the distro; I like the abundance of packages from [Pacman](https://archlinux.org/packages/) and [AUR](https://aur.archlinux.org/); I value its thorough and comprehensive documentation.
