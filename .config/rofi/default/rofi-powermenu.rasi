@@ -4,22 +4,8 @@ window {
     width: 300px;
 }
 
-prompt {
-    padding: 6px 7px 4px 7px;
-    background-color: @bga;
-    text-color: @fg;
-}
-
-textbox-prompt-colon {
-    padding: 6px 7px 4px 7px;
-    background-color: @ac;
-    text-color: @fg;
-    expand: false;
-    str: "";
-}
-
 inputbar {
-    children: [ textbox-prompt-colon, prompt ];
+    enabled: false;
 }
 
 listview {

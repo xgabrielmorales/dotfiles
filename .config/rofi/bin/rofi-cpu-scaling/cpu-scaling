@@ -6,4 +6,4 @@ ROFI="rofi -dmenu -theme $THEME -p Governor"
 governors=("Conservative" "Ondemand" "Performance" "Powersave" "Schedutil" "Userspace")
 governor=$(printf "%s\n" "${governors[@]}" | $ROFI | tr '[:upper:]' '[:lower:]')
 
-[[ -n $governor ]] && sudo -A cpupower frequency-set --governor "$governor" > /dev/null
+[[ -n $governor ]] && sudo -A cpupower frequency-set --governor "$governor" >/dev/null

@@ -1,0 +1,19 @@
+mode-switcher {
+    enabled: true;
+    background-color: #282C34;
+    border-radius: 8px;
+}
+
+button {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+
+    text-color: @fga;
+    background-color: #282C34;
+}
+
+button.selected {
+    text-color: @fg;
+    background-color: @ac;
+}

@@ -1,0 +1,43 @@
+listview {
+    background-color: @al;
+    padding: 0px;
+    columns: 2;
+    lines: 10;
+    spacing: 6px;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+    scrollbar: false;
+}
+
+element {
+    background-color: @bg;
+    text-color: @fga;
+    orientation: horizontal;
+    border-radius: 0px;
+    padding: 4px;
+}
+
+element-icon {
+    size: 1em;
+    text-color: inherit;
+    background-color: transparent;
+}
+
+element-text {
+    expand: false;
+    width: 500px;
+    horizontal-align: 0;
+    vertical-align: 0.5;
+    margin: 0px 2.5px 0px 2.5px;
+    background-color: @al;
+    text-color: @fga;
+}
+
+element selected {
+    background-color: @se;
+    text-color: @fga;
+    border: 0px 0px 0px 0px;
+    border-radius: 7px;
+    border-color: @ac;
+}
