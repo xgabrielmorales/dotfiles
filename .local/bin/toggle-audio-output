@@ -131,6 +131,9 @@ def set_default_sink_port(sink: AvailableSink) -> None:
 def main() -> int:
     avalible_sinks: list[AvailableSink] = get_avalible_sinks()
 
+    if not avalible_sinks:
+        return 0
+
     if len(avalible_sinks) == 1:
         selected_sink: AvailableSink = next(iter(avalible_sinks))
     else:
