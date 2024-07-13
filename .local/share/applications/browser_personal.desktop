@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=LibreWolf (Personal)
+Exec=/usr/lib/librewolf/librewolf -P Personal
+Icon=librewolf
