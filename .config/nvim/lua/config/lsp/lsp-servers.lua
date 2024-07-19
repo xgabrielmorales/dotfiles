@@ -13,7 +13,9 @@ local servers = {
   -- https://github.com/rcjsuen/dockerfile-language-server-nodejs
   "dockerls",
   -- https://github.com/microsoft/compose-language-service
-  "docker_compose_language_service"
+  "docker_compose_language_service",
+  -- https://github.com/hrsh7th/vscode-langservers-extracted
+  "jsonls",
 }
 
 for _, lsp in pairs(servers) do
