@@ -6,9 +6,6 @@
 [core]
     editor = nvim
 
-[diff]
-    external = difft
-
 [push]
     autoSetupRemote = true
 
