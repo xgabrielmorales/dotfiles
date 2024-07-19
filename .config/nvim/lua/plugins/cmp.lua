@@ -6,10 +6,13 @@ return {
     "saadparwaiz1/cmp_luasnip",
     -- LSP (Completion Source)
     "hrsh7th/cmp-nvim-lsp",
+    -- Pictograms for LSP completion items
+    "onsails/lspkind.nvim"
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+    local lspkind = require('lspkind')
 
     require("luasnip.loaders.from_snipmate").lazy_load()
 
@@ -27,6 +30,14 @@ return {
     end
 
     cmp.setup({
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = 'symbol_text',
+          maxwidth = 50,
+          ellipsis_char = '...',
+          show_labelDetails = true
+        })
+      },
       window = {
         completion = {
           border = border("CmpDocBorder"),
