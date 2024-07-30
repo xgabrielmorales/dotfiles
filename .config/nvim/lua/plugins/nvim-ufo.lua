@@ -3,11 +3,8 @@ return {
   dependencies = {
     "kevinhwang91/promise-async",
   },
-  opts = {
-    provider_selector = function(bufnr, filetype, buftype)
-      return { 'treesitter', 'indent' }
-    end
-  },
+  -- lazy = true,
+  opts = require("config.nvim-ufo"),
   config = function(_, opts)
     vim.o.foldlevel = 99
     vim.o.foldlevelstart = 99
