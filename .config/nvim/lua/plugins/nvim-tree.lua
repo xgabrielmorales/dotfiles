@@ -23,8 +23,14 @@ return {
   opts = {
     on_attach = on_attach,
     sort_by = "case_sensitive",
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_focused_file = {
+      enable = true,
+      update_root = true
+    },
     view = {
-      width = 25,
+      width = 40,
       side = "right",
       adaptive_size = true,
     },
