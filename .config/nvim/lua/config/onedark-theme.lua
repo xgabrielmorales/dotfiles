@@ -9,4 +9,8 @@ return {
     functions = "none",
     variables = "none",
   },
+  highlights = {
+    NormalFloat = { bg = "NONE" },
+    FloatBorder = { bg = "NONE", fg = "#ABB2BF" },
+  },
 }
