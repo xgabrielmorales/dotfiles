@@ -9,5 +9,5 @@ return {
     vim.o.foldlevel = 99
     vim.o.foldlevelstart = 99
     require("ufo").setup(opts)
-  end
+  end,
 }

@@ -18,7 +18,6 @@ local function on_attach(bufnr)
   map("n", "<C-h>", api.tree.toggle_hidden_filter, opts)
 end
 
-
 return {
   on_attach = on_attach,
   sort_by = "case_sensitive",
@@ -26,7 +25,7 @@ return {
   respect_buf_cwd = true,
   update_focused_file = {
     enable = true,
-    update_root = true
+    update_root = true,
   },
   view = {
     width = 40,

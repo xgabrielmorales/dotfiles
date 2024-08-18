@@ -12,5 +12,5 @@ return {
     require("mason").setup(mason_opts)
     require("mason-lspconfig").setup(mason_lspconfig_opts)
     require("mason-null-ls").setup(mason_null_ls_opts)
-  end
+  end,
 }

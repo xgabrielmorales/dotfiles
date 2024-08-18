@@ -1,6 +1,6 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
-local lspkind = require('lspkind')
+local lspkind = require("lspkind")
 
 require("luasnip.loaders.from_snipmate").lazy_load()
 
@@ -20,11 +20,11 @@ end
 cmp.setup({
   formatting = {
     format = lspkind.cmp_format({
-      mode = 'symbol_text',
+      mode = "symbol_text",
       maxwidth = 50,
-      ellipsis_char = '...',
-      show_labelDetails = true
-    })
+      ellipsis_char = "...",
+      show_labelDetails = true,
+    }),
   },
   window = {
     completion = {
@@ -79,5 +79,5 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "luasnip" },
-  })
+  }),
 })
