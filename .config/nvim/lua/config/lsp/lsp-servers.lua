@@ -24,6 +24,13 @@ lspconfig.jedi_language_server.setup({
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   init_options = {
+    jediSettings = {
+      autoImportModules = { "numpy", "pandas", "bs4" },
+    },
+    codeAction = {
+      nameExtractFunction = { enable = false },
+      nameExtractVariable = { enable = false },
+    },
     diagnostics = {
       enable = false,
     },
