@@ -8,7 +8,7 @@ local servers = {
   "eslint",
   "ruff_lsp",
   "rust_analyzer",
-  "tsserver",
+  "ts_ls",
 }
 
 for _, lsp in pairs(servers) do

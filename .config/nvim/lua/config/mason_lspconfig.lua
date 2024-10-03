@@ -8,7 +8,7 @@ return {
     "lua_ls", -- https://github.com/LuaLS/lua-language-server
     "ruff_lsp", -- https://github.com/astral-sh/ruff-lsp
     "rust_analyzer", -- https://github.com/rust-lang/rust-analyzer
-    "tsserver", -- https://github.com/typescript-language-server/typescript-language-server
+    "ts_ls", -- https://github.com/typescript-language-server/typescript-language-server
     "eslint",
   },
 }
