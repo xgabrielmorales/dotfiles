@@ -14,7 +14,7 @@ local servers = {
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup({
     on_attach = M.on_attach,
-    capabilites = M.capabilities,
+    capabilities = M.capabilities,
   })
 end
 
