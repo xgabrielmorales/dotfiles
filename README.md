@@ -1,70 +1,68 @@
 # ~/dotfiles
 
-[![en](https://img.shields.io/badge/lang-en-red.svg)](./README.en.md)
-
-Este repositorio contiene los archivos de configuración de mi WorkStation. Eres libre de tomar y modificar lo que gustes, sin embargo, ten en cuenta que lo que aquí se muestra son mis preferencias personales. Por tal razón, te sugeriría que revises bien lo que tomes antes de adjuntarlo a tu configuración.
+This repository contains the configuration files for my WorkStation. Feel free to take and modify whatever you like; however, keep in mind that what is shown here reflects my personal preferences. Therefore, I would suggest thoroughly reviewing what you take before incorporating it into your configuration.
 
 ![rice](https://github.com/xgabrielmorales/dotfiles/assets/50029987/ee183470-b255-4df0-a72e-0c7b33920406)
 
 ## Distro: Arch Linux
 
-Uso [Arch Linux](https://archlinux.org/) como única distro principal. Me gusta la simplicidad de la distro; me gusta la riqueza de paquetes de [Pacman](https://archlinux.org/packages/) y [AUR](https://aur.archlinux.org/); me gusta la buena y completa documentación que la acompaña.
+I use [Arch Linux](https://archlinux.org/) as my primary and only distribution. I appreciate the simplicity of the distro; I like the abundance of packages from [Pacman](https://archlinux.org/packages/) and [AUR](https://aur.archlinux.org/); I value its thorough and comprehensive documentation.
 
 ## Window Manager: Openbox
 
-[Openbox](http://openbox.org) es un, y mi actual, *floating* window manager. Es una excelente opción como entorno de escritorio ya que trae lo justo para funcionar.
+[Openbox](http://openbox.org) is a *floating* window manager, and it's my current choice. It's an excellent option for a desktop environment as it provides just enough to function.
 
-[I3wm](https://i3wm.org/) es el *tiling* window manager que también uso. Es suficiente para mí, cumple con mis necesidades. Es fácil de configurar y de usar, sin embargo, quizás un poco limitado en cuanto a lo que puedes hacer con él.
+[I3wm](https://i3wm.org/) is the *tiling* window manager I also use. It's sufficient for my needs, easy to configure, and use, although perhaps somewhat limited in terms of flexibility.
 
-Mi configuración la puedes encontrar aquí: [Openbox](.config/openbox/), [i3wm](.config/i3/).
+You can find my configuration here: [Openbox](.config/openbox/), [i3wm](.config/i3/).
 
 ## Status Bars: Tint2
 
-[Tint2](https://github.com/o9000/tint2) es mi actual barra de estado. En el pasado, utilizaba [Polybar](https://polybar.github.io/). Ambas son fáciles de usar y configurar. No son nada especiales, pero cumplen su función.
+[Tint2](https://github.com/o9000/tint2) is my current status bar. In the past, I used [Polybar](https://polybar.github.io/). Both are easy to use and configure. They're nothing special but get the job done.
 
-Mi configuración se puede encontrar aquí: [Tint2](.config/tint2), [Polybar](.config/polybar).
+My configuration can be found here: [Tint2](.config/tint2), [Polybar](.config/polybar).
 
 ## Window Switcher: Rofi
 
-Mi window switcher de preferencia, más por lo estético, es Rofi. Dmenu me parece muy "plano". Sin embargo, Rofi es igualmente ligero, rápido y simple, que es lo que se busca.
+My preferred window switcher, more for its aesthetics, is Rofi. I find Dmenu to be too "plain". However, Rofi is equally lightweight, fast, and simple, which is what I'm after.
 
-Mi configuración se puede encontrar aquí: [Rofi](.config/rofi).
+My configuration can be found here: [Rofi](.config/rofi).
 
-## Emulador de Terminal: Alacritty
+## Terminal Emulator: Alacritty
 
-En mi búsqueda de la simpleza, he utilizado muchos emuladores de terminal, pero solo con [Alacritty](https://alacritty.org/) he encontrado lo que busco.
+In my quest for simplicity, I've used many terminal emulators, but only with [Alacritty](https://alacritty.org/) have I found what I'm looking for.
 
-Mi configuración la puedes encontrar aquí: [Alacritty](.config/alacritty/).
+My configuration can be found here: [Alacritty](.config/alacritty/).
 
 ### Terminal Multiplexer: Tmux
 
-Un paquete fundamental ya que Alacritty no cuenta ni con paneles ni pestañas. Tmux te permite tener múltiples sesiones de terminal en una misma ventana, con el menor esfuerzo posible.
+An essential package since Alacritty lacks panels or tabs. Tmux allows you to have multiple terminal sessions in a single window with minimal effort.
 
-Mi configuración la puedes encontrar aquí: [Tmux](.config/tmux/tmux.conf).
+My configuration can be found here: [Tmux](.config/tmux/tmux.conf).
 
 ## File Manager: Lf
 
-[Lf](https://github.com/gokcehan/lf), antes [Ranger](https://github.com/ranger/ranger), es mi gestor de archivos para todo, excepto para esos casos en los que necesito arrastrar un archivo a algún sitio. Es simple, es rápido, utiliza los atajos de teclado de Vim y es muy extensible.
+[Lf](https://github.com/gokcehan/lf), formerly [Ranger](https://github.com/ranger/ranger), is my file manager for everything except when I need to drag a file somewhere. It's simple, fast, uses Vim keybindings, and is highly extensible.
 
-Mi configuración la puedes encontrar aquí: [Lf](.config/lf), [Ranger](.config/ranger).
+My configuration can be found here: [Lf](.config/lf), [Ranger](.config/ranger).
 
-## Editor de Texto - Neovim
+## Text Editor - Neovim
 
-Uso [Neovim](https://neovim.io/) para programar, en el pasado usé [Emacs](https://www.gnu.org/software/emacs/). Hoy en día también estoy aprendiendo a usar [VSCode](https://code.visualstudio.com/). Intento no depender de un único editor.
+I use [Neovim](https://neovim.io/) for programming; in the past, I used [Emacs](https://www.gnu.org/software/emacs/). Nowadays, I'm also learning to use [VSCode](https://code.visualstudio.com/). I try not to depend on a single editor.
 
-Mi configuración la puedes encontrar aquí: [Nvim](.config/nvim/) y [Emacs](.config/emacs/).
+My configuration can be found here: [Nvim](.config/nvim/) and [Emacs](.config/emacs/).
 
-## Otro
+## Others
 
-Paquetes no listados:
+Unlisted packages:
 
 - Browser: [Librewolf](https://librewolf.net/)
 - Document viewer: [Zathura](https://wiki.archlinux.org/title/Zathura)
 - Media Player: [Mpv](https://wiki.archlinux.org/title/Mpv)
 - Music Player: [Mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) + Mpc + [Rofi MPD](https://github.com/xgabrielmorales/rofi-mpd)
 
-### Fuentes tipográficas
+### Typography Fonts
 
-- Iconos: [Feather](https://github.com/AT-UI/feather-font)
-- Monoespaciada: [JetBrains Mono Nerd Font](https://www.jetbrains.com/lp/mono/)
-- Proporcional: [Cantarell](https://fonts.google.com/specimen/Cantarell)
+- Icons: [Feather](https://github.com/AT-UI/feather-font)
+- Monospace: [JetBrains Mono Nerd Font](https://www.jetbrains.com/lp/mono/)
+- Proportional: [Cantarell](https://fonts.google.com/specimen/Cantarell)
