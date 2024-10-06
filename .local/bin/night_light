@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-
-LOCATION_SERVICE="https://location.services.mozilla.com/v1/geolocate?key=geoclue"
-
-coordinates=$(curl --silent "$LOCATION_SERVICE" | jq --raw-output '.location | "\(.lat):\(.lng)"')
-
-redshift -r -l "$coordinates"

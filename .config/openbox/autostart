@@ -26,4 +26,4 @@ killall -q -9 polybar picom plank xfce-polkit
 sleep 3;
 
 # Redshift
-$HOME/.local/bin/night_light &
+redshift &
