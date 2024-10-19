@@ -249,7 +249,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>recycle alacritty Alacritty</command>
+        <command>recycle alacritty</command>
       </action>
     </keybind>
     <!-- Toggle audio output -->

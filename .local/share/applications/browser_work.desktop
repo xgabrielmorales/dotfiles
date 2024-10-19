@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=LibreWolf (Work)
-Exec=/usr/lib/librewolf/librewolf -P Work
+Exec=recycle librewolf -P Work
 Icon=librewolf
