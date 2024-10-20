@@ -16,8 +16,3 @@ setopt SHARE_HISTORY
 
 # See: https://wiki.archlinux.org/title/GNOME/Keyring#SSH_keys
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
