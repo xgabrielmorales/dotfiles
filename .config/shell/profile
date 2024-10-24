@@ -16,3 +16,6 @@ setopt SHARE_HISTORY
 
 # See: https://wiki.archlinux.org/title/GNOME/Keyring#SSH_keys
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+
+# Disable Ctrl+S / Ctrl+Q
+stty -ixon
