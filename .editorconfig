@@ -16,3 +16,7 @@ indent_size = 2
 [*.{py,sh,rs,el,lisp,org,toml,sql}]
 indent_style = space
 indent_size = 4
+
+[Dockerfile]
+indent_style = space
+indent_size = 4
