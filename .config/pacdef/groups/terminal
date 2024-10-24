@@ -4,6 +4,7 @@
 alacritty
 bat
 csvlens
+exa
 htop
 jq
 lf
@@ -13,5 +14,5 @@ ranger
 tmux
 zsh
 zsh-autosuggestions
-zsh-syntax-highlighting
 zsh-history-substring-search
+zsh-syntax-highlighting

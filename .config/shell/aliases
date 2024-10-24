@@ -15,7 +15,8 @@ alias cbcopy="xclip -selection clipboard"
 alias cbpaste="xclip -selection clipboard -o"
 
 # Shortcuts
-alias ls="ls -FXAvhc --color=auto --group-directories-first --time-style=+'%H:%M %y/%m/%d' "
+alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{printf \"%s: %s\n\", \$NF, \$2}'"
+alias ls="exa -F --all --header --group-directories-first --icons"
 alias vim="nvim"
 
 # Functions
