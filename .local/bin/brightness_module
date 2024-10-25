@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BRIGHTNESS_ICON=""
+
+case "$1" in
+    "--status")
+    echo "$BRIGHTNESS_ICON $(xbacklight -get)%"
+    ;;
+    "--inc")
+        [[ "$(xbacklight -get)" == "100" ]] && exit;
+        xbacklight -inc 10
+    ;;
+    "--dec")
+        [[ "$(xbacklight -get)" == "10" ]] && exit;
+        xbacklight -dec 10
+    ;;
+esac
