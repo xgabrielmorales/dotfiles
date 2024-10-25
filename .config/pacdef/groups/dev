@@ -4,12 +4,11 @@
 ansible
 datagrip
 datagrip-jre
-difftastic
 docker
 docker-compose
 git
 git-extras-git
-postman-bin
+postman-agent
 python-pip
 python-pipx
 ruff

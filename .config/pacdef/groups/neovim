@@ -1,14 +1,8 @@
 # vim: ft=dosini
 
 [arch]
-bash-language-server
 fd
 hunspell
-jdtls
-jedi-language-server
-lua-language-server
 neovim
 ripgrep
-ruff-lsp
-stylua
 xclip
