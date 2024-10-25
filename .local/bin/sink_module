@@ -1,12 +1,23 @@
 #!/bin/bash
 
+VOLUME_ICON=""
+MUTE_ICON=""
+
 sink_status() {
-    local status=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -o "Mute: yes")
-    local volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')
-    [[ $status == "Mute: yes" ]] && echo  || echo " $volume";
+    local status
+    local volume
+
+    status=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -o "Mute: yes")
+    volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')
+
+    if [[ $status == "Mute: yes" ]]; then
+        echo "$MUTE_ICON"
+    else
+        echo "$VOLUME_ICON $volume";
+    fi
 }
 
-case $1 in
+case "$1" in
     "--status")
         sink_status
     ;;
@@ -14,9 +25,11 @@ case $1 in
         pactl set-sink-mute @DEFAULT_SINK@ toggle
     ;;
     "--inc")
+        [[ "$(sink_status)" == "$VOLUME_ICON 100%" ]] && exit;
         pactl set-sink-volume @DEFAULT_SINK@ +5%
     ;;
     "--dec")
+        [[ "$(sink_status)" == "$VOLUME_ICON 0%" ]] && exit;
         pactl set-sink-volume @DEFAULT_SINK@ -5%
     ;;
 esac

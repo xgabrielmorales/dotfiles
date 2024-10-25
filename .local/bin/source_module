@@ -1,22 +1,35 @@
 #!/bin/bash
 
-mic_status() {
+SOURCE_ICON=""
+SOURCE_MUTED_ICON=""
+
+source_status() {
+    local status
+    local volume
+
     status=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -o "Mute: yes")
     volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}')
-    [[ $status == "Mute: yes" ]] && echo  || echo " $volume";
+
+    if [[ $status == "Mute: yes" ]]; then
+        echo "$SOURCE_MUTED_ICON"
+    else
+        echo "$SOURCE_ICON $volume";
+    fi
 }
 
-case $1 in
+case "$1" in
     "--status")
-        mic_status
+        source_status
     ;;
     "--toggle")
         pactl set-source-mute @DEFAULT_SOURCE@ toggle
     ;;
     "--inc")
-        pactl set-source-volume @DEFAULT_SOURCE@ +5%
+        [[ "$(source_status)" == "$SOURCE_ICON 100%" ]] && exit;
+        pactl set-source-volume @DEFAULT_SOURCE@ +10%
     ;;
     "--dec")
-        pactl set-source-volume @DEFAULT_SOURCE@ -5%
+        [[ "$(source_status)" == "$SOURCE_ICON 0%" ]] && exit;
+        pactl set-source-volume @DEFAULT_SOURCE@ -10%
     ;;
 esac
