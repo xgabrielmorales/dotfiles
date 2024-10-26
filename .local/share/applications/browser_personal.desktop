@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=LibreWolf (Personal)
-Exec=recycle librewolf -P Personal
+Exec=librewolf -P Personal --new-tab "about:home"
 Icon=librewolf
