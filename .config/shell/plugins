@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-PLUGIN_DIR="/usr/share/zsh/plugins"
+PLUGIN_DIR="$XDG_CONFIG_HOME/shell/external-plugins"
 
 source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$PLUGIN_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh"

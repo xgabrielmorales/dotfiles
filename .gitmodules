@@ -1,0 +1,9 @@
+[submodule ".config/shell/external-plugins/zsh-syntax-highlighting"]
+	path = .config/shell/external-plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".config/shell/external-plugins/zsh-autosuggestions"]
+	path = .config/shell/external-plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".config/shell/external-plugins/zsh-history-substring-search"]
+	path = .config/shell/external-plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
