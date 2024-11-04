@@ -6,7 +6,7 @@ export READER="zathura"
 export BROWSER="librewolf"
 
 export HISTFILE="$XDG_DATA_HOME/.zsh_history"
-export HISTORY_IGNORE="(ls|cd|pwd|exit|history|cd -|cd ..)"
+export HISTORY_IGNORE="(ls|cd|pwd|exit|history|cd -|cd ..|rm)"
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export SAVEHIST=10000
