@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=LibreWolf (Work)
-Exec=librewolf -P Work --new-tab "about:home"
-Icon=librewolf
