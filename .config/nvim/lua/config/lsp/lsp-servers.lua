@@ -6,7 +6,7 @@ local servers = {
   "docker_compose_language_service",
   "dockerls",
   "eslint",
-  "ruff_lsp",
+  "ruff",
   "rust_analyzer",
   "ts_ls",
 }

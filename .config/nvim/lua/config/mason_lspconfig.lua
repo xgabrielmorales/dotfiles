@@ -6,7 +6,7 @@ return {
     "jedi_language_server", -- https://github.com/pappasam/jedi-language-server
     "jsonls", -- https://github.com/hrsh7th/vscode-langservers-extracted
     "lua_ls", -- https://github.com/LuaLS/lua-language-server
-    "ruff_lsp", -- https://github.com/astral-sh/ruff-lsp
+    "ruff", -- https://github.com/astral-sh/ruff-lsp
     "rust_analyzer", -- https://github.com/rust-lang/rust-analyzer
     "ts_ls", -- https://github.com/typescript-language-server/typescript-language-server
     "eslint",
