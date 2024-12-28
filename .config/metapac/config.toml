@@ -1,0 +1,3 @@
+# Must be one of: ["pacman", "paru", "pikaur", "yay"]
+# Default: "pacman"
+arch_package_manager = "yay"

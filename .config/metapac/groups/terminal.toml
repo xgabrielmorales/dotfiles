@@ -1,0 +1,14 @@
+arch = [
+    "alacritty",
+    "bat",
+    "csvlens",
+    "eza",
+    "htop",
+    "jq",
+    "lf",
+    "maim",
+    "ncdu",
+    "ranger",
+    "tmux",
+    "zsh",
+]

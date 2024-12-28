@@ -1,0 +1,8 @@
+arch = [
+    "openbox",
+    "picom",
+    "rofi",
+    "rofi-calc",
+    "tint2",
+    "xfce4-notifyd",
+]

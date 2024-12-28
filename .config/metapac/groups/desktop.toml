@@ -1,0 +1,15 @@
+arch = [
+    "blueman",
+    "cameractrls",
+    "flameshot",
+    "gucharmap",
+    "librewolf-bin",
+    "mpv",
+    "pavucontrol",
+    "redshift",
+    "seahorse",
+    "thunar",
+    "viewnior",
+    "zathura",
+    "zathura-pdf-mupdf",
+]

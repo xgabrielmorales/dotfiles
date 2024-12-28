@@ -1,0 +1,6 @@
+arch = [
+    "fd",
+    "hunspell",
+    "neovim",
+    "ripgrep",
+]

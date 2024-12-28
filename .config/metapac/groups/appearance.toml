@@ -1,0 +1,8 @@
+arch = [
+    "arc-gtk-theme",
+    "lxappearance",
+    "nitrogen",
+    "noto-fonts",
+    "papirus-icon-theme",
+    "ttf-twemoji",
+]

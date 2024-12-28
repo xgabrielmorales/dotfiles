@@ -1,0 +1,16 @@
+arch = [
+    "ansible",
+    "docker",
+    "docker-compose",
+    "git",
+    "git-extras-git",
+    "npm",
+    "postman-agent",
+    "python-pip",
+    "python-pipx",
+]
+
+pipx = [
+    "poetry",
+    "uv",
+]
