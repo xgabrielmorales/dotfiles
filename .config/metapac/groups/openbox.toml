@@ -5,4 +5,8 @@ arch = [
     "rofi-calc",
     "tint2",
     "xfce4-notifyd",
+    "xorg-server",
+    "xorg-xinit",
+    "xorg-xrandr",
+    "xorg-xset",
 ]

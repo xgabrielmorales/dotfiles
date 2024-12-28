@@ -1,5 +1,6 @@
 arch = [
     "ansible",
+    "ctop",
     "docker",
     "docker-compose",
     "git",
@@ -8,6 +9,7 @@ arch = [
     "postman-agent",
     "python-pip",
     "python-pipx",
+    "visual-studio-code-bin",
 ]
 
 pipx = [
