@@ -1,18 +1,47 @@
 #!/bin/bash
 
-file="$HOME/Pictures/Screenshots/ss.$(date +'%Y-%m-%dT%H:%M:%S').png"
+SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+SCREENSHOT="$SCREENSHOTS_DIR/ss.$(date +'%Y-%m-%dT%H-%M-%S').png"
 
-trap "rm -f '$file'" INT
+mkdir --parent "$SCREENSHOTS_DIR"
 
-case $1 in
+case "$1" in
     "-s" | "--screen" | "Screen")
         maim --nokeyboard \
-        | tee "$file" \
+        | tee "$SCREENSHOT" \
         | xclip -selection clipboard -target image/png -in
     ;;
     "-S" | "--selection" | "Selection")
-        maim --select --hidecursor --nokeyboard --bordersize=2 \
-        | tee "$file" \
+        maim --select --hidecursor --bordersize=5 \
+        | tee "$SCREENSHOT" \
         | xclip -selection clipboard -target image/png -in
+    ;;
+esac
+
+# tee creates an empty file even if no screenshot was taken,
+# so we delete it if it is empty.
+if [ ! -s "$SCREENSHOT" ]; then
+    rm "$SCREENSHOT" && exit
+fi
+
+action=$(notify-send \
+    --app-name="Screenshot" \
+    --icon="image-x-generic-symbolic" \
+    --action="edit=Edit" \
+    --action="view=View" \
+    --action="delete=Delete" \
+    "Screenshot Taken" \
+    "It has been saved to the clipboard." \
+)
+
+case "$action" in
+    "edit")
+        swappy -f "$SCREENSHOT"
+    ;;
+    "view")
+        xdg-open "$SCREENSHOT"
+    ;;
+    "delete")
+        rm "$SCREENSHOT"
     ;;
 esac

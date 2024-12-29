@@ -6,7 +6,6 @@ arch = [
     "htop",
     "jq",
     "lf",
-    "maim",
     "ncdu",
     "ranger",
     "tmux",
