@@ -2,7 +2,7 @@ arch = [
     "arc-gtk-theme",
     "lxappearance",
     "nitrogen",
-    "noto-fonts",
+    "noto-fonts-cjk",
     "papirus-icon-theme",
     "ttf-twemoji",
 ]
