@@ -18,11 +18,7 @@ case "$1" in
     ;;
 esac
 
-# tee creates an empty file even if no screenshot was taken,
-# so we delete it if it is empty.
-if [ ! -s "$SCREENSHOT" ]; then
-    rm "$SCREENSHOT" && exit
-fi
+[[ ! -s "$SCREENSHOT" ]] && rm "$SCREENSHOT" && exit
 
 action=$(notify-send \
     --app-name="Screenshot" \
@@ -36,7 +32,7 @@ action=$(notify-send \
 
 case "$action" in
     "edit")
-        swappy -f "$SCREENSHOT"
+        satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT"
     ;;
     "view")
         xdg-open "$SCREENSHOT"
