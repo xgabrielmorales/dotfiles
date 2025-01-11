@@ -1,35 +1,46 @@
 #!/bin/bash
 
-VOLUME_ICON=""
-MUTE_ICON=""
+SINK_ICON=""
+SINK_MUTE_ICON=""
 
-sink_status() {
+sink_volume() {
     local status
     local volume
 
     status=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -o "Mute: yes")
-    volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')
+    [[ "$status" == "Mute: yes" ]] && echo "-1" && return 0
 
-    if [[ $status == "Mute: yes" ]]; then
-        echo "$MUTE_ICON"
+    volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -d "%")
+    echo "$volume"
+}
+
+sink_status() {
+    local volume
+
+    volume="$1"
+
+    if (( volume <= -1 )); then
+        echo "$SINK_MUTE_ICON MUTE"
     else
-        echo "$VOLUME_ICON $volume";
+        echo "$SINK_ICON $volume%"
     fi
 }
 
 case "$1" in
     "--status")
-        sink_status
+        sink_status "$(sink_volume)"
     ;;
     "--toggle")
         pactl set-sink-mute @DEFAULT_SINK@ toggle
     ;;
     "--inc")
-        [[ "$(sink_status)" == "$VOLUME_ICON 100%" ]] && exit;
-        pactl set-sink-volume @DEFAULT_SINK@ +5%
+        (( $(sink_volume) = 100 )) && exit
+        (( $(sink_volume) > 100 )) && pactl set-sink-volume @DEFAULT_SINK@ 100%
+        (( $(sink_volume) < 100 )) && pactl set-sink-volume @DEFAULT_SINK@ +10%
     ;;
     "--dec")
-        [[ "$(sink_status)" == "$VOLUME_ICON 0%" ]] && exit;
-        pactl set-sink-volume @DEFAULT_SINK@ -5%
+        (( $(sink_volume) = 0 )) && exit
+        (( $(sink_volume) < 0 )) && pactl set-sink-volume @DEFAULT_SINK@   0%
+        (( $(sink_volume) > 0 )) && pactl set-sink-volume @DEFAULT_SINK@ -10%
     ;;
 esac

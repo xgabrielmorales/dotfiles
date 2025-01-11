@@ -3,33 +3,44 @@
 SOURCE_ICON=""
 SOURCE_MUTED_ICON=""
 
-source_status() {
+source_volume() {
     local status
     local volume
 
     status=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -o "Mute: yes")
-    volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}')
+    [[ "$status" == "Mute: yes" ]] && echo "-1" && return 0
 
-    if [[ $status == "Mute: yes" ]]; then
-        echo "$SOURCE_MUTED_ICON"
+    volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | tr -d "%")
+    echo "$volume"
+}
+
+source_status() {
+    local volume
+
+    volume="$1"
+
+    if (( volume <= -1 )); then
+        echo "$SOURCE_MUTED_ICON MUTE"
     else
-        echo "$SOURCE_ICON $volume";
+        echo "$SOURCE_ICON $volume%"
     fi
 }
 
 case "$1" in
     "--status")
-        source_status
+        source_status "$(source_volume)"
     ;;
     "--toggle")
         pactl set-source-mute @DEFAULT_SOURCE@ toggle
     ;;
     "--inc")
-        [[ "$(source_status)" == "$SOURCE_ICON 100%" ]] && exit;
-        pactl set-source-volume @DEFAULT_SOURCE@ +10%
+        (( $(source_volume) = 100 )) && exit
+        (( $(source_volume) > 100 )) && pactl set-source-volume @DEFAULT_SOURCE@ 100%
+        (( $(source_volume) < 100 )) && pactl set-source-volume @DEFAULT_SOURCE@ +10%
     ;;
     "--dec")
-        [[ "$(source_status)" == "$SOURCE_ICON 0%" ]] && exit;
-        pactl set-source-volume @DEFAULT_SOURCE@ -10%
+        (( $(source_volume) = 0 )) && exit
+        (( $(source_volume) < 0 )) && pactl set-source-volume @DEFAULT_SOURCE@   0%
+        (( $(source_volume) > 0 )) && pactl set-source-volume @DEFAULT_SOURCE@ -10%
     ;;
 esac
