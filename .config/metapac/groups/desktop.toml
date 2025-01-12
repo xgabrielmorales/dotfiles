@@ -4,7 +4,7 @@ arch = [
     "gucharmap",
     "librewolf-bin",
     "maim",
-    "mpv",
+    "vlc",
     "pavucontrol",
     "redshift",
     "seahorse",
