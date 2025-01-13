@@ -5,10 +5,14 @@ return {
     build = ":call fzf#install()",
   },
   config = function()
-    vim.g.fzf_preview_window = {}
+    vim.g.fzf_vim = {
+      grep_multi_line = 3,
+      preview_window = {},
+    }
   end,
   keys = {
-    { "<leader>f", "<CMD>Files<CR>" },
+    { "<leader>f", "<CMD>GFiles<CR>" },
     { "<leader>b", "<CMD>Buffers<CR>" },
+    { "<leader>rg", "<CMD>Rg<CR>" },
   },
 }
