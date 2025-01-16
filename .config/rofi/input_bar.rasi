@@ -12,6 +12,7 @@ prompt {
     enabled: true;
     padding: 7px 9px;
     background-color: @ac;
+    vertical-align: 0.50;
     border-radius: 7px;
     text-color: @fg;
 }
