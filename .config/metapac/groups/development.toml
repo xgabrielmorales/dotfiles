@@ -6,6 +6,7 @@ arch = [
     "git",
     "git-extras-git",
     "npm",
+    "postgresql-client",
     "postman-agent",
     "python-pip",
     "python-pipx",
