@@ -3,3 +3,11 @@
 mainbox {
     children: [ "inputbar", "listview", "message" ];
 }
+
+listview {
+    columns: 1;
+}
+
+element {
+    children: [ element-text ];
+}
