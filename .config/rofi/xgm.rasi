@@ -15,6 +15,7 @@ configuration {
     display-window: "";
     display-filebrowser: "";
     display-calc: "";
+    display-emoji: "📔";
 
     window-format: "{c} · {t}";
     drun-display-format: "{name}";

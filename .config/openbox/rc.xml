@@ -279,6 +279,11 @@
         <command>~/.config/rofi/bin/rofi-calc/rofi-calc.sh</command>
       </action>
     </keybind>
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>~/.config/rofi/bin/rofi-emoji/rofi-emoji.sh</command>
+      </action>
+    </keybind>
     <keybind key="W-m">
       <action name="Execute">
         <command>~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh</command>

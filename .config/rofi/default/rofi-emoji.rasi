@@ -1,0 +1,17 @@
+@import "../xgm.rasi"
+
+mainbox {
+    children: [ "inputbar", "listview", "message" ];
+}
+
+listview {
+    columns: 1;
+}
+
+element {
+    children: [ element-text ];
+}
+
+element-text {
+    expand: true;
+}
