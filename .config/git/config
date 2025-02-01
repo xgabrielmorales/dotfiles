@@ -34,3 +34,5 @@
 
 [includeIf "gitdir:~/Documents/Work/"]
     path = ~/Documents/Work/.gitconfig
+[help]
+	autocorrect = immediate
