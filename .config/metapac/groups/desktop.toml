@@ -13,4 +13,5 @@ arch = [
     "viewnior",
     "zathura",
     "zathura-pdf-mupdf",
+    "bitwarden",
 ]

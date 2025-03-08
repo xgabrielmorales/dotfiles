@@ -23,4 +23,7 @@ killall -q -9 polybar picom plank xfce-polkit
 sleep 3;
 
 # Redshift
-redshift &
+/usr/bin/redshift &
+
+# Password Manager
+/usr/bin/bitwarden &

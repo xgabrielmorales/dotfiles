@@ -15,8 +15,8 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 
-# See: https://wiki.archlinux.org/title/GNOME/Keyring#SSH_keys
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+# See: https://bitwarden.com/help/ssh-agent/#configure-bitwarden-ssh-agent
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 
 # Disable Ctrl+S / Ctrl+Q
 stty -ixon

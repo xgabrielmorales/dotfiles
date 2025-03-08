@@ -1,7 +1,7 @@
 [user]
     name = Gabriel Morales
     email = gabrielmorales1@protonmail.com
-    signingkey = ~/.ssh/Personal/IdentityFiles/id_ed25519.pub
+    signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP11Z5NLmFk0jEj9cS+ceq4xsxJL0AbVx0km903ZQNOD"
 
 [core]
     editor = nvim
@@ -34,5 +34,6 @@
 
 [includeIf "gitdir:~/Documents/Work/"]
     path = ~/Documents/Work/.gitconfig
+
 [help]
-	autocorrect = immediate
+    autocorrect = immediate
