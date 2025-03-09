@@ -14,4 +14,6 @@ arch = [
     "zathura",
     "zathura-pdf-mupdf",
     "bitwarden",
+    "spotify-tui",
+    "spotifyd",
 ]
