@@ -3,6 +3,7 @@ arch = [
     "bat",
     "csvlens",
     "eza",
+    "fzf",
     "htop",
     "jq",
     "lf",

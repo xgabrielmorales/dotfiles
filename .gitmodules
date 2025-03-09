@@ -7,3 +7,6 @@
 [submodule ".config/shell/external-plugins/zsh-history-substring-search"]
 	path = .config/shell/external-plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule ".config/shell/external-plugins/fzf-tab"]
+	path = .config/shell/external-plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
