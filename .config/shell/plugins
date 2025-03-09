@@ -5,7 +5,7 @@ PLUGIN_DIR="$XDG_CONFIG_HOME/shell/external-plugins"
 source "$PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh"
 source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$PLUGIN_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh"
-source "$PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$PLUGIN_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 # Bindings: history-substring-search
 bindkey '^[[A' history-substring-search-up
