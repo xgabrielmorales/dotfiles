@@ -26,4 +26,4 @@ sleep 3;
 /usr/bin/redshift &
 
 # Password Manager
-/usr/bin/bitwarden &
+/usr/bin/bitwarden-desktop &
