@@ -1,0 +1,30 @@
+[Default Applications]
+# Text files
+text/plain=text.desktop
+application/json=text.desktop
+
+# Documents
+application/pdf=pdf.desktop
+
+# Videos
+video/mp4=video.desktop
+
+# Images
+image/gif=img.desktop
+image/heif=img.desktop
+image/jpeg=img.desktop
+image/png=img.desktop
+image/svg+xml=img.desktop
+
+# Browser
+application/x-extension-htm=browser.desktop
+application/x-extension-html=browser.desktop
+application/x-extension-shtml=browser.desktop
+application/x-extension-xht=browser.desktop
+application/x-extension-xhtml=browser.desktop
+application/xhtml+xml=browser.desktop
+text/html=browser.desktop
+x-scheme-handler/chrome=browser.desktop
+x-scheme-handler/ftp=browser.desktop
+x-scheme-handler/http=browser.desktop
+x-scheme-handler/https=browser.desktop
