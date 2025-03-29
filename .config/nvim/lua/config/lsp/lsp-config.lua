@@ -14,24 +14,20 @@ M.on_attach = function(client, bufnr)
   map("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
   map("n", "<leader>gR", vim.lsp.buf.references, bufopts)
   map("n", "<leader>gr", vim.lsp.buf.rename, bufopts)
-  map("n", "K", vim.lsp.buf.hover, bufopts)
+  map("n", "K", "<cmd>lua vim.lsp.buf.hover({border = 'single'})<CR>", bufopts)
   map("n", "<leader>cf", function()
     vim.lsp.buf.format({ async = true, timeout_ms = 3000 })
   end, bufopts)
 
   -- Diagnostic
-  map("n", "<leader>dr", vim.diagnostic.reset, bufopts)
-  map("n", "<leader>de", vim.diagnostic.enable, bufopts)
-  map("n", "<leader>dd", vim.diagnostic.disable, bufopts)
-  map("n", "<leader>dp", vim.diagnostic.goto_prev, bufopts)
-  map("n", "<leader>dn", vim.diagnostic.goto_next, bufopts)
-  map("n", "<leader>df", vim.diagnostic.open_float, bufopts)
+  -- stylua: ignore start
+  map("n", "<leader>dn", function() vim.diagnostic.jump({ count = 1 }) end)
+  map("n", "<leader>dp", function() vim.diagnostic.jump({ count = -1 }) end)
+  map("n", "<leader>df", vim.diagnostic.open_float)
+  -- stylua: ignore end
 end
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 
 vim.diagnostic.config({
   float = { border = "single" },
