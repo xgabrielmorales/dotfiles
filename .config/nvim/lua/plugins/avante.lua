@@ -3,14 +3,18 @@ return {
   event = "VeryLazy",
   version = false,
   opts = {
-    provider = "mistral",
+    provider = "claude",
     vendors = {
-      mistral = {
-        __inherited_from = "openai",
-        api_key_name = "MISTRAL_API_KEY",
-        endpoint = "https://api.mistral.ai/v1/",
-        model = "mistral-large-latest",
-        max_tokens = 4096,
+      {
+        claude = {
+          api_key_name = "ANTHROPIC_API_KEY",
+          endpoint = "https://api.anthropic.com",
+          model = "claude-3-7-sonnet-20250219",
+          timeout = 30000,
+          temperature = 0,
+          max_tokens = 4096,
+          disable_tools = true,
+        },
       },
     },
   },
