@@ -36,11 +36,11 @@ case "$1" in
     "--inc")
         (( $(source_volume) = 100 )) && exit
         (( $(source_volume) > 100 )) && pactl set-source-volume @DEFAULT_SOURCE@ 100%
-        (( $(source_volume) < 100 )) && pactl set-source-volume @DEFAULT_SOURCE@ +10%
+        (( $(source_volume) < 100 )) && pactl set-source-volume @DEFAULT_SOURCE@ +5%
     ;;
     "--dec")
         (( $(source_volume) = 0 )) && exit
         (( $(source_volume) < 0 )) && pactl set-source-volume @DEFAULT_SOURCE@   0%
-        (( $(source_volume) > 0 )) && pactl set-source-volume @DEFAULT_SOURCE@ -10%
+        (( $(source_volume) > 0 )) && pactl set-source-volume @DEFAULT_SOURCE@ -5%
     ;;
 esac

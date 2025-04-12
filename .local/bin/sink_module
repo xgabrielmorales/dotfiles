@@ -36,11 +36,11 @@ case "$1" in
     "--inc")
         (( $(sink_volume) = 100 )) && exit
         (( $(sink_volume) > 100 )) && pactl set-sink-volume @DEFAULT_SINK@ 100%
-        (( $(sink_volume) < 100 )) && pactl set-sink-volume @DEFAULT_SINK@ +10%
+        (( $(sink_volume) < 100 )) && pactl set-sink-volume @DEFAULT_SINK@ +5%
     ;;
     "--dec")
         (( $(sink_volume) = 0 )) && exit
         (( $(sink_volume) < 0 )) && pactl set-sink-volume @DEFAULT_SINK@   0%
-        (( $(sink_volume) > 0 )) && pactl set-sink-volume @DEFAULT_SINK@ -10%
+        (( $(sink_volume) > 0 )) && pactl set-sink-volume @DEFAULT_SINK@ -5%
     ;;
 esac
