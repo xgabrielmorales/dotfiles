@@ -5,6 +5,10 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.hoverProvider = false
   end
 
+  if client.config.root_dir then
+    vim.api.nvim_set_current_dir(client.config.root_dir)
+  end
+
   -- Local Keybindings
   local map = vim.keymap.set
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
