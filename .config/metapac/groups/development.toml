@@ -6,11 +6,13 @@ arch = [
     "git",
     "git-extras-git",
     "npm",
+    "openresolv",
     "postgresql-client",
     "postman-agent",
     "python-pip",
     "python-pipx",
     "visual-studio-code-bin",
+    "wireguard-tools",
 ]
 
 pipx = [
