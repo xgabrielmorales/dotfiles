@@ -16,4 +16,5 @@ arch = [
     "bitwarden",
     "spotify-tui",
     "spotifyd",
+    "syncthing",
 ]
