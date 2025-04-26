@@ -17,4 +17,5 @@ arch = [
     "spotify-tui",
     "spotifyd",
     "syncthing",
+    "playerctl",
 ]

@@ -255,7 +255,7 @@
     <!-- Toggle audio output -->
     <keybind key="W-o">
       <action name="Execute">
-        <command>~/dotfiles/scripts/toggle-audio-output</command>
+        <command>toggle-audio-output</command>
       </action>
     </keybind>
     <!-- Rofi -->
@@ -289,25 +289,20 @@
         <command>~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh</command>
       </action>
     </keybind>
-    <keybind key="Pause">
-      <action name="Execute">
-        <command>polybar-msg cmd toggle</command>
-      </action>
-    </keybind>
     <!-- Media Controls-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
+        <command>sink_module --inc</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
+        <command>sink_module --dec</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
+        <command>sink_module --toggle</command>
       </action>
     </keybind>
     <keybind key="XF86AudioStop">
@@ -317,17 +312,27 @@
     </keybind>
     <keybind key="XF86AudioPlay">
       <action name="Execute">
-        <command>mpc toggle</command>
+        <command>playerctl play</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPrev">
       <action name="Execute">
-        <command>mpc prev</command>
+        <command>playerctl previous</command>
       </action>
     </keybind>
     <keybind key="XF86AudioNext">
       <action name="Execute">
-        <command>mpc next</command>
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>brightness_module --inc 5</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>brightness_module --dec 5</command>
       </action>
     </keybind>
     <!-- Screenshot Keys -->
