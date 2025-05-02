@@ -12,5 +12,6 @@ return {
   highlights = {
     NormalFloat = { bg = "NONE" },
     FloatBorder = { bg = "NONE", fg = "#ABB2BF" },
+    ColorColumn = { bg = "NONE" },
   },
 }
