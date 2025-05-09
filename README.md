@@ -56,7 +56,7 @@ My configuration can be found here: [Nvim](.config/nvim/) and [Emacs](.config/em
 
 Unlisted packages:
 
-- Browser: [Librewolf](https://librewolf.net/)
+- Browser: [Zen Browser](https://zen-browser.app/)
 - Document viewer: [Zathura](https://wiki.archlinux.org/title/Zathura)
 - Media Player: [Mpv](https://wiki.archlinux.org/title/Mpv)
 - Music Player: [Mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) + Mpc + [Rofi MPD](https://github.com/xgabrielmorales/rofi-mpd)

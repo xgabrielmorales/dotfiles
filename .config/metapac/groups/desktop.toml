@@ -2,7 +2,7 @@ arch = [
     "blueman",
     "cameractrls",
     "gucharmap",
-    "librewolf-bin",
+    "zen-browser-bin",
     "maim",
     "vlc",
     "pavucontrol",

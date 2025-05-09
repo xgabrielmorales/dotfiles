@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Web Browser (Personal)
+Icon=zen-browser
+Type=Application
+Exec=recycle zen-browser

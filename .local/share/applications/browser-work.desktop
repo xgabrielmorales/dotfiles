@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Web Browser (Work)
+Icon=brave-desktop
+Type=Application
+Exec=recycle brave
