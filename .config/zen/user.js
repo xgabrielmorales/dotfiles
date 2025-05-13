@@ -1,6 +1,7 @@
 user_pref("browser.compactmode.show", true);
 user_pref("browser.download.autohideButton", true);
 user_pref("browser.download.useDownloadDir", false);
+user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.search.separatePrivateDefault", false);
 user_pref("browser.tabs.hoverPreview.enabled", true);
 user_pref("browser.tabs.hoverPreview.showThumbnails", true);
@@ -10,6 +11,8 @@ user_pref("browser.uidensity", 1);
 user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("extensions.activeThemeID", "firefox-compact-light@mozilla.org");
 user_pref("layout.css.prefers-color-scheme.content-override", 1);
+user_pref("middlemouse.openNewWindow", false);
+user_pref("middlemouse.paste", false);
 user_pref("places.history.enabled", false);
 user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"formdata\",\"browsingHistoryAndDownloads\",\"cookiesAndStorage\"],\"options\":{}}]");
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
