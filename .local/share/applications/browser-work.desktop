@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Web Browser (Work)
-Icon=brave-desktop
+Icon=firefox
 Type=Application
-Exec=recycle brave
+Exec=recycle firefox
