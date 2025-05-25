@@ -37,3 +37,6 @@
 
 [help]
     autocorrect = immediate
+
+[pull]
+    rebase = true
