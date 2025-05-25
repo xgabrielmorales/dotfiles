@@ -1,0 +1,37 @@
+#!/bin/bash
+
+APP_DIR="/usr/share/applications"
+FILES=(
+  "avahi-discover"
+  "blueman-adapters"
+  "bssh"
+  "bvnc"
+  "compton"
+  "gcr-prompter"
+  "gcr-viewer"
+  "htop"
+  "lf"
+  "lstopo"
+  "nvim"
+  "nvtop"
+  "openbox"
+  "picom"
+  "plank"
+  "qv4l2"
+  "qvidcap"
+  "ranger"
+  "redshift-gtk"
+  "rofi"
+  "rofi-theme-selector"
+  "thunar-bulk-rename"
+  "thunar-settings"
+  "vim"
+  "xfce4-about"
+  "xfce4-notifyd-config"
+)
+
+find "$APP_DIR" -name "electron[0-9]*.desktop" -type f -exec rm {} \;
+
+for f in "${FILES[@]}"; do
+    find "$APP_DIR" -name "$f*.desktop" -type f -exec rm {} \;
+done
