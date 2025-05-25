@@ -1,13 +1,25 @@
 [system]
-# File path of skippy-xd pipe daemon communication
-pipePath = /tmp/skippy-xd-fifo
+# When focus is stolen off skippy-xd
+# E.g. a window is newly created during skippy-xd activation
+# Focus back on skippy-xd
+enforceFocus = true
+
+# File path for client-to-daemon communication
+daemonPath = /tmp/skippy-xd-fifo
+
+# File path for daemon-to-client communication
+clientPath = /tmp/skippy-xd-fofi
 
 # Frequency to update pixmaps
 updateFreq = 60.0
 
+# This queries the list of windows
 # Depending on your window manager, you may want to choose between
 # XQueryTree, _NET_CLIENT_LIST, _WIN_CLIENT_LIST
-clientList = XQueryTree
+# If you see missing windows, or windows that you did not expect,
+# Or even crashes,
+# Try a different option
+clientList = _NET_CLIENT_LIST
 
 # when compositors such as picom are not used
 # turn on pseudo-transparency
@@ -20,14 +32,21 @@ switchWaitDuration = 100
 
 # Set = 0 to switch off animations
 # For switch, there is never animation
-animationDuration = 25
+animationDuration = 0
+
+# Refresh rate during animation
+animationRefresh = 60
+
+# Relative minimal distance between windows
+distance = 50
 
 # Relative minimal distance between windows
 distance = 25
 
-# exposeLayout=xd uses the same layout as switcher, maximizing screen estate
-# exposeLayout=boxy tends to preserve window positions, thus guiding the eye more
-exposeLayout = xd
+# xd layout is the switch layout
+# boxy layout uses box heuristics (legacy)
+# cosmos layout uses physics based modeling
+exposeLayout = cosmos
 
 # Whether to show the window bigger than its original size
 allowUpscale = false
@@ -66,18 +85,19 @@ includeFrame = true
 # with corner radius in pixels
 cornerRadius = 0
 
-# Icon parameters
-showIconsOnThumbnails = true
-preferredIconSize = 48
+# Whether to show icons on live preview thumbnails
+icon = true
+iconPlace = right right
+iconSize = 48
 
 # Display when live preview is not available
 fillSpec = #FFFFFF
 iconFillSpec = mid mid #1e2128
 
 [normal]
-opacity = 255
 tint = black
 tintOpacity = 0
+opacity = 255
 
 [highlight]
 opacity = 255
@@ -96,7 +116,7 @@ font = JetBrainsMono Nerd Font-11:weight=Normal
 offsetX = 0
 offsetY = 5
 opacity = 255
-show = true
+show = false
 showDesktop = false
 showMonitor = false
 text = #C4C7C5
