@@ -7,10 +7,13 @@ user_pref("browser.tabs.hoverPreview.enabled", true);
 user_pref("browser.tabs.hoverPreview.showThumbnails", true);
 user_pref("browser.tabs.insertAfterCurrent", true);
 user_pref("browser.tabs.insertAfterCurrentExceptPinned", true);
+user_pref("browser.translations.enable", false);
 user_pref("browser.uidensity", 1);
 user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("extensions.activeThemeID", "firefox-compact-light@mozilla.org");
+user_pref("extensions.pocket.enabled", false);
 user_pref("layout.css.prefers-color-scheme.content-override", 1);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false)
 user_pref("middlemouse.openNewWindow", false);
 user_pref("middlemouse.paste", false);
 user_pref("places.history.enabled", false);
