@@ -232,6 +232,9 @@
     <keybind key="W-S-space">
       <action name="ToggleMaximizeFull" />
     </keybind>
+    <keybind key="W-S-c">
+      <action name="MoveToCenter" />
+    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
