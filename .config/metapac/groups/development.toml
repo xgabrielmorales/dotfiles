@@ -1,18 +1,21 @@
 arch = [
-    "ansible",
-    "ctop",
     "cursor-bin",
     "docker",
+    "docker-buildx",
     "docker-compose",
     "git",
     "git-extras-git",
     "npm",
     "openresolv",
-    "postgresql-client",
+    "postgresql-libs",
     "postman-agent",
     "python-pip",
     "python-pipx",
     "wireguard-tools",
+]
+
+flatpak = [
+    "com.jetbrains.DataGrip",
 ]
 
 pipx = [

@@ -8,6 +8,7 @@ arch = [
     "xdotool",
     "xfce4-notifyd",
     "xorg-server",
+    "xorg-xev",
     "xorg-xinit",
     "xorg-xrandr",
     "xorg-xset",
