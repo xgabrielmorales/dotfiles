@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local M = require("config.lsp.lsp-config")
 
 local servers = {
@@ -12,15 +11,15 @@ local servers = {
 }
 
 for _, lsp in pairs(servers) do
-  lspconfig[lsp].setup({
+  vim.lsp.config[lsp] = {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
-  })
+  }
 end
 
 -- Jedi Language Server
 -- https://github.com/pappasam/jedi-language-server
-lspconfig.jedi_language_server.setup({
+vim.lsp.config["jedi_language_server"] = {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   init_options = {
@@ -39,10 +38,10 @@ lspconfig.jedi_language_server.setup({
       enable = false,
     },
   },
-})
+}
 
 -- https://github.com/LuaLS/lua-language-server
-lspconfig.lua_ls.setup({
+vim.lsp.config["lua_ls"] = {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   settings = {
@@ -59,13 +58,13 @@ lspconfig.lua_ls.setup({
       },
     },
   },
-})
+}
 
 -- JsonLS
-lspconfig.jsonls.setup({
+vim.lsp.config["jsonls"] = {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   init_options = {
     provideFormatter = false,
   },
-})
+}
