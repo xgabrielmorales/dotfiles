@@ -5,9 +5,13 @@
 }
 
 #tabbrowser-tabpanels > hbox {
-    margin: 0px!important;
+    margin: 0px !important;
 }
 
-#zen-current-workspace-indicator-container {
-    display: none;
+#zen-appcontent-navbar-wrapper {
+    display: none !important;
+}
+
+.zen-current-workspace-indicator  {
+    display: none !important;
 }
