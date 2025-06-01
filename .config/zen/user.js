@@ -11,6 +11,7 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("browser.translations.enable", false);
 user_pref("browser.uidensity", 1);
 user_pref("browser.urlbar.suggest.recentsearches", false);
+user_pref("devtools.toolbox.zoomValue", 1);
 user_pref("extensions.activeThemeID", "firefox-compact-light@mozilla.org");
 user_pref("extensions.pocket.enabled", false);
 user_pref("layout.css.prefers-color-scheme.content-override", 1);
