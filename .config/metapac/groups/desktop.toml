@@ -3,6 +3,7 @@ arch = [
     "cameractrls",
     "gucharmap",
     "maim",
+    "ncspot",
     "pavucontrol",
     "playerctl",
     "redshift",
