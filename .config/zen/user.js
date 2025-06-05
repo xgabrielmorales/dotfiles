@@ -1,5 +1,5 @@
 user_pref("browser.compactmode.show", true);
-user_pref("browser.download.autohideButton", true);
+user_pref("browser.download.autohideButton", false);
 user_pref("browser.download.useDownloadDir", false);
 user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.search.separatePrivateDefault", false);
