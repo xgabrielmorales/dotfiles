@@ -15,7 +15,7 @@
     # Show Staged files
     staged = diff --staged
     # Show log decorated
-    lod = log --graph --pretty=format:'%C(yellow)%h%Creset%Cred%d%Creset %Cgreen%cr%Creset %s ' --abbrev-commit  --date=relative
+    lod = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(red)%aN%C(reset) %C(green)%ar%C(reset) %C(yellow)%D%C(reset)%n%s%n' --use-mailmap
 
 [diff]
     context = 5
@@ -37,6 +37,7 @@
 
 [log]
     date = iso-local
+    mailmap = true
 
 [gpg]
     format = ssh
