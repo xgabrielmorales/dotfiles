@@ -1,6 +1,7 @@
 #!/bin/sh
 
 export EDITOR="nvim"
+export PAGER="less"
 export VISUAL="nvim"
 export READER="zathura"
 export BROWSER="zen-browser"
