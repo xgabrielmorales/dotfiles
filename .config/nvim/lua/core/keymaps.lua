@@ -4,6 +4,8 @@ local map = vim.keymap.set
 local options = { silent = true, noremap = true }
 
 map("n", "Q", "<Nop>", options)
+map("n", "q:", "<Nop>", options)
+map("n", "q/", "<Nop>", options)
 map("n", "<ESC><ESC>", ":nohlsearch<CR>", options)
 
 -- Page down/up and center view
