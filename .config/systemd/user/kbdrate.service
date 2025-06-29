@@ -1,0 +1,10 @@
+[Unit]
+Description=Keyboard repeat rate in tty.
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/xset r rate 200 30
+
+[Install]
+WantedBy=default.target
