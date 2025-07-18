@@ -35,3 +35,5 @@ user_pref("zen.view.compact.color-sidebar", false);
 user_pref("zen.view.compact.color-toolbar", false);
 user_pref("zen.view.hide-window-controls", false);
 user_pref("zen.welcome-screen.seen", true);
+// Makes the right-click menu smaller
+user_pref("devtools.accessibility.enabled", true);
