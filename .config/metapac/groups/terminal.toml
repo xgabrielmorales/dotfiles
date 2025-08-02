@@ -11,4 +11,5 @@ arch = [
     "ranger",
     "tmux",
     "zsh",
+    "zsh-completions",
 ]
