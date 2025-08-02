@@ -1,11 +1,11 @@
 arch = [
-    "cursor-bin",
     "diff-so-fancy",
     "docker",
     "docker-buildx",
     "docker-compose",
     "git",
     "git-extras-git",
+    "github-cli",
     "npm",
     "openresolv",
     "postgresql-libs",
@@ -20,6 +20,7 @@ flatpak = [
 ]
 
 pipx = [
+    "commitizen",
     "poetry",
     "uv",
 ]

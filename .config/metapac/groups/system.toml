@@ -6,7 +6,6 @@ arch = [
     "less",
     "man-db",
     "man-pages",
-    "metapac-bin",
     "openssh",
     "pacman-contrib",
     "rsync",
