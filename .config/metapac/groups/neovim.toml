@@ -1,7 +1,0 @@
-arch = [
-    "fd",
-    "hunspell",
-    "luarocks",
-    "neovim",
-    "ripgrep",
-]
