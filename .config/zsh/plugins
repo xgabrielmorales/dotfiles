@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLUGIN_DIR="$XDG_CONFIG_HOME/shell/external-plugins"
+PLUGIN_DIR="$XDG_CONFIG_HOME/zsh/external-plugins"
 
 source "$PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh"
 source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
