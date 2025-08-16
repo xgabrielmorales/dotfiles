@@ -9,4 +9,4 @@ AC="${COLORS[$(( $RANDOM % 6 ))]}"
 sed --in-place --expression "s/ac: .*/ac:   ${AC}FF;/g" "$ROFI_CONFIG_FILE"
 sed --in-place --expression "s/se: .*/se:   ${AC}40;/g" "$ROFI_CONFIG_FILE"
 
-rofi -show drun -theme xgm
+rofi -show drun -theme xgm -sorting-method fzf -sort
