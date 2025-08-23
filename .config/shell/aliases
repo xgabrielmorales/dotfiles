@@ -19,6 +19,9 @@ alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{printf \"%
 alias ls="exa -F --all --header --group-directories-first --icons"
 alias vim="nvim"
 
+# Development
+alias k="kubectl"
+
 # Functions
 ext() {
     if [ ! -f "$1" ]; then
