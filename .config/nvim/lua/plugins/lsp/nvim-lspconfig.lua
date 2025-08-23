@@ -123,6 +123,18 @@ return {
         provideFormatter = false,
       },
     }
+
+    -- Nix
+    vim.lsp.config["nil_ls"] = {
+      on_attach = M.on_attach,
+      capabilities = M.capabilities,
+      settings = {
+        ["nil"] = {
+          formatting = {
+            command = { "nixfmt" },
+          },
+        },
+      },
+    }
   end,
 }
-
