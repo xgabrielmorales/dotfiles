@@ -57,12 +57,12 @@ return {
     -- LSP Servers Configuration
     local servers = {
       "bashls",
-      "docker_compose_language_service",
-      "dockerls",
+      "docker_language_server",
       "eslint",
       "ruff",
       "rust_analyzer",
       "ts_ls",
+      "yamlls",
     }
 
     for _, lsp in pairs(servers) do
