@@ -9,6 +9,7 @@ set icons true
 set cursorpreviewfmt "\033[7m"
 set period 1
 set hiddenfiles ".*:lost+found:*.bak:__pycache__"
+set info time:size
 
 # MAPPINGS
 # ================================
