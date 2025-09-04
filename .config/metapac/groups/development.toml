@@ -1,4 +1,5 @@
 arch = [
+    "claude-code",
     "diff-so-fancy",
     "docker",
     "docker-buildx",
@@ -7,6 +8,7 @@ arch = [
     "git",
     "git-extras-git",
     "github-cli",
+    "harper",
     "hunspell",
     "luarocks",
     "neovim",
@@ -27,7 +29,6 @@ flatpak = [
 ]
 
 pipx = [
-    "commitizen",
     "poetry",
     "uv",
 ]

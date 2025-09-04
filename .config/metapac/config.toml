@@ -3,6 +3,10 @@
 # Default: []
 enabled_backends = ["arch", "pipx", "npm", "flatpak"]
 
-# Must be one of: ["pacman", "paru", "pikaur", "yay"]
+[arch]
+# Since pacman, pamac, paru, pikaur and yay all operate on the same package database
+# they are mutually exclusive and so you must pick which one you want
+# metapac to use.
+# Must be one of: ["pacman", "pamac", "paru", "pikaur", "yay"]
 # Default: "pacman"
-arch_package_manager = "yay"
+package_manager = "yay"
