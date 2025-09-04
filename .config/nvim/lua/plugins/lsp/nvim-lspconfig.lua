@@ -59,8 +59,10 @@ return {
       "bashls",
       "docker_language_server",
       "eslint",
+      "harper-ls",
       "ruff",
       "rust_analyzer",
+      "taplo",
       "ts_ls",
       "yamlls",
     }
