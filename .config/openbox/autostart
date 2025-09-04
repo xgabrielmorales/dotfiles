@@ -19,3 +19,8 @@ killall -q -9 polybar picom plank xfce-polkit
 
 # Polkit
 /usr/lib/xfce-polkit/xfce-polkit &
+
+sleep 3;
+
+# Redshift
+/usr/bin/redshift &
