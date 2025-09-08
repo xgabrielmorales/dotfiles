@@ -174,7 +174,7 @@
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <allDesktops>yes</allDesktops>
+        <allDesktops>no</allDesktops>
         <bar>no</bar>
         <finalactions>
           <action name="Focus" />
@@ -184,7 +184,7 @@
     </keybind>
     <keybind key="W-Tab">
       <action name="NextWindow">
-        <allDesktops>No</allDesktops>
+        <allDesktops>yes</allDesktops>
         <bar>no</bar>
         <finalactions>
           <action name="focus" />
