@@ -3,7 +3,6 @@ arch = [
     "bluez",
     "bluez-utils",
     "libpulse",
-    "ncspot",
     "pavucontrol",
     "pipewire",
     "pipewire-alsa",

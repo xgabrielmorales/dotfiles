@@ -1,8 +1,0 @@
-audio_cache=true
-audio_cache_size=5120
-bitrate=320
-gapless=true
-library_tabs=["playlists", "albums", "artists", "tracks", "browse"]
-notify=false
-use_nerdfont=true
-volnorm=true

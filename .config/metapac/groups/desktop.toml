@@ -11,6 +11,7 @@ arch = [
     "rofi-emoji",
     "satty",
     "seahorse",
+    "simplescreenrecorder",
     "syncthing",
     "thunar",
     "tint2",
