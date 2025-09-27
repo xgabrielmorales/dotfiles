@@ -31,4 +31,5 @@ flatpak = [
 pipx = [
     "poetry",
     "uv",
+    "zuban"
 ]
