@@ -3,6 +3,9 @@
 .config/gtk-3.0/bookmarks
 
 # ZSH
+.config/zsh/.zcompdump-*
+
+# ZSH
 .config/zsh/.zcompdump
 
 # Ranger
