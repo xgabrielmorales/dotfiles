@@ -65,7 +65,6 @@ return {
       "taplo",
       "ts_ls",
       "yamlls",
-      "zuban",
     }
 
     for _, lsp in pairs(servers) do
@@ -75,7 +74,28 @@ return {
       }
     end
 
-    vim.lsp.enable("zuban")
+    -- Jedi Language Server
+    -- https://github.com/pappasam/jedi-language-server
+    vim.lsp.config["jedi_language_server"] = {
+      on_attach = M.on_attach,
+      capabilities = M.capabilities,
+      init_options = {
+        jediSettings = {
+          autoImportModules = {
+            "numpy",
+            "pandas",
+            "bs4",
+          },
+        },
+        codeAction = {
+          nameExtractFunction = { enable = false },
+          nameExtractVariable = { enable = false },
+        },
+        diagnostics = {
+          enable = false,
+        },
+      },
+    }
 
     -- https://github.com/LuaLS/lua-language-server
     vim.lsp.config["lua_ls"] = {

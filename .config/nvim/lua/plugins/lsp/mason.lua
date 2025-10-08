@@ -12,6 +12,7 @@ return {
         "bashls",
         "docker_language_server",
         "harper_ls",
+        "jedi_language_server",
         "jsonls",
         "lua_ls",
         "nil_ls",
