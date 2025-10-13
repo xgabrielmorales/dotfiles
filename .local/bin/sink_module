@@ -7,10 +7,10 @@ sink_volume() {
     local status
     local volume
 
-    status=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -o "Mute: yes")
-    [[ "$status" == "Mute: yes" ]] && echo "-1" && return 0
+    status=$(pamixer --get-mute)
+    [[ "$status" == true ]] && echo "-1" && return 0
 
-    volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -d "%")
+    volume=$(pamixer --get-volume)
     echo "$volume"
 }
 
@@ -31,16 +31,16 @@ case "$1" in
         sink_status "$(sink_volume)"
     ;;
     "--toggle")
-        pactl set-sink-mute @DEFAULT_SINK@ toggle
+        pamixer --toggle-mute
     ;;
     "--inc")
-        (( $(sink_volume) = 100 )) && exit
-        (( $(sink_volume) > 100 )) && pactl set-sink-volume @DEFAULT_SINK@ 100%
-        (( $(sink_volume) < 100 )) && pactl set-sink-volume @DEFAULT_SINK@ +5%
+        (( $(sink_volume) == 100 )) && exit
+        (( $(sink_volume) > 100 )) && pamixer --set-volume 100
+        (( $(sink_volume) < 100 )) && pamixer --increase 5
     ;;
     "--dec")
-        (( $(sink_volume) = 0 )) && exit
-        (( $(sink_volume) < 0 )) && pactl set-sink-volume @DEFAULT_SINK@   0%
-        (( $(sink_volume) > 0 )) && pactl set-sink-volume @DEFAULT_SINK@ -5%
+        (( $(sink_volume) == 0 )) && exit
+        (( $(sink_volume) < 0 )) && pamixer --set-volume 0
+        (( $(sink_volume) > 0 )) && pamixer --decrease 5
     ;;
 esac

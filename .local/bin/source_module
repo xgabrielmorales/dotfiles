@@ -7,10 +7,10 @@ source_volume() {
     local status
     local volume
 
-    status=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -o "Mute: yes")
-    [[ "$status" == "Mute: yes" ]] && echo "-1" && return 0
+    status=$(pamixer --default-source --get-mute)
+    [[ "$status" == true ]] && echo "-1" && return 0
 
-    volume=$(pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | tr -d "%")
+    volume=$(pamixer --default-source --get-volume)
     echo "$volume"
 }
 
@@ -31,16 +31,16 @@ case "$1" in
         source_status "$(source_volume)"
     ;;
     "--toggle")
-        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        pamixer --default-source --toggle-mute
     ;;
     "--inc")
-        (( $(source_volume) = 100 )) && exit
-        (( $(source_volume) > 100 )) && pactl set-source-volume @DEFAULT_SOURCE@ 100%
-        (( $(source_volume) < 100 )) && pactl set-source-volume @DEFAULT_SOURCE@ +5%
+        (( $(source_volume) == 100 )) && exit
+        (( $(source_volume) > 100 )) && pamixer --default-source --set-volume 100
+        (( $(source_volume) < 100 )) && pamixer --default-source --increase 5
     ;;
     "--dec")
-        (( $(source_volume) = 0 )) && exit
-        (( $(source_volume) < 0 )) && pactl set-source-volume @DEFAULT_SOURCE@   0%
-        (( $(source_volume) > 0 )) && pactl set-source-volume @DEFAULT_SOURCE@ -5%
+        (( $(source_volume) == 0 )) && exit
+        (( $(source_volume) < 0 )) && pamixer --default-source --set-volume 0
+        (( $(source_volume) > 0 )) && pamixer --default-source --decrease 5
     ;;
 esac
