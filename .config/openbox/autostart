@@ -1,15 +1,18 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 killall -q -9 polybar picom plank xfce-polkit
 
 # Restore Wallpaper
-/usr/bin/nitrogen --restore &
+/usr/bin/env nitrogen --restore &
 
 # Status bar (Polybar)
-/usr/bin/tint2 &
+/usr/bin/env tint2 &
 
 # Task Switcher
-/usr/bin/skippy-xd --start-daemon &
+/usr/bin/env skippy-xd --start-daemon &
+
+# Key repeat delay
+/usr/bin/env xset r rate 200 30 &
 
 # Notification daemon
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
@@ -23,4 +26,4 @@ killall -q -9 polybar picom plank xfce-polkit
 sleep 3;
 
 # Redshift
-/usr/bin/redshift &
+/usr/bin/env redshift &

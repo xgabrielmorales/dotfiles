@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SINK_ICON=""
 SINK_MUTE_ICON=""

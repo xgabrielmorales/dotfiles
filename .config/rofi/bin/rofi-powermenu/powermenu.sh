@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 ROFI_CONFIG_DIR="$HOME/.config/rofi/default"
 ROFI_COMMAND="rofi -theme $ROFI_CONFIG_DIR/rofi-powermenu.rasi -dmenu"

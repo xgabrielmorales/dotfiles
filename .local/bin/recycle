@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Description: Open a new instance of a binary or focus an existing one
 # Dependencies: wmctrl

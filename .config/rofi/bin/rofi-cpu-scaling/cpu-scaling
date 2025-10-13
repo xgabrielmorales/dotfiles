@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 THEME="$HOME/.config/rofi/default/rofi-cpu-scaling.rasi"
 ROFI="rofi -dmenu -theme $THEME -p Governor"

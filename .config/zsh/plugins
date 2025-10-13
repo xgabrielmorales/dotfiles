@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 PLUGIN_DIR="$XDG_CONFIG_HOME/zsh/external-plugins"
 

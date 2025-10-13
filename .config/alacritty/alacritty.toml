@@ -8,7 +8,7 @@ multiplier = 3
 
 [terminal.shell]
 args = ["-l", "-c", "tmux attach || tmux"]
-program = "/bin/zsh"
+program = "/bin/sh"
 
 [window]
 dynamic_title = false

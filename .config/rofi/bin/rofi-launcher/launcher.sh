@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 ROFI_CONFIG_FILE="$HOME/.config/rofi/colors.rasi"
 
