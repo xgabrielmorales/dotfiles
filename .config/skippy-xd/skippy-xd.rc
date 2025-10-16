@@ -1,99 +1,88 @@
-[system]
-# When focus is stolen off skippy-xd
-# E.g. a window is newly created during skippy-xd activation
-# Focus back on skippy-xd
-enforceFocus = true
+# vim: ft=config
 
+[system]
 # File path for client-to-daemon communication
 daemonPath = /tmp/skippy-xd-fifo
 
 # File path for daemon-to-client communication
 clientPath = /tmp/skippy-xd-fofi
 
-# Frequency to update pixmaps
-updateFreq = 60.0
-
 # This queries the list of windows
 # Depending on your window manager, you may want to choose between
 # XQueryTree, _NET_CLIENT_LIST, _WIN_CLIENT_LIST
-# If you see missing windows, or windows that you did not expect,
-# Or even crashes,
+# If you see missing windows, extra windows, or even crashes,
 # Try a different option
 clientList = _NET_CLIENT_LIST
 
-# when compositors such as picom are not used
-# turn on pseudo-transparency
+# When compositors such as picom are not used
+# Turn on pseudo-transparency
 pseudoTrans = true
 
 [layout]
 
+# xd: row-to-row layout
+# cosmos: position preserving layout
+switchLayout = xd
+exposeLayout = cosmos
+
 # Wait time before displaying switch previews
+# Set = 0 to veto live previews completely
 switchWaitDuration = 100
 
-# Set = 0 to switch off animations
-# For switch, there is never animation
-animationDuration = 0
+# During switchWaitDuration and animation,
+# Whether switch can cycle through windows
+switchCycleDuringWait = false
 
-# Refresh rate during animation
-animationRefresh = 60
-
-# Relative minimal distance between windows
-distance = 50
+# Enable to cycle through all virtual desktops
+switchCycleDesktops = false
+exposeCycleDesktops = false
 
 # Relative minimal distance between windows
 distance = 25
 
-# xd layout is the switch layout
-# boxy layout uses box heuristics (legacy)
-# cosmos layout uses physics based modeling
-exposeLayout = cosmos
-
 # Whether to show the window bigger than its original size
 allowUpscale = false
 
-[filter]
-
-# in multi-monitor setting, whether to filter windows by monitor
-showOnlyCurrentMonitor = false
-
-# Choose whether to show shadow windows:
-# windows that are minimized, shaded, or on other virtual desktops
-showShadow = true
-
-# For switch and expose,
-# Whether to limit window select on current virtual desktop
-# Or allow window selection on all virtual desktops
-# Paging always show all desktops
-switchShowAllDesktops = false
-exposeShowAllDesktops = false
-
 [display]
 
-# Background picture when skippy-xd is activated
-# Examples to paint wallpaper, or to tint existing background:
-#   background = /home/richard/screenshots/256.png
-#   background = #00000066
-background =
+# Set = 0 to switch off animations
+animationDuration = 0
 
-# Move the mouse cursor when skippy is activated
+# Animation refresh rate in fps
+animationRefresh = 60
+
+# Background when skippy-xd is activated
+# To display background wallpaper:
+#   background = /home/richard/screenshots/256.png
+# For tinted background:
+#   background = #00000055
+# For transparent background:
+#   background = None
+background = None
+
+# During paging, do not apply background to individual desktops
+preservePages = true
+
+# Reposition the mouse cursor per focus updates
 movePointer = false
 
 # Whether to display window frames
 includeFrame = true
 
-# Show window previews with rounded corners,
-# with corner radius in pixels
+# Show window previews with rounded corners
 cornerRadius = 0
 
-# Whether to show icons on live preview thumbnails
+# Icons on live previews
 icon = true
 iconPlace = right right
 iconSize = 48
 
-# Display when live preview is not available
-fillSpec = #FFFFFF
-iconFillSpec = mid mid #1e2128
+[filler]
+tint = #333333
+iconPlace = mid mid
+iconSize = 48
 
+# Windows that are not filler, highlight, shadow, multiselect
 [normal]
 tint = black
 tintOpacity = 0
@@ -104,21 +93,33 @@ opacity = 255
 tint = #101020
 tintOpacity = 128
 
-[shadow]
-opacity = 255
-tint = #1e2128
-tintOpacity = 0
 
-[tooltip]
+# Highlighted in multi-select mode
+[multiselect]
+tint = #3376BB
+tintOpacity = 50
+opacity = 255
+
+# Windows of type _NET_WM_WINDOW_TYPE_DOCK
+[panel]
+show = true
+backgroundTinting = true
+reserveSpace = true
+
+# Windows of type _NET_WM_WINDOW_TYPE_DESKTOP
+[desktop]
+show = true
+
+[label]
 background = #1e2128
+backgroundHighlight = #666666
 border = #C4C7C5
 font = JetBrainsMono Nerd Font-11:weight=Normal
 offsetX = 0
 offsetY = 5
 opacity = 255
+option = windowClass
 show = false
-showDesktop = false
-showMonitor = false
 text = #C4C7C5
 textShadow = black
 width = 0.8
