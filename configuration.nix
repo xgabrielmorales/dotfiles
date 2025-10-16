@@ -21,6 +21,11 @@
     useXkbConfig = true;
   };
 
+  hardware = {
+    graphics.enable = true;
+    nvidia.open = true;
+  };
+
   # Enable the X11 windowing system.
   services.xserver = {
     autoRepeatDelay = 200;
@@ -28,6 +33,7 @@
     autorun = false;
     displayManager.startx.enable = true;
     enable = true;
+    videoDrivers = [ "nvidia" ];
     windowManager.openbox.enable = true;
     xkb = {
       variant = "intl";
