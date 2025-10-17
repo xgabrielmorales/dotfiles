@@ -49,6 +49,7 @@
     gcc
     git
     htop
+    lm_sensors
     python314
     rustc
     unzip
@@ -76,6 +77,7 @@
         bluez
         cameractrls-gtk4
         claude-code
+        csvlens
         diff-so-fancy
         discord
         docker-buildx
@@ -87,14 +89,18 @@
         git-extras
         gucharmap
         hunspell
+        jq
         lf
         libnotify
+        lxappearance
         maim
+        ncdu
         neofetch
         neovim
         nitrogen
         nodejs_24
         pamixer
+        papirus-icon-theme
         pavucontrol
         ranger
         redshift
@@ -105,6 +111,7 @@
         satty
         simplescreenrecorder
         skippy-xd
+        spotify
         stow
         syncthing
         tmux
@@ -114,10 +121,12 @@
         wireguard-tools
         wmctrl
         xclip
+        xdg-user-dirs
         xdotool
         xfce.thunar
         xorg.xev
         zathura
+        zsh-completions
       ];
     };
   };
@@ -126,7 +135,6 @@
     cantarell-fonts
     icomoon-feather
     nerd-fonts.jetbrains-mono
-    papirus-icon-theme
     twitter-color-emoji
   ];
 
