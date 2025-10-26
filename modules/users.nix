@@ -60,6 +60,7 @@
           spotify
           stow
           syncthing
+          tint2
           tmux
           typora
           viewnior
