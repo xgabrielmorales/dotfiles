@@ -6,4 +6,3 @@
 ^/LICENSE.*
 ^/.pre-commit-config.yaml
 \.mailmap
-\.editorconfig
