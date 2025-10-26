@@ -11,6 +11,7 @@
     ./modules/packages.nix
     ./modules/fonts.nix
     ./modules/users.nix
+    ./modules/virtualization.nix
   ];
 
   system.stateVersion = "25.05";
