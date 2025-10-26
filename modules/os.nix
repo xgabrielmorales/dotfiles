@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  nix.optimise.automatic = true;
+}
