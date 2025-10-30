@@ -19,6 +19,7 @@
         packages = with pkgs; [
           alacritty
           arc-theme
+          bitwarden-desktop
           blueman
           bluez
           cameractrls-gtk4
@@ -48,6 +49,7 @@
           pamixer
           papirus-icon-theme
           pavucontrol
+          postman
           ranger
           redshift
           ripgrep
