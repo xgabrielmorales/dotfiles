@@ -11,7 +11,6 @@ return {
       ensure_installed = {
         "bashls",
         "docker_language_server",
-        "jedi_language_server",
         "jsonls",
         "lua_ls",
         "nil_ls",
