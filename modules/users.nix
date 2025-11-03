@@ -20,8 +20,6 @@
           alacritty
           arc-theme
           bitwarden-desktop
-          blueman
-          bluez
           cameractrls-gtk4
           claude-code
           csvlens
