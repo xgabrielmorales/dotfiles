@@ -1,6 +1,13 @@
 { pkgs, ... }:
 
 {
+  security.sudo = {
+    configFile = ''
+      # Disable sudo timeout (ask for password every time)
+      Defaults timestamp_timeout=0
+    '';
+  };
+
   users = {
     mutableUsers = false;
     users = {
