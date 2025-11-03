@@ -2,7 +2,12 @@
 
 {
   services = {
-    # Enable the X11 windowing system.
+    getty = {
+      autologinUser = "xgm";
+      autologinOnce = true;
+      greetingLine = "";
+      helpLine = "";
+    };
     xserver = {
       autoRepeatDelay = 200;
       autoRepeatInterval = 30;
