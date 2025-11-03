@@ -16,6 +16,7 @@
     vim
     wget
     zip
+    dig
   ];
 
   programs.firefox.enable = true;

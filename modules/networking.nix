@@ -3,7 +3,7 @@
 {
   networking = {
     hostName = "xgm";
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    nameservers = [ "192.168.1.2" ];
     networkmanager.enable = true;
   };
   programs.ssh.startAgent = true;
