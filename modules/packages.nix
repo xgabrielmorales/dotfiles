@@ -1,4 +1,4 @@
-{ pkgs, zen-browser, ... }:
+{ pkgs, ... }:
 
 {
   # Packages
@@ -6,7 +6,6 @@
 
   environment.systemPackages = with pkgs; [
     cargo
-    dig
     gcc
     git
     htop
@@ -16,8 +15,8 @@
     unzip
     vim
     wget
-    zen-browser
     zip
+    dig
   ];
 
   programs.firefox.enable = true;
