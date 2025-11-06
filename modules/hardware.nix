@@ -3,7 +3,10 @@
 {
   hardware = {
     graphics.enable = true;
-    nvidia.open = true;
+    nvidia = {
+      open = true;
+      forceFullCompositionPipeline = true;
+    };
     bluetooth = {
       enable = true;
       powerOnBoot = true;
