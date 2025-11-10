@@ -4,7 +4,6 @@
   fonts = {
     packages = with pkgs; [
       cantarell-fonts
-      icomoon-feather
       nerd-fonts.jetbrains-mono
       noto-fonts
       twitter-color-emoji
