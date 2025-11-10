@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, zen-browser, ... }:
 
 {
   # Packages
@@ -17,6 +17,7 @@
     wget
     zip
     dig
+    zen-browser.packages.${pkgs.system}.default
   ];
 
   programs.firefox.enable = true;
