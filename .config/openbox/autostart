@@ -17,9 +17,6 @@ killall -q -9 polybar picom plank xfce-polkit
 # Notification daemon
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-# Key repeat delay
-/usr/bin/xset r rate 200 30 &
-
 # Polkit
 /usr/lib/xfce-polkit/xfce-polkit &
 
