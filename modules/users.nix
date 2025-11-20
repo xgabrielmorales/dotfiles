@@ -23,47 +23,6 @@
         hashedPassword =
           "$6$NrF8dQmb8fp6DBZy$Zgb.IEodEdox3nIyxdCjr6bbgm3J6tCP5nwjXN.qDsYyyzsfNOnNpPqqDlAKoClHHN8A5fISaICfrCEdd.Kcr0";
         shell = pkgs.zsh;
-        packages = with pkgs; [
-          alacritty
-          arc-theme
-          cameractrls-gtk4
-          csvlens
-          eza
-          fzf
-          gucharmap
-          jq
-          lf
-          libnotify
-          lxappearance
-          maim
-          ncdu
-          neofetch
-          nitrogen
-          pamixer
-          papirus-icon-theme
-          pavucontrol
-          ranger
-          redshift
-          rofi
-          satty
-          simplescreenrecorder
-          skippy-xd
-          stow
-          syncthing
-          tint2
-          tmux
-          typora
-          viewnior
-          vlc
-          wmctrl
-          xclip
-          xdg-user-dirs
-          xdotool
-          xfce.thunar
-          xorg.xev
-          zathura
-          zsh-completions
-        ];
       };
     };
   };
