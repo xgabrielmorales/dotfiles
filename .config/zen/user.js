@@ -37,3 +37,5 @@ user_pref("zen.view.hide-window-controls", false);
 user_pref("zen.welcome-screen.seen", true);
 // Makes the right-click menu smaller
 user_pref("devtools.accessibility.enabled", true);
+// To enable hardware video acceleration on Nvidia GPUs
+user_pref("media.hardware-video-decoding.force-enabled", true)
