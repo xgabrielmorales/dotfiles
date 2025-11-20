@@ -19,6 +19,7 @@ return {
         "taplo",
         "ts_ls",
         "yamlls",
+        "zuban",
       },
     })
 

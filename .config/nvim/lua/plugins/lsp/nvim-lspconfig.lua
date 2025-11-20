@@ -75,8 +75,6 @@ return {
       }
     end
 
-    vim.lsp.enable("zuban")
-
     -- https://github.com/LuaLS/lua-language-server
     vim.lsp.config["lua_ls"] = {
       on_attach = M.on_attach,
