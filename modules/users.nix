@@ -30,9 +30,6 @@
           claude-code
           csvlens
           diff-so-fancy
-          docker-buildx
-          docker-compose
-          docker_28
           eza
           fd
           fzf

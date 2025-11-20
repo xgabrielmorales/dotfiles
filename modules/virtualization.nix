@@ -1,6 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  # Docker CLI tools
+  environment.systemPackages = with pkgs; [
+    docker-buildx
+    docker-compose
+    docker_28
+  ];
+  # Docker service configuration
   virtualisation.docker = {
     enable = true;
     enableOnBoot = false;
