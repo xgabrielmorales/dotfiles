@@ -26,21 +26,19 @@
         packages = with pkgs; [
           alacritty
           arc-theme
-          bitwarden-desktop
           cameractrls-gtk4
           claude-code
           csvlens
           diff-so-fancy
-          discord
           docker-buildx
           docker-compose
           docker_28
           eza
           fd
           fzf
+          git
           git-extras
           gucharmap
-          uv
           hunspell
           jq
           lf
@@ -56,21 +54,20 @@
           papirus-icon-theme
           pavucontrol
           postman
+          python314
           ranger
           redshift
           ripgrep
           rofi
-          rofi-calc
-          rofi-emoji
           satty
           simplescreenrecorder
           skippy-xd
-          spotify
           stow
           syncthing
           tint2
           tmux
           typora
+          uv
           viewnior
           vlc
           wireguard-tools

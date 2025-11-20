@@ -7,10 +7,8 @@
   environment.systemPackages = with pkgs; [
     cargo
     gcc
-    git
     htop
     lm_sensors
-    python314
     rustc
     unzip
     vim
