@@ -5,7 +5,7 @@
     /etc/nixos/hardware-configuration.nix
     ./modules/boot.nix
     ./modules/networking.nix
-    ./modules/hardware.nix
+    ./modules/bluetooth.nix
     ./modules/locale.nix
     ./modules/desktop.nix
     ./modules/packages.nix

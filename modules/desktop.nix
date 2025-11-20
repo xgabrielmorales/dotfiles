@@ -30,7 +30,6 @@
         AllowUsers = [ "xgm" ];
       };
     };
-    blueman.enable = true;
   };
 
   # Systemd services
