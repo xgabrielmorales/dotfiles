@@ -19,7 +19,7 @@
         isNormalUser = true;
         description = "Gabriel Morales";
         home = "/home/xgm";
-        extraGroups = [ "wheel" "docker" ];
+        extraGroups = [ "wheel" ];
         hashedPassword =
           "$6$NrF8dQmb8fp6DBZy$Zgb.IEodEdox3nIyxdCjr6bbgm3J6tCP5nwjXN.qDsYyyzsfNOnNpPqqDlAKoClHHN8A5fISaICfrCEdd.Kcr0";
         shell = pkgs.zsh;

@@ -21,6 +21,8 @@
       };
     };
   };
+
+  users.users.xgm.extraGroups = [ "docker" ];
   users.users.xgm.packages = with pkgs; [
     age
     claude-code
@@ -41,5 +43,6 @@
     uv
     wireguard-tools
   ];
+
   programs.nix-ld.enable = true;
 }
