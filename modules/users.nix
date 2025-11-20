@@ -10,6 +10,12 @@
 
   users = {
     mutableUsers = false;
+    groups = {
+      xgm = {
+        name = "xgm";
+        gid = 1000;
+      };
+    };
     users = {
       root = {
         hashedPassword =
@@ -19,6 +25,8 @@
         isNormalUser = true;
         description = "Gabriel Morales";
         home = "/home/xgm";
+        uid = 1000;
+        group = "xgm";
         extraGroups = [ "wheel" ];
         hashedPassword =
           "$6$NrF8dQmb8fp6DBZy$Zgb.IEodEdox3nIyxdCjr6bbgm3J6tCP5nwjXN.qDsYyyzsfNOnNpPqqDlAKoClHHN8A5fISaICfrCEdd.Kcr0";
