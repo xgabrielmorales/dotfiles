@@ -27,16 +27,10 @@
           alacritty
           arc-theme
           cameractrls-gtk4
-          claude-code
           csvlens
-          diff-so-fancy
           eza
-          fd
           fzf
-          git
-          git-extras
           gucharmap
-          hunspell
           jq
           lf
           libnotify
@@ -44,17 +38,12 @@
           maim
           ncdu
           neofetch
-          neovim
           nitrogen
-          nodejs_24
           pamixer
           papirus-icon-theme
           pavucontrol
-          postman
-          python314
           ranger
           redshift
-          ripgrep
           rofi
           satty
           simplescreenrecorder
@@ -64,10 +53,8 @@
           tint2
           tmux
           typora
-          uv
           viewnior
           vlc
-          wireguard-tools
           wmctrl
           xclip
           xdg-user-dirs

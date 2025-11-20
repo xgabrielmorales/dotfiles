@@ -21,4 +21,25 @@
       };
     };
   };
+  users.users.xgm.packages = with pkgs; [
+    age
+    claude-code
+    diff-so-fancy
+    fd
+    gh
+    git
+    git-extras
+    hunspell
+    jetbrains.datagrip
+    neovim
+    nodejs_24
+    postman
+    postman
+    python314
+    ripgrep
+    sops
+    uv
+    wireguard-tools
+  ];
+  programs.nix-ld.enable = true;
 }

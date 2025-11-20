@@ -11,7 +11,7 @@
     ./modules/packages.nix
     ./modules/fonts.nix
     ./modules/users.nix
-    ./modules/virtualization.nix
+    ./modules/development.nix
     ./modules/nvidia.nix
   ];
 
