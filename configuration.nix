@@ -12,6 +12,7 @@
     ./modules/fonts.nix
     ./modules/users.nix
     ./modules/virtualization.nix
+    ./modules/nvidia.nix
   ];
 
   system.stateVersion = "25.05";

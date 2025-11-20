@@ -14,7 +14,6 @@
       autorun = false;
       displayManager.startx.enable = true;
       enable = true;
-      videoDrivers = [ "nvidia" ];
       windowManager.openbox.enable = true;
       xkb = {
         variant = "intl";
