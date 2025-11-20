@@ -22,6 +22,7 @@
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
+  programs.nix-ld.enable = true;
 
   # Add .local/bin to PATH for all users
   environment.localBinInPath = true;

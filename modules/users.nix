@@ -40,6 +40,7 @@
           fzf
           git-extras
           gucharmap
+          uv
           hunspell
           jq
           lf
