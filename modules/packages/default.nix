@@ -51,6 +51,7 @@
     satty
     simplescreenrecorder
     skippy-xd
+    spotify
     stow
     tint2
     tmux
