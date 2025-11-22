@@ -13,16 +13,16 @@
   # System Pacakges
   environment.systemPackages = with pkgs; [
     cargo
+    dig
     gcc
     htop
+    just
     lm_sensors
     rustc
     unzip
     vim
     wget
     zip
-    dig
-    zen-browser.packages.${pkgs.system}.default
   ];
 
   # User Pacakges
@@ -65,6 +65,7 @@
     xfce.thunar
     xorg.xev
     zathura
+    zen-browser.packages.${pkgs.system}.default
     zsh-completions
   ];
 }
