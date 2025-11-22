@@ -1,0 +1,8 @@
+delete-generations:
+  sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 1d
+
+clean:
+  sudo nix-store --gc
+
+build:
+  sudo nixos-rebuild switch --impure --flake ~/nix#xgm
