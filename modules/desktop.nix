@@ -1,9 +1,14 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   services = {
+    syncthing = {
+      enable = true;
+      user = config.mainUser;
+      dataDir = "/home/${config.mainUser}";
+    };
     getty = {
-      autologinUser = "xgm";
+      autologinUser = config.mainUser;
       autologinOnce = true;
       greetingLine = "";
       helpLine = "";
@@ -26,7 +31,7 @@
         PasswordAuthentication = false;
         KbdInteractiveAuthentication = false;
         PermitRootLogin = "no";
-        AllowUsers = [ "xgm" ];
+        AllowUsers = [ config.mainUser ];
       };
     };
   };

@@ -3,6 +3,7 @@
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
+    ./modules/main-user.nix
     ./modules/boot.nix
     ./modules/networking.nix
     ./modules/bluetooth.nix

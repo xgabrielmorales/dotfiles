@@ -1,4 +1,4 @@
-{ pkgs, zen-browser, ... }:
+{ config, pkgs, zen-browser, ... }:
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg: true;
@@ -26,7 +26,7 @@
   ];
 
   # User Pacakges
-  users.users.xgm.packages = with pkgs; [
+  users.users.${config.mainUser}.packages = with pkgs; [
     alacritty
     arc-theme
     cameractrls-gtk4
@@ -52,7 +52,6 @@
     simplescreenrecorder
     skippy-xd
     stow
-    syncthing
     tint2
     tmux
     typora
