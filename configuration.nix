@@ -14,6 +14,7 @@
     ./modules/users
     ./modules/development
     ./modules/nvidia
+    ./modules/polkit
   ];
 
   system.stateVersion = "25.05";
