@@ -1,16 +1,15 @@
 { ... }:
 
 {
-  # NVIDIA GPU Configuration
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware = {
     graphics.enable = true;
     nvidia = {
-      open = true;
+      open = false;
       forceFullCompositionPipeline = true;
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      powerManagement.enable = false;
     };
-  };
-  # NVIDIA Driver for X Server
-  services.xserver = {
-    videoDrivers = [ "nvidia" ];
   };
 }
