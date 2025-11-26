@@ -45,7 +45,6 @@
     papirus-icon-theme
     pavucontrol
     ranger
-    redshift
     rofi
     satty
     simplescreenrecorder

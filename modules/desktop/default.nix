@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  location = {
+    provider = "manual";
+    latitude = 4.66;
+    longitude = -74.09;
+  };
   services = {
     syncthing = {
       enable = true;
@@ -34,6 +39,7 @@
         AllowUsers = [ config.mainUser ];
       };
     };
+    redshift.enable = true;
   };
 
   # Systemd services
