@@ -7,13 +7,9 @@
     enableOnBoot = false;
     autoPrune.enable = true;
     extraPackages = [ pkgs.docker-buildx ];
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-      daemon.settings = {
-        dns = [ "1.1.1.1" "1.0.0.1" ];
-        registry-mirrors = [ "https://mirror.gcr.io" ];
-      };
+    daemon.settings = {
+      dns = [ "1.1.1.1" "1.0.0.1" ];
+      registry-mirrors = [ "https://mirror.gcr.io" ];
     };
   };
 
