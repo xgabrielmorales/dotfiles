@@ -24,6 +24,7 @@
       claude-code
       diff-so-fancy
       fd
+      firefox
       gh
       git
       git-extras
