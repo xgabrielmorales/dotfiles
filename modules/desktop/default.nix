@@ -20,11 +20,18 @@
       helpLine = "";
     };
     xserver = {
+      enable = true;
       autoRepeatDelay = 200;
       autoRepeatInterval = 30;
-      autorun = false;
-      displayManager.startx.enable = true;
-      enable = true;
+      displayManager = {
+        lightdm.enable = true;
+        sessionCommands = ''
+          ${pkgs.xorg.xrdb}/bin/xrdb -merge <<EOF
+            Xcursor.theme: Adwaita
+            Xcursor.size: 32
+          EOF
+        '';
+      };
       windowManager.openbox.enable = true;
       xkb = {
         variant = "intl";
