@@ -22,10 +22,9 @@
       wants = [ "graphical-session.target" ];
       after = [ "graphical-session.target" ];
       serviceConfig = {
-        Type = "forking";
+        Type = "oneshot";
         ExecStart = "${pkgs.skippy-xd}/bin/skippy-xd --start-daemon";
-        Restart = "on-failure";
-        RestartSec = 1;
+        RemainAfterExit = true;
         TimeoutStopSec = 10;
       };
     };
@@ -35,10 +34,9 @@
       wants = [ "graphical-session.target" ];
       after = [ "graphical-session.target" ];
       serviceConfig = {
-        Type = "forking";
+        Type = "oneshot";
         ExecStart = "${pkgs.tint2}/bin/tint2";
-        Restart = "on-failure";
-        RestartSec = 1;
+        RemainAfterExit = true;
         TimeoutStopSec = 10;
       };
     };
@@ -48,10 +46,9 @@
       wants = [ "graphical-session.target" ];
       after = [ "graphical-session.target" ];
       serviceConfig = {
-        Type = "forking";
+        Type = "oneshot";
         ExecStart = "${pkgs.nitrogen}/bin/nitrogen --restore";
-        Restart = "on-failure";
-        RestartSec = 1;
+        RemainAfterExit = true;
         TimeoutStopSec = 10;
       };
     };
