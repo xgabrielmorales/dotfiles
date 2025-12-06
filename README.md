@@ -8,6 +8,8 @@ This repository contains the configuration files for my WorkStation. Feel free t
 
 I use [Arch Linux](https://archlinux.org/) as my primary and only distribution. I appreciate the simplicity of the distro; I like the abundance of packages from [Pacman](https://archlinux.org/packages/) and [AUR](https://aur.archlinux.org/); I value its thorough and comprehensive documentation.
 
+Currently transitioning to NixOS. See [nixos](.config/nixos/).
+
 ## Window Manager: Openbox
 
 [Openbox](http://openbox.org) is a *floating* window manager, and it's my current choice. It's an excellent option for a desktop environment as it provides just enough to function.
