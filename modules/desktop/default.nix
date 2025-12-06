@@ -7,6 +7,7 @@
     longitude = -74.09;
   };
   services = {
+    gnome.gnome-keyring.enable = true;
     syncthing = {
       enable = true;
       user = config.mainUser;

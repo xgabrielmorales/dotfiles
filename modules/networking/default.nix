@@ -12,5 +12,4 @@
     networkmanager.enable = false;
     useDHCP = false;
   };
-  programs.ssh.startAgent = true;
 }
