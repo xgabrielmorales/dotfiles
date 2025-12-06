@@ -3,19 +3,19 @@
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ./modules/main-user
-    ./modules/boot
-    ./modules/networking
     ./modules/bluetooth
-    ./modules/locale
+    ./modules/boot
     ./modules/desktop
-    ./modules/packages
-    ./modules/fonts
-    ./modules/users
     ./modules/development
+    ./modules/fonts
+    ./modules/locale
+    ./modules/main-user
+    ./modules/networking
     ./modules/nvidia
+    ./modules/os
+    ./modules/packages
     ./modules/polkit
+    ./modules/users
   ];
-
   system.stateVersion = "25.05";
 }
