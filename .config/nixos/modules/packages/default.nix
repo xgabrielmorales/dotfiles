@@ -29,6 +29,7 @@
     alacritty
     arc-theme
     cameractrls-gtk4
+    conky
     csvlens
     eza
     fzf

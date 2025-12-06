@@ -52,5 +52,18 @@
         TimeoutStopSec = 10;
       };
     };
+    xgm-conky = {
+      description = "Conky system monitor";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.conky}/bin/conky";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
   };
 }
