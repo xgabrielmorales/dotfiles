@@ -46,7 +46,7 @@
     papirus-icon-theme
     pavucontrol
     ranger
-    rofi
+    (rofi.override { plugins = [ rofi-calc rofi-emoji ]; })
     satty
     simplescreenrecorder
     skippy-xd
