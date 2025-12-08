@@ -7,6 +7,7 @@
     ./modules/boot
     ./modules/desktop
     ./modules/development
+    ./modules/enviroment
     ./modules/fonts
     ./modules/locale
     ./modules/main-user
