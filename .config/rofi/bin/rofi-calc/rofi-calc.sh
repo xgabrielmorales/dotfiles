@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ROFI_CONFIG_FILE="$HOME/dotfiles/.config/rofi/default/rofi-calc.rasi"
+ROFI_CONFIG_FILE="${XDG_CONFIG_HOME}/rofi/default/rofi-calc.rasi"
 
 rofi -show calc \
     -theme "$ROFI_CONFIG_FILE" \

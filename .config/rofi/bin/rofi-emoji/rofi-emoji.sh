@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ROFI_CONFIG_FILE="$HOME/dotfiles/.config/rofi/default/rofi-emoji.rasi"
+ROFI_CONFIG_FILE="${XDG_CONFIG_HOME}/rofi/default/rofi-emoji.rasi"
 
 rofi \
     -show emoji \

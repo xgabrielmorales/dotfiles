@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ROFI_CONFIG_DIR="$HOME/.config/rofi/default"
+ROFI_CONFIG_DIR="${XDG_CONFIG_HOME}/rofi/default"
 ROFI_COMMAND="rofi -theme $ROFI_CONFIG_DIR/rofi-powermenu.rasi -dmenu"
 
 chosen=$(

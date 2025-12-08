@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-THEME="$HOME/.config/rofi/default/rofi-cpu-scaling.rasi"
+THEME="${XDG_CONFIG_HOME}/rofi/default/rofi-cpu-scaling.rasi"
 ROFI="rofi -dmenu -theme $THEME -p Governor"
 
 governors=("Conservative" "Ondemand" "Performance" "Powersave" "Schedutil" "Userspace")
