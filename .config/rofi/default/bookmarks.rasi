@@ -1,0 +1,11 @@
+@import "../xgm.rasi"
+
+inputbar {
+    enabled: true;
+    children: [ entry ];
+}
+
+element {
+    children: [ element-text ];
+    padding: 8px;
+}

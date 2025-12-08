@@ -273,6 +273,11 @@
         <command>~/.config/rofi/bin/rofi-emoji/rofi-emoji.sh</command>
       </action>
     </keybind>
+    <keybind key="W-i">
+      <action name="Execute">
+        <command>~/.local/bin/bookmarks</command>
+      </action>
+    </keybind>
     <keybind key="W-m">
       <action name="Execute">
         <command>~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh</command>

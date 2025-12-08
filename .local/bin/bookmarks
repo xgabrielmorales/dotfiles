@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ROFI_THEME="${XDG_CONFIG_HOME}/rofi/default/bookmarks.rasi"
+xdotool type "$(cat "${XDG_CACHE_HOME}/bookmarks" | rofi -theme "$ROFI_THEME" -sorting-method fzf -sort -dmenu)"
