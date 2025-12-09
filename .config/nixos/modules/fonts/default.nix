@@ -14,6 +14,7 @@
         monospace = [ "JetBrainsMono Nerd Font" ];
         sansSerif = [ "Noto Sans" ];
         serif = [ "Noto Serif" ];
+        emoji = [ "Twitter Color Emoji" ];
       };
     };
   };
