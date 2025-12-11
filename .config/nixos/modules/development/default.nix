@@ -28,13 +28,13 @@
       jetbrains.datagrip
       neovim
       nodejs_24
+      pipx
       postman
       postman
       python314
       ripgrep
       signal-desktop
       sops
-      uv
       wireguard-tools
     ];
   };
