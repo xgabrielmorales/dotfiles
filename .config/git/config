@@ -54,3 +54,6 @@
 [rebase]
     autoStash = true
     missingCommitsCheck = warn
+
+[status]
+    relativePaths = false
