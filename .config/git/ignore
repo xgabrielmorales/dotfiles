@@ -3,3 +3,6 @@
 .venv
 env/
 venv/
+
+# Claude Code
+**/.claude/settings.local.json
