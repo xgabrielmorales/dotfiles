@@ -58,10 +58,9 @@
       wants = [ "graphical-session.target" ];
       after = [ "graphical-session.target" ];
       serviceConfig = {
-        Type = "simple";
+        Type = "oneshot";
         ExecStart = "${pkgs.conky}/bin/conky";
-        Restart = "on-failure";
-        RestartSec = 1;
+        RemainAfterExit = true;
         TimeoutStopSec = 10;
       };
     };
