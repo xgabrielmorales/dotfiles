@@ -65,5 +65,18 @@
         TimeoutStopSec = 10;
       };
     };
+    xgm-xfce4-notifyd = {
+      description = "Notification service";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart =
+          "${pkgs.xfce.xfce4-notifyd}/lib/xfce4/notifyd/xfce4-notifyd";
+        RemainAfterExit = true;
+        TimeoutStopSec = 10;
+      };
+    };
   };
 }

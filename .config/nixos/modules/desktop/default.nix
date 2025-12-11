@@ -49,7 +49,4 @@
     };
     redshift.enable = true;
   };
-
-  # Systemd services
-  systemd.packages = with pkgs.xfce; [ xfce4-notifyd ];
 }

@@ -62,6 +62,7 @@
     xdg-user-dirs
     xdotool
     xfce.thunar
+    xfce.xfce4-notifyd
     xorg.xev
     zathura
     zen-browser.packages.${pkgs.system}.default
