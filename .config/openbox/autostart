@@ -11,6 +11,9 @@ killall -q -9 polybar picom plank xfce-polkit
 # Task Switcher
 /usr/bin/env skippy-xd --start-daemon &
 
+# System Monitor
+/usr/bin/env conky &
+
 # Key repeat delay
 /usr/bin/env xset r rate 200 30 &
 
