@@ -12,32 +12,6 @@
       registry-mirrors = [ "https://mirror.gcr.io" ];
     };
   };
-
-  users.users.${mainUser} = {
-    extraGroups = [ "docker" ];
-    packages = with pkgs; [
-      age
-      claude-code
-      diff-so-fancy
-      fd
-      firefox
-      gh
-      git
-      git-extras
-      hunspell
-      jetbrains.datagrip
-      neovim
-      nodejs_24
-      pipx
-      postman
-      postman
-      python314
-      ripgrep
-      signal-desktop
-      sops
-      wireguard-tools
-    ];
-  };
-
+  users.users.${mainUser}.extraGroups = [ "docker" ];
   programs.nix-ld.enable = true;
 }

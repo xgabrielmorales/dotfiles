@@ -6,6 +6,8 @@ let
   share = ".local/share";
   mkLink = config.lib.file.mkOutOfStoreSymlink;
 in {
+  imports = [ ./packages.nix ];
+
   home.username = mainUser;
   home.homeDirectory = "/home/${mainUser}";
   home.stateVersion = "25.05";

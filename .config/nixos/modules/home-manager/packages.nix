@@ -1,0 +1,64 @@
+{ pkgs, zen-browser, ... }:
+
+{
+  home.packages = with pkgs; [
+    (rofi.override { plugins = [ rofi-calc rofi-emoji ]; })
+    age
+    alacritty
+    arc-theme
+    cameractrls-gtk4
+    claude-code
+    conky
+    csvlens
+    diff-so-fancy
+    eza
+    fd
+    firefox
+    fzf
+    gh
+    git-extras
+    gucharmap
+    hunspell
+    jetbrains.datagrip
+    jq
+    just
+    lf
+    libnotify
+    lxappearance
+    maim
+    neofetch
+    neovim
+    nitrogen
+    nodejs_24
+    pamixer
+    papirus-icon-theme
+    pavucontrol
+    pipx
+    postman
+    python314
+    ranger
+    ripgrep
+    satty
+    signal-desktop
+    simplescreenrecorder
+    skippy-xd
+    sops
+    spotify
+    stow
+    tint2
+    tmux
+    typora
+    viewnior
+    vlc
+    wireguard-tools
+    wmctrl
+    xclip
+    xdg-user-dirs
+    xdotool
+    xfce.thunar
+    xfce.xfce4-notifyd
+    xorg.xev
+    zathura
+    zen-browser.packages.${pkgs.system}.default
+  ];
+}
