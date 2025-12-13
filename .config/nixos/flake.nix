@@ -12,8 +12,21 @@
     };
   };
   outputs = { nixpkgs, zen-browser, home-manager, ... }: {
-    nixosConfigurations.xgm = nixpkgs.lib.nixosSystem {
+    # Workstation configuration
+    nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { mainUser = "xgm"; };
+      modules = [
+        ./configuration.nix
+        { _module.args = { inherit zen-browser; }; }
+        home-manager.nixosModules.home-manager
+      ];
+    };
+
+    # Laptop configuration
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { mainUser = "xgm-laptop"; };
       modules = [
         ./configuration.nix
         { _module.args = { inherit zen-browser; }; }

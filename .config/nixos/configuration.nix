@@ -11,7 +11,6 @@
     ./modules/fonts
     ./modules/home-manager
     ./modules/locale
-    ./modules/main-user
     ./modules/networking
     ./modules/nvidia
     ./modules/os

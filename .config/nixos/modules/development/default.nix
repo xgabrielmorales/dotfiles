@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, mainUser, ... }:
 
 {
   # Docker service configuration
@@ -13,7 +13,7 @@
     };
   };
 
-  users.users.${config.mainUser} = {
+  users.users.${mainUser} = {
     extraGroups = [ "docker" ];
     packages = with pkgs; [
       age

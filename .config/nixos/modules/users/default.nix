@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, mainUser, ... }:
 
 {
   security.sudo = {
@@ -11,8 +11,8 @@
   users = {
     mutableUsers = false;
     groups = {
-      ${config.mainUser} = {
-        name = config.mainUser;
+      ${mainUser} = {
+        name = mainUser;
         gid = 1000;
       };
     };
@@ -21,11 +21,11 @@
         hashedPassword =
           "$6$LFjitH4qaP2ZlWvx$2tiE98H92SGMkM3g9lHHZIBsv3h56evEgcnl9RaGbwJUmqYG7nrQKyCl9iOnLYCb5xWIgD8Vbw/Sk2vI75xSn.";
       };
-      ${config.mainUser} = {
+      ${mainUser} = {
         isNormalUser = true;
-        home = "/home/${config.mainUser}";
+        home = "/home/${mainUser}";
         uid = 1000;
-        group = config.mainUser;
+        group = mainUser;
         extraGroups = [ "wheel" ];
         hashedPassword =
           "$6$NrF8dQmb8fp6DBZy$Zgb.IEodEdox3nIyxdCjr6bbgm3J6tCP5nwjXN.qDsYyyzsfNOnNpPqqDlAKoClHHN8A5fISaICfrCEdd.Kcr0";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, mainUser, ... }:
 
 {
   location = {
@@ -10,11 +10,11 @@
     gnome.gnome-keyring.enable = true;
     syncthing = {
       enable = true;
-      user = config.mainUser;
-      dataDir = "/home/${config.mainUser}";
+      user = mainUser;
+      dataDir = "/home/${mainUser}";
     };
     getty = {
-      autologinUser = config.mainUser;
+      autologinUser = mainUser;
       autologinOnce = true;
       greetingLine = "";
       helpLine = "";
@@ -44,7 +44,7 @@
         PasswordAuthentication = false;
         KbdInteractiveAuthentication = false;
         PermitRootLogin = "no";
-        AllowUsers = [ config.mainUser ];
+        AllowUsers = [ mainUser ];
       };
     };
     redshift.enable = true;

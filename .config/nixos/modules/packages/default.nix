@@ -1,4 +1,4 @@
-{ config, pkgs, zen-browser, ... }:
+{ pkgs, zen-browser, mainUser, ... }:
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg: true;
@@ -25,7 +25,7 @@
   ];
 
   # User Pacakges
-  users.users.${config.mainUser}.packages = with pkgs; [
+  users.users.${mainUser}.packages = with pkgs; [
     alacritty
     arc-theme
     cameractrls-gtk4

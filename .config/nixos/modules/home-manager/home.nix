@@ -1,13 +1,13 @@
-{ config, ... }:
+{ config, mainUser, ... }:
 
 let
-  dotfiles = "/home/xgm/dotfiles";
+  dotfiles = "/home/${mainUser}/dotfiles";
   bin = ".local/bin";
   share = ".local/share";
   mkLink = config.lib.file.mkOutOfStoreSymlink;
 in {
-  home.username = "xgm";
-  home.homeDirectory = "/home/xgm";
+  home.username = mainUser;
+  home.homeDirectory = "/home/${mainUser}";
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
