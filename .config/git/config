@@ -3,28 +3,13 @@
     email = gabrielmorales1@protonmail.com
     signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP11Z5NLmFk0jEj9cS+ceq4xsxJL0AbVx0km903ZQNOD"
 
-[core]
-    editor = nvim
-
-[push]
-    autoSetupRemote = true
-
 [alias]
-    s = status
-    ss = status --short
-    # Show Staged files
-    staged = diff --staged
-    # Show log decorated
     lod = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(red)%aN%C(reset) %C(green)%ar%C(reset) %C(yellow)%D%C(reset)%n%s%n' --use-mailmap
+    s = status
+    staged = diff --staged
 
-[diff]
-    context = 5
-
-[pager]
-    diff = diff-so-fancy | $PAGER
-
-[diff-so-fancy]
-    markEmptyLines = False
+[branch]
+    sort = -committerdate
 
 [color "status"]
     added = yellow
@@ -35,25 +20,52 @@
     gpgsign = true
     verbose = true
 
-[log]
-    date = iso-local
-    mailmap = true
+
+[core]
+    editor = nvim
+
+[diff]
+    context = 5
+
+[diff-so-fancy]
+    markEmptyLines = False
+
+[fetch]
+    all = true
+    prune = true
+    pruneTags = true
 
 [gpg]
     format = ssh
 
+[help]
+    autocorrect = immediate
+
 [includeIf "gitdir:~/Documents/Work/"]
     path = ~/Documents/Work/.gitconfig
 
-[help]
-    autocorrect = immediate
+[init]
+    defaultBranch = trunk
+
+[log]
+    date = iso-local
+    mailmap = true
+
+[pager]
+    diff = diff-so-fancy | $PAGER
 
 [pull]
     rebase = true
 
+[push]
+    autoSetupRemote = true
+    default = simple
+
 [rebase]
     autoStash = true
     missingCommitsCheck = warn
+    updateRefs = true
 
 [status]
     relativePaths = false
+    showStash = true
