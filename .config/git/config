@@ -67,5 +67,4 @@
     updateRefs = true
 
 [status]
-    relativePaths = false
     showStash = true
