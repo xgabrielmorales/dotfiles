@@ -4,7 +4,6 @@
 set drawbox true
 set mouse true
 set ratios 1:1
-set sixel true
 set icons true
 set cursorpreviewfmt "\033[7m"
 set period 1
