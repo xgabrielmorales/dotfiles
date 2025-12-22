@@ -65,7 +65,7 @@ return {
       "taplo",
       "ts_ls",
       "yamlls",
-      "zuban",
+      "ty",
     }
 
     for _, lsp in pairs(servers) do
