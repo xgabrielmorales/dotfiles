@@ -26,9 +26,10 @@
         PartOf = [ "graphical-session.target" ];
       };
       Service = {
-        Type = "oneshot";
+        Type = "simple";
         ExecStart = "${pkgs.skippy-xd}/bin/skippy-xd --start-daemon";
-        RemainAfterExit = true;
+        Restart = "on-failure";
+        RestartSec = 1;
         TimeoutStopSec = 10;
       };
       Install = { WantedBy = [ "graphical-session.target" ]; };
@@ -41,9 +42,10 @@
         PartOf = [ "graphical-session.target" ];
       };
       Service = {
-        Type = "oneshot";
+        Type = "simple";
         ExecStart = "${pkgs.tint2}/bin/tint2";
-        RemainAfterExit = true;
+        Restart = "on-failure";
+        RestartSec = 1;
         TimeoutStopSec = 10;
       };
       Install = { WantedBy = [ "graphical-session.target" ]; };
@@ -71,9 +73,10 @@
         PartOf = [ "graphical-session.target" ];
       };
       Service = {
-        Type = "oneshot";
+        Type = "simple";
         ExecStart = "${pkgs.conky}/bin/conky";
-        RemainAfterExit = true;
+        Restart = "on-failure";
+        RestartSec = 1;
         TimeoutStopSec = 10;
       };
       Install = { WantedBy = [ "graphical-session.target" ]; };
@@ -86,10 +89,11 @@
         PartOf = [ "graphical-session.target" ];
       };
       Service = {
-        Type = "oneshot";
+        Type = "simple";
         ExecStart =
-          "${pkgs.xfce.xfce4-notifyd}/lib/xfce4/notifyd/xfce4-notifyd";
-        RemainAfterExit = true;
+          "${pkgs.xfce4-notifyd}/lib/xfce4/notifyd/xfce4-notifyd";
+        Restart = "on-failure";
+        RestartSec = 1;
         TimeoutStopSec = 10;
       };
       Install = { WantedBy = [ "graphical-session.target" ]; };

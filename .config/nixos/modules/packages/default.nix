@@ -17,6 +17,7 @@
     lm_sensors
     ncdu
     rustc
+    unrar
     unzip
     vim
     wget

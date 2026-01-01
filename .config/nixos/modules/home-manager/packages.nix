@@ -55,10 +55,10 @@
     xclip
     xdg-user-dirs
     xdotool
-    xfce.thunar
-    xfce.xfce4-notifyd
+    thunar
+    xfce4-notifyd
     xorg.xev
     zathura
-    zen-browser.packages.${pkgs.system}.default
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
