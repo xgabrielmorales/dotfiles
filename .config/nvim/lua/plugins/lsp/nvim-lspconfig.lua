@@ -65,7 +65,7 @@ return {
       "taplo",
       "ts_ls",
       "yamlls",
-      "ty",
+      "zuban",
     }
 
     for _, lsp in pairs(servers) do
@@ -109,11 +109,7 @@ return {
       on_attach = M.on_attach,
       capabilities = M.capabilities,
       settings = {
-        ["nil"] = {
-          formatting = {
-            command = { "nixfmt" },
-          },
-        },
+        ["nil"] = {},
       },
     }
   end,

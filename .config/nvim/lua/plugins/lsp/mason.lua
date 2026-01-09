@@ -18,16 +18,14 @@ return {
         "rust_analyzer",
         "taplo",
         "ts_ls",
+        "zuban",
         "yamlls",
-        "ty",
       },
     })
 
     require("mason-null-ls").setup({
       ensure_installed = {
         "stylua",
-        "prettierd",
-        "nixfmt",
       },
     })
   end,
