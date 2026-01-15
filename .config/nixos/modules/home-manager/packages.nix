@@ -45,6 +45,7 @@
     sops
     spotify
     stow
+    thunar
     tint2
     tmux
     typora
@@ -55,7 +56,6 @@
     xclip
     xdg-user-dirs
     xdotool
-    thunar
     xfce4-notifyd
     xorg.xev
     zathura

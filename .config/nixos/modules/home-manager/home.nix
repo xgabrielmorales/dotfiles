@@ -4,7 +4,6 @@ let
   dotfiles = "/home/${mainUser}/dotfiles";
   bin = ".local/bin";
   share = ".local/share";
-  mkLink = config.lib.file.mkOutOfStoreSymlink;
 in {
   imports = [ ./packages.nix ./services.nix ];
 
@@ -14,39 +13,34 @@ in {
   programs.home-manager.enable = true;
 
   xdg.configFile = {
-    "alacritty".source = mkLink "${dotfiles}/.config/alacritty";
-    "conky".source = mkLink "${dotfiles}/.config/conky";
-    "git".source = mkLink "${dotfiles}/.config/git";
-    "gtk-2.0".source = mkLink "${dotfiles}/.config/gtk-2.0";
-    "gtk-3.0".source = mkLink "${dotfiles}/.config/gtk-3.0";
-    "gtk-4.0".source = mkLink "${dotfiles}/.config/gtk-4.0";
-    "lf".source = mkLink "${dotfiles}/.config/lf";
-    "nvim".source = mkLink "${dotfiles}/.config/nvim";
-    "openbox".source = mkLink "${dotfiles}/.config/openbox";
-    "ranger".source = mkLink "${dotfiles}/.config/ranger";
-    "rofi".source = mkLink "${dotfiles}/.config/rofi";
-    "shell".source = mkLink "${dotfiles}/.config/shell";
-    "skippy-xd".source = mkLink "${dotfiles}/.config/skippy-xd";
-    "tint2".source = mkLink "${dotfiles}/.config/tint2";
-    "tmux".source = mkLink "${dotfiles}/.config/tmux";
-    "zathura".source = mkLink "${dotfiles}/.config/zathura";
-    "zen".source = mkLink "${dotfiles}/.config/zen";
-    "zsh".source = mkLink "${dotfiles}/.config/zsh";
+    "alacritty".source = "${dotfiles}/.config/alacritty";
+    "conky".source = "${dotfiles}/.config/conky";
+    "git".source = "${dotfiles}/.config/git";
+    "gtk-2.0".source = "${dotfiles}/.config/gtk-2.0";
+    "gtk-3.0".source = "${dotfiles}/.config/gtk-3.0";
+    "gtk-4.0".source = "${dotfiles}/.config/gtk-4.0";
+    "lf".source = "${dotfiles}/.config/lf";
+    "nvim".source = "${dotfiles}/.config/nvim";
+    "openbox".source = "${dotfiles}/.config/openbox";
+    "ranger".source = "${dotfiles}/.config/ranger";
+    "rofi".source = "${dotfiles}/.config/rofi";
+    "shell".source = "${dotfiles}/.config/shell";
+    "skippy-xd".source = "${dotfiles}/.config/skippy-xd";
+    "tint2".source = "${dotfiles}/.config/tint2";
+    "tmux".source = "${dotfiles}/.config/tmux";
+    "zathura".source = "${dotfiles}/.config/zathura";
+    "zen".source = "${dotfiles}/.config/zen";
+    "zsh".source = "${dotfiles}/.config/zsh";
   };
   home.file = {
-    "${bin}/bookmarks".source = mkLink "${dotfiles}/${bin}/bookmarks";
-    "${bin}/brightness_module".source =
-      mkLink "${dotfiles}/${bin}/brightness_module";
-    "${bin}/recycle".source = mkLink "${dotfiles}/${bin}/recycle";
-    "${bin}/remove-unused-desktop-apps".source =
-      mkLink "${dotfiles}/${bin}/remove-unused-desktop-apps";
-    "${bin}/screenshot".source = mkLink "${dotfiles}/${bin}/screenshot";
-    "${bin}/sink_module".source = mkLink "${dotfiles}/${bin}/sink_module";
-    "${bin}/source_module".source = mkLink "${dotfiles}/${bin}/source_module";
-    "${bin}/toggle-audio-output".source =
-      mkLink "${dotfiles}/${bin}/toggle-audio-output";
-    "${share}/applications".source = mkLink "${dotfiles}/${share}/applications";
-    "${share}/fonts".source = mkLink "${dotfiles}/${share}/fonts";
-    "${share}/themes".source = mkLink "${dotfiles}/${share}/themes";
+    "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
+    "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
+    "${bin}/screenshot".source = "${dotfiles}/${bin}/screenshot";
+    "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
+    "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
+    "${bin}/toggle-audio-output".source = "${dotfiles}/${bin}/toggle-audio-output";
+    "${share}/applications".source = "${dotfiles}/${share}/applications";
+    "${share}/fonts".source = "${dotfiles}/${share}/fonts";
+    "${share}/themes".source = "${dotfiles}/${share}/themes";
   };
 }
