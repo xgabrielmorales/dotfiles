@@ -7,36 +7,21 @@
     longitude = -74.09;
   };
   services = {
+    redshift.enable = true;
     syncthing = {
       enable = true;
       user = mainUser;
       dataDir = "/home/${mainUser}";
     };
-    getty = {
-      autologinUser = mainUser;
-      autologinOnce = true;
-      greetingLine = "";
-      helpLine = "";
-    };
     xserver = {
       enable = true;
+      excludePackages = with pkgs; [ xterm ];
       autoRepeatDelay = 200;
       autoRepeatInterval = 30;
-      displayManager = {
-        lightdm.enable = true;
-        sessionCommands = ''
-          ${pkgs.xorg.xrdb}/bin/xrdb -merge <<EOF
-            Xcursor.theme: Adwaita
-            Xcursor.size: 32
-          EOF
-        '';
-      };
+      displayManager.lightdm.enable = true;
       windowManager.openbox.enable = true;
-      xkb = {
-        variant = "intl";
-        layout = "us";
-      };
+      xkb.variant = "intl";
+      xkb.layout = "us";
     };
-    redshift.enable = true;
   };
 }
