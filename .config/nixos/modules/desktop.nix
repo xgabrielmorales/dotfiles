@@ -7,7 +7,6 @@
     longitude = -74.09;
   };
   services = {
-    gnome.gnome-keyring.enable = true;
     syncthing = {
       enable = true;
       user = mainUser;
@@ -36,15 +35,6 @@
       xkb = {
         variant = "intl";
         layout = "us";
-      };
-    };
-    openssh = {
-      enable = true;
-      settings = {
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-        PermitRootLogin = "no";
-        AllowUsers = [ mainUser ];
       };
     };
     redshift.enable = true;
