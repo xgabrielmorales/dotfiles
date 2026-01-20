@@ -1,4 +1,4 @@
-{ config, mainUser, ... }:
+{ mainUser, ... }:
 
 let
   dotfiles = "/home/${mainUser}/dotfiles";

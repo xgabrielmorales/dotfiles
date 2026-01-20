@@ -9,6 +9,7 @@
     cameractrls-gtk4
     claude-code
     conky
+    corepack_24
     csvlens
     diff-so-fancy
     eza
@@ -17,6 +18,7 @@
     fzf
     gh
     git-extras
+    gnumake
     gucharmap
     hunspell
     jetbrains.datagrip
