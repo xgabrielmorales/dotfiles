@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfreePredicate = pkg: true;
-
   # Add .local/bin to PATH for all users
   environment.localBinInPath = true;
   programs.zsh.enable = true;
@@ -16,9 +14,11 @@
     htop
     lm_sensors
     ncdu
+    pciutils
     rustc
     unrar
     unzip
+    usbutils
     vim
     wget
     zip
