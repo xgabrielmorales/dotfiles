@@ -9,6 +9,13 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
 
+    # Wayland/NVIDIA
+    NIXOS_OZONE_WL = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
+
     ANSIBLE_CONFIG = "${XDG_CONFIG_HOME}/ansible.cfg";
     ANSIBLE_GALAXY_CACHE_DIR = "${XDG_CACHE_HOME}/ansible/galaxy_cache";
     ANSIBLE_HOME = "${XDG_CONFIG_HOME}/ansible";
@@ -26,8 +33,6 @@
     PYTHON_HISTORY = "${XDG_DATA_HOME}/python_history";
     RUFF_CACHE_DIR = "${XDG_CACHE_HOME}/ruff";
     WGETRC = "${XDG_CONFIG_HOME}/wget/wgetrc";
-    XINITRC = "${XDG_CONFIG_HOME}/X11/xinitrc";
-    XSERVERRC = "${XDG_CONFIG_HOME}/X11/xserverrc";
     ZDOTDIR = "${XDG_CONFIG_HOME}/zsh";
   };
 }

@@ -26,11 +26,8 @@
     just
     lf
     libnotify
-    lxappearance
-    maim
     neofetch
     neovim
-    nitrogen
     nodejs_24
     pamixer
     papirus-icon-theme
@@ -42,24 +39,19 @@
     ripgrep
     satty
     signal-desktop
-    simplescreenrecorder
-    skippy-xd
     sops
     spotify
     stow
+    swaybg
     thunar
-    tint2
     tmux
     typora
     viewnior
     vlc
+    waybar
     wireguard-tools
-    wmctrl
-    xclip
+    wl-clipboard
     xdg-user-dirs
-    xdotool
-    xfce4-notifyd
-    xorg.xev
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];

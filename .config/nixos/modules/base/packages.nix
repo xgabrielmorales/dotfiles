@@ -13,6 +13,7 @@
     gcc
     git
     htop
+    hyprpaper
     lm_sensors
     ncdu
     pciutils

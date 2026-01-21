@@ -1,0 +1,64 @@
+{
+  "position": "bottom",
+  "height": 40,
+  "mode": "dock",
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "tray",
+    "pulseaudio#mic",
+    "pulseaudio",
+    "clock",
+    "custom/power"
+  ],
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/bin/rofi-launcher/launcher.sh &"
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 16
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " MUTED",
+    "tooltip-format": "Microphone Volume",
+    "on-click": "source_module --toggle",
+    "on-scroll-up": "source_module --inc",
+    "on-scroll-down": "source_module --dec"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 MUTED",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "tooltip-format": "Audio Volume",
+    "on-click": "sink_module --toggle",
+    "on-click-right": "toggle-audio-output",
+    "on-scroll-up": "sink_module --inc",
+    "on-scroll-down": "sink_module --dec"
+  },
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip-format": "Power",
+    "on-click": "~/.config/rofi/bin/rofi-powermenu/powermenu.sh"
+  }
+}

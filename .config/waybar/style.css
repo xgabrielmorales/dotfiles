@@ -1,0 +1,122 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: #1e222a;
+  color: #b4bbc8;
+}
+
+/* Launcher button - green */
+#custom-launcher {
+  background-color: #7eca9c;
+  color: #2b3339;
+  padding: 0 10px;
+  margin: 4px 0 4px 6px;
+  border-radius: 10px;
+}
+
+/* Windows button */
+#custom-windows {
+  background-color: #282c34;
+  color: #b4bbc8;
+  padding: 0 10px;
+  margin: 4px 0 4px 10px;
+  border-radius: 10px;
+}
+
+#custom-windows:hover {
+  background-color: #333b41;
+}
+
+/* Workspaces */
+#workspaces {
+  background-color: #282c34;
+  margin: 4px 0 4px 10px;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  background-color: transparent;
+  color: #b4bbc8;
+  padding: 0 8px;
+  margin: 4px 0;
+  border-radius: 8px;
+}
+
+#workspaces button.active {
+  background-color: #333b41;
+}
+
+#workspaces button:hover {
+  background-color: #333b41;
+}
+
+/* Systray */
+#tray {
+  background-color: #282c34;
+  margin: 4px 10px 4px 0;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #e06c75;
+}
+
+/* Pulseaudio mic */
+#pulseaudio.mic {
+  background-color: #282c34;
+  padding: 0 10px;
+  margin: 4px 10px 4px 0;
+  border-radius: 10px;
+}
+
+/* Pulseaudio */
+#pulseaudio {
+  background-color: #282c34;
+  padding: 0 10px;
+  margin: 4px 10px 4px 0;
+  border-radius: 10px;
+}
+
+#pulseaudio:hover {
+  background-color: #333b41;
+}
+
+/* Clock */
+#clock {
+  background-color: #282c34;
+  padding: 0 10px;
+  margin: 4px 10px 4px 0;
+  border-radius: 10px;
+}
+
+/* Power button - red */
+#custom-power {
+  background-color: #e06c75;
+  color: #2b3339;
+  padding: 0 10px;
+  margin: 4px 6px 4px 0;
+  border-radius: 10px;
+}
+
+/* Tooltips */
+tooltip {
+  background-color: #1e222a;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+tooltip label {
+  color: #b4bbc8;
+}

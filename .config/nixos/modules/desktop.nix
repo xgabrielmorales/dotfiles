@@ -1,27 +1,37 @@
 { pkgs, mainUser, ... }:
 
 {
-  location = {
-    provider = "manual";
-    latitude = 4.66;
-    longitude = -74.09;
+  # Deshabilitar Xorg
+  services.xserver.enable = false;
+
+  # Habilitar Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
-  services = {
-    redshift.enable = true;
-    syncthing = {
-      enable = true;
-      user = mainUser;
-      dataDir = "/home/${mainUser}";
+
+  # greetd como display manager para Wayland
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
+        user = "greeter";
+      };
     };
-    xserver = {
-      enable = true;
-      excludePackages = with pkgs; [ xterm ];
-      autoRepeatDelay = 200;
-      autoRepeatInterval = 30;
-      displayManager.lightdm.enable = true;
-      windowManager.openbox.enable = true;
-      xkb.variant = "intl";
-      xkb.layout = "us";
-    };
+  };
+
+  # Servicios
+  services.syncthing = {
+    enable = true;
+    user = mainUser;
+    dataDir = "/home/${mainUser}";
+  };
+
+  # XDG portal para Wayland
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "*";
   };
 }
