@@ -10,19 +10,19 @@ I use [Arch Linux](https://archlinux.org/) as my primary and only distribution. 
 
 Currently transitioning to NixOS. See [nixos](.config/nixos/).
 
-## Window Manager: Openbox
+## Window Manager: Hyprland
 
-[Openbox](http://openbox.org) is a *floating* window manager, and it's my current choice. It's an excellent option for a desktop environment as it provides just enough to function.
+[Hyprland](https://hyprland.org/) is my current window manager running on Wayland. It's a dynamic *tiling* compositor that offers smooth animations, modern features, and excellent performance. Previously: [Openbox](http://openbox.org) and [i3wm](https://i3wm.org/).
 
-[I3wm](https://i3wm.org/) is the *tiling* window manager I also use. It's sufficient for my needs, easy to configure, and use, although perhaps somewhat limited in terms of flexibility.
+You can find my configuration here: [Hyprland](.config/hypr/), [Openbox](.config/openbox/), [i3wm](.config/i3/).
 
-You can find my configuration here: [Openbox](.config/openbox/), [i3wm](.config/i3/).
+## Status Bars: Waybar
 
-## Status Bars: Tint2
+[Waybar](https://github.com/Alexays/Waybar) is my current status bar for Wayland/Hyprland. It's highly customizable, supports modern features, and integrates perfectly with the Wayland ecosystem.
 
-[Tint2](https://github.com/o9000/tint2) is my current status bar. In the past, I used [Polybar](https://polybar.github.io/). Both are easy to use and configure. They're nothing special but get the job done.
+Previously, I used [Tint2](https://github.com/o9000/tint2) and [Polybar](https://polybar.github.io/) on X11. Both are easy to use and configure.
 
-My configuration can be found here: [Tint2](.config/tint2), [Polybar](.config/polybar).
+My configuration can be found here: [Waybar](.config/waybar), [Tint2](.config/tint2), [Polybar](.config/polybar).
 
 ## Window Switcher: Rofi
 
@@ -50,7 +50,7 @@ My configuration can be found here: [Lf](.config/lf), [Ranger](.config/ranger).
 
 ## Text Editor - Neovim
 
-I use [Neovim](https://neovim.io/) for programming; in the past, I used [Emacs](https://www.gnu.org/software/emacs/). Nowadays, I'm also learning to use [VSCode](https://code.visualstudio.com/). I try not to depend on a single editor.
+I use [Neovim](https://neovim.io/) for programming; in the past, I used [Emacs](https://www.gnu.org/software/emacs/).
 
 My configuration can be found here: [Nvim](.config/nvim/) and [Emacs](.config/emacs/).
 
@@ -60,8 +60,8 @@ Unlisted packages:
 
 - Browser: [Zen Browser](https://zen-browser.app/)
 - Document viewer: [Zathura](https://wiki.archlinux.org/title/Zathura)
-- Media Player: [Mpv](https://wiki.archlinux.org/title/Mpv)
-- Music Player: [Mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) + Mpc + [Rofi MPD](https://github.com/xgabrielmorales/rofi-mpd)
+- Media Player: [VLC](https://www.videolan.org/vlc/)
+- Music Player:  ~~[Mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) + Mpc + [Rofi MPD](https://github.com/xgabrielmorales/rofi-mpd)~~ Spotify.
 
 ### Typography Fonts
 
