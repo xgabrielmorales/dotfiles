@@ -1,6 +1,22 @@
 set -o emacs
 
-autoload -Uz compinit; compinit
+# Optimized compinit - cache for 24 hours
+autoload -Uz compinit
+
+setopt EXTENDEDGLOB
+
+for dump in ${ZDOTDIR:-$HOME}/.zcompdump(#qNmh-24); do
+  compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
+done
+
+if [[ ! -e ${ZDOTDIR:-$HOME}/.zcompdump ]]; then
+  compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
+else
+  compinit -C -d "${ZDOTDIR:-$HOME}/.zcompdump"
+fi
+
+unsetopt EXTENDEDGLOB
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # THE ORDER MATTERS!

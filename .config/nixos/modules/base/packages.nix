@@ -4,6 +4,7 @@
   # Add .local/bin to PATH for all users
   environment.localBinInPath = true;
   programs.zsh.enable = true;
+  programs.zsh.enableGlobalCompInit = false;
 
   # System Packages
   environment.systemPackages = with pkgs; [
