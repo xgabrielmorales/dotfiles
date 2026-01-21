@@ -54,5 +54,7 @@
     xdg-user-dirs
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    zsh
+    zsh-completions
   ];
 }
