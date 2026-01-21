@@ -9,6 +9,8 @@
   "modules-center": [],
   "modules-right": [
     "tray",
+    "disk",
+    "temperature",
     "pulseaudio#mic",
     "pulseaudio",
     "clock",
@@ -26,6 +28,15 @@
   "tray": {
     "icon-size": 16,
     "spacing": 16
+  },
+  "disk": {
+      "interval": 30,
+      "format": "DISK {percentage_used}%",
+      "path": "/"
+  },
+ "temperature": {
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input",
+    "format": "CPU {temperatureC}°C"
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
