@@ -56,6 +56,18 @@ window#waybar {
   background-color: #333b41;
 }
 
+/* Taskbar */
+#taskbar {
+  margin: 4px 0 4px 10px;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+#taskbar button:hover {
+  background-color: #333b41;
+  border-radius: 10px;
+}
+
 /* Systray */
 #tray {
   background-color: #282c34;
