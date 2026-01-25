@@ -19,7 +19,6 @@ in {
     cameractrls-gtk4
     claude-code
     mako
-    conky
     corepack_24
     csvlens
     diff-so-fancy
@@ -73,7 +72,6 @@ in {
   # XDG config files
   xdg.configFile = {
     "alacritty".source = "${dotfiles}/.config/alacritty";
-    "conky".source = "${dotfiles}/.config/conky";
     "git".source = "${dotfiles}/.config/git";
     "gtk-2.0".source = "${dotfiles}/.config/gtk-2.0";
     "gtk-3.0".source = "${dotfiles}/.config/gtk-3.0";
