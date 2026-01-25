@@ -61,6 +61,7 @@ in {
     waybar
     wireguard-tools
     wl-clipboard
+    wlrctl
     xdg-user-dirs
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -94,6 +95,7 @@ in {
   home.file = {
     "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
     "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
+    "${bin}/recycle-wayland".source = "${dotfiles}/${bin}/recycle-wayland";
     "${bin}/screenshot".source = "${dotfiles}/${bin}/screenshot";
     "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
     "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";

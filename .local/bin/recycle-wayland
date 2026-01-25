@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Description: Open a new instance of a binary or focus an existing one
+# Dependencies: wlrctl (for Wayland/wlroots compositors)
+
+if [[ $# -lt 1 ]]; then
+    echo "No binary specified"
+    exit 1
+fi
+
+BINARY=$(command -v "$1")
+if [[ -z "$BINARY" ]]; then
+    echo "Binary not found: $1"
+    exit 1
+fi
+
+APP_NAME=$(basename "$BINARY")
+
+# Try to focus existing window by app_id or title
+if wlrctl window focus "$APP_NAME" 2>/dev/null || wlrctl window focus "${APP_NAME^}" 2>/dev/null; then
+    exit 0
+fi
+
+# No existing window found, launch the binary
+exec "$BINARY" "${@:2}" &
