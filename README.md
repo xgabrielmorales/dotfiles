@@ -4,11 +4,11 @@ This repository contains the configuration files for my WorkStation. Feel free t
 
 ![rice](https://github.com/xgabrielmorales/dotfiles/assets/50029987/ee183470-b255-4df0-a72e-0c7b33920406)
 
-## Distro: Arch Linux
+## Distro: NixOS
 
-I use [Arch Linux](https://archlinux.org/) as my primary and only distribution. I appreciate the simplicity of the distro; I like the abundance of packages from [Pacman](https://archlinux.org/packages/) and [AUR](https://aur.archlinux.org/); I value its thorough and comprehensive documentation.
+[NixOS](https://nixos.org/) is my primary and only distribution. I appreciate its declarative configuration approach; I like the reproducibility and rollback capabilities; I value the extensive package collection from [Nixpkgs](https://search.nixos.org/packages). Previously: [Arch Linux](https://archlinux.org/).
 
-Currently transitioning to NixOS. See [nixos](.config/nixos/).
+My configuration can be found here: [NixOS](.config/nixos/).
 
 ## Window Manager: Hyprland
 
