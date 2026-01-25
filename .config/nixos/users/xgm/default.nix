@@ -1,6 +1,7 @@
-{ pkgs, mainUser, ... }:
+{ pkgs, mainUser, zen-browser, ... }:
 
 {
+  # Configuración de usuario (de users.nix)
   security.sudo = {
     configFile = ''
       # Disable sudo timeout (ask for password every time)
@@ -34,4 +35,10 @@
       };
     };
   };
+
+  # Configuración home-manager (de home-manager/default.nix)
+  home-manager.users.${mainUser} = import ./home.nix;
+  home-manager.extraSpecialArgs = { inherit mainUser zen-browser; };
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 }

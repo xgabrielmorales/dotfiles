@@ -13,5 +13,4 @@
     };
   };
   users.users.${mainUser}.extraGroups = [ "docker" ];
-  programs.nix-ld.enable = true;
 }

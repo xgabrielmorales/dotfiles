@@ -1,17 +1,74 @@
-{ mainUser, ... }:
+{ pkgs, mainUser, zen-browser, ... }:
 
 let
   dotfiles = "/home/${mainUser}/dotfiles";
   bin = ".local/bin";
   share = ".local/share";
 in {
-  imports = [ ./packages.nix ];
-
   home.username = mainUser;
   home.homeDirectory = "/home/${mainUser}";
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
+  # Packages (from packages.nix)
+  home.packages = with pkgs; [
+    (rofi.override { plugins = [ rofi-calc rofi-emoji ]; })
+    age
+    alacritty
+    arc-theme
+    cameractrls-gtk4
+    claude-code
+    conky
+    corepack_24
+    csvlens
+    diff-so-fancy
+    eza
+    fd
+    firefox
+    fzf
+    gh
+    git-extras
+    gucharmap
+    hunspell
+    hyprpaper
+    jetbrains.datagrip
+    jq
+    just
+    lf
+    libnotify
+    neofetch
+    neovim
+    nodejs_24
+    obs-studio
+    pamixer
+    papirus-icon-theme
+    pavucontrol
+    pipx
+    postman
+    python314
+    ranger
+    satty
+    signal-desktop
+    sops
+    spotify
+    stow
+    swaybg
+    thunar
+    tmux
+    typora
+    viewnior
+    vlc
+    waybar
+    wireguard-tools
+    wl-clipboard
+    xdg-user-dirs
+    zathura
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    zsh
+    zsh-completions
+  ];
+
+  # XDG config files
   xdg.configFile = {
     "alacritty".source = "${dotfiles}/.config/alacritty";
     "conky".source = "${dotfiles}/.config/conky";
@@ -32,6 +89,8 @@ in {
     "zen".source = "${dotfiles}/.config/zen";
     "zsh".source = "${dotfiles}/.config/zsh";
   };
+
+  # Home files
   home.file = {
     "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
     "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";

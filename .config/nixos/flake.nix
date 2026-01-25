@@ -12,11 +12,11 @@
     };
   };
   outputs = { nixpkgs, zen-browser, home-manager, ... }: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.xgm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { mainUser = "xgm"; };
       modules = [
-        ./configuration.nix
+        ./hosts/xgm
         { _module.args = { inherit zen-browser; }; }
         home-manager.nixosModules.home-manager
       ];

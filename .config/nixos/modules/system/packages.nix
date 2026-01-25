@@ -10,11 +10,12 @@
     dig
     gcc
     git
+    gnumake
     htop
-    hyprpaper
     lm_sensors
     ncdu
     pciutils
+    ripgrep
     rustc
     unrar
     unzip
