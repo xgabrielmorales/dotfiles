@@ -15,7 +15,7 @@ user_pref("devtools.toolbox.zoomValue", 1);
 user_pref("extensions.activeThemeID", "firefox-compact-light@mozilla.org");
 user_pref("extensions.pocket.enabled", false);
 user_pref("layout.css.prefers-color-scheme.content-override", 1);
-user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false)
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 user_pref("middlemouse.openNewWindow", false);
 user_pref("middlemouse.paste", false);
 user_pref("places.history.enabled", false);
@@ -38,4 +38,4 @@ user_pref("zen.welcome-screen.seen", true);
 // Makes the right-click menu smaller
 user_pref("devtools.accessibility.enabled", true);
 // To enable hardware video acceleration on Nvidia GPUs
-user_pref("media.hardware-video-decoding.force-enabled", true)
+user_pref("media.hardware-video-decoding.force-enabled", true);
