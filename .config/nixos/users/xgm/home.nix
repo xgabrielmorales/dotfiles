@@ -18,6 +18,7 @@ in {
     arc-theme
     cameractrls-gtk4
     claude-code
+    mako
     conky
     corepack_24
     csvlens
@@ -85,6 +86,7 @@ in {
     "shell".source = "${dotfiles}/.config/shell";
     "tmux".source = "${dotfiles}/.config/tmux";
     "waybar".source = "${dotfiles}/.config/waybar";
+    "mako".source = "${dotfiles}/.config/mako";
     "xsettingsd".source = "${dotfiles}/.config/xsettingsd";
     "zathura".source = "${dotfiles}/.config/zathura";
     "zen".source = "${dotfiles}/.config/zen";
