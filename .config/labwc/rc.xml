@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labwc_config>
+   <!-- CORE SETTINGS -->
+   <core>
+      <decoration>server</decoration>
+      <gap>0</gap>
+      <adaptiveSync>no</adaptiveSync>
+      <allowTearing>no</allowTearing>
+      <autoEnableOutputs>yes</autoEnableOutputs>
+      <reuseOutputMode>no</reuseOutputMode>
+      <xwaylandPersistence>no</xwaylandPersistence>
+      <primarySelection>yes</primarySelection>
+   </core>
+   <!-- RESISTANCE / SNAP SETTINGS-->
+   <resistance>
+      <screenEdgeStrength>20</screenEdgeStrength>
+      <windowEdgeStrength>10</windowEdgeStrength>
+      <unSnapThreshold>20</unSnapThreshold>
+      <unMaximizeThreshold>150</unMaximizeThreshold>
+   </resistance>
+   <!-- PLACEMENT-->
+   <placement>
+      <policy>center</policy>
+   </placement>
+   <!-- THEME & FONTS-->
+   <theme>
+      <name>Openbox Arc Darker</name>
+      <fallbackAppIcon>labwc</fallbackAppIcon>
+      <titlebar>
+         <layout>icon title iconify maximize close</layout>
+         <showTitle>yes</showTitle>
+      </titlebar>
+      <cornerRadius>0</cornerRadius>
+      <keepBorder>no</keepBorder>
+      <maximizedDecoration>titlebar</maximizedDecoration>
+      <dropShadows>no</dropShadows>
+      <dropShadowsOnTiled>no</dropShadowsOnTiled>
+      <font place="ActiveWindow">
+         <name>JetBrainsMono Nerd Font Mono</name>
+         <size>11</size>
+         <slant>normal</slant>
+         <weight>normal</weight>
+      </font>
+      <font place="InactiveWindow">
+         <name>JetBrainsMono Nerd Font Mono</name>
+         <size>11</size>
+         <slant>normal</slant>
+         <weight>normal</weight>
+      </font>
+      <font place="MenuHeader">
+         <name>JetBrainsMono Nerd Font Mono</name>
+         <size>11</size>
+         <slant>normal</slant>
+         <weight>normal</weight>
+      </font>
+      <font place="MenuItem">
+         <name>JetBrainsMono Nerd Font Mono</name>
+         <size>11</size>
+         <slant>normal</slant>
+         <weight>normal</weight>
+      </font>
+      <font place="OnScreenDisplay">
+         <name>JetBrainsMono Nerd Font Mono</name>
+         <size>12</size>
+         <slant>normal</slant>
+         <weight>normal</weight>
+      </font>
+   </theme>
+   <!-- RESIZE SETTINGS-->
+   <resize>
+      <popupShow>Always</popupShow>
+      <drawContents>yes</drawContents>
+      <minimumArea>8</minimumArea>
+   </resize>
+   <!-- FOCUS SETTINGS-->
+   <focus>
+      <focusNew>yes</focusNew>
+      <followMouse>no</followMouse>
+      <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+      <raiseOnFocus>no</raiseOnFocus>
+      <focusPrevOnClose>yes</focusPrevOnClose>
+   </focus>
+   <!-- SNAPPING-->
+   <snapping>
+      <range inner="10" outer="10" />
+      <cornerRange>50</cornerRange>
+      <overlay enabled="yes">
+         <delay inner="500" outer="500" />
+      </overlay>
+      <topMaximize>yes</topMaximize>
+      <notifyClient>always</notifyClient>
+   </snapping>
+   <!-- DESKTOPS/WORKSPACES-->
+   <desktops>
+      <popupTime>0</popupTime>
+      <number>5</number>
+      <names>
+         <name>1</name>
+         <name>2</name>
+         <name>3</name>
+         <name>4</name>
+         <name>5</name>
+      </names>
+   </desktops>
+
+
+   <regions>
+     <region name="snap-vertical" width="80%" height="99%" />
+     <region name="snap-vertical-small" width="55%" height="75%" />
+   </regions>
+
+   <!-- KEYBOARD BINDINGS-->
+   <keyboard>
+      <repeatRate>25</repeatRate>
+      <repeatDelay>200</repeatDelay>
+      <keybind key="W-S-r">
+         <action name="Reconfigure" />
+      </keybind>
+      <!-- Move window to desktop-->
+      <keybind key="W-S-1">
+         <action name="SendToDesktop" to="1" />
+      </keybind>
+      <keybind key="W-S-2">
+         <action name="SendToDesktop" to="2" />
+      </keybind>
+      <keybind key="W-S-3">
+         <action name="SendToDesktop" to="3" />
+      </keybind>
+      <keybind key="W-S-4">
+         <action name="SendToDesktop" to="4" />
+      </keybind>
+      <keybind key="W-S-5">
+         <action name="SendToDesktop" to="5" />
+      </keybind>
+      <!-- Switch to desktop-->
+      <keybind key="W-1">
+         <action name="GoToDesktop" to="1" />
+      </keybind>
+      <keybind key="W-2">
+         <action name="GoToDesktop" to="2" />
+      </keybind>
+      <keybind key="W-3">
+         <action name="GoToDesktop" to="3" />
+      </keybind>
+      <keybind key="W-4">
+         <action name="GoToDesktop" to="4" />
+      </keybind>
+      <keybind key="W-5">
+         <action name="GoToDesktop" to="5" />
+      </keybind>
+      <!-- Window switching -->
+      <keybind key="A-Tab">
+         <action name="NextWindow" />
+      </keybind>
+      <keybind key="W-Tab">
+         <action name="NextWindow" />
+      </keybind>
+      <!-- Window tiling/snapping-->
+      <keybind key="W-S-h">
+         <action name="Unmaximize" />
+         <action name="SnapToEdge" direction="left" />
+      </keybind>
+      <keybind key="W-S-j">
+         <action name="Unmaximize" />
+         <action name="SnapToEdge" direction="down" />
+      </keybind>
+      <keybind key="W-S-k">
+         <action name="Unmaximize" />
+         <action name="SnapToEdge" direction="up" />
+      </keybind>
+      <keybind key="W-S-l">
+         <action name="Unmaximize" />
+         <action name="SnapToEdge" direction="right" />
+      </keybind>
+      <keybind key="W-S-space">
+         <action name="ToggleMaximize" />
+      </keybind>
+      <!-- Applications launcher -->
+      <keybind key="W-Return">
+         <action name="Execute" command="recycle-wayland alacritty" />
+      </keybind>
+      <keybind key="W-o">
+         <action name="Execute" command="toggle-audio-output" />
+      </keybind>
+      <keybind key="W-space">
+         <action name="Execute" command="~/.config/rofi/bin/rofi-launcher/launcher.sh" />
+      </keybind>
+      <keybind key="W-x">
+         <action name="Execute" command="rofi -show run -theme xgm" />
+      </keybind>
+      <keybind key="W-c">
+         <action name="Execute" command="~/.config/rofi/bin/rofi-calc/rofi-calc.sh" />
+      </keybind>
+      <keybind key="W-e">
+         <action name="Execute" command="~/.config/rofi/bin/rofi-emoji/rofi-emoji.sh" />
+      </keybind>
+      <keybind key="W-i">
+         <action name="Execute" command="~/.local/bin/bookmarks" />
+      </keybind>
+      <keybind key="W-m">
+         <action name="Execute" command="~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh" />
+      </keybind>
+      <!-- Media Controls -->
+      <keybind key="XF86AudioRaiseVolume">
+         <action name="Execute" command="sink_module --inc" />
+      </keybind>
+      <keybind key="XF86AudioLowerVolume">
+         <action name="Execute" command="sink_module --dec" />
+      </keybind>
+      <keybind key="XF86AudioMute">
+         <action name="Execute" command="sink_module --toggle" />
+      </keybind>
+      <keybind key="XF86AudioStop">
+         <action name="Execute" command="playerctl stop" />
+      </keybind>
+      <keybind key="XF86AudioPlay">
+         <action name="Execute" command="playerctl play" />
+      </keybind>
+      <keybind key="XF86AudioPrev">
+         <action name="Execute" command="playerctl previous" />
+      </keybind>
+      <keybind key="XF86AudioNext">
+         <action name="Execute" command="playerctl next" />
+      </keybind>
+      <!-- Brightness -->
+      <keybind key="XF86MonBrightnessUp">
+         <action name="Execute" command="brightness_module --inc 5" />
+      </keybind>
+      <keybind key="XF86MonBrightnessDown">
+         <action name="Execute" command="brightness_module --dec 5" />
+      </keybind>
+      <!-- Screenshots -->
+      <keybind key="Print">
+         <action name="Execute" command="screenshot-wayland --screen" />
+      </keybind>
+      <keybind key="W-s">
+         <action name="Execute" command="screenshot-wayland --selection" />
+      </keybind>
+   </keyboard>
+   <!-- MOUSE BINDINGS-->
+   <mouse>
+      <doubleClickTime>400</doubleClickTime>
+      <!-- Frame-->
+      <context name="Frame">
+         <mousebind button="W-Left" action="Drag">
+            <action name="Move" />
+         </mousebind>
+         <mousebind button="A-Left" action="Drag">
+            <action name="Move" />
+         </mousebind>
+         <mousebind button="W-S-Right" action="Drag">
+            <action name="Resize" />
+         </mousebind>
+      </context>
+      <!-- TitleBar -->
+      <context name="TitleBar">
+         <mousebind button="Left" action="Press">
+            <action name="Focus" />
+            <action name="Raise" />
+         </mousebind>
+      </context>
+      <context name="Title">
+         <mousebind button="Left" action="DoubleClick">
+            <action name="ToggleMaximize" />
+            <action name="AutoPlace" policy="center" />
+         </mousebind>
+         <mousebind button="Middle" action="Press">
+            <action name="AutoPlace" policy="center" />
+         </mousebind>
+         <mousebind button="Right" action="Press">
+            <action name="SnapToRegion" region="snap-vertical" />
+            <action name="AutoPlace" policy="center" />
+         </mousebind>
+         <mousebind button="Right" action="DoubleClick">
+            <action name="SnapToRegion" region="snap-vertical-small" />
+            <action name="AutoPlace" policy="center" />
+         </mousebind>
+         <mousebind button="A-Middle" action="Press">
+            <action name="ToggleAlwaysOnTop" />
+         </mousebind>
+         <mousebind button="A-Left" action="Drag">
+            <action name="Move" />
+         </mousebind>
+         <mousebind button="Left" action="Drag">
+            <action name="Move" />
+         </mousebind>
+      </context>
+      <!-- Border edges: resize by edge -->
+      <context name="Top">
+         <mousebind button="Left" action="Drag">
+            <action name="Resize" direction="up" />
+         </mousebind>
+      </context>
+      <context name="Left">
+         <mousebind button="Left" action="Drag">
+            <action name="Resize" direction="left" />
+         </mousebind>
+      </context>
+      <context name="Right">
+         <mousebind button="Left" action="Drag">
+            <action name="Resize" direction="right" />
+         </mousebind>
+      </context>
+      <context name="Bottom">
+         <mousebind button="Left" action="Drag">
+            <action name="Resize" direction="down" />
+         </mousebind>
+      </context>
+      <!-- Client area-->
+      <context name="Client">
+         <mousebind button="Left" action="Press">
+            <action name="Focus" />
+            <action name="Raise" />
+         </mousebind>
+         <mousebind button="Right" action="Press">
+            <action name="Focus" />
+            <action name="Raise" />
+         </mousebind>
+      </context>
+      <!-- Titlebar buttons contexts -->
+      <context name="Maximize">
+         <mousebind button="Left" action="Press">
+            <action name="Focus" />
+            <action name="Raise" />
+         </mousebind>
+         <mousebind button="Left" action="Click">
+            <action name="ToggleMaximize" />
+         </mousebind>
+      </context>
+      <context name="Iconify">
+         <mousebind button="Left" action="Click">
+            <action name="Iconify" />
+         </mousebind>
+      </context>
+      <context name="Close">
+         <mousebind button="Left" action="Click">
+            <action name="Close" />
+         </mousebind>
+      </context>
+      <context name="AllDesktops">
+         <mousebind button="Left" action="Click">
+            <action name="ToggleOmnipresent" />
+         </mousebind>
+      </context>
+      <context name="Shade">
+         <mousebind button="Left" action="Click">
+            <action name="ToggleShade" />
+         </mousebind>
+      </context>
+   </mouse>
+
+   <windowSwitcher preview="no" outlines="no">
+     <fields>
+       <field content="icon" width="5%" />
+       <field content="title" width="95%" />
+     </fields>
+   </windowSwitcher>
+</labwc_config>

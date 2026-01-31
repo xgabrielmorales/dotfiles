@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+exec waybar --log-level off &
+exec waypaper --restore &

@@ -22,7 +22,7 @@
     ../../modules/hardware/nvidia.nix
 
     # Desktop environment
-    ../../modules/desktop/hyprland.nix
+    ../../modules/desktop/labwc.nix
     ../../modules/desktop/greetd.nix
     ../../modules/desktop/xdg.nix
     ../../modules/desktop/steam.nix

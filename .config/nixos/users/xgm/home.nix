@@ -30,7 +30,7 @@ in {
     grim
     gucharmap
     hunspell
-    hyprpaper
+    waypaper
     jetbrains.datagrip
     jq
     just
@@ -78,7 +78,7 @@ in {
     "gtk-2.0".source = "${dotfiles}/.config/gtk-2.0";
     "gtk-3.0".source = "${dotfiles}/.config/gtk-3.0";
     "gtk-4.0".source = "${dotfiles}/.config/gtk-4.0";
-    "hypr".source = "${dotfiles}/.config/hypr";
+    "labwc".source = "${dotfiles}/.config/labwc";
     "lf".source = "${dotfiles}/.config/lf";
     "nvim".source = "${dotfiles}/.config/nvim";
     "ranger".source = "${dotfiles}/.config/ranger";

@@ -10,11 +10,11 @@ This repository contains the configuration files for my WorkStation. Feel free t
 
 My configuration can be found here: [NixOS](.config/nixos/).
 
-## Window Manager: Hyprland
+## Window Manager: labwc
 
-[Hyprland](https://hyprland.org/) is my current window manager running on Wayland. It's a dynamic *tiling* compositor that offers smooth animations, modern features, and excellent performance. Previously: [Openbox](http://openbox.org) and [i3wm](https://i3wm.org/).
+[labwc](https://labwc.github.io/) is my current window manager running on Wayland. It's a wlroots-based stacking compositor inspired by Openbox, offering a familiar experience with modern Wayland features. Previously:  [Openbox](http://openbox.org) and [i3wm](https://i3wm.org/).
 
-You can find my configuration here: [Hyprland](.config/hypr/), [Openbox](.config/openbox/), [i3wm](.config/i3/).
+You can find my configuration here: [labwc](.config/labwc/), [Openbox](.config/openbox/), [i3wm](.config/i3/).
 
 ## Status Bars: Waybar
 
