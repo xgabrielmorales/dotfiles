@@ -18,7 +18,6 @@ in {
     arc-theme
     cameractrls-gtk4
     claude-code
-    mako
     corepack_24
     csvlens
     diff-so-fancy
@@ -28,6 +27,7 @@ in {
     fzf
     gh
     git-extras
+    grim
     gucharmap
     hunspell
     hyprpaper
@@ -36,6 +36,7 @@ in {
     just
     lf
     libnotify
+    mako
     neofetch
     neovim
     nodejs_24
@@ -49,6 +50,7 @@ in {
     ranger
     satty
     signal-desktop
+    slurp
     sops
     spotify
     stow
@@ -96,7 +98,7 @@ in {
     "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
     "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
     "${bin}/recycle-wayland".source = "${dotfiles}/${bin}/recycle-wayland";
-    "${bin}/screenshot".source = "${dotfiles}/${bin}/screenshot";
+    "${bin}/screenshot-wayland".source = "${dotfiles}/${bin}/screenshot-wayland";
     "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
     "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
     "${bin}/toggle-audio-output".source =

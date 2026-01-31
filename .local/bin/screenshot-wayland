@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+SCREENSHOT="$SCREENSHOTS_DIR/ss.$(date +'%Y-%m-%dT%H-%M-%S').png"
+
+mkdir --parent "$SCREENSHOTS_DIR"
+
+case "$1" in
+    "-s" | "--screen" | "Screen")
+        grim "$SCREENSHOT" && wl-copy --type image/png < "$SCREENSHOT"
+    ;;
+    "-S" | "--selection" | "Selection")
+        grim -g "$(slurp)" "$SCREENSHOT" && wl-copy --type image/png < "$SCREENSHOT"
+    ;;
+    *)
+        >&2 echo "Please. Select a valid option." && exit
+        ;;
+esac
+
+if [[ ! -s "$SCREENSHOT" ]]; then
+    rm "$SCREENSHOT" > /dev/null 2>&1
+    exit
+fi
+
+action=$(notify-send \
+    --app-name="Screenshot" \
+    --icon="image-x-generic-symbolic" \
+    --action="edit=Edit" \
+    --action="view=View" \
+    --action="delete=Delete" \
+    "Screenshot Taken" \
+    "It has been saved to the clipboard." \
+)
+
+case "$action" in
+    "edit")
+        satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT"
+    ;;
+    "view")
+        xdg-open "$SCREENSHOT"
+    ;;
+    "delete")
+        rm "$SCREENSHOT"
+    ;;
+esac
