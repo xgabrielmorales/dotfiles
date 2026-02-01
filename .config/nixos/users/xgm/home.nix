@@ -98,7 +98,8 @@ in {
     "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
     "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
     "${bin}/recycle-wayland".source = "${dotfiles}/${bin}/recycle-wayland";
-    "${bin}/screenshot-wayland".source = "${dotfiles}/${bin}/screenshot-wayland";
+    "${bin}/screenshot-wayland".source =
+      "${dotfiles}/${bin}/screenshot-wayland";
     "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
     "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
     "${bin}/toggle-audio-output".source =
@@ -106,5 +107,44 @@ in {
     "${share}/applications".source = "${dotfiles}/${share}/applications";
     "${share}/fonts".source = "${dotfiles}/${share}/fonts";
     "${share}/themes".source = "${dotfiles}/${share}/themes";
+  };
+
+  xdg.desktopEntries = {
+    "nvidia-settings" = {
+      name = "";
+      noDisplay = true;
+    };
+    "org.pwmt.zathura" = {
+      name = "";
+      noDisplay = true;
+    };
+    "thunar-bulk-rename" = {
+      name = "";
+      noDisplay = true;
+    };
+    "thunar-settings" = {
+      name = "";
+      noDisplay = true;
+    };
+    gvim = {
+      name = "";
+      noDisplay = true;
+    };
+    htop = {
+      name = "";
+      noDisplay = true;
+    };
+    lf = {
+      name = "";
+      noDisplay = true;
+    };
+    ranger = {
+      name = "";
+      noDisplay = true;
+    };
+    vim = {
+      name = "";
+      noDisplay = true;
+    };
   };
 }
