@@ -27,7 +27,7 @@
       <name>Openbox Arc Darker</name>
       <fallbackAppIcon>labwc</fallbackAppIcon>
       <titlebar>
-         <layout>icon title iconify maximize close</layout>
+         <layout>icon:iconify,max,close</layout>
          <showTitle>yes</showTitle>
       </titlebar>
       <cornerRadius>0</cornerRadius>
@@ -102,13 +102,10 @@
          <name>5</name>
       </names>
    </desktops>
-
-
    <regions>
-     <region name="snap-vertical" width="80%" height="99%" />
-     <region name="snap-vertical-small" width="55%" height="75%" />
+      <region name="snap-vertical" width="80%" height="99%" />
+      <region name="snap-vertical-small" width="55%" height="75%" />
    </regions>
-
    <!-- KEYBOARD BINDINGS-->
    <keyboard>
       <repeatRate>25</repeatRate>
@@ -288,22 +285,22 @@
       <!-- Border edges: resize by edge -->
       <context name="Top">
          <mousebind button="Left" action="Drag">
-            <action name="Resize" direction="up" />
+            <action name="Resize" />
          </mousebind>
       </context>
       <context name="Left">
          <mousebind button="Left" action="Drag">
-            <action name="Resize" direction="left" />
+            <action name="Resize" />
          </mousebind>
       </context>
       <context name="Right">
          <mousebind button="Left" action="Drag">
-            <action name="Resize" direction="right" />
+            <action name="Resize" />
          </mousebind>
       </context>
       <context name="Bottom">
          <mousebind button="Left" action="Drag">
-            <action name="Resize" direction="down" />
+            <action name="Resize" />
          </mousebind>
       </context>
       <!-- Client area-->
@@ -348,11 +345,10 @@
          </mousebind>
       </context>
    </mouse>
-
    <windowSwitcher preview="no" outlines="no">
-     <fields>
-       <field content="icon" width="5%" />
-       <field content="title" width="95%" />
-     </fields>
+      <fields>
+         <field content="icon" width="5%" />
+         <field content="title" width="95%" />
+      </fields>
    </windowSwitcher>
 </labwc_config>
