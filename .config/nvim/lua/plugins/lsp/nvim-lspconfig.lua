@@ -63,6 +63,7 @@ return {
       "ruff",
       "rust_analyzer",
       "taplo",
+      "terraformls",
       "ts_ls",
       "yamlls",
       "zuban",

@@ -17,9 +17,10 @@ return {
         "ruff",
         "rust_analyzer",
         "taplo",
+        "terraformls",
         "ts_ls",
-        "zuban",
         "yamlls",
+        "zuban",
       },
     })
 
