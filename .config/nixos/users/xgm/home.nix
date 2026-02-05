@@ -21,6 +21,7 @@ in {
     corepack_24
     csvlens
     diff-so-fancy
+    direnv
     eza
     fd
     firefox
@@ -30,7 +31,6 @@ in {
     grim
     gucharmap
     hunspell
-    waypaper
     jetbrains.datagrip
     jq
     just
@@ -61,6 +61,7 @@ in {
     viewnior
     vlc
     waybar
+    waypaper
     wireguard-tools
     wl-clipboard
     wlrctl

@@ -24,3 +24,5 @@ source "$XDG_CONFIG_HOME/zsh/prompt"
 source "$XDG_CONFIG_HOME/shell/aliases"
 source "$XDG_CONFIG_HOME/shell/profile"
 source "$XDG_CONFIG_HOME/zsh/plugins"
+
+eval "$(direnv hook zsh)"
