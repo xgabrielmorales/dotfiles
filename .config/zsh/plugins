@@ -6,7 +6,6 @@ source "$PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh"
 source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$PLUGIN_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh"
 source "$PLUGIN_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-source "$PLUGIN_DIR/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh"
 
 # Bindings: history-substring-search
 bindkey '^[[A' history-substring-search-up

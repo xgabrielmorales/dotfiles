@@ -7,9 +7,6 @@
 [submodule ".config/zsh/external-plugins/zsh-autosuggestions"]
 	path = .config/zsh/external-plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule ".config/zsh/external-plugins/zsh-autoswitch-virtualenv"]
-	path = .config/zsh/external-plugins/zsh-autoswitch-virtualenv
-	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
 [submodule ".config/zsh/external-plugins/zsh-history-substring-search"]
 	path = .config/zsh/external-plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
