@@ -99,5 +99,5 @@ cmd touch %touch "$@"
 cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
 cmd yank-name $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
 
-cmd tmux-split-h-window $ tmux split-window -h -c "$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
-cmd tmux-split-v-window $ tmux split-window -v -c "$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+cmd tmux-split-h-window $ tmux split-window -h -c "$PWD"
+cmd tmux-split-v-window $ tmux split-window -v -c "$PWD"
