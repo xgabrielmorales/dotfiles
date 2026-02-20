@@ -16,6 +16,7 @@ in {
     age
     alacritty
     arc-theme
+    bubblewrap
     cameractrls-gtk4
     claude-code
     corepack_24
@@ -45,12 +46,14 @@ in {
     papirus-icon-theme
     pavucontrol
     pipx
+    playerctl
     postman
     python314
     ranger
     satty
     signal-desktop
     slurp
+    socat
     sops
     spotify
     stow

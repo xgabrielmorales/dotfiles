@@ -9,11 +9,14 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
 
-    # Wayland/NVIDIA
+    # Wayland
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     NIXOS_OZONE_WL = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
-    GBM_BACKEND = "nvidia-drm";
+
+    # Nvidia
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
     LIBVA_DRIVER_NAME = "nvidia";
 
     # Keyboard
