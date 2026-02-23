@@ -16,6 +16,7 @@ in {
     age
     alacritty
     arc-theme
+    awscli2
     bubblewrap
     cameractrls-gtk4
     claude-code
@@ -29,6 +30,7 @@ in {
     fzf
     gh
     git-extras
+    google-cloud-sdk
     grim
     gucharmap
     hunspell
@@ -58,6 +60,7 @@ in {
     spotify
     stow
     swaybg
+    terraform
     thunar
     tmux
     typora
