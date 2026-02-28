@@ -31,6 +31,7 @@
     ../../modules/services/docker.nix
     ../../modules/services/ssh.nix
     ../../modules/services/syncthing.nix
+    ../../modules/services/virt-manager.nix
 
     # Users
     ../../users/xgm
