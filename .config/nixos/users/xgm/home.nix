@@ -40,7 +40,6 @@ in {
     lf
     libnotify
     mako
-    neofetch
     neovim
     nodejs_24
     obs-studio

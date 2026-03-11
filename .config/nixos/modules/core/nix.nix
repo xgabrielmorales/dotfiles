@@ -3,7 +3,11 @@
 {
   nix.channel.enable = false;
   nix.settings.auto-optimise-store = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  nix.settings.download-buffer-size = 536870912; # 512 MB
   nixpkgs.config.allowUnfreePredicate = pkg: true;
 
   # nix-ld
