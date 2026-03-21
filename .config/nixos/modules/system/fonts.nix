@@ -2,6 +2,7 @@
 
 {
   fonts = {
+    enableDefaultPackages = false;
     packages = with pkgs; [
       cantarell-fonts
       nerd-fonts.jetbrains-mono

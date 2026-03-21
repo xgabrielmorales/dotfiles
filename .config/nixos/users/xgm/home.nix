@@ -43,6 +43,7 @@ in {
     neovim
     nodejs_24
     obs-studio
+    openssl_oqs
     pamixer
     papirus-icon-theme
     pavucontrol

@@ -10,8 +10,12 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { nixpkgs, zen-browser, home-manager, ... }: {
+  outputs = { nixpkgs, zen-browser, home-manager, nix-index-database, ... }: {
     nixosConfigurations.xgm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { mainUser = "xgm"; };
@@ -19,6 +23,7 @@
         ./hosts/xgm
         { _module.args = { inherit zen-browser; }; }
         home-manager.nixosModules.home-manager
+        nix-index-database.nixosModules.default
       ];
     };
   };
