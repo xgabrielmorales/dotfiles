@@ -45,7 +45,8 @@
     "status-icons": {
       "paused": "",
       "playing": ""
-    }
+    },
+    "ignored-players": ["firefox", "zen-beta"]
   },
   "tray": {
     "icon-size": 16,
