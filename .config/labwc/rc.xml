@@ -103,8 +103,8 @@
       </names>
    </desktops>
    <regions>
-      <region name="snap-vertical" width="80%" height="99%" />
-      <region name="snap-vertical-small" width="55%" height="75%" />
+      <region name="snap-vertical"       x="10%"   y="0.5%"  width="80%" height="100%" />
+      <region name="snap-vertical-small" x="22.5%" y="12.5%" width="55%" height="75%" />
    </regions>
    <!-- KEYBOARD BINDINGS-->
    <keyboard>
@@ -259,18 +259,13 @@
       <context name="Title">
          <mousebind button="Left" action="DoubleClick">
             <action name="ToggleMaximize" />
-            <action name="AutoPlace" policy="center" />
          </mousebind>
-         <mousebind button="Middle" action="Press">
-            <action name="AutoPlace" policy="center" />
-         </mousebind>
+         <mousebind button="Middle" action="Press"></mousebind>
          <mousebind button="Right" action="Press">
             <action name="SnapToRegion" region="snap-vertical" />
-            <action name="AutoPlace" policy="center" />
          </mousebind>
          <mousebind button="Right" action="DoubleClick">
             <action name="SnapToRegion" region="snap-vertical-small" />
-            <action name="AutoPlace" policy="center" />
          </mousebind>
          <mousebind button="A-Middle" action="Press">
             <action name="ToggleAlwaysOnTop" />
