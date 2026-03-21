@@ -1,10 +1,16 @@
-{ pkgs, mainUser, zen-browser, ... }:
+{
+  pkgs,
+  mainUser,
+  zen-browser,
+  ...
+}:
 
 let
   dotfiles = "/home/${mainUser}/dotfiles";
   bin = ".local/bin";
   share = ".local/share";
-in {
+in
+{
   home.username = mainUser;
   home.homeDirectory = "/home/${mainUser}";
   home.stateVersion = "25.05";
@@ -12,7 +18,12 @@ in {
 
   # Packages (from packages.nix)
   home.packages = with pkgs; [
-    (rofi.override { plugins = [ rofi-calc rofi-emoji ]; })
+    (rofi.override {
+      plugins = [
+        rofi-calc
+        rofi-emoji
+      ];
+    })
     age
     alacritty
     arc-theme
@@ -71,7 +82,9 @@ in {
     wireguard-tools
     wl-clipboard
     wlrctl
+    wtype
     xdg-user-dirs
+    ydotool
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zsh
@@ -102,15 +115,12 @@ in {
 
   # Home files
   home.file = {
-    "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
-    "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
-    "${bin}/recycle-wayland".source = "${dotfiles}/${bin}/recycle-wayland";
-    "${bin}/screenshot-wayland".source =
-      "${dotfiles}/${bin}/screenshot-wayland";
+    "${bin}/bookmarks".source = "${dotfiles}/${bin}/wayland/bookmarks";
+    "${bin}/recycle".source = "${dotfiles}/${bin}/wayland/recycle";
+    "${bin}/screenshot".source = "${dotfiles}/${bin}/wayland/screenshot";
     "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
     "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
-    "${bin}/toggle-audio-output".source =
-      "${dotfiles}/${bin}/toggle-audio-output";
+    "${bin}/toggle-audio-output".source = "${dotfiles}/${bin}/toggle-audio-output";
     "${share}/applications".source = "${dotfiles}/${share}/applications";
     "${share}/fonts".source = "${dotfiles}/${share}/fonts";
     "${share}/themes".source = "${dotfiles}/${share}/themes";

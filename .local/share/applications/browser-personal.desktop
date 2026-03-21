@@ -3,4 +3,4 @@ Type=Application
 Name=Web Browser (Personal)
 Icon=zen-browser
 Type=Application
-Exec=recycle-wayland zen-beta
+Exec=recycle zen-beta

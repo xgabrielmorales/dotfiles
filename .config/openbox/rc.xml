@@ -275,7 +275,7 @@
     </keybind>
     <keybind key="W-i">
       <action name="Execute">
-        <command>~/.local/bin/bookmarks</command>
+        <command>bookmarks</command>
       </action>
     </keybind>
     <keybind key="W-m">

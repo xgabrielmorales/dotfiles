@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+ROFI_THEME="${XDG_CONFIG_HOME}/rofi/default/bookmarks.rasi"
+BOOKMARKS_FILE="${XDG_CACHE_HOME}/bookmarks"
+
+SELECCION=$(cat "$BOOKMARKS_FILE" | rofi -dmenu -theme "$ROFI_THEME" -sorting-method fzf -sort)
+
+if [[ -n "$SELECCION" ]]; then
+    sleep 0.1
+    wtype "$SELECCION"
+fi

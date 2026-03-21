@@ -174,7 +174,7 @@
       </keybind>
       <!-- Applications launcher -->
       <keybind key="W-Return">
-         <action name="Execute" command="recycle-wayland alacritty" />
+         <action name="Execute" command="recycle alacritty" />
       </keybind>
       <keybind key="W-o">
          <action name="Execute" command="toggle-audio-output" />
@@ -228,10 +228,10 @@
       </keybind>
       <!-- Screenshots -->
       <keybind key="Print">
-         <action name="Execute" command="screenshot-wayland --screen" />
+         <action name="Execute" command="screenshot --screen" />
       </keybind>
       <keybind key="W-s">
-         <action name="Execute" command="screenshot-wayland --selection" />
+         <action name="Execute" command="screenshot --selection" />
       </keybind>
    </keyboard>
    <!-- MOUSE BINDINGS-->
