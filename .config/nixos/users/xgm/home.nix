@@ -50,7 +50,6 @@ in
     just
     lf
     libnotify
-    mako
     neovim
     nodejs_24
     obs-studio
@@ -84,6 +83,7 @@ in
     wlrctl
     wtype
     xdg-user-dirs
+    xfce4-notifyd
     ydotool
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -106,7 +106,6 @@ in
     "shell".source = "${dotfiles}/.config/shell";
     "tmux".source = "${dotfiles}/.config/tmux";
     "waybar".source = "${dotfiles}/.config/waybar";
-    "mako".source = "${dotfiles}/.config/mako";
     "xsettingsd".source = "${dotfiles}/.config/xsettingsd";
     "zathura".source = "${dotfiles}/.config/zathura";
     "zen".source = "${dotfiles}/.config/zen";

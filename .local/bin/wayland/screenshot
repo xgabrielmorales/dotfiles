@@ -34,12 +34,14 @@ action=$(notify-send \
 
 case "$action" in
     "edit")
-        satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT"
+        satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT" --early-exit --font-family "JetBrainsMono Nerd Font"
+        notify-send "Screenshot Edited" "It has been saved."
     ;;
     "view")
         xdg-open "$SCREENSHOT"
     ;;
     "delete")
         rm "$SCREENSHOT"
+        notify-send "Screenshot Deleted" "Now it's gone."
     ;;
 esac
