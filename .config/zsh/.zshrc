@@ -18,6 +18,7 @@ fi
 unsetopt EXTENDEDGLOB
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 -F --all --group-directories-first --icons $realpath'
 
 # THE ORDER MATTERS!
 source "$XDG_CONFIG_HOME/zsh/prompt"
