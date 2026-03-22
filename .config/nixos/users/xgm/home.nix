@@ -16,6 +16,13 @@ in
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
+  services.gammastep = {
+    enable = true;
+    provider = "manual";
+    latitude = "4.69";
+    longitude = "-74.1";
+  };
+
   # Packages (from packages.nix)
   home.packages = with pkgs; [
     (rofi.override {
