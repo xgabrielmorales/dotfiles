@@ -34,7 +34,7 @@ action=$(notify-send \
 
 case "$action" in
     "edit")
-        satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT" --early-exit --font-family "JetBrainsMono Nerd Font"
+        satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT" --font-family "JetBrainsMono Nerd Font" --disable-notifications --save-after-copy
         notify-send "Screenshot Edited" "It has been saved."
     ;;
     "view")
