@@ -35,6 +35,7 @@ in
     alacritty
     arc-theme
     awscli2
+    bat
     bubblewrap
     cameractrls-gtk4
     claude-code
@@ -44,6 +45,7 @@ in
     direnv
     eza
     fd
+    file
     firefox
     fzf
     gh
@@ -65,6 +67,7 @@ in
     papirus-icon-theme
     pavucontrol
     pipx
+    pistol
     playerctl
     postman
     python314
@@ -98,27 +101,6 @@ in
     zsh-completions
   ];
 
-  # XDG config files
-  xdg.configFile = {
-    "alacritty".source = "${dotfiles}/.config/alacritty";
-    "git".source = "${dotfiles}/.config/git";
-    "gtk-2.0".source = "${dotfiles}/.config/gtk-2.0";
-    "gtk-3.0".source = "${dotfiles}/.config/gtk-3.0";
-    "gtk-4.0".source = "${dotfiles}/.config/gtk-4.0";
-    "labwc".source = "${dotfiles}/.config/labwc";
-    "lf".source = "${dotfiles}/.config/lf";
-    "nvim".source = "${dotfiles}/.config/nvim";
-    "ranger".source = "${dotfiles}/.config/ranger";
-    "rofi".source = "${dotfiles}/.config/rofi";
-    "shell".source = "${dotfiles}/.config/shell";
-    "tmux".source = "${dotfiles}/.config/tmux";
-    "waybar".source = "${dotfiles}/.config/waybar";
-    "xsettingsd".source = "${dotfiles}/.config/xsettingsd";
-    "zathura".source = "${dotfiles}/.config/zathura";
-    "zen".source = "${dotfiles}/.config/zen";
-    "zsh".source = "${dotfiles}/.config/zsh";
-  };
-
   # Home files
   home.file = {
     "${bin}/bookmarks".source = "${dotfiles}/${bin}/wayland/bookmarks";
@@ -131,43 +113,63 @@ in
     "${share}/fonts".source = "${dotfiles}/${share}/fonts";
     "${share}/themes".source = "${dotfiles}/${share}/themes";
   };
-
-  xdg.desktopEntries = {
-    "nvidia-settings" = {
-      name = "";
-      noDisplay = true;
+  xdg = {
+    configFile = {
+      "alacritty".source = "${dotfiles}/.config/alacritty";
+      "git".source = "${dotfiles}/.config/git";
+      "gtk-2.0".source = "${dotfiles}/.config/gtk-2.0";
+      "gtk-3.0".source = "${dotfiles}/.config/gtk-3.0";
+      "gtk-4.0".source = "${dotfiles}/.config/gtk-4.0";
+      "labwc".source = "${dotfiles}/.config/labwc";
+      "lf".source = "${dotfiles}/.config/lf";
+      "nvim".source = "${dotfiles}/.config/nvim";
+      "ranger".source = "${dotfiles}/.config/ranger";
+      "rofi".source = "${dotfiles}/.config/rofi";
+      "shell".source = "${dotfiles}/.config/shell";
+      "tmux".source = "${dotfiles}/.config/tmux";
+      "waybar".source = "${dotfiles}/.config/waybar";
+      "xsettingsd".source = "${dotfiles}/.config/xsettingsd";
+      "zathura".source = "${dotfiles}/.config/zathura";
+      "zen".source = "${dotfiles}/.config/zen";
+      "zsh".source = "${dotfiles}/.config/zsh";
     };
-    "org.pwmt.zathura" = {
-      name = "";
-      noDisplay = true;
-    };
-    "thunar-bulk-rename" = {
-      name = "";
-      noDisplay = true;
-    };
-    "thunar-settings" = {
-      name = "";
-      noDisplay = true;
-    };
-    gvim = {
-      name = "";
-      noDisplay = true;
-    };
-    htop = {
-      name = "";
-      noDisplay = true;
-    };
-    lf = {
-      name = "";
-      noDisplay = true;
-    };
-    ranger = {
-      name = "";
-      noDisplay = true;
-    };
-    vim = {
-      name = "";
-      noDisplay = true;
+    desktopEntries = {
+      "nvidia-settings" = {
+        name = "";
+        noDisplay = true;
+      };
+      "org.pwmt.zathura" = {
+        name = "";
+        noDisplay = true;
+      };
+      "thunar-bulk-rename" = {
+        name = "";
+        noDisplay = true;
+      };
+      "thunar-settings" = {
+        name = "";
+        noDisplay = true;
+      };
+      gvim = {
+        name = "";
+        noDisplay = true;
+      };
+      htop = {
+        name = "";
+        noDisplay = true;
+      };
+      lf = {
+        name = "";
+        noDisplay = true;
+      };
+      ranger = {
+        name = "";
+        noDisplay = true;
+      };
+      vim = {
+        name = "";
+        noDisplay = true;
+      };
     };
   };
 }
