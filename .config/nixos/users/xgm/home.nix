@@ -109,7 +109,6 @@ in
     "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
     "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
     "${bin}/toggle-audio-output".source = "${dotfiles}/${bin}/toggle-audio-output";
-    "${share}/applications".source = "${dotfiles}/${share}/applications";
     "${share}/fonts".source = "${dotfiles}/${share}/fonts";
     "${share}/themes".source = "${dotfiles}/${share}/themes";
   };
@@ -133,42 +132,56 @@ in
       "zen".source = "${dotfiles}/.config/zen";
       "zsh".source = "${dotfiles}/.config/zsh";
     };
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        # Images
+        "image/*" = "img.desktop";
+        # Video
+        "video/*" = "video.desktop";
+        # Text Files
+        "text/*" = "text.desktop";
+        # Documents
+        "application/pdf" = "pdf.desktop";
+        # Browser (Personal)
+        "x-scheme-handler/about" = "browser-personal.desktop";
+        "x-scheme-handler/http" = "browser-personal.desktop";
+        "x-scheme-handler/https" = "browser-personal.desktop";
+        "x-scheme-handler/unknown" = "browser-personal.desktop";
+      };
+    };
     desktopEntries = {
-      "nvidia-settings" = {
-        name = "";
-        noDisplay = true;
+      "browser-personal" = {
+        name = "Web Browser (Personal)";
+        icon = "zen-browser";
+        exec = "recycle zen-beta";
+        type = "Application";
       };
-      "org.pwmt.zathura" = {
-        name = "";
-        noDisplay = true;
+      "browser-work" = {
+        name = "Web Browser (Work)";
+        icon = "firefox";
+        exec = "recycle firefox";
+        type = "Application";
       };
-      "thunar-bulk-rename" = {
-        name = "";
-        noDisplay = true;
+      "img" = {
+        name = "Image Viewer";
+        exec = "${pkgs.viewnior}/bin/viewnior %F";
+        type = "Application";
       };
-      "thunar-settings" = {
-        name = "";
-        noDisplay = true;
+      "pdf" = {
+        name = "PDF Reader";
+        exec = "${pkgs.zathura}/bin/zathura %u";
+        type = "Application";
       };
-      gvim = {
-        name = "";
-        noDisplay = true;
+      "text" = {
+        name = "Text Editor";
+        exec = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.neovim}/bin/nvim %u";
+        type = "Application";
       };
-      htop = {
-        name = "";
-        noDisplay = true;
-      };
-      lf = {
-        name = "";
-        noDisplay = true;
-      };
-      ranger = {
-        name = "";
-        noDisplay = true;
-      };
-      vim = {
-        name = "";
-        noDisplay = true;
+      "video" = {
+        name = "Video Viewer";
+        exec = "${pkgs.vlc}/bin/vlc %f";
+        type = "Application";
       };
     };
   };
