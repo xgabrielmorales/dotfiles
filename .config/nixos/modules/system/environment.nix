@@ -20,8 +20,8 @@
     LIBVA_DRIVER_NAME = "nvidia";
 
     # Keyboard
-    XKB_DEFAULT_LAYOUT="us";
-    XKB_DEFAULT_VARIANT="intl";
+    XKB_DEFAULT_LAYOUT = "us";
+    XKB_DEFAULT_VARIANT = "intl";
 
     ANSIBLE_CONFIG = "${XDG_CONFIG_HOME}/ansible.cfg";
     ANSIBLE_GALAXY_CACHE_DIR = "${XDG_CACHE_HOME}/ansible/galaxy_cache";
