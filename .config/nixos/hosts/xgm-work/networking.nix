@@ -3,7 +3,13 @@
 {
   networking = {
     hostName = "xgm-work";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
     useDHCP = false;
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  };
+
+  services.resolved = {
+    enable = true;
+    fallbackDns = [ "1.1.1.1" "8.8.8.8" ];
   };
 }
