@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd labwc";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd labwc";
         user = "greeter";
       };
     };
