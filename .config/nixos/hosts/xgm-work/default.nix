@@ -18,14 +18,14 @@
     ../../modules/system/packages.nix
 
     # Hardware support
-    ../../modules/hardware/bluetooth.nix
     ../../modules/hardware/nvidia.nix
+    ../../modules/hardware/bluetooth.nix
+    ../../modules/hardware/laptop.nix
 
     # Desktop environment
     ../../modules/desktop/labwc.nix
     ../../modules/desktop/greetd.nix
     ../../modules/desktop/xdg.nix
-    ../../modules/desktop/steam.nix
 
     # Services
     ../../modules/services/docker.nix
@@ -33,13 +33,12 @@
     ../../modules/services/syncthing.nix
 
     # Users
-    ../../users/xgm
+    ../../users/xgm-work
   ];
 
   # Keyboard
   environment.sessionVariables = {
-    XKB_DEFAULT_LAYOUT = "us";
-    XKB_DEFAULT_VARIANT = "intl";
+    XKB_DEFAULT_LAYOUT = "latam";
   };
 
   system.stateVersion = "25.05";

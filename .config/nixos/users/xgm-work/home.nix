@@ -1,10 +1,12 @@
 {
   pkgs,
-  mainUser,
-  zen-browser,
   ...
 }:
 
 {
   imports = [ ../common/home.nix ];
+
+  home.packages = with pkgs; [
+    brightnessctl
+  ];
 }

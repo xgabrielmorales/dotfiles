@@ -6,3 +6,6 @@ clean:
 
 build:
   sudo nixos-rebuild switch --impure --flake ~/dotfiles/.config/nixos#xgm
+
+build-work:
+  sudo nixos-rebuild switch --impure --flake ~/dotfiles/.config/nixos#xgm-work

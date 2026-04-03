@@ -26,5 +26,15 @@
         nix-index-database.nixosModules.default
       ];
     };
+    nixosConfigurations.xgm-work = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { mainUser = "xgm-work"; };
+      modules = [
+        ./hosts/xgm-work
+        { _module.args = { inherit zen-browser; }; }
+        home-manager.nixosModules.home-manager
+        nix-index-database.nixosModules.default
+      ];
+    };
   };
 }

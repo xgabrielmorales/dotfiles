@@ -346,4 +346,10 @@
       <field content="title" width="95%"/>
     </fields>
   </windowSwitcher>
+  <!-- LIBINPUT -->
+  <libinput>
+    <device category="touchpad">
+      <naturalScroll>yes</naturalScroll>
+    </device>
+  </libinput>
 </labwc_config>

@@ -13,6 +13,8 @@
     "tray",
     "disk",
     "temperature",
+    "backlight",
+    "upower",
     "pulseaudio#mic",
     "pulseaudio",
     "clock",
@@ -61,6 +63,12 @@
     "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input",
     "format": "CPU {temperatureC}°C"
   },
+  "backlight": {
+    "format": "󰃠 {percent}%",
+    "tooltip-format": "Brightness",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
   "pulseaudio#mic": {
     "format": "{format_source}",
     "format-source": " {volume}%",
@@ -85,6 +93,13 @@
     "on-click-right": "toggle-audio-output",
     "on-scroll-up": "sink_module --inc",
     "on-scroll-down": "sink_module --dec"
+  },
+  "upower": {
+    "format": " {percentage}",
+    "hide-if-empty": true,
+    "icon-size": 0,
+    "on-click": "",
+    "tooltip": false
   },
   "clock": {
     "format": " {:%H:%M}",
