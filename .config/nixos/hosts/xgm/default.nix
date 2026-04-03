@@ -25,7 +25,6 @@
     ../../modules/desktop/labwc.nix
     ../../modules/desktop/greetd.nix
     ../../modules/desktop/xdg.nix
-    ../../modules/desktop/steam.nix
 
     # Services
     ../../modules/services/docker.nix
