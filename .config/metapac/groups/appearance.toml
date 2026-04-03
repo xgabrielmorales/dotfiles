@@ -1,9 +1,0 @@
-arch = [
-    "arc-gtk-theme",
-    "cantarell-fonts",
-    "lxappearance",
-    "nitrogen",
-    "noto-fonts-cjk",
-    "papirus-icon-theme",
-    "ttf-twemoji",
-]

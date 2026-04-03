@@ -1,8 +1,0 @@
-\.git
-\.gitignore
-\.gitmodules
-
-^/README.*
-^/LICENSE.*
-^/.pre-commit-config.yaml
-\.mailmap

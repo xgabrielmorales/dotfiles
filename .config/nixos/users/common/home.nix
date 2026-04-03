@@ -105,9 +105,9 @@ in
 
   # Home files
   home.file = {
-    "${bin}/bookmarks".source = "${dotfiles}/${bin}/wayland/bookmarks";
-    "${bin}/recycle".source = "${dotfiles}/${bin}/wayland/recycle";
-    "${bin}/screenshot".source = "${dotfiles}/${bin}/wayland/screenshot";
+    "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
+    "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
+    "${bin}/screenshot".source = "${dotfiles}/${bin}/screenshot";
     "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
     "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
     "${bin}/toggle-audio-output".source = "${dotfiles}/${bin}/toggle-audio-output";

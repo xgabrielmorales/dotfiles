@@ -12,17 +12,15 @@ My configuration can be found here: [NixOS](.config/nixos/).
 
 ## Window Manager: labwc
 
-[labwc](https://labwc.github.io/) is my current window manager running on Wayland. It's a wlroots-based stacking compositor inspired by Openbox, offering a familiar experience with modern Wayland features. Previously:  [Openbox](http://openbox.org) and [i3wm](https://i3wm.org/).
+[labwc](https://labwc.github.io/) is my current window manager running on Wayland. It's a wlroots-based stacking compositor inspired by Openbox, offering a familiar experience with modern Wayland features.
 
-You can find my configuration here: [labwc](.config/labwc/), [Openbox](.config/openbox/), [i3wm](.config/i3/).
+You can find my configuration here: [labwc](.config/labwc/).
 
 ## Status Bars: Waybar
 
 [Waybar](https://github.com/Alexays/Waybar) is my current status bar for Wayland/Hyprland. It's highly customizable, supports modern features, and integrates perfectly with the Wayland ecosystem.
 
-Previously, I used [Tint2](https://github.com/o9000/tint2) and [Polybar](https://polybar.github.io/) on X11. Both are easy to use and configure.
-
-My configuration can be found here: [Waybar](.config/waybar), [Tint2](.config/tint2), [Polybar](.config/polybar).
+My configuration can be found here: [Waybar](.config/waybar).
 
 ## Window Switcher: Rofi
 
@@ -61,7 +59,7 @@ Unlisted packages:
 - Browser: [Zen Browser](https://zen-browser.app/)
 - Document viewer: [Zathura](https://wiki.archlinux.org/title/Zathura)
 - Media Player: [VLC](https://www.videolan.org/vlc/)
-- Music Player:  ~~[Mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) + Mpc + [Rofi MPD](https://github.com/xgabrielmorales/rofi-mpd)~~ Spotify.
+- Music Player: Spotify.
 
 ### Typography Fonts
 
