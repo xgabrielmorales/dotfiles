@@ -142,6 +142,8 @@ in
       enable = true;
       defaultApplications = {
         # Images
+        "image/png" = "pdf.desktop";
+        "image/jpg" = "pdf.desktop";
         "image/*" = "img.desktop";
         # Video
         "video/*" = "video.desktop";
