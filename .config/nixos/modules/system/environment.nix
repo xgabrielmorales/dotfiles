@@ -19,9 +19,6 @@
     CARGO_HOME = "${XDG_DATA_HOME}/cargo";
     DOCKER_CONFIG = "${XDG_CONFIG_HOME}/docker";
     GTK2_RC_FILES = "${XDG_CONFIG_HOME}/gtk-2.0/gtkrc";
-    KUBECACHEDIR = "${XDG_CACHE_HOME}/kube";
-    KUBECONFIG = "${XDG_CONFIG_HOME}/kube";
-    MINIKUBE_HOME = "${XDG_DATA_HOME}/minikube";
     NPM_CONFIG_CACHE = "${XDG_CACHE_HOME}/npm";
     NPM_CONFIG_INIT_MODULE = "${XDG_CONFIG_HOME}/npm/config/npm-init.js";
     NPM_CONFIG_PREFIX = "$HOME/.local";
