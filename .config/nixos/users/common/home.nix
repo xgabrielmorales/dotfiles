@@ -38,7 +38,6 @@ in
     bat
     bubblewrap
     cameractrls-gtk4
-    claude-code
     corepack_24
     csvlens
     diff-so-fancy
@@ -119,6 +118,7 @@ in
     userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = true;
     };
     configFile = {
       "alacritty".source = "${dotfiles}/.config/alacritty";

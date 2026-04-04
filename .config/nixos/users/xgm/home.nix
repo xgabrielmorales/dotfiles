@@ -1,7 +1,4 @@
 {
-  pkgs,
-  mainUser,
-  zen-browser,
   ...
 }:
 

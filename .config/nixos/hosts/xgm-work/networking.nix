@@ -5,11 +5,16 @@
     hostName = "xgm-work";
     networkmanager.enable = false;
     useDHCP = false;
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
   };
-
   services.resolved = {
     enable = true;
-    fallbackDns = [ "1.1.1.1" "8.8.8.8" ];
+    settings.Resolve.FallbackDNS = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
   };
 }

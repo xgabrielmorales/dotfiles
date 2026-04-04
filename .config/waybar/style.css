@@ -126,14 +126,6 @@ window#waybar {
   border-radius: 10px;
 }
 
-/* Power Profiles Daemon */
-#power-profiles-daemon {
-  background-color: #282c34;
-  padding: 0 10px;
-  margin: 4px 10px 4px 0;
-  border-radius: 10px;
-}
-
 /* UPower */
 #upower {
   background-color: #282c34;
