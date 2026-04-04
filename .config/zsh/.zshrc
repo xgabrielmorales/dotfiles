@@ -5,14 +5,10 @@ autoload -Uz compinit
 
 setopt EXTENDEDGLOB
 
-for dump in ${ZDOTDIR:-$HOME}/.zcompdump(#qNmh-24); do
-  compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
-done
-
-if [[ ! -e ${ZDOTDIR:-$HOME}/.zcompdump ]]; then
-  compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
+if [[ -n $XDG_CACHE_HOME/.zcompdump(#qNmh-24) ]]; then
+  compinit -C -d "$XDG_CACHE_HOME/.zcompdump"
 else
-  compinit -C -d "${ZDOTDIR:-$HOME}/.zcompdump"
+  compinit -d "$XDG_CACHE_HOME/.zcompdump"
 fi
 
 unsetopt EXTENDEDGLOB

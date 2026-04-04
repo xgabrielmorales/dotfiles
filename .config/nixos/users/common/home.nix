@@ -84,6 +84,7 @@ in
     swaybg
     terraform
     thunar
+    time
     tmux
     typora
     viewnior
