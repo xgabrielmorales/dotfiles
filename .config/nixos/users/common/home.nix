@@ -152,6 +152,7 @@ in
       "shell".source = "${dotfiles}/.config/shell";
       "tmux".source = "${dotfiles}/.config/tmux";
       "waybar".source = "${dotfiles}/.config/waybar";
+      "waypaper".source = "${dotfiles}/.config/waypaper";
       "xsettingsd".source = "${dotfiles}/.config/xsettingsd";
       "zathura".source = "${dotfiles}/.config/zathura";
       "zsh".source = "${dotfiles}/.config/zsh";
