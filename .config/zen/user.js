@@ -39,3 +39,6 @@ user_pref("zen.welcome-screen.seen", true);
 user_pref("devtools.accessibility.enabled", true);
 // To enable hardware video acceleration on Nvidia GPUs
 user_pref("media.hardware-video-decoding.force-enabled", true);
+
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("browser.tabs.inTitlebar", 0);
