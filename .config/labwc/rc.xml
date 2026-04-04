@@ -221,10 +221,10 @@
     </keybind>
     <!-- Brightness -->
     <keybind key="XF86MonBrightnessUp">
-      <action name="Execute" command="brightness_module --inc 5"/>
+      <action name="Execute" command="brightnessctl set +5%"/>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
-      <action name="Execute" command="brightness_module --dec 5"/>
+      <action name="Execute" command="brightnessctl set -5%"/>
     </keybind>
     <!-- Screenshots -->
     <keybind key="Print">
