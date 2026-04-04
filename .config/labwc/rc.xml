@@ -226,6 +226,10 @@
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute" command="brightnessctl set -5%"/>
     </keybind>
+    <!-- Lock screen -->
+    <keybind key="W-l">
+      <action name="Execute" command="swaylock"/>
+    </keybind>
     <!-- Screenshots -->
     <keybind key="Print">
       <action name="Execute" command="screenshot --screen"/>

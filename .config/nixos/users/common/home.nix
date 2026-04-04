@@ -23,6 +23,22 @@ in
     longitude = "-74.1";
   };
 
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      image = "~/dotfiles/wallpapers/3.png";
+      show-failed-attempts = true;
+    };
+  };
+
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      { timeout = 120; command = "swaylock -f"; }
+      { timeout = 300; command = "wlopm --off \\*"; resumeCommand = "wlopm --on \\*"; }
+    ];
+  };
+
   # Packages (from packages.nix)
   home.packages = with pkgs; [
     (rofi.override {
@@ -81,6 +97,7 @@ in
     spotify
     stow
     swaybg
+    swayidle
     terraform
     thunar
     time
@@ -92,6 +109,7 @@ in
     waypaper
     wireguard-tools
     wl-clipboard
+    wlopm
     wlrctl
     wtype
     xdg-user-dirs
