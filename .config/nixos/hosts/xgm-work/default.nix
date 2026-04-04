@@ -21,6 +21,7 @@
     ../../modules/hardware/gpu.nix
     ../../modules/hardware/bluetooth.nix
     ../../modules/hardware/laptop.nix
+    ../../modules/hardware/iphone-tethering.nix
 
     # Desktop environment
     ../../modules/desktop/labwc.nix
