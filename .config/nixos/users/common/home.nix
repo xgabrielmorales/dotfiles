@@ -86,7 +86,7 @@ in
     pipx
     pistol
     playerctl
-    postman
+    postman-agent
     python314
     ranger
     satty
