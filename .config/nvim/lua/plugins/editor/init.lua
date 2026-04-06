@@ -1,5 +1,4 @@
 return {
-  require("plugins.editor.editorconfig"),
   require("plugins.editor.colorizer"),
   require("plugins.editor.aerial"),
   require("plugins.editor.smartcolumn"),

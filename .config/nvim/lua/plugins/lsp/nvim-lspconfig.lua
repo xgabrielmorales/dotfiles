@@ -113,5 +113,9 @@ return {
         ["nil"] = {},
       },
     }
+
+    -- Enable all configured LSP servers
+    local all_servers = vim.list_extend(servers, { "lua_ls", "jsonls", "nil_ls" })
+    vim.lsp.enable(all_servers)
   end,
 }
