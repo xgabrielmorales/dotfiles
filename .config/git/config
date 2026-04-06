@@ -1,7 +1,7 @@
 [user]
     name = Gabriel Morales
     email = gabrielmorales1@protonmail.com
-    signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP11Z5NLmFk0jEj9cS+ceq4xsxJL0AbVx0km903ZQNOD"
+    signingkey = ~/.ssh/Personal/IdentityFiles/id_ed25519.pub
 
 [alias]
     lod = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(red)%aN%C(reset) %C(green)%ar%C(reset) %C(yellow)%D%C(reset)%n%s%n' --use-mailmap
