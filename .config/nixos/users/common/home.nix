@@ -99,6 +99,7 @@ in
     swaybg
     swayidle
     terraform
+    tree-sitter
     thunar
     time
     tmux
