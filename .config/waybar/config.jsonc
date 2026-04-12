@@ -41,6 +41,7 @@
     "format": "{player_icon} {artist} - {title}",
     "format-paused": "<i>{player_icon} {artist} - {title}</i>",
     "tooltip-format": "{status_icon} {position} / {length}",
+    "interval": 1,
     "player-icons": {
       "default": ""
     },
