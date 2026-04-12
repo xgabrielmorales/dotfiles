@@ -99,15 +99,16 @@ in
     swaybg
     swayidle
     terraform
-    tree-sitter
     thunar
     time
     tmux
+    tree-sitter
     typora
     viewnior
     vlc
     waybar
     waypaper
+    wdisplays
     wireguard-tools
     wl-clipboard
     wlopm
