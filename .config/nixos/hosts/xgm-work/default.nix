@@ -18,7 +18,7 @@
     ../../modules/system/packages.nix
 
     # Hardware support
-    ../../modules/hardware/gpu.nix
+    ../../modules/hardware/nvidia.nix
     ../../modules/hardware/bluetooth.nix
     ../../modules/hardware/laptop.nix
     ../../modules/hardware/iphone-tethering.nix
