@@ -1,18 +1,25 @@
 { pkgs, ... }:
 
 {
-  # usbmuxd is required for iOS USB communication (tethering, file access, etc.)
   services.usbmuxd.enable = true;
 
-  # Enable systemd-networkd for iPhone USB network interface
-  systemd.network.enable = true;
-  systemd.network.networks."50-iphone-usb" = {
-    matchConfig.Name = "eth0";
-    networkConfig.DHCP = "yes";
-    linkConfig.RequiredForOnline = "no";
+  systemd.network = {
+    enable = true;
+    networks."50-iphone-usb" = {
+      matchConfig.Driver = "ipheth";
+      networkConfig.DHCP = "yes";
+      linkConfig.RequiredForOnline = "no";
+    };
   };
 
   environment.systemPackages = with pkgs; [
-    libimobiledevice # CLI tools for interacting with iOS devices
+    libimobiledevice
   ];
+
+  # Pre-load ipheth so it's available on first plug
+  boot.kernelModules = [ "ipheth" ];
+
+  # apple-mfi-fastcharge resets the USB device config when it binds, which
+  # kicks ipheth off the tethering interface immediately after it attaches
+  boot.blacklistedKernelModules = [ "apple-mfi-fastcharge" ];
 }
