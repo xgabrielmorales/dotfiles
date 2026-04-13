@@ -18,6 +18,7 @@
     ../../modules/system/packages.nix
 
     # Hardware support
+    ../../modules/hardware/audio.nix
     ../../modules/hardware/bluetooth.nix
     ../../modules/hardware/nvidia.nix
 
