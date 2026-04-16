@@ -27,8 +27,6 @@
 [diff]
     context = 5
 
-[diff-so-fancy]
-    markEmptyLines = False
 
 [fetch]
     all = true
@@ -51,8 +49,42 @@
     date = iso-local
     mailmap = true
 
+[delta]
+    features = xgm-theme
+
+[delta "xgm-theme"]
+    syntax-theme = OneHalfDark
+    line-numbers = true
+
+    file-style = omit
+
+    hunk-header-decoration-style = underline overline "#E5C07B"
+    hunk-header-file-style = "#E5C07B"
+    hunk-header-style = file line-number
+
+    zero-style = dim syntax
+
+    minus-emph-style = bold "#E06C75" "#3f0001"
+    minus-empty-line-marker-style = normal "#3f0001"
+    minus-non-emph-style = dim "#E06C75"
+    minus-style = "#E06C75"
+
+    plus-emph-style = bold "#98C379" "#002800"
+    plus-empty-line-marker-style = normal "#002800"
+    plus-non-emph-style = dim "#98C379"
+    plus-style = "#98C379"
+
+    whitespace-error-style = reverse "#E06C75"
+
+    line-numbers-left-format = "{nm:^3} "
+    line-numbers-left-style = "#5C6370"
+    line-numbers-minus-style = "#E06C75"
+    line-numbers-plus-style = "#98C379"
+    line-numbers-right-format = "{np:^3} "
+    line-numbers-right-style = "#5C6370"
+
 [pager]
-    diff = diff-so-fancy | $PAGER
+    diff = delta
 
 [pull]
     rebase = true

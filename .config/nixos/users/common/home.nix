@@ -57,7 +57,7 @@ in
     cameractrls-gtk4
     corepack_24
     csvlens
-    diff-so-fancy
+    delta
     direnv
     eza
     fd
