@@ -52,6 +52,7 @@ in
     arc-theme
     awscli2
     bat
+    btop
     bubblewrap
     cameractrls-gtk4
     corepack_24
@@ -142,6 +143,7 @@ in
     };
     configFile = {
       "alacritty".source = "${dotfiles}/.config/alacritty";
+      "btop".source = "${dotfiles}/.config/btop";
       "git".source = "${dotfiles}/.config/git";
       "gtk-2.0".source = "${dotfiles}/.config/gtk-2.0";
       "gtk-3.0".source = "${dotfiles}/.config/gtk-3.0";
