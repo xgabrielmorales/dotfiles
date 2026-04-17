@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+swayidle -w \
+  timeout 120 'swaylock -f' \
+  timeout 300 'wlopm --off *' \
+    resume 'wlopm --on *' &
+
 exec waybar --log-level off &
 exec waypaper --restore &

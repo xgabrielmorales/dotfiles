@@ -31,15 +31,6 @@ in
     };
   };
 
-  services.swayidle = {
-    enable = true;
-    timeouts = [
-      { timeout = 120; command = "swaylock -f"; }
-      { timeout = 300; command = "wlopm --off \\*"; resumeCommand = "wlopm --on \\*"; }
-    ];
-  };
-
-  # Packages (from packages.nix)
   home.packages = with pkgs; [
     (rofi.override {
       plugins = [
