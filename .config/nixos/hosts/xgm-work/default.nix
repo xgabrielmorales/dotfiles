@@ -31,6 +31,7 @@
 
     # Services
     ../../modules/services/docker.nix
+    ../../modules/services/kubernetes.nix
     ../../modules/services/ssh.nix
     ../../modules/services/syncthing.nix
 

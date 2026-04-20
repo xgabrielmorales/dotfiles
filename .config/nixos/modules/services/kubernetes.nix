@@ -15,6 +15,8 @@
 
   environment.systemPackages = with pkgs; [
     kubernetes-helm
+    kustomize
+    kustomize-sops
   ];
 
   environment.sessionVariables = {
