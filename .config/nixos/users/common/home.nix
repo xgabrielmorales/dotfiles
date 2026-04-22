@@ -68,6 +68,7 @@ in
     libnotify
     neovim
     net-tools
+    nixfmt-tree
     nodejs_24
     nwg-look
     obs-studio

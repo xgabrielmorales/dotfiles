@@ -15,30 +15,43 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, zen-browser, home-manager, nix-index-database, ... }: let
-    overlays = [ (import ./overlays) ];
-  in {
-    nixosConfigurations.xgm = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { mainUser = "xgm"; };
-      modules = [
-        { nixpkgs.overlays = overlays; }
-        ./hosts/xgm
-        { _module.args = { inherit zen-browser; }; }
-        home-manager.nixosModules.home-manager
-        nix-index-database.nixosModules.default
-      ];
+  outputs =
+    {
+      nixpkgs,
+      zen-browser,
+      home-manager,
+      nix-index-database,
+      ...
+    }:
+    let
+      overlays = [ (import ./overlays) ];
+    in
+    {
+      nixosConfigurations.xgm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          mainUser = "xgm";
+        };
+        modules = [
+          { nixpkgs.overlays = overlays; }
+          ./hosts/xgm
+          { _module.args = { inherit zen-browser; }; }
+          home-manager.nixosModules.home-manager
+          nix-index-database.nixosModules.default
+        ];
+      };
+      nixosConfigurations.xgm-work = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          mainUser = "xgm-work";
+        };
+        modules = [
+          { nixpkgs.overlays = overlays; }
+          ./hosts/xgm-work
+          { _module.args = { inherit zen-browser; }; }
+          home-manager.nixosModules.home-manager
+          nix-index-database.nixosModules.default
+        ];
+      };
     };
-    nixosConfigurations.xgm-work = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { mainUser = "xgm-work"; };
-      modules = [
-        { nixpkgs.overlays = overlays; }
-        ./hosts/xgm-work
-        { _module.args = { inherit zen-browser; }; }
-        home-manager.nixosModules.home-manager
-        nix-index-database.nixosModules.default
-      ];
-    };
-  };
 }
