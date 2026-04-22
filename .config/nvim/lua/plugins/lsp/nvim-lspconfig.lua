@@ -110,7 +110,11 @@ return {
       on_attach = M.on_attach,
       capabilities = M.capabilities,
       settings = {
-        ["nil"] = {},
+        ["nil"] = {
+          formatting = {
+            command = { "nixfmt" },
+          },
+        },
       },
     }
 
