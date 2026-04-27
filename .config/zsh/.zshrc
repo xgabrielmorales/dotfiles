@@ -19,8 +19,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 -F --all --group-directories
 # THE ORDER MATTERS!
 source <(fzf --zsh)
 source "$XDG_CONFIG_HOME/zsh/prompt"
-source "$XDG_CONFIG_HOME/shell/aliases"
-source "$XDG_CONFIG_HOME/shell/profile"
+source "$XDG_CONFIG_HOME/zsh/aliases"
+source "$XDG_CONFIG_HOME/zsh/profile"
 source "$XDG_CONFIG_HOME/zsh/plugins"
 
 eval "$(direnv hook zsh)"

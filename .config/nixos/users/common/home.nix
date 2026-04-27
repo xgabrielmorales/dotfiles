@@ -145,7 +145,6 @@ in
       "nvim".source = "${dotfiles}/.config/nvim";
       "ranger".source = "${dotfiles}/.config/ranger";
       "rofi".source = "${dotfiles}/.config/rofi";
-      "shell".source = "${dotfiles}/.config/shell";
       "tmux".source = "${dotfiles}/.config/tmux";
       "waybar".source = "${dotfiles}/.config/waybar";
       "waypaper".source = "${dotfiles}/.config/waypaper";
