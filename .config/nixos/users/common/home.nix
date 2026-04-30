@@ -23,14 +23,6 @@ in
     longitude = "-74.1";
   };
 
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      image = "~/dotfiles/wallpapers/3.png";
-      show-failed-attempts = true;
-    };
-  };
-
   home.packages = with pkgs; [
     (rofi.override {
       plugins = [
@@ -90,7 +82,6 @@ in
     spotify
     stow
     swaybg
-    swayidle
     terraform
     thunar
     time
@@ -104,7 +95,6 @@ in
     wdisplays
     wireguard-tools
     wl-clipboard
-    wlopm
     wlrctl
     wtype
     xdg-user-dirs
