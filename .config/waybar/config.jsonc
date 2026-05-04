@@ -6,9 +6,7 @@
     "custom/launcher",
     "wlr/taskbar"
   ],
-  "modules-center": [
-    "mpris"
-  ],
+  "modules-center": [],
   "modules-right": [
     "tray",
     "disk",
@@ -36,20 +34,6 @@
     "on-click": "minimize-raise",
     "on-click-middle": "close",
     "ignore-list": []
-  },
-  "mpris": {
-    "format": "{player_icon} {artist} - {title}",
-    "format-paused": "<i>{player_icon} {artist} - {title}</i>",
-    "tooltip-format": "{status_icon} {position} / {length}",
-    "interval": 1,
-    "player-icons": {
-      "default": ""
-    },
-    "status-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "ignored-players": ["firefox", "zen-beta"]
   },
   "tray": {
     "icon-size": 16,
