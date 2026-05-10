@@ -69,7 +69,6 @@ in
     papirus-icon-theme
     pavucontrol
     pipx
-    pistol
     playerctl
     postman-agent
     python314
