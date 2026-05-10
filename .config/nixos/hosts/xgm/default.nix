@@ -21,6 +21,7 @@
     ../../modules/hardware/audio.nix
     ../../modules/hardware/bluetooth.nix
     ../../modules/hardware/nvidia.nix
+    ../../modules/hardware/webcam.nix
 
     # Desktop environment
     ../../modules/desktop/labwc.nix
