@@ -33,6 +33,7 @@
     ../../modules/services/kubernetes.nix
     ../../modules/services/ssh.nix
     ../../modules/services/syncthing.nix
+    ../../modules/services/virtualbox.nix
 
     # Users
     ../../users/xgm
