@@ -1,11 +1,15 @@
 {
-  pkgs,
+  config,
   mainUser,
+  pkgs,
   zen-browser,
   ...
 }:
 
 {
+  sops.secrets."users/${mainUser}/password".neededForUsers = true;
+  sops.secrets."users/root/password".neededForUsers = true;
+
   security.sudo = {
     configFile = ''
       # Disable sudo timeout (ask for password every time)
@@ -23,7 +27,7 @@
     };
     users = {
       root = {
-        hashedPassword = "$6$LFjitH4qaP2ZlWvx$2tiE98H92SGMkM3g9lHHZIBsv3h56evEgcnl9RaGbwJUmqYG7nrQKyCl9iOnLYCb5xWIgD8Vbw/Sk2vI75xSn.";
+        hashedPasswordFile = config.sops.secrets."users/root/password".path;
       };
       ${mainUser} = {
         isNormalUser = true;
@@ -31,7 +35,7 @@
         uid = 1000;
         group = mainUser;
         extraGroups = [ "wheel" ];
-        hashedPassword = "$6$NrF8dQmb8fp6DBZy$Zgb.IEodEdox3nIyxdCjr6bbgm3J6tCP5nwjXN.qDsYyyzsfNOnNpPqqDlAKoClHHN8A5fISaICfrCEdd.Kcr0";
+        hashedPasswordFile = config.sops.secrets."users/${mainUser}/password".path;
         shell = pkgs.zsh;
         ignoreShellProgramCheck = true;
       };

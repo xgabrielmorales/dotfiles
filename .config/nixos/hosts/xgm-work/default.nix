@@ -11,6 +11,7 @@
     ../../modules/core/locale.nix
     ../../modules/core/nix.nix
     ../../modules/core/security.nix
+    ../../modules/core/sops.nix
 
     # System settings
     ../../modules/system/environment.nix

@@ -14,6 +14,10 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -21,6 +25,7 @@
       zen-browser,
       home-manager,
       nix-index-database,
+      sops-nix,
       ...
     }:
     let
@@ -33,11 +38,12 @@
           mainUser = "xgm";
         };
         modules = [
-          { nixpkgs.overlays = overlays; }
           ./hosts/xgm
-          { _module.args = { inherit zen-browser; }; }
           home-manager.nixosModules.home-manager
           nix-index-database.nixosModules.default
+          sops-nix.nixosModules.sops
+          { nixpkgs.overlays = overlays; }
+          { _module.args = { inherit zen-browser; }; }
         ];
       };
       nixosConfigurations.xgm-work = nixpkgs.lib.nixosSystem {
@@ -46,11 +52,12 @@
           mainUser = "xgm-work";
         };
         modules = [
-          { nixpkgs.overlays = overlays; }
           ./hosts/xgm-work
-          { _module.args = { inherit zen-browser; }; }
           home-manager.nixosModules.home-manager
           nix-index-database.nixosModules.default
+          sops-nix.nixosModules.sops
+          { nixpkgs.overlays = overlays; }
+          { _module.args = { inherit zen-browser; }; }
         ];
       };
     };

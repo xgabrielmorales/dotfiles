@@ -29,3 +29,6 @@ hardware-configuration.nix
 # Tint2
 .config/tint2/*
 !.config/tint2/tint2rc
+
+# AGE
+keys.txt
