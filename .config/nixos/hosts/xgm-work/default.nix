@@ -17,6 +17,7 @@
     ../../modules/system/environment.nix
     ../../modules/system/fonts.nix
     ../../modules/system/packages.nix
+    ../../modules/system/users.nix
 
     # Hardware support
     ../../modules/hardware/audio.nix
@@ -36,8 +37,8 @@
     ../../modules/services/ssh.nix
     ../../modules/services/syncthing.nix
 
-    # Users
-    ../../users/xgm-work
+    # Home Manager
+    ../../modules/home-manager/home.nix
   ];
 
   # Keyboard
