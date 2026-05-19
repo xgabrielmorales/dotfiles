@@ -6,7 +6,6 @@
   boot.kernelParams = [
     "quiet"
     "udev.log_level=3"
-    "usbcore.autosuspend=-1"
   ];
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 15;

@@ -38,17 +38,21 @@ in
     btop
     bubblewrap
     cameractrls-gtk4
+    cargo
     corepack_24
     csvlens
     delta
+    dig
     direnv
     eza
     fd
     file
     firefox
     fzf
+    gcc
     gh
     git-extras
+    gnumake
     google-cloud-sdk
     grim
     gucharmap
@@ -58,6 +62,8 @@ in
     just
     lf
     libnotify
+    lm_sensors
+    ncdu
     neovim
     net-tools
     nixfmt-tree
@@ -68,11 +74,14 @@ in
     pamixer
     papirus-icon-theme
     pavucontrol
+    pciutils
     pipx
     playerctl
     postman-agent
     python314
     ranger
+    ripgrep
+    rustc
     satty
     signal-desktop
     slurp
@@ -87,11 +96,15 @@ in
     tmux
     tree-sitter
     typora
+    unrar
+    unzip
+    usbutils
     viewnior
     vlc
     waybar
     waypaper
     wdisplays
+    wget
     wireguard-tools
     wl-clipboard
     wlrctl
@@ -101,11 +114,10 @@ in
     ydotool
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    zip
     zsh
     zsh-completions
   ];
-
-  # Home files
   home.file = {
     "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
     "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
@@ -144,17 +156,12 @@ in
     mimeApps = {
       enable = true;
       defaultApplications = {
-        # Images
         "image/png" = "pdf.desktop";
         "image/jpg" = "pdf.desktop";
         "image/*" = "img.desktop";
-        # Video
         "video/*" = "video.desktop";
-        # Text Files
         "text/*" = "text.desktop";
-        # Documents
         "application/pdf" = "pdf.desktop";
-        # Browser (Personal)
         "x-scheme-handler/about" = "browser-personal.desktop";
         "x-scheme-handler/http" = "browser-personal.desktop";
         "x-scheme-handler/https" = "browser-personal.desktop";

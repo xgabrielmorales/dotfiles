@@ -8,10 +8,11 @@
       "--write-kubeconfig-mode=644"
     ];
   };
-
-  networking.firewall.allowedTCPPorts = [
-    6443 # Kubernetes API server
-  ];
+  networking.firewall = {
+    allowedTCPPorts = [
+      6443 # Kubernetes API server
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     kubernetes-helm

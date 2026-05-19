@@ -1,7 +1,6 @@
 { pkgs, mainUser, ... }:
 
 {
-  # Docker service configuration
   virtualisation.docker = {
     enable = true;
     enableOnBoot = false;
@@ -12,7 +11,6 @@
         "1.1.1.1"
         "1.0.0.1"
       ];
-      registry-mirrors = [ "https://mirror.gcr.io" ];
     };
   };
   users.users.${mainUser}.extraGroups = [ "docker" ];

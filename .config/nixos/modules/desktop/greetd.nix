@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Display Manager
   services.greetd = {
     enable = true;
     settings = {

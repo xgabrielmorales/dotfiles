@@ -6,7 +6,6 @@
     user = mainUser;
     dataDir = "/home/${mainUser}";
   };
-
   networking.firewall = {
     allowedTCPPorts = [ 22000 ];
     allowedUDPPorts = [
