@@ -1,6 +1,15 @@
 { ... }:
 
 {
+  boot = {
+    initrd.kernelModules = [
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_drm"
+    ];
+    kernelModules = [ "nvidia_uvm" ];
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware = {
     graphics.enable = true;
