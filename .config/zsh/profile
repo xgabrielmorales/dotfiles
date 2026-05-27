@@ -4,7 +4,7 @@ export EDITOR="nvim"
 export PAGER="less"
 export VISUAL="nvim"
 export READER="zathura"
-export BROWSER="zen-browser"
+export BROWSER="zen-beta"
 
 export HISTFILE="$XDG_DATA_HOME/.zsh_history"
 export HISTORY_IGNORE="(ls( *)?|cd( *)?|curl( *)?|rm|cp|pwd|exit|history)"
