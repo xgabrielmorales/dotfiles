@@ -38,6 +38,7 @@ in
           arc-theme
           awscli2
           bat
+          bluetui
           brightnessctl
           btop
           bubblewrap
