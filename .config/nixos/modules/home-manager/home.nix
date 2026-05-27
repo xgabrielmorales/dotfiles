@@ -62,6 +62,7 @@ in
           grim
           gucharmap
           hunspell
+          impala
           jetbrains.datagrip
           jq
           just
