@@ -79,7 +79,6 @@ in
           papirus-icon-theme
           pavucontrol
           pciutils
-          pipx
           playerctl
           postman-agent
           python314
