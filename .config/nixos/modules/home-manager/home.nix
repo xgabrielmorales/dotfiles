@@ -169,18 +169,41 @@ in
             "video/*" = "video.desktop";
             "text/*" = "text.desktop";
             "application/pdf" = "pdf.desktop";
-            "x-scheme-handler/about" = "browser-personal.desktop";
-            "x-scheme-handler/http" = "browser-personal.desktop";
-            "x-scheme-handler/https" = "browser-personal.desktop";
-            "x-scheme-handler/unknown" = "browser-personal.desktop";
+            "application/x-extension-htm" = "zen-beta.desktop";
+            "application/x-extension-html" = "zen-beta.desktop";
+            "application/x-extension-shtml" = "zen-beta.desktop";
+            "application/x-extension-xht" = "zen-beta.desktop";
+            "application/x-extension-xhtml" = "zen-beta.desktop";
+            "application/xhtml+xml" = "zen-beta.desktop";
+            "text/html" = "zen-beta.desktop";
+            "x-scheme-handler/about" = "zen-beta.desktop";
+            "x-scheme-handler/chrome" = "zen-beta.desktop";
+            "x-scheme-handler/http" = "zen-beta.desktop";
+            "x-scheme-handler/https" = "zen-beta.desktop";
+            "x-scheme-handler/unknown" = "zen-beta.desktop";
           };
         };
         desktopEntries = {
-          "browser-personal" = {
+          "zen-beta" = {
             name = "Web Browser (Personal)";
             icon = "zen-browser";
-            exec = "recycle zen-beta";
+            exec = "recycle zen-beta %U";
             type = "Application";
+            categories = [ "Network" "WebBrowser" ];
+            mimeType = [
+              "application/x-extension-htm"
+              "application/x-extension-html"
+              "application/x-extension-shtml"
+              "application/x-extension-xht"
+              "application/x-extension-xhtml"
+              "application/xhtml+xml"
+              "text/html"
+              "x-scheme-handler/about"
+              "x-scheme-handler/chrome"
+              "x-scheme-handler/http"
+              "x-scheme-handler/https"
+              "x-scheme-handler/unknown"
+            ];
           };
           "browser-work" = {
             name = "Web Browser (Work)";

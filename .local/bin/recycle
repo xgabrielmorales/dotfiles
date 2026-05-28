@@ -16,10 +16,15 @@ fi
 
 APP_NAME=$(basename "$BINARY")
 
+# If extra args are given, pass them directly to the binary
+if [[ $# -gt 1 ]]; then
+    exec "$BINARY" "${@:2}"
+fi
+
 # Try to focus existing window by app_id or title
 if wlrctl window focus "$APP_NAME" 2>/dev/null || wlrctl window focus "${APP_NAME^}" 2>/dev/null; then
     exit 0
 fi
 
 # No existing window found, launch the binary
-exec "$BINARY" "${@:2}" &
+exec "$BINARY"
