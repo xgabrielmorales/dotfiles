@@ -224,7 +224,7 @@
       <action name="Execute" command="brightnessctl set +5%"/>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set -5%"/>
+      <action name="Execute" command="brightnessctl set 5%-"/>
     </keybind>
     <!-- Lock screen -->
     <keybind key="W-l">
