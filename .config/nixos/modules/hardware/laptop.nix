@@ -19,6 +19,10 @@
         CPU_BOOST_ON_AC = 0;
         CPU_BOOST_ON_BAT = 0;
 
+        # WiFi power saving
+        WIFI_PWR_ON_AC = "on";
+        WIFI_PWR_ON_BAT = "on";
+
         # PCIe Active State Power Management
         PCIE_ASPM_ON_AC = "powersupersave";
         PCIE_ASPM_ON_BAT = "powersupersave";
