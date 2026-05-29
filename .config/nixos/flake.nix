@@ -18,6 +18,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spotatui = {
+      url = "github:LargeModGames/spotatui";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -26,6 +30,7 @@
       home-manager,
       nix-index-database,
       sops-nix,
+      spotatui,
       ...
     }:
     let
@@ -43,7 +48,7 @@
           nix-index-database.nixosModules.default
           sops-nix.nixosModules.sops
           { nixpkgs.overlays = overlays; }
-          { _module.args = { inherit zen-browser; }; }
+          { _module.args = { inherit zen-browser spotatui; }; }
         ];
       };
       nixosConfigurations.xgm-work = nixpkgs.lib.nixosSystem {
@@ -57,7 +62,7 @@
           nix-index-database.nixosModules.default
           sops-nix.nixosModules.sops
           { nixpkgs.overlays = overlays; }
-          { _module.args = { inherit zen-browser; }; }
+          { _module.args = { inherit zen-browser spotatui; }; }
         ];
       };
     };

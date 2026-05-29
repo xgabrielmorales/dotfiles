@@ -92,7 +92,6 @@ in
           slurp
           socat
           sops
-          spotify
           stow
           swaybg
           terraform

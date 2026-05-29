@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, spotatui, ... }:
 
 {
   programs = {
@@ -16,6 +16,7 @@
       vim
       zsh
       htop
+      spotatui.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 }
