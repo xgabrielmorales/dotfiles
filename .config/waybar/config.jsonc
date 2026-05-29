@@ -1,6 +1,6 @@
 {
   "position": "bottom",
-  "height": 40,
+  "height": 32,
   "mode": "dock",
   "modules-left": [
     "custom/launcher",
@@ -22,10 +22,6 @@
     "format": "",
     "tooltip": false,
     "on-click": "~/.config/rofi/bin/rofi-launcher/launcher.sh &"
-  },
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "on-click": "activate"
   },
   "wlr/taskbar": {
     "format": "{icon}",
@@ -52,7 +48,8 @@
     "format": "󰃠 {percent}%",
     "tooltip-format": "Brightness",
     "on-scroll-up": "brightnessctl set +5%",
-    "on-scroll-down": "brightnessctl set 5%-"
+    "on-scroll-down": "brightnessctl set 5%-",
+    "smooth-scrolling-threshold": 1
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
@@ -61,7 +58,8 @@
     "tooltip-format": "Microphone Volume",
     "on-click": "source_module --toggle",
     "on-scroll-up": "source_module --inc",
-    "on-scroll-down": "source_module --dec"
+    "on-scroll-down": "source_module --dec",
+    "smooth-scrolling-threshold": 1
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -77,7 +75,8 @@
     "on-click": "sink_module --toggle",
     "on-click-right": "toggle-audio-output",
     "on-scroll-up": "sink_module --inc",
-    "on-scroll-down": "sink_module --dec"
+    "on-scroll-down": "sink_module --dec",
+    "smooth-scrolling-threshold": 1
   },
   "upower": {
     "format": " {percentage}",
