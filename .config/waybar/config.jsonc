@@ -80,9 +80,8 @@
   },
   "upower": {
     "format": " {percentage}",
-    "hide-if-empty": true,
+    "format-alt": " {time}",
     "icon-size": 0,
-    "on-click": "",
     "tooltip": false
   },
   "clock": {
