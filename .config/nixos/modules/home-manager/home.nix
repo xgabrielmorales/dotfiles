@@ -37,13 +37,10 @@ in
           alacritty
           arc-theme
           awscli2
-          bat
           bluetui
           brightnessctl
           btop
-          bubblewrap
           cameractrls-gtk4
-          cargo
           corepack_24
           csvlens
           delta
@@ -54,10 +51,8 @@ in
           file
           firefox
           fzf
-          gcc
           gh
           git-extras
-          gnumake
           google-cloud-sdk
           grim
           gucharmap
@@ -84,13 +79,12 @@ in
           playerctl
           postman-agent
           python314
+          qbittorrent
           ranger
           ripgrep
-          rustc
           satty
           signal-desktop
           slurp
-          socat
           sops
           stow
           swaybg
@@ -99,7 +93,6 @@ in
           time
           tmux
           tree-sitter
-          typora
           unrar
           unzip
           usbutils
