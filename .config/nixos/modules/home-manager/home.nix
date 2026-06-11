@@ -86,6 +86,8 @@ in
           signal-desktop
           slurp
           sops
+          spotify
+          spotifyd
           stow
           swaybg
           terraform
