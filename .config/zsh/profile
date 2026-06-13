@@ -1,20 +1,23 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
+export BROWSER="zen-beta"
 export EDITOR="nvim"
 export PAGER="less"
-export VISUAL="nvim"
 export READER="zathura"
-export BROWSER="zen-beta"
+export VISUAL="nvim"
 
 export HISTFILE="$XDG_DATA_HOME/.zsh_history"
-export HISTORY_IGNORE="(ls( *)?|cd( *)?|curl( *)?|rm|cp|pwd|exit|history)"
-export HISTFILESIZE=10000
-export HISTSIZE=10000
+export HISTORY_IGNORE="(ls( *)?|cd( *)?|curl( *)?|cp( *)?|pwd|exit|history)"
+export HISTSIZE=50000
 export SAVEHIST=10000
-setopt APPENDHISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt NO_BEEP
 setopt SHARE_HISTORY
 setopt autocd
 

@@ -1,4 +1,4 @@
-set -o emacs
+bindkey -e
 
 # Optimized compinit - cache for 24 hours
 autoload -Uz compinit
@@ -14,6 +14,7 @@ fi
 unsetopt EXTENDEDGLOB
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 -F --all --group-directories-first --icons $realpath'
 
 # THE ORDER MATTERS!
