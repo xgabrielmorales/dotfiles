@@ -61,6 +61,7 @@ return {
       "eslint",
       "harper-ls",
       "ruff",
+      "rumdl",
       "rust_analyzer",
       "taplo",
       "terraformls",

@@ -15,6 +15,7 @@ return {
         "lua_ls",
         "nil_ls",
         "ruff",
+        "rumdl",
         "rust_analyzer",
         "taplo",
         "terraformls",
