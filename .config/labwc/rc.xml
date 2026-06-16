@@ -211,7 +211,10 @@
       <action name="Execute" command="playerctl stop"/>
     </keybind>
     <keybind key="XF86AudioPlay">
-      <action name="Execute" command="playerctl play"/>
+      <action name="Execute" command="playerctl play-pause"/>
+    </keybind>
+    <keybind key="XF86AudioPause">
+      <action name="Execute" command="playerctl pause"/>
     </keybind>
     <keybind key="XF86AudioPrev">
       <action name="Execute" command="playerctl previous"/>

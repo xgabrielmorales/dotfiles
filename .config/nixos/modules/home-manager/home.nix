@@ -63,6 +63,7 @@ in
           just
           lf
           libnotify
+          librepods
           lm_sensors
           ncdu
           neovim
