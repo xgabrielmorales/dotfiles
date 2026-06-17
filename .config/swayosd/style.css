@@ -1,0 +1,60 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+}
+
+window#osd {
+  border-radius: 12px;
+  border: 2px solid #c4c7c5;
+  background-color: #1e222a;
+  color: #b4bbc8;
+  padding: 4px;
+}
+
+window#osd #container {
+  margin: 5px;
+}
+
+window#osd image,
+window#osd label {
+  color: #b4bbc8;
+}
+
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.5;
+}
+
+window#osd progressbar,
+window#osd segmentedprogress {
+  min-height: 6px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+}
+
+window#osd trough,
+window#osd segment {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background-color: #333b41;
+}
+
+window#osd progress,
+window#osd segment.active {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background-color: #7eca9c;
+}
+
+window#osd segment {
+  margin-left: 8px;
+}
+
+window#osd segment:first-child {
+  margin-left: 0;
+}

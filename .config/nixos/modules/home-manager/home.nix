@@ -91,6 +91,7 @@ in
           spotifyd
           stow
           swaybg
+          swayosd
           terraform
           thunar
           time
@@ -148,6 +149,7 @@ in
           "nvim".source = "${dotfiles}/.config/nvim";
           "ranger".source = "${dotfiles}/.config/ranger";
           "rofi".source = "${dotfiles}/.config/rofi";
+          "swayosd".source = "${dotfiles}/.config/swayosd";
           "tmux".source = "${dotfiles}/.config/tmux";
           "waybar".source = "${dotfiles}/.config/waybar";
           "waypaper".source = "${dotfiles}/.config/waypaper";

@@ -47,8 +47,8 @@
   "backlight": {
     "format": "󰃠 {percent}%",
     "tooltip-format": "Brightness",
-    "on-scroll-up": "brightnessctl set +5%",
-    "on-scroll-down": "brightnessctl set 5%-",
+    "on-scroll-up": "swayosd-client --brightness raise",
+    "on-scroll-down": "swayosd-client --brightness lower",
     "smooth-scrolling-threshold": 1
   },
   "pulseaudio#mic": {
@@ -56,9 +56,9 @@
     "format-source": " {volume}%",
     "format-source-muted": " MUTED",
     "tooltip-format": "Microphone Volume",
-    "on-click": "source_module --toggle",
-    "on-scroll-up": "source_module --inc",
-    "on-scroll-down": "source_module --dec",
+    "on-click": "source_module --toggle && swayosd-client --input-volume +0",
+    "on-scroll-up": "swayosd-client --input-volume raise",
+    "on-scroll-down": "swayosd-client --input-volume lower",
     "smooth-scrolling-threshold": 1
   },
   "pulseaudio": {
@@ -72,10 +72,10 @@
       ]
     },
     "tooltip-format": "Audio Volume",
-    "on-click": "sink_module --toggle",
+    "on-click": "swayosd-client --output-volume mute-toggle",
     "on-click-right": "toggle-audio-output",
-    "on-scroll-up": "sink_module --inc",
-    "on-scroll-down": "sink_module --dec",
+    "on-scroll-up": "swayosd-client --output-volume raise",
+    "on-scroll-down": "swayosd-client --output-volume lower",
     "smooth-scrolling-threshold": 1
   },
   "upower": {

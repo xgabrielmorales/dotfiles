@@ -1,0 +1,9 @@
+[server]
+top_margin = 0.85
+max_volume = 100
+min_brightness = 5
+show_percentage = true
+playerctl_format = "{albumArtist} · {title}"
+keyboard_backlight = true
+
+[client]
