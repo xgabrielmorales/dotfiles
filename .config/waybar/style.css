@@ -8,6 +8,7 @@
 window#waybar {
   background-color: #1e222a;
   color: #b4bbc8;
+  border-top: 1px solid #2f343f;
 }
 
 #custom-launcher {
