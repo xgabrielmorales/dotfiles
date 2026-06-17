@@ -103,6 +103,7 @@ in
           viewnior
           vlc
           waybar
+          waylock
           waypaper
           wdisplays
           wget
