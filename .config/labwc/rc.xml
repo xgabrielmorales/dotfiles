@@ -231,7 +231,7 @@
     </keybind>
     <!-- Lock screen -->
     <keybind key="W-l">
-      <action name="Execute" command="waylock -init-color 0x1e222a -input-color 0x7eca9c -fail-color 0xe06c75"/>
+      <action name="Execute" command="waylock -init-color 0x1e222a -input-color 0x98c379 -fail-color 0xe06c75"/>
     </keybind>
     <!-- Screenshots -->
     <keybind key="Print">

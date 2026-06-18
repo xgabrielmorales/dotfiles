@@ -1,7 +1,7 @@
 inputbar {
     children: [ prompt, entry ];
     background-color: @bg;
-    text-color: @fg;
+    text-color: @fga;
     expand: false;
     margin: 0px;
     padding: 0px;

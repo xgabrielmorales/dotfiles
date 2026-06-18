@@ -1,6 +1,6 @@
 mode-switcher {
     enabled: true;
-    background-color: #282C34;
+    background-color: @bgs;
     border-radius: 8px;
 }
 
@@ -10,7 +10,7 @@ button {
     border-radius: 8px;
 
     text-color: @fga;
-    background-color: #282C34;
+    background-color: @bgs;
 }
 
 button.selected {

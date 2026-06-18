@@ -2,17 +2,18 @@ set selection-clipboard clipboard
 
 set scroll-step 100
 
-set default-bg  "#282c34"
+set default-bg  "#1e222a"
 
-set inputbar-bg "#fafafa"
-set inputbar-fg "#0d0d0d"
+set inputbar-bg "#282c34"
+set inputbar-fg "#c4c7c5"
 
-set statusbar-bg "#c8ccd4"
-set statusbar-fg "#0d0d0d"
+set statusbar-bg "#282c34"
+set statusbar-fg "#c4c7c5"
 
-set notification-error-bg "#ED7976"
+set notification-error-bg "#e06c75"
 
 set recolor-lightcolor \#282c34
+set recolor-darkcolor  \#c4c7c5
 
 set font "JetBrainsMono Nerd Font Mono 11"
 

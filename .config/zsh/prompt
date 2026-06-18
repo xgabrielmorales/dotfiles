@@ -11,7 +11,7 @@ precmd() {
 declare -A fg=(
     [xgm_cyan]="#56B6C2"
     [xgm_green]="#98C379"
-    [xgm_fg]="#ABB2BF"
+    [xgm_fg]="#c4c7c5"
     [xgm_yellow]="#E5C07B"
     [xgm_red]="#E06C75"
 )

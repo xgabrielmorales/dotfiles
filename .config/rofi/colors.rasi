@@ -1,9 +1,17 @@
+/* OneDark unified palette (see waybar/style.css, tmux.conf, etc.)
+ * base #1e222a · surface #282c34 · overlay #333b41 · border #2f343f
+ * text #c4c7c5 · on-accent #1e222a · green #98c379
+ */
 * {
-    al:   #00000000;
-    bg:   #1e2128FF;
-    bga:  #C4C7C5FF;
-    fg:   #1C1E20FF;
-    fga:  #C4C7C5FF;
-    ac:   #a3be8cFF;
-    se:   #a3be8c40;
+    /* OneDark palette */
+    bg:   #1e222aFF;   /* base background      */
+    bgs:  #282c34FF;   /* dark surface         */
+    fg:   #1e222aFF;   /* dark text on accent  */
+    ac:   #98c379FF;   /* accent green         */
+
+    /* Custom (theme-specific) */
+    al:   #00000000;   /* transparent          */
+    bga:  #c4c7c5FF;   /* light search bar     */
+    fga:  #c4c7c5FF;   /* primary light text   */
+    se:   #98c37940;   /* selection tint       */
 }

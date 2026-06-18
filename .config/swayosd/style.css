@@ -7,9 +7,9 @@
 
 window#osd {
   border-radius: 12px;
-  border: 2px solid #c4c7c5;
+  border: 2px solid #5c6370;
   background-color: #1e222a;
-  color: #b4bbc8;
+  color: #c4c7c5;
   padding: 4px;
 }
 
@@ -19,7 +19,7 @@ window#osd #container {
 
 window#osd image,
 window#osd label {
-  color: #b4bbc8;
+  color: #c4c7c5;
 }
 
 window#osd progressbar:disabled,
@@ -48,7 +48,7 @@ window#osd segment.active {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background-color: #7eca9c;
+  background-color: #98c379;
 }
 
 window#osd segment {
