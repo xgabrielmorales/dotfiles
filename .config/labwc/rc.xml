@@ -24,7 +24,7 @@
   </placement>
   <!-- THEME & FONTS-->
   <theme>
-    <name>Openbox Arc Darker</name>
+    <name>Arc Darker</name>
     <fallbackAppIcon>labwc</fallbackAppIcon>
     <titlebar>
       <layout>icon:iconify,max,close</layout>
