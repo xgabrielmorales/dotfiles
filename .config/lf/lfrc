@@ -96,8 +96,8 @@ cmd bulk-rename ${{
 
 cmd touch %touch "$@"
 
-cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
-cmd yank-name $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
+cmd yank-path $printf '%s' "$fx" | wl-copy
+cmd yank-name $basename -a -- $fx | head -c-1 | wl-copy
 
 cmd tmux-split-h-window $ tmux split-window -h -c "$PWD"
 cmd tmux-split-v-window $ tmux split-window -v -c "$PWD"
