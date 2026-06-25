@@ -1,47 +1,54 @@
 #!/usr/bin/env bash
 
 SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+SCREENSHOT_TEMP="/tmp/screenshot-$(date +'%Y-%m-%dT%H-%M-%S').png"
 SCREENSHOT="$SCREENSHOTS_DIR/ss.$(date +'%Y-%m-%dT%H-%M-%S').png"
 
 mkdir --parent "$SCREENSHOTS_DIR"
 
 case "$1" in
     "-s" | "--screen" | "Screen")
-        grim "$SCREENSHOT" && wl-copy --type image/png < "$SCREENSHOT"
+        grim "$SCREENSHOT_TEMP" && wl-copy --type image/png < "$SCREENSHOT_TEMP"
     ;;
     "-S" | "--selection" | "Selection")
-        grim -g "$(slurp)" "$SCREENSHOT" && wl-copy --type image/png < "$SCREENSHOT"
+        grim -g "$(slurp)" "$SCREENSHOT_TEMP" && wl-copy --type image/png < "$SCREENSHOT_TEMP"
     ;;
     *)
         >&2 echo "Please. Select a valid option." && exit
         ;;
 esac
 
-if [[ ! -s "$SCREENSHOT" ]]; then
-    rm "$SCREENSHOT" > /dev/null 2>&1
+if [[ ! -s "$SCREENSHOT_TEMP" ]]; then
+    rm "$SCREENSHOT_TEMP" > /dev/null 2>&1
     exit
 fi
 
 action=$(notify-send \
     --app-name="Screenshot" \
-    --icon="image-x-generic-symbolic" \
+    --icon="image-x-generic" \
     --action="edit=Edit" \
     --action="view=View" \
-    --action="delete=Delete" \
+    --action="save=Save" \
     "Screenshot Taken" \
     "It has been saved to the clipboard." \
 )
 
 case "$action" in
     "edit")
+        cp "$SCREENSHOT_TEMP" "$SCREENSHOT"
         satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT" --font-family "JetBrainsMono Nerd Font" --disable-notifications --save-after-copy
-        notify-send "Screenshot Edited" "It has been saved."
+        rm "$SCREENSHOT_TEMP"
+        notify-send --icon="image-x-generic" "Screenshot Edited" "It has been saved."
     ;;
     "view")
+        notify-send --icon="image-x-generic" "Screenshot" "Opening file..."
+        cp "$SCREENSHOT_TEMP" "$SCREENSHOT"
         xdg-open "$SCREENSHOT"
+        rm "$SCREENSHOT_TEMP"
     ;;
-    "delete")
-        rm "$SCREENSHOT"
-        notify-send "Screenshot Deleted" "Now it's gone."
+    "save")
+        cp "$SCREENSHOT_TEMP" "$SCREENSHOT"
+        rm "$SCREENSHOT_TEMP"
+        notify-send --icon="image-x-generic" "Screenshot Saved" "Saved to $SCREENSHOTS_DIR"
     ;;
 esac
