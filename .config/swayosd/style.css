@@ -1,12 +1,12 @@
 * {
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 14px;
+  font-size: 18px;
   border: none;
   border-radius: 0;
 }
 
 window#osd {
-  border-radius: 12px;
+  border-radius: 0px;
   border: 2px solid #5c6370;
   background-color: #1e222a;
   color: #c4c7c5;
