@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+systemctl --user --no-block start labwc-session.target
+
 exec waypaper --restore &
 exec waybar --log-level off &
 exec swayosd-server &
