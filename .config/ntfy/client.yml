@@ -1,0 +1,4 @@
+default-host: https://ntfy.xgabrielmorales.com
+subscribe:
+  - topic: homelab
+    command: 'notify-send "ntfy" "$message"'
