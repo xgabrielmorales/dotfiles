@@ -21,6 +21,12 @@
         CPU_BOOST_ON_AC = 0;
         CPU_BOOST_ON_BAT = 0;
 
+        # ACPI platform profile (handled by amd-pmf): caps the SoC sustained/
+        # boost power limits (SPL/sPPT/fPPT) and thermal targets. low-power
+        # keeps the whole machine in power-saving mode.
+        PLATFORM_PROFILE_ON_AC = "low-power";
+        PLATFORM_PROFILE_ON_BAT = "low-power";
+
         # WiFi power saving
         WIFI_PWR_ON_AC = "on";
         WIFI_PWR_ON_BAT = "on";
