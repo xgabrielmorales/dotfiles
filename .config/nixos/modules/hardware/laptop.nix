@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+
   services = {
     upower.enable = true;
     tlp = {
