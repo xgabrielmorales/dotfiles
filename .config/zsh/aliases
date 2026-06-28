@@ -8,6 +8,7 @@ alias ....="cd ../../.."
 alias dl="cd ~/Downloads && ls -l"
 alias doc="cd ~/Documents && ls -l"
 alias dotfiles="cd ~/dotfiles && ls -l"
+alias homelab="cd ~/Documents/homelab && ls -l"
 alias work="cd ~/Documents/Work && ls -la"
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
@@ -19,6 +20,7 @@ alias cbpaste="wl-paste --no-newline"
 alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{printf \"%s: %s\n\", \$NF, \$2}'"
 alias ls="eza -F --all --header --group-directories-first --icons"
 alias vim="nvim"
+alias webcam="scrcpy --video-source=camera --v4l2-sink=/dev/video10 --camera-ar=16:9 --camera-id=0 --no-audio --capture-orientation=180 --camera-torch --no-video-playback"
 
 alias xblueooth="bluetui"
 alias xwifi="impala"
