@@ -1,68 +1,15 @@
 # ~/dotfiles
 
-This repository contains the configuration files for my WorkStation. Feel free to take and modify whatever you like; however, keep in mind that what is shown here reflects my personal preferences. Therefore, I would suggest thoroughly reviewing what you take before incorporating it into your configuration.
-
 ![rice](https://github.com/xgabrielmorales/dotfiles/assets/50029987/ee183470-b255-4df0-a72e-0c7b33920406)
 
-## Distro: NixOS
-
-[NixOS](https://nixos.org/) is my primary and only distribution. I appreciate its declarative configuration approach; I like the reproducibility and rollback capabilities; I value the extensive package collection from [Nixpkgs](https://search.nixos.org/packages). Previously: [Arch Linux](https://archlinux.org/).
-
-My configuration can be found here: [NixOS](.config/nixos/).
-
-## Window Manager: labwc
-
-[labwc](https://labwc.github.io/) is my current window manager running on Wayland. It's a wlroots-based stacking compositor inspired by Openbox, offering a familiar experience with modern Wayland features.
-
-You can find my configuration here: [labwc](.config/labwc/).
-
-## Status Bars: Waybar
-
-[Waybar](https://github.com/Alexays/Waybar) is my current status bar for Wayland/Hyprland. It's highly customizable, supports modern features, and integrates perfectly with the Wayland ecosystem.
-
-My configuration can be found here: [Waybar](.config/waybar).
-
-## Window Switcher: Rofi
-
-My preferred window switcher, more for its aesthetics, is Rofi. I find Dmenu to be too "plain". However, Rofi is equally lightweight, fast, and simple, which is what I'm after.
-
-My configuration can be found here: [Rofi](.config/rofi).
-
-## Terminal Emulator: Alacritty
-
-In my quest for simplicity, I've used many terminal emulators, but only with [Alacritty](https://alacritty.org/) have I found what I'm looking for.
-
-My configuration can be found here: [Alacritty](.config/alacritty/).
-
-### Terminal Multiplexer: Tmux
-
-An essential package since Alacritty lacks panels or tabs. Tmux allows you to have multiple terminal sessions in a single window with minimal effort.
-
-My configuration can be found here: [Tmux](.config/tmux/tmux.conf).
-
-## File Manager: Lf
-
-[Lf](https://github.com/gokcehan/lf), formerly [Ranger](https://github.com/ranger/ranger), is my file manager for everything except when I need to drag a file somewhere. It's simple, fast, uses Vim keybindings, and is highly extensible.
-
-My configuration can be found here: [Lf](.config/lf), [Ranger](.config/ranger).
-
-## Text Editor - Neovim
-
-I use [Neovim](https://neovim.io/) for programming; in the past, I used [Emacs](https://www.gnu.org/software/emacs/).
-
-My configuration can be found here: [Nvim](.config/nvim/) and [Emacs](.config/emacs/).
-
-## Others
-
-Unlisted packages:
-
-- Browser: [Zen Browser](https://zen-browser.app/)
-- Document viewer: [Zathura](https://wiki.archlinux.org/title/Zathura)
-- Media Player: [VLC](https://www.videolan.org/vlc/)
-- Music Player: Spotify.
-
-### Typography Fonts
-
-- Icons: [Feather](https://github.com/AT-UI/feather-font)
-- Monospace: [JetBrains Mono Nerd Font](https://www.jetbrains.com/lp/mono/)
-- Proportional: [Cantarell](https://fonts.google.com/specimen/Cantarell)
+| Category             | Program                                     | Configuration                                    | Why                                                               |
+| -------------------- | ------------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------- |
+| Distro               | [NixOS](https://nixos.org/)                 | [.config/nixos/](.config/nixos/)                 | "i use arch btw" doesnt impress nobody no more                    |
+| Window Manager       | [labwc](https://labwc.github.io/)           | [.config/labwc/](.config/labwc/)                 | have u seen gnome's ram usage?? 💀                                |
+| Status Bar           | [Waybar](https://github.com/Alexays/Waybar) | [.config/waybar](.config/waybar)                 | need to check my RAM every 0.5s so i can pretend im in control    |
+| Window Switcher      | [Rofi](https://github.com/davatorium/rofi)  | [.config/rofi](.config/rofi)                     | dmenu is ugly afff                                                |
+| Terminal Emulator    | [Alacritty](https://alacritty.org/)         | [.config/alacritty/](.config/alacritty/)         | my terminal opens in 3ms. skill issue if yours dont               |
+| Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux)        | [.config/tmux/tmux.conf](.config/tmux/tmux.conf) | closing the terminal and losing everything is too much adrenaline |
+| File Manager         | [Lf](https://github.com/gokcehan/lf)        | [.config/lf](.config/lf)                         | using a mouse to move files is for ppl with free time             |
+| Text Editor          | [Neovim](https://neovim.io/)                | [.config/nvim/](.config/nvim/)                   | tryna look smart in front of my coworkers                         |
+| Browser              | [Zen Browser](https://zen-browser.app/)     | [.config/zen/](.config/zen/)                     | fuck Firefox all my homies use Zen Browser                        |
