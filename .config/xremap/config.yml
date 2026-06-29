@@ -1,0 +1,9 @@
+modmap:
+  - name: Foot pedal push-to-talk
+    remap:
+      KEY_F13:
+        skip_key_event: true
+        press:
+          - launch: ["/run/current-system/sw/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SOURCE@", "0"]
+        release:
+          - launch: ["/run/current-system/sw/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SOURCE@", "1"]

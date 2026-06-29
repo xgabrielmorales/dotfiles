@@ -22,6 +22,7 @@
     # Hardware support
     ../../modules/hardware/audio.nix
     ../../modules/hardware/bluetooth.nix
+    ../../modules/hardware/footpedal.nix
     ../../modules/hardware/nvidia.nix
     ../../modules/hardware/webcam.nix
 

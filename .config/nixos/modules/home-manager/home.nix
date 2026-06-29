@@ -11,7 +11,7 @@ let
 in
 {
   home-manager.users.${mainUser} =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       services.gammastep = {
         enable = true;
@@ -29,6 +29,23 @@ in
           ExecStart = "${pkgs.ntfy-sh}/bin/ntfy subscribe --from-config";
           Restart = "on-failure";
           RestartSec = 10;
+        };
+        Install.WantedBy = [ "graphical-session.target" ];
+      };
+
+      systemd.user.services.xremap = {
+        Unit = {
+          Description = "xremap - foot pedal push-to-talk (mic gate)";
+          After = [
+            "graphical-session.target"
+            "pipewire.service"
+          ];
+          PartOf = [ "graphical-session.target" ];
+        };
+        Service = {
+          ExecStart = ''${pkgs.xremap}/bin/xremap --device "PCsensor FootSwitch Keyboard" --watch=device --allow-launch true ${config.xdg.configHome}/xremap/config.yml'';
+          Restart = "on-failure";
+          RestartSec = 5;
         };
         Install.WantedBy = [ "graphical-session.target" ];
       };
@@ -127,6 +144,7 @@ in
           wtype
           xdg-user-dirs
           xfce4-notifyd
+          xremap
           ydotool
           zathura
           zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -169,6 +187,7 @@ in
           "tmux".source = "${dotfiles}/.config/tmux";
           "waybar".source = "${dotfiles}/.config/waybar";
           "waypaper".source = "${dotfiles}/.config/waypaper";
+          "xremap".source = "${dotfiles}/.config/xremap";
           "xsettingsd".source = "${dotfiles}/.config/xsettingsd";
           "zathura".source = "${dotfiles}/.config/zathura";
           "zsh".source = "${dotfiles}/.config/zsh";
