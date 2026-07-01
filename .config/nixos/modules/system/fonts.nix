@@ -5,6 +5,7 @@
     enableDefaultPackages = false;
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
+      inter
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -14,7 +15,7 @@
       enable = true;
       defaultFonts = {
         monospace = [ "JetBrainsMono Nerd Font" ];
-        sansSerif = [ "Noto Sans" ];
+        sansSerif = [ "Inter" "Noto Sans" ];
         serif = [ "Noto Serif" ];
         emoji = [ "Twitter Color Emoji" ];
       };
