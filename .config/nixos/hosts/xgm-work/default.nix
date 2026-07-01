@@ -34,7 +34,6 @@
     # Services
     ../../modules/services/docker.nix
     ../../modules/services/ssh.nix
-    ../../modules/services/syncthing.nix
 
     # Home Manager
     ../../modules/home-manager/home.nix
