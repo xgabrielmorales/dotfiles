@@ -164,6 +164,16 @@ in
         };
       };
 
+      xfconf.settings = {
+        xfce4-notifyd = {
+          "theme" = "Default";
+          "initial-opacity" = 1.0;
+          "notify-location" = "top-right";
+          "do-fadeout" = false;
+          "do-slideout" = false;
+        };
+      };
+
       xdg = {
         userDirs = {
           enable = true;
