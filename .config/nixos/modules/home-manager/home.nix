@@ -65,6 +65,8 @@ in
           })
           age
           alacritty
+          bubblewrap
+          socat
           arc-theme
           awscli2
           bluetui
