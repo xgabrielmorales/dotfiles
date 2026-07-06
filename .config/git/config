@@ -7,6 +7,7 @@
     lod = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(red)%aN%C(reset) %C(green)%ar%C(reset) %C(yellow)%D%C(reset)%n%s%n' --use-mailmap
     s = status
     staged = diff --staged
+    wclone = "!wclone"
 
 [branch]
     sort = -committerdate

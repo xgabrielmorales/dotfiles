@@ -161,6 +161,7 @@ in
           "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
           "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
           "${bin}/toggle-audio-output".source = "${dotfiles}/${bin}/toggle-audio-output";
+          "${bin}/wclone".source = "${dotfiles}/${bin}/wclone";
           "${share}/fonts".source = "${dotfiles}/${share}/fonts";
           "${share}/themes".source = "${dotfiles}/${share}/themes";
         };
