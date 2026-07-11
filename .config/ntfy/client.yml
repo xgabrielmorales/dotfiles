@@ -1,4 +1,0 @@
-default-host: https://ntfy.xgabrielmorales.com
-subscribe:
-  - topic: Homelab
-    command: 'notify-send -i bell "${title:-$topic}" "$message"'

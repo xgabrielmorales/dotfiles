@@ -20,19 +20,6 @@ in
         longitude = "-74.1";
       };
 
-      systemd.user.services.ntfy-client = {
-        Unit = {
-          Description = "ntfy subscription client";
-          After = [ "graphical-session.target" ];
-        };
-        Service = {
-          ExecStart = "${pkgs.ntfy-sh}/bin/ntfy subscribe --from-config";
-          Restart = "on-failure";
-          RestartSec = 10;
-        };
-        Install.WantedBy = [ "graphical-session.target" ];
-      };
-
       systemd.user.services.xremap = {
         Unit = {
           Description = "xremap - foot pedal push-to-talk (mic gate)";
@@ -102,7 +89,6 @@ in
           net-tools
           nixfmt-tree
           nodejs_24
-          ntfy-sh
           nwg-look
           obs-studio
           openssl_oqs
@@ -192,7 +178,6 @@ in
           "gtk-4.0".source = "${dotfiles}/.config/gtk-4.0";
           "labwc".source = "${dotfiles}/.config/labwc";
           "lf".source = "${dotfiles}/.config/lf";
-          "ntfy".source = "${dotfiles}/.config/ntfy";
           "nvim".source = "${dotfiles}/.config/nvim";
           "ranger".source = "${dotfiles}/.config/ranger";
           "rofi".source = "${dotfiles}/.config/rofi";
