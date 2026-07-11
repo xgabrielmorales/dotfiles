@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   boot.consoleLogLevel = 0;
   boot.initrd.verbose = false;
   boot.kernelParams = [
