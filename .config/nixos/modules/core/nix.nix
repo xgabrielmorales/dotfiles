@@ -8,6 +8,6 @@
     "nix-command"
     "flakes"
   ];
-  nixpkgs.config.allowUnfreePredicate = pkg: true;
+  nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
 }
