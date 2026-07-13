@@ -33,6 +33,7 @@
 
     # Services
     ../../modules/services/docker.nix
+    ../../modules/services/kubernetes.nix
     ../../modules/services/ssh.nix
 
     # Home Manager
