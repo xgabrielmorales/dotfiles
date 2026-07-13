@@ -3,7 +3,7 @@
 {
   imports = [
     # Host
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     ./networking.nix
 
     # Core system
