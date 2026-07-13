@@ -12,6 +12,9 @@ in
 {
   home-manager.users.${mainUser} =
     { pkgs, config, ... }:
+    let
+      link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
+    in
     {
       services.gammastep = {
         enable = true;
@@ -142,15 +145,15 @@ in
           zsh-completions
         ];
         file = {
-          "${bin}/bookmarks".source = "${dotfiles}/${bin}/bookmarks";
-          "${bin}/recycle".source = "${dotfiles}/${bin}/recycle";
-          "${bin}/screenshot".source = "${dotfiles}/${bin}/screenshot";
-          "${bin}/sink_module".source = "${dotfiles}/${bin}/sink_module";
-          "${bin}/source_module".source = "${dotfiles}/${bin}/source_module";
-          "${bin}/toggle-audio-output".source = "${dotfiles}/${bin}/toggle-audio-output";
-          "${bin}/wclone".source = "${dotfiles}/${bin}/wclone";
-          "${share}/fonts".source = "${dotfiles}/${share}/fonts";
-          "${share}/themes".source = "${dotfiles}/${share}/themes";
+          "${bin}/bookmarks".source = link "${bin}/bookmarks";
+          "${bin}/recycle".source = link "${bin}/recycle";
+          "${bin}/screenshot".source = link "${bin}/screenshot";
+          "${bin}/sink_module".source = link "${bin}/sink_module";
+          "${bin}/source_module".source = link "${bin}/source_module";
+          "${bin}/toggle-audio-output".source = link "${bin}/toggle-audio-output";
+          "${bin}/wclone".source = link "${bin}/wclone";
+          "${share}/fonts".source = link "${share}/fonts";
+          "${share}/themes".source = link "${share}/themes";
         };
       };
 
@@ -171,25 +174,25 @@ in
           setSessionVariables = true;
         };
         configFile = {
-          "alacritty".source = "${dotfiles}/.config/alacritty";
-          "btop".source = "${dotfiles}/.config/btop";
-          "git".source = "${dotfiles}/.config/git";
-          "gtk-2.0".source = "${dotfiles}/.config/gtk-2.0";
-          "gtk-3.0".source = "${dotfiles}/.config/gtk-3.0";
-          "gtk-4.0".source = "${dotfiles}/.config/gtk-4.0";
-          "labwc".source = "${dotfiles}/.config/labwc";
-          "lf".source = "${dotfiles}/.config/lf";
-          "nvim".source = "${dotfiles}/.config/nvim";
-          "ranger".source = "${dotfiles}/.config/ranger";
-          "rofi".source = "${dotfiles}/.config/rofi";
-          "swayosd".source = "${dotfiles}/.config/swayosd";
-          "tmux".source = "${dotfiles}/.config/tmux";
-          "waybar".source = "${dotfiles}/.config/waybar";
-          "waypaper".source = "${dotfiles}/.config/waypaper";
-          "xremap".source = "${dotfiles}/.config/xremap";
-          "xsettingsd".source = "${dotfiles}/.config/xsettingsd";
-          "zathura".source = "${dotfiles}/.config/zathura";
-          "zsh".source = "${dotfiles}/.config/zsh";
+          "alacritty".source = link ".config/alacritty";
+          "btop".source = link ".config/btop";
+          "git".source = link ".config/git";
+          "gtk-2.0".source = link ".config/gtk-2.0";
+          "gtk-3.0".source = link ".config/gtk-3.0";
+          "gtk-4.0".source = link ".config/gtk-4.0";
+          "labwc".source = link ".config/labwc";
+          "lf".source = link ".config/lf";
+          "nvim".source = link ".config/nvim";
+          "ranger".source = link ".config/ranger";
+          "rofi".source = link ".config/rofi";
+          "swayosd".source = link ".config/swayosd";
+          "tmux".source = link ".config/tmux";
+          "waybar".source = link ".config/waybar";
+          "waypaper".source = link ".config/waypaper";
+          "xremap".source = link ".config/xremap";
+          "xsettingsd".source = link ".config/xsettingsd";
+          "zathura".source = link ".config/zathura";
+          "zsh".source = link ".config/zsh";
         };
         mimeApps = {
           enable = true;
