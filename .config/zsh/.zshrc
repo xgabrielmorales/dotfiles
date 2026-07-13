@@ -1,5 +1,7 @@
 bindkey -e
 
+fpath=(/etc/profiles/per-user/$USER/share/zsh/site-functions /run/current-system/sw/share/zsh/site-functions $fpath)
+
 # Optimized compinit - cache for 24 hours
 autoload -Uz compinit
 
