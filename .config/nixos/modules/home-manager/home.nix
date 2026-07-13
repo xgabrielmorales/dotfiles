@@ -223,7 +223,10 @@ in
             icon = "zen-browser";
             exec = "recycle zen-beta %U";
             type = "Application";
-            categories = [ "Network" "WebBrowser" ];
+            categories = [
+              "Network"
+              "WebBrowser"
+            ];
             mimeType = [
               "application/x-extension-htm"
               "application/x-extension-html"

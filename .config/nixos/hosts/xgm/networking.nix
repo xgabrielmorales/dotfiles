@@ -10,7 +10,10 @@
         prefixLength = 24;
       }
     ];
-    nameservers = [ "10.10.10.3" "1.1.1.1" ];
+    nameservers = [
+      "10.10.10.3"
+      "1.1.1.1"
+    ];
     networkmanager.enable = false;
     useDHCP = false;
   };

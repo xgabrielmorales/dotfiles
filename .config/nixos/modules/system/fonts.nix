@@ -16,8 +16,14 @@
       enable = true;
       defaultFonts = {
         monospace = [ "JetBrainsMono Nerd Font" ];
-        sansSerif = [ "Inter" "Noto Sans" ];
-        serif = [ "Source Serif 4" "Noto Serif" ];
+        sansSerif = [
+          "Inter"
+          "Noto Sans"
+        ];
+        serif = [
+          "Source Serif 4"
+          "Noto Serif"
+        ];
         emoji = [ "Twitter Color Emoji" ];
       };
     };
