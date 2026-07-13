@@ -5,4 +5,5 @@ env/
 venv/
 
 # Claude Code
+**/.claude/.cc-writes/
 **/.claude/settings.local.json
