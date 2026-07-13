@@ -5,7 +5,7 @@ clean:
   sudo nix-store --gc
 
 build:
-  sudo nixos-rebuild switch --impure --flake ~/dotfiles/.config/nixos#xgm
+  sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos#xgm
 
 build-work:
-  sudo nixos-rebuild switch --impure --flake ~/dotfiles/.config/nixos#xgm-work
+  sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos#xgm-work
