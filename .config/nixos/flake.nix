@@ -18,6 +18,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    claude-desktop = {
+      url = "github:aaddrick/claude-desktop-debian";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -26,10 +30,14 @@
       home-manager,
       nix-index-database,
       sops-nix,
+      claude-desktop,
       ...
     }:
     let
-      overlays = [ (import ./overlays) ];
+      overlays = [
+        (import ./overlays)
+        claude-desktop.overlays.default
+      ];
     in
     {
       nixosConfigurations.xgm = nixpkgs.lib.nixosSystem {
