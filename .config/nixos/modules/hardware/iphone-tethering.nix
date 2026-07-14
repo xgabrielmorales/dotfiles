@@ -9,6 +9,8 @@
       matchConfig.Driver = "ipheth";
       networkConfig.DHCP = "yes";
       linkConfig.RequiredForOnline = "no";
+      dhcpV4Config.UseDNS = false;
+      dhcpV6Config.UseDNS = false;
     };
   };
 
