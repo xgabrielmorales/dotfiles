@@ -1,0 +1,128 @@
+{
+  "$schema": "https://f.jstanger.dev/github/ironbar/schema.json",
+  "name": "main",
+  "position": "bottom",
+  "height": 32,
+  "popup_autohide": true,
+  "start": [
+    {
+      "type": "custom",
+      "class": "launcher-box",
+      "bar": [
+        {
+          "type": "button",
+          "name": "launcher-btn",
+          "label": "",
+          "on_click": "!~/.config/rofi/bin/rofi-launcher/launcher.sh"
+        }
+      ]
+    },
+    {
+      "type": "launcher",
+      "show_icons": true,
+      "show_names": false,
+      "icon_size": 24
+    }
+  ],
+  "center": [
+    {
+      "type": "music",
+      "format": "{title} - {artist}",
+      "truncate": {
+        "mode": "end",
+        "max_length": 50
+      },
+      "truncate_popup_title": {
+        "mode": "end",
+        "max_length": 25
+      },
+      "truncate_popup_artist": {
+        "mode": "end",
+        "max_length": 25
+      },
+      "truncate_popup_album": {
+        "mode": "end",
+        "max_length": 25
+      }
+    }
+  ],
+  "end": [
+    {
+      "type": "tray",
+      "icon_size": 16
+    },
+    {
+      "type": "sys_info",
+      "format": [
+        "CPU {temp_c@k10temp Tctl:.0}°C"
+      ],
+      "interval": {
+        "temps": 5
+      }
+    },
+    {
+      "type": "brightness",
+      "format": "{percentage}%",
+      "icon_label": "󰃠 ",
+      "use_default_profiles": false,
+      "mode": {
+        "type": "systemd",
+        "subsystem": "backlight",
+        "name": "amdgpu_bl2"
+      },
+      "tooltip": "Brightness"
+    },
+    {
+      "type": "battery",
+      "format": "{percentage}%",
+      "show_icon": true
+    },
+    {
+      "type": "bluetooth",
+      "icon_size": 28,
+      "popup": {
+        "header": "  Bluetooth",
+        "disabled": "{adapter_status}"
+      },
+      "format": {
+        "enabled": " On",
+        "disabled": " Off",
+        "connected": " {device_alias}",
+        "connected_battery": " {device_alias} • {device_battery_percent}%"
+      }
+    },
+    {
+      "type": "volume",
+      "show_sinks": true,
+      "show_sources": true,
+      "truncate_popup": {
+        "mode": "end",
+        "max_length": 25
+      },
+      "icons": {
+        "mic_muted": " ",
+        "mic_volume": " "
+      },
+      "popup_orientation": "vertical",
+      "on_scroll_up": "swayosd-client --output-volume raise",
+      "on_scroll_down": "swayosd-client --output-volume lower"
+    },
+    {
+      "type": "clock",
+      "format": " %H:%M"
+    },
+    {
+      "type": "custom",
+      "class": "power-box",
+      "tooltip": "Power",
+      "bar": [
+        {
+          "type": "button",
+          "name": "power-btn",
+          "label": "",
+          "on_click": "!~/.config/rofi/bin/rofi-powermenu/powermenu.sh"
+        }
+      ]
+    }
+  ]
+}

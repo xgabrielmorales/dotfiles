@@ -1,0 +1,206 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+}
+
+.background {
+  background-color: #1e222a;
+  color: #c4c7c5;
+}
+
+#bar {
+  border-top: 1px solid #2f343f;
+}
+
+.widget-container,
+.widget {
+  background-color: transparent;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #c4c7c5;
+  min-height: 0;
+  min-width: 0;
+  margin: 2px;
+}
+
+#launcher-btn {
+  background-color: #98c379;
+  border-radius: 8px;
+  color: #1e222a;
+  margin: 2px 0 2px 6px;
+  padding: 0 10px;
+}
+
+.launcher {
+  margin: 2px 0 2px 10px;
+}
+
+.launcher .item {
+  border-radius: 8px;
+  padding: 0 2px;
+}
+
+.launcher .item:hover,
+.launcher .item.focused {
+  background-color: #333b41;
+  border-radius: 8px;
+}
+
+.tray,
+.sysinfo .item,
+.music,
+.brightness,
+.battery,
+.mic,
+.volume,
+.bluetooth,
+.clock {
+  background-color: #282c34;
+  border-radius: 8px;
+  margin: 2px 4px 2px 0;
+  padding: 0 10px;
+}
+
+.music:hover,
+.volume:hover,
+.bluetooth:hover {
+  background-color: #333b41;
+}
+
+.popup-volume,
+.popup-bluetooth {
+  min-height: 200px;
+  min-width: 300px;
+}
+
+.tray .item:not(:last-child) {
+  margin-right: 16px;
+}
+
+.tray .item.urgent {
+  background-color: #e06c75;
+}
+
+.sysinfo .item:not(:last-child) {
+  margin-right: 0;
+}
+
+.music {
+  margin: 2px 0;
+}
+
+.popup-music {
+  min-width: 420px;
+  min-height: 100px;
+}
+
+.popup-music .volume,
+.popup-music .volume:hover {
+  background-color: transparent;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.popup-music .volume .slider,
+.popup-music .volume .icon {
+  min-width: 24px;
+}
+
+.popup-bluetooth .devices .box .device .icon-box {
+  margin-right: 8px;
+}
+
+#power-btn {
+  background-color: #e06c75;
+  border-radius: 8px;
+  color: #1e222a;
+  margin: 2px 4px 2px 0;
+  padding: 0 10px;
+}
+
+tooltip {
+  background-color: #1e222a;
+  border-radius: 8px;
+  border: 1px solid #2f343f;
+  margin: 3px;
+  padding: 5px;
+}
+
+tooltip label {
+  color: #c4c7c5;
+}
+
+popover contents {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+popover arrow {
+  background-color: transparent;
+}
+
+scale trough {
+  background-color: #282c34;
+  border-radius: 2px;
+  min-height: 4px;
+  min-width: 4px;
+}
+
+scale highlight {
+  background-color: #98c379;
+}
+
+scale slider {
+  background-color: #c4c7c5;
+  border-radius: 7px;
+  border: none;
+}
+
+calendar {
+  background-color: transparent;
+  border: none;
+  color: #c4c7c5;
+}
+
+calendar header,
+calendar header button {
+  background-color: transparent;
+  color: #c4c7c5;
+}
+
+calendar label.day-number.other-month {
+  color: #4b5263;
+}
+
+calendar label.day-number:selected {
+  background-color: #98c379;
+  border-radius: 6px;
+  color: #1e222a;
+}
+
+.popup {
+  background-color: #1e222a;
+  border: 1px solid #2f343f;
+  border-radius: 8px;
+  color: #c4c7c5;
+  padding: 8px;
+}
+
+.popup button {
+  background-color: #282c34;
+  border-radius: 8px;
+  padding: 2px 8px;
+}
+
+.popup button:hover {
+  background-color: #333b41;
+}

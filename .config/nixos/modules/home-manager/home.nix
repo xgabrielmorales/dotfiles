@@ -125,7 +125,7 @@ in
           usbutils
           viewnior
           vlc
-          waybar
+          ironbar
           waylock
           waypaper
           wdisplays
@@ -187,7 +187,7 @@ in
           "rofi".source = link ".config/rofi";
           "swayosd".source = link ".config/swayosd";
           "tmux".source = link ".config/tmux";
-          "waybar".source = link ".config/waybar";
+          "ironbar".source = link ".config/ironbar";
           "waypaper".source = link ".config/waypaper";
           "xremap".source = link ".config/xremap";
           "xsettingsd".source = link ".config/xsettingsd";

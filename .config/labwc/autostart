@@ -3,5 +3,5 @@
 systemctl --user --no-block start labwc-session.target
 
 exec waypaper --restore &
-exec waybar --log-level off &
+exec ironbar &
 exec swayosd-server &
