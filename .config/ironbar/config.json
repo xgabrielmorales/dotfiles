@@ -93,17 +93,29 @@
     },
     {
       "type": "volume",
-      "show_sinks": true,
+      "show_sinks": false,
       "show_sources": true,
+      "show_monitors": false,
       "truncate_popup": {
         "mode": "end",
         "max_length": 25
       },
-      "icons": {
-        "mic_muted": " ",
-        "mic_volume": " "
+      "popup_orientation": "vertical",
+      "on_click_middle": "swayosd-client --input-volume mute-toggle",
+      "on_scroll_up": "swayosd-client --input-volume raise",
+      "on_scroll_down": "swayosd-client --input-volume lower"
+    },
+    {
+      "type": "volume",
+      "show_sinks": true,
+      "show_sources": false,
+      "show_monitors": false,
+      "truncate_popup": {
+        "mode": "end",
+        "max_length": 25
       },
       "popup_orientation": "vertical",
+      "on_click_middle": "swayosd-client --output-volume mute-toggle",
       "on_scroll_up": "swayosd-client --output-volume raise",
       "on_scroll_down": "swayosd-client --output-volume lower"
     },

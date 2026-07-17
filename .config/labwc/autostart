@@ -3,5 +3,5 @@
 systemctl --user --no-block start labwc-session.target
 
 exec waypaper --restore &
-exec ironbar &
+GSK_RENDERER=gl exec ironbar &
 exec swayosd-server &
