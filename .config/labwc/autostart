@@ -5,3 +5,4 @@ systemctl --user --no-block start labwc-session.target
 exec waypaper --restore &
 GSK_RENDERER=gl exec ironbar &
 exec swayosd-server &
+exec librepods &
