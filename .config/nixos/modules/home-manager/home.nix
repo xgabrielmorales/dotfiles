@@ -55,13 +55,12 @@ in
           })
           age
           alacritty
-          bubblewrap
-          socat
           arc-theme
           awscli2
           bluetui
           brightnessctl
           btop
+          bubblewrap
           cameractrls-gtk4
           claude-desktop
           corepack_24
@@ -81,6 +80,7 @@ in
           gucharmap
           hunspell
           impala
+          ironbar
           jetbrains.datagrip
           jq
           just
@@ -109,7 +109,9 @@ in
           satty
           signal-desktop
           slurp
+          socat
           sops
+          speedtest-go
           spotify
           spotifyd
           stow
@@ -125,7 +127,6 @@ in
           usbutils
           viewnior
           vlc
-          ironbar
           waylock
           waypaper
           wdisplays
