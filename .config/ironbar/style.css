@@ -125,6 +125,20 @@ button {
   padding: 0 10px;
 }
 
+.popup-power-menu .power-menu-btn {
+  background-color: #282c34;
+  border-radius: 8px;
+  padding: 4px 12px;
+}
+
+.popup-power-menu .power-menu-btn:hover {
+  background-color: #333b41;
+}
+
+.popup-power-menu .power-menu-btn:not(:first-child) {
+  margin-top: 4px;
+}
+
 tooltip {
   background-color: #1e222a;
   border-radius: 8px;

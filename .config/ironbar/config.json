@@ -93,9 +93,12 @@
     },
     {
       "type": "volume",
+      "name": "vol-in",
       "show_sinks": false,
       "show_sources": true,
       "show_monitors": false,
+      "on_click_left": "swayosd-client --input-volume mute-toggle",
+      "on_click_right": "ironbar bar main toggle-popup vol-in",
       "truncate_popup": {
         "mode": "end",
         "max_length": 25
@@ -107,9 +110,12 @@
     },
     {
       "type": "volume",
+      "name": "vol-out",
       "show_sinks": true,
       "show_sources": false,
       "show_monitors": false,
+      "on_click_left": "swayosd-client --output-volume mute-toggle",
+      "on_click_right": "ironbar bar main toggle-popup vol-out",
       "truncate_popup": {
         "mode": "end",
         "max_length": 25
@@ -121,18 +127,58 @@
     },
     {
       "type": "clock",
-      "format": " %H:%M"
+      "format": " %H:%M",
+      "tooltip": "{{1000:date '+%Y-%m-%d %H:%M:%S'}}"
     },
     {
       "type": "custom",
-      "class": "power-box",
+      "name": "power-menu",
+      "class": "power-menu",
       "tooltip": "Power",
       "bar": [
         {
           "type": "button",
           "name": "power-btn",
           "label": "",
-          "on_click": "!~/.config/rofi/bin/rofi-powermenu/powermenu.sh"
+          "on_click": "popup:toggle"
+        }
+      ],
+      "popup": [
+        {
+          "type": "box",
+          "orientation": "vertical",
+          "widgets": [
+            {
+              "type": "button",
+              "class": "power-menu-btn",
+              "label": " Lock    ",
+              "on_click": "!waylock -init-color 0x1e222a -input-color 0x98c379 -fail-color 0xe06c75"
+            },
+            {
+              "type": "button",
+              "class": "power-menu-btn",
+              "label": " Sleep   ",
+              "on_click": "!systemctl suspend"
+            },
+            {
+              "type": "button",
+              "class": "power-menu-btn",
+              "label": " Logout  ",
+              "on_click": "!labwc --exit"
+            },
+            {
+              "type": "button",
+              "class": "power-menu-btn",
+              "label": " Restart ",
+              "on_click": "!systemctl reboot"
+            },
+            {
+              "type": "button",
+              "class": "power-menu-btn",
+              "label": " Shutdown",
+              "on_click": "!systemctl poweroff"
+            }
+          ]
         }
       ]
     }
