@@ -15,4 +15,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.timeout = 5;
   boot.tmp.cleanOnBoot = true;
+  services.fstrim.enable = true;
+  zramSwap.enable = true;
 }

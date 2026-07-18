@@ -67,7 +67,6 @@ in
           csvlens
           delta
           dig
-          direnv
           eza
           fd
           file
@@ -79,6 +78,8 @@ in
           grim
           gucharmap
           hunspell
+          hunspellDicts.en_US
+          hunspellDicts.es_CO
           impala
           ironbar
           jetbrains.datagrip
@@ -142,7 +143,6 @@ in
           zathura
           zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
           zip
-          zsh
           zsh-completions
         ];
         file = {
@@ -199,7 +199,7 @@ in
           enable = true;
           defaultApplications = {
             "image/png" = "pdf.desktop";
-            "image/jpg" = "pdf.desktop";
+            "image/jpeg" = "pdf.desktop";
             "image/*" = "img.desktop";
             "video/*" = "video.desktop";
             "text/*" = "text.desktop";

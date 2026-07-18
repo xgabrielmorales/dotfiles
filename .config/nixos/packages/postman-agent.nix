@@ -28,11 +28,11 @@
 
 stdenv.mkDerivation rec {
   pname = "postman-agent";
-  version = "latest";
+  version = "0.4.89";
 
   src = fetchurl {
-    url = "https://dl-agent.pstmn.io/download/latest/linux";
-    hash = "sha256-8xN41KVR4y9FT/Ue45PvpW1MMONiJXAV6lYfDtU0FL0=";
+    url = "https://dl-agent.pstmn.io/download/version/${version}/linux";
+    hash = "sha256-Gx2L/KwU1W+fgKDu+2Mzre6aMWdwaTu4USqlYg/vHZ8=";
     name = "${pname}-${version}.tar.gz";
   };
 

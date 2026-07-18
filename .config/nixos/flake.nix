@@ -34,39 +34,31 @@
       ...
     }:
     let
-      overlays = [
-        (import ./overlays)
-        claude-desktop.overlays.default
-      ];
+      # Hostname and main user share the same name on every machine
+      mkHost =
+        name:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            mainUser = name;
+            inherit zen-browser;
+          };
+          modules = [
+            ./hosts/${name}
+            home-manager.nixosModules.home-manager
+            nix-index-database.nixosModules.default
+            sops-nix.nixosModules.sops
+            {
+              nixpkgs.overlays = [
+                (import ./overlays)
+                claude-desktop.overlays.default
+              ];
+            }
+          ];
+        };
     in
     {
-      nixosConfigurations.xgm = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          mainUser = "xgm";
-        };
-        modules = [
-          ./hosts/xgm
-          home-manager.nixosModules.home-manager
-          nix-index-database.nixosModules.default
-          sops-nix.nixosModules.sops
-          { nixpkgs.overlays = overlays; }
-          { _module.args = { inherit zen-browser; }; }
-        ];
-      };
-      nixosConfigurations.xgm-work = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          mainUser = "xgm-work";
-        };
-        modules = [
-          ./hosts/xgm-work
-          home-manager.nixosModules.home-manager
-          nix-index-database.nixosModules.default
-          sops-nix.nixosModules.sops
-          { nixpkgs.overlays = overlays; }
-          { _module.args = { inherit zen-browser; }; }
-        ];
-      };
+      nixosConfigurations.xgm = mkHost "xgm";
+      nixosConfigurations.xgm-work = mkHost "xgm-work";
     };
 }

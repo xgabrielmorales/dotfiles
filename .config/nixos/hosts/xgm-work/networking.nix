@@ -2,7 +2,6 @@
 
 {
   systemd.network.wait-online.enable = false;
-
   networking = {
     hostName = "xgm-work";
     networkmanager.enable = false;

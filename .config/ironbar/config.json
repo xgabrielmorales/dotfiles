@@ -68,7 +68,7 @@
       "mode": {
         "type": "systemd",
         "subsystem": "backlight",
-        "name": "amdgpu_bl2"
+        "name": "amdgpu_bl1"
       },
       "tooltip": "Brightness"
     },
