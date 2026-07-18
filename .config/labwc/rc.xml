@@ -347,7 +347,8 @@
       </mousebind>
     </context>
   </mouse>
-  <windowSwitcher preview="no" outlines="no">
+  <windowSwitcher preview="yes" outlines="no">
+    <osd style="thumbnail"/>
     <fields>
       <field content="icon" width="5%"/>
       <field content="title" width="95%"/>
