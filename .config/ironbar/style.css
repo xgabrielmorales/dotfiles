@@ -11,7 +11,7 @@
 }
 
 #bar {
-  border-top: 1px solid #2f343f;
+  border-top: 2px solid #2f343f;
 }
 
 .widget-container,
@@ -75,8 +75,15 @@ button {
 
 .popup-volume,
 .popup-bluetooth {
-  min-height: 200px;
   min-width: 300px;
+}
+.popup-bluetooth .devices .box .device {
+  padding: 5px;
+}
+
+.popup-bluetooth .header {
+  padding: 5px;
+  border-bottom: 2px solid #2f343f;
 }
 
 .tray .item:not(:last-child) {
@@ -142,8 +149,8 @@ button {
 tooltip {
   background-color: #1e222a;
   border-radius: 8px;
-  border: 1px solid #2f343f;
-  margin: 3px;
+  border: 2px solid #2f343f;
+  margin: 2px;
   padding: 5px;
 }
 
@@ -203,7 +210,7 @@ calendar label.day-number:selected {
 
 .popup {
   background-color: #1e222a;
-  border: 1px solid #2f343f;
+  border: 2px solid #2f343f;
   border-radius: 8px;
   color: #c4c7c5;
   padding: 8px;
