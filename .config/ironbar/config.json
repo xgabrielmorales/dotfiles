@@ -97,16 +97,16 @@
       "show_sinks": false,
       "show_sources": true,
       "show_monitors": false,
-      "on_click_left": "swayosd-client --input-volume mute-toggle",
+      "on_click_left": "source_module --toggle",
       "on_click_right": "ironbar bar main toggle-popup vol-in",
       "truncate_popup": {
         "mode": "end",
         "max_length": 25
       },
       "popup_orientation": "vertical",
-      "on_click_middle": "swayosd-client --input-volume mute-toggle",
-      "on_scroll_up": "swayosd-client --input-volume raise",
-      "on_scroll_down": "swayosd-client --input-volume lower"
+      "on_click_middle": "source_module --toggle",
+      "on_scroll_up": "source_module --inc",
+      "on_scroll_down": "source_module --dec"
     },
     {
       "type": "volume",
@@ -114,16 +114,16 @@
       "show_sinks": true,
       "show_sources": false,
       "show_monitors": false,
-      "on_click_left": "swayosd-client --output-volume mute-toggle",
+      "on_click_left": "sink_module --toggle",
       "on_click_right": "ironbar bar main toggle-popup vol-out",
       "truncate_popup": {
         "mode": "end",
         "max_length": 25
       },
       "popup_orientation": "vertical",
-      "on_click_middle": "swayosd-client --output-volume mute-toggle",
-      "on_scroll_up": "swayosd-client --output-volume raise",
-      "on_scroll_down": "swayosd-client --output-volume lower"
+      "on_click_middle": "sink_module --toggle",
+      "on_scroll_up": "sink_module --inc",
+      "on_scroll_down": "sink_module --dec"
     },
     {
       "type": "clock",

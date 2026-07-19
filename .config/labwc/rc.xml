@@ -199,35 +199,35 @@
     </keybind>
     <!-- Media Controls -->
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute" command="swayosd-client --output-volume raise"/>
+      <action name="Execute" command="sink_module --inc"/>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
-      <action name="Execute" command="swayosd-client --output-volume lower"/>
+      <action name="Execute" command="sink_module --dec"/>
     </keybind>
     <keybind key="XF86AudioMute">
-      <action name="Execute" command="swayosd-client --output-volume mute-toggle"/>
+      <action name="Execute" command="sink_module --toggle"/>
     </keybind>
     <keybind key="XF86AudioStop">
-      <action name="Execute" command="swayosd-client --playerctl stop"/>
+      <action name="Execute" command="playerctl stop"/>
     </keybind>
     <keybind key="XF86AudioPlay">
-      <action name="Execute" command="swayosd-client --playerctl play-pause"/>
+      <action name="Execute" command="playerctl play-pause"/>
     </keybind>
     <keybind key="XF86AudioPause">
-      <action name="Execute" command="swayosd-client --playerctl pause"/>
+      <action name="Execute" command="playerctl pause"/>
     </keybind>
     <keybind key="XF86AudioPrev">
-      <action name="Execute" command="swayosd-client --playerctl prev"/>
+      <action name="Execute" command="playerctl previous"/>
     </keybind>
     <keybind key="XF86AudioNext">
-      <action name="Execute" command="swayosd-client --playerctl next"/>
+      <action name="Execute" command="playerctl next"/>
     </keybind>
     <!-- Brightness -->
     <keybind key="XF86MonBrightnessUp">
-      <action name="Execute" command="swayosd-client --brightness raise"/>
+      <action name="Execute" command="brightnessctl set 5%+"/>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
-      <action name="Execute" command="swayosd-client --brightness lower"/>
+      <action name="Execute" command="brightnessctl set 5%-"/>
     </keybind>
     <!-- Lock screen -->
     <keybind key="W-l">

@@ -34,13 +34,9 @@ case "$1" in
         pamixer --toggle-mute
     ;;
     "--inc")
-        (( $(sink_volume) == 100 )) && exit
-        (( $(sink_volume) > 100 )) && pamixer --set-volume 100
-        (( $(sink_volume) < 100 )) && pamixer --increase 5
+        pamixer --increase 5
     ;;
     "--dec")
-        (( $(sink_volume) == 0 )) && exit
-        (( $(sink_volume) < 0 )) && pamixer --set-volume 0
-        (( $(sink_volume) > 0 )) && pamixer --decrease 5
+        pamixer --decrease 5
     ;;
 esac
