@@ -47,6 +47,7 @@
     ncdu
     neovim
     net-tools
+    nil
     nixfmt-tree
     nodejs_24
     nwg-look

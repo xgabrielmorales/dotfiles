@@ -13,7 +13,6 @@ return {
         "docker_language_server",
         "jsonls",
         "lua_ls",
-        "nil_ls",
         "ruff",
         "rumdl",
         "rust_analyzer",
