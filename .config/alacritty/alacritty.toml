@@ -5,6 +5,9 @@ TERM = "xterm-256color"
 history = 10000
 multiplier = 3
 
+[selection]
+save_to_clipboard = true
+
 [terminal.shell]
 args = ["-l", "-c", "tmux attach || tmux"]
 program = "/bin/sh"

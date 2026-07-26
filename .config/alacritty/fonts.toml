@@ -1,5 +1,6 @@
 [font]
 size = 13
+builtin_box_drawing = false
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
