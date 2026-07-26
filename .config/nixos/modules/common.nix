@@ -31,6 +31,6 @@
     ./services/ssh.nix
 
     # Home Manager
-    ./home-manager/home.nix
+    ./home-manager
   ];
 }
