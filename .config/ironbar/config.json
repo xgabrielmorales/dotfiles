@@ -61,18 +61,6 @@
       }
     },
     {
-      "type": "brightness",
-      "format": "{percentage}%",
-      "icon_label": "󰃠 ",
-      "use_default_profiles": false,
-      "mode": {
-        "type": "systemd",
-        "subsystem": "backlight",
-        "name": "amdgpu_bl1"
-      },
-      "tooltip": "Brightness"
-    },
-    {
       "type": "battery",
       "format": "{percentage}%",
       "show_icon": true
