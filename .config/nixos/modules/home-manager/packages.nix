@@ -15,7 +15,6 @@
     bluetui
     brightnessctl
     btop
-    bubblewrap
     cameractrls-gtk4
     claude-desktop
     corepack_24
@@ -60,18 +59,14 @@
     playerctl
     postman-agent
     python314
-    qbittorrent
     ranger
     ripgrep
     satty
     signal-desktop
     slurp
-    socat
     sops
     speedtest-go
     spotify
-    spotifyd
-    stow
     swaybg
     terraform
     thunar
