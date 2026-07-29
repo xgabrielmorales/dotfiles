@@ -20,9 +20,15 @@
     ANSIBLE_CONFIG = "${XDG_CONFIG_HOME}/ansible.cfg";
     ANSIBLE_GALAXY_CACHE_DIR = "${XDG_CACHE_HOME}/ansible/galaxy_cache";
     ANSIBLE_HOME = "${XDG_CONFIG_HOME}/ansible";
+    AWS_CONFIG_FILE = "${XDG_CONFIG_HOME}/aws/config";
+    AWS_SHARED_CREDENTIALS_FILE = "${XDG_CONFIG_HOME}/aws/credentials";
     CARGO_HOME = "${XDG_DATA_HOME}/cargo";
+    CLOUDSDK_CONFIG = "${XDG_CONFIG_HOME}/gcloud";
     DOCKER_CONFIG = "${XDG_CONFIG_HOME}/docker";
     GTK2_RC_FILES = "${XDG_CONFIG_HOME}/gtk-2.0/gtkrc";
+    INPUTRC = "${XDG_CONFIG_HOME}/readline/inputrc";
+    LESSHISTFILE = "${XDG_STATE_HOME}/less/history";
+    NODE_REPL_HISTORY = "${XDG_STATE_HOME}/node_repl_history";
     NPM_CONFIG_CACHE = "${XDG_CACHE_HOME}/npm";
     NPM_CONFIG_INIT_MODULE = "${XDG_CONFIG_HOME}/npm/config/npm-init.js";
     NPM_CONFIG_PREFIX = "$HOME/.local";
@@ -30,6 +36,7 @@
     PYTHONPYCACHEPREFIX = "${XDG_CACHE_HOME}/python";
     PYTHON_HISTORY = "${XDG_DATA_HOME}/python_history";
     RUFF_CACHE_DIR = "${XDG_CACHE_HOME}/ruff";
+    TF_CLI_CONFIG_FILE = "${XDG_CONFIG_HOME}/terraform/terraformrc";
     WGETRC = "${XDG_CONFIG_HOME}/wget/wgetrc";
     ZDOTDIR = "${XDG_CONFIG_HOME}/zsh";
   };
