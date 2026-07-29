@@ -101,3 +101,6 @@
 
 [status]
     showStash = true
+
+[diff "sopsdiffer"]
+      textconv = sops decrypt --output-type dotenv --input-type dotenv
