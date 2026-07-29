@@ -7,6 +7,7 @@
     <adaptiveSync>no</adaptiveSync>
     <allowTearing>no</allowTearing>
     <autoEnableOutputs>yes</autoEnableOutputs>
+    <hdr>yes</hdr>
     <reuseOutputMode>no</reuseOutputMode>
     <xwaylandPersistence>no</xwaylandPersistence>
     <primarySelection>yes</primarySelection>
