@@ -1,0 +1,18 @@
+auto_sync = true
+keymap_mode = "emacs"
+search_mode = "fuzzy"
+show_help = false
+show_preview = false
+show_tabs = false
+style = "compact"
+sync_address = "https://atuin.xgabrielmorales.com"
+sync_frequency = "5m"
+history_filter = [
+  "^ls($| )",
+  "^cd($| )",
+  "^curl($| )",
+  "^cp($| )",
+  "^pwd$",
+  "^exit$",
+  "^history$"
+]

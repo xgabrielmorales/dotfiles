@@ -11,6 +11,7 @@
     age
     alacritty
     arc-theme
+    atuin
     awscli2
     bluetui
     brightnessctl

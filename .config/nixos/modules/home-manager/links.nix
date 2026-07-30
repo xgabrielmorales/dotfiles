@@ -26,6 +26,7 @@ in
 
   xdg.configFile = {
     "alacritty".source = link ".config/alacritty";
+    "atuin/config.toml".source = link ".config/atuin/config.toml";
     "btop".source = link ".config/btop";
     "git".source = link ".config/git";
     "gtk-2.0".source = link ".config/gtk-2.0";
