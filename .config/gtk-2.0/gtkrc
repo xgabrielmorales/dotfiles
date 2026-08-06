@@ -1,8 +1,8 @@
 # DO NOT EDIT! This file will be overwritten by nwg-look.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
-include "/home/xgm/.gtkrc-2.0.mine"
-gtk-theme-name="Fluent-Light-compact"
+include "~/.gtkrc-2.0.mine"
+gtk-theme-name="Arc-Darker"
 gtk-icon-theme-name="Papirus-Dark"
 gtk-font-name="Inter 12"
 gtk-cursor-theme-name="Adwaita"

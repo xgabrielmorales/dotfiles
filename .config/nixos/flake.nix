@@ -2,6 +2,7 @@
   description = "NixOS";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-2605.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-2605,
       zen-browser,
       home-manager,
       nix-index-database,
@@ -52,6 +54,9 @@
               nixpkgs.overlays = [
                 (import ./overlays)
                 claude-desktop.overlays.default
+                (final: _: {
+                  inherit (nixpkgs-2605.legacyPackages.${final.system}) arc-theme;
+                })
               ];
             }
           ];

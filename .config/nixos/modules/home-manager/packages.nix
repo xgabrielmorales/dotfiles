@@ -10,7 +10,7 @@
     })
     age
     alacritty
-    fluent-gtk-theme
+    arc-theme
     atuin
     awscli2
     bluetui
