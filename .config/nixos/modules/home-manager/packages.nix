@@ -18,7 +18,6 @@
     brightnessctl
     btop
     cameractrls-gtk4
-    claude-desktop
     corepack_24
     csvlens
     delta
@@ -68,7 +67,6 @@
     slurp
     sops
     speedtest-go
-    spotify
     swaybg
     terraform
     thunar
