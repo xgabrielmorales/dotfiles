@@ -41,17 +41,4 @@
       };
     };
   };
-
-  # Disable runtime power management for the I2C controller that drives the
-  # ELAN touchpad to prevent input lag caused by controller suspend/resume
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="platform", KERNEL=="AMDI0010:03", DRIVER=="i2c_designware", ATTR{power/control}="on"
-  '';
-
-  # WiFi
-  networking.wireless.iwd.enable = true;
-  networking.wireless.iwd.settings = {
-    General.EnableNetworkConfiguration = true;
-    Network.NameResolvingService = "systemd";
-  };
 }

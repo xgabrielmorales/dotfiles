@@ -7,12 +7,12 @@
     # Host
     ./hardware-configuration.nix
     ./keyboard.nix
+    ./laptop.nix
     ./luks.nix
     ./networking.nix
     ./nvidia.nix
 
     # Hardware support
-    ../../modules/hardware/laptop.nix
     ../../modules/hardware/iphone-tethering.nix
   ];
 
