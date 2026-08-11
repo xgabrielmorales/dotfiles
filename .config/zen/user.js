@@ -33,7 +33,7 @@ user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-user_pref("zen.glance.enabled", false);
+user_pref("zen.glance.enabled", true);
 user_pref("zen.tab-unloader.timeout-minutes", 15);
 user_pref("zen.tabs.vertical.right-side", true);
 user_pref("zen.theme.border-radius", 0);
