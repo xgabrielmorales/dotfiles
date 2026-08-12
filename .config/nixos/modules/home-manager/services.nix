@@ -10,7 +10,7 @@
 
   systemd.user.services.xremap = {
     Unit = {
-      Description = "xremap - foot pedal push-to-talk (mic gate)";
+      Description = "xremap - foot pedal dictation trigger";
       After = [
         "graphical-session.target"
         "pipewire.service"

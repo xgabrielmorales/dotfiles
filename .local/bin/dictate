@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+AUDIO_FILE="/tmp/dictate.wav"
+
+notify-send \
+    --icon="audio-input-microphone" \
+    --expire-time=3000 \
+    "Dictate" \
+    "Recording..."
+
+# timeout exits 124 when the limit is reached
+timeout --signal=INT 3 pw-record \
+    --channels=1 \
+    --rate=16000 \
+    --format=s16 \
+    "$AUDIO_FILE" >/dev/null 2>&1 || true
+
+notify-send \
+    --icon="text-x-generic" \
+    --expire-time=2000 \
+    "Dictate" \
+    "Transcribing..."
+
+whisper-cli \
+    --model "$HOME/.local/share/whisper/ggml-small.bin" \
+    --language "es" \
+    --no-prints \
+    --no-timestamps \
+    --file "$AUDIO_FILE" 2>/dev/null |
+    tr '\n' ' ' |
+    sed -e 's/^ *//' -e 's/ *$//' |
+    wtype -

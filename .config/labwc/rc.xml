@@ -195,6 +195,9 @@
     <keybind key="W-i">
       <action name="Execute" command="~/.local/bin/bookmarks"/>
     </keybind>
+    <keybind key="W-d">
+      <action name="Execute" command="~/.local/bin/dictate"/>
+    </keybind>
     <keybind key="W-m">
       <action name="Execute" command="~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh"/>
     </keybind>

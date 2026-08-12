@@ -84,6 +84,7 @@
     wget
     wireguard-tools
     wl-clipboard
+    (whisper-cpp.override { vulkanSupport = true; })
     wlrctl
     wtype
     xdg-user-dirs

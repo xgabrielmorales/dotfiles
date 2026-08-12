@@ -14,6 +14,7 @@ in
 {
   home.file = {
     "${bin}/bookmarks".source = link "${bin}/bookmarks";
+    "${bin}/dictate".source = link "${bin}/dictate";
     "${bin}/mic-check".source = link "${bin}/mic-check";
     "${bin}/recycle".source = link "${bin}/recycle";
     "${bin}/screenshot".source = link "${bin}/screenshot";
