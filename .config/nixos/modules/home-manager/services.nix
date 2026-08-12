@@ -1,11 +1,28 @@
 { pkgs, config, ... }:
 
+let
+  whisperModel = pkgs.fetchurl {
+    url = "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q5_0.bin";
+    sha256 = "1qm7zxamlvac564c3270wqqqks5wc7532q3fqi01zbfmkiq22hir";
+  };
+  whisper = pkgs.whisper-cpp.override { vulkanSupport = true; };
+in
 {
   services.gammastep = {
     enable = true;
     provider = "manual";
     latitude = "4.69";
     longitude = "-74.1";
+  };
+
+  systemd.user.services.whisper-server = {
+    Unit.Description = "whisper.cpp - servidor de transcripción para dictate";
+    Service = {
+      ExecStart = "${whisper}/bin/whisper-server --model ${whisperModel} --device 0 --language es --no-timestamps --port 8642";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+    Install.WantedBy = [ "default.target" ];
   };
 
   systemd.user.services.xremap = {

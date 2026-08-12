@@ -4,6 +4,9 @@ set -euo pipefail
 
 AUDIO_FILE="/tmp/dictate.wav"
 
+exec 9>/tmp/dictate.lock
+flock --nonblock 9 || exit 0
+
 notify-send \
     --icon="audio-input-microphone" \
     --expire-time=3000 \
@@ -23,12 +26,10 @@ notify-send \
     "Dictate" \
     "Transcribing..."
 
-whisper-cli \
-    --model "$HOME/.local/share/whisper/ggml-small.bin" \
-    --language "es" \
-    --no-prints \
-    --no-timestamps \
-    --file "$AUDIO_FILE" 2>/dev/null |
+curl --silent --fail \
+    --form file=@"$AUDIO_FILE" \
+    --form response_format=text \
+    http://127.0.0.1:8642/inference |
     tr '\n' ' ' |
     sed -e 's/^ *//' -e 's/ *$//' |
     wtype -
