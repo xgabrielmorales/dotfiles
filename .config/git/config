@@ -19,7 +19,8 @@
 
 [commit]
     gpgsign = true
-    verbose = true
+    verbose = false
+    status = false
 
 
 [core]
