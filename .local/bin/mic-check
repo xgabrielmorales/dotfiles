@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source=$(wpctl inspect @DEFAULT_AUDIO_SOURCE@ | grep -m1 'node.name' | cut -d'"' -f2)
+
+if [[ -z "$source" ]]; then
+    echo "Default microphone not found" >&2
+    exit 1
+fi
+
+wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0
+echo "Listening: $source"
+exec pw-loopback -C "$source" -m '[FL FR]'
