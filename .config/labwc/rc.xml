@@ -201,6 +201,9 @@
     <keybind key="W-m">
       <action name="Execute" command="~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh"/>
     </keybind>
+    <keybind key="W-b">
+      <action name="Execute" command="~/.local/bin/toggle-ironbar"/>
+    </keybind>
     <!-- Media Controls -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute" command="sink_module --inc"/>

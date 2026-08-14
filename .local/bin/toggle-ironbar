@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec ironbar bar "${1:-main}" toggle-visible

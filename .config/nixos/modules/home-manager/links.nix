@@ -21,6 +21,7 @@ in
     "${bin}/sink_module".source = link "${bin}/sink_module";
     "${bin}/source_module".source = link "${bin}/source_module";
     "${bin}/toggle-audio-output".source = link "${bin}/toggle-audio-output";
+    "${bin}/toggle-ironbar".source = link "${bin}/toggle-ironbar";
     "${bin}/wclone".source = link "${bin}/wclone";
     "${share}/fonts".source = link "${share}/fonts";
     "${share}/themes".source = link "${share}/themes";
