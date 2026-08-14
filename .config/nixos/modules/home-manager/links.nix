@@ -32,6 +32,7 @@ in
     "atuin/config.toml".source = link ".config/atuin/config.toml";
     "btop".source = link ".config/btop";
     "direnv/direnvrc".source = link ".config/direnv/direnvrc";
+    "emacs/init.el".source = link ".config/emacs/init.el";
     "git".source = link ".config/git";
     "gtk-2.0".source = link ".config/gtk-2.0";
     "gtk-3.0".source = link ".config/gtk-3.0";

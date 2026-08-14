@@ -8,6 +8,16 @@ let
   whisper = pkgs.whisper-cpp.override { vulkanSupport = true; };
 in
 {
+  programs.emacs = {
+    enable = true;
+    extraPackages = epkgs: [ epkgs.treesit-grammars.with-all-grammars ];
+  };
+
+  services.emacs = {
+    enable = true;
+    client.enable = true;
+  };
+
   services.gammastep = {
     enable = true;
     provider = "manual";

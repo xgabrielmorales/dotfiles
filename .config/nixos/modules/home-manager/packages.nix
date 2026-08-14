@@ -32,9 +32,6 @@
     google-cloud-sdk
     grim
     gucharmap
-    hunspell
-    hunspellDicts.en_US
-    hunspellDicts.es_CO
     impala
     ironbar
     jetbrains.datagrip
@@ -62,6 +59,7 @@
     python314
     ranger
     ripgrep
+    ruff
     satty
     signal-desktop
     slurp
@@ -69,6 +67,7 @@
     speedtest-go
     swaybg
     terraform
+    terraform-ls
     thunar
     time
     tmux
@@ -91,6 +90,7 @@
     xfce4-notifyd
     xremap
     ydotool
+    zuban
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zip
