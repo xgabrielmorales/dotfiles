@@ -27,6 +27,7 @@ alias xblueooth="bluetui"
 alias xwifi="impala"
 
 # Development
+alias c="claude"
 alias k="kubectl"
 
 # Functions
