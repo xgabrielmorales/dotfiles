@@ -26,17 +26,35 @@ source_status() {
     fi
 }
 
+source_notify() {
+    local volume
+
+    volume="$(source_volume)"
+
+    local id_file="${XDG_RUNTIME_DIR:-/tmp}/source_module.nid"
+    local id
+
+    id=$(cat "$id_file" 2>/dev/null)
+
+    notify-send -a source_module -p -r "${id:-0}" \
+        -h "int:value:$(( volume < 0 ? 0 : volume ))" \
+        "" > "$id_file"
+}
+
 case "$1" in
     "--status")
         source_status "$(source_volume)"
     ;;
     "--toggle")
         pamixer --default-source --toggle-mute
+        source_notify
     ;;
     "--inc")
         pamixer --default-source --increase 5
+        source_notify
     ;;
     "--dec")
         pamixer --default-source --decrease 5
+        source_notify
     ;;
 esac

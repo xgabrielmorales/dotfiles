@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+BRIGHTNESS_ICON="󰃠"
+
+NOTIFY_ID_FILE="${XDG_RUNTIME_DIR:-/tmp}/brightness_module.nid"
+
+notify_id() {
+    local id
+
+    id=$(cat "$NOTIFY_ID_FILE" 2>/dev/null)
+    echo "${id:-0}"
+}
+
+brightness_value() {
+    brightnessctl --machine-readable | cut --delimiter=, --fields=4 | tr --delete '%'
+}
+
+brightness_notify() {
+    local brightness
+
+    brightness="$(brightness_value)"
+
+    notify-send \
+        --app-name="Brightness" \
+        --replace-id="$(notify_id)" \
+        --id-fd=3 \
+        --hint="int:value:$brightness" \
+        "" 3>"$NOTIFY_ID_FILE"
+}
+
+case "$1" in
+    "--status")
+        echo "$BRIGHTNESS_ICON $(brightness_value)%"
+    ;;
+    "--inc")
+        brightnessctl --quiet set 5%+
+        brightness_notify
+    ;;
+    "--dec")
+        brightnessctl --quiet set 5%-
+        (( $(brightness_value) < 1 )) && brightnessctl --quiet set 1%
+        brightness_notify
+    ;;
+esac

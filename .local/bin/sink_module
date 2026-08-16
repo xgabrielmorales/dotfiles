@@ -26,17 +26,35 @@ sink_status() {
     fi
 }
 
+sink_notify() {
+    local volume
+
+    volume="$(sink_volume)"
+
+    local id_file="${XDG_RUNTIME_DIR:-/tmp}/sink_module.nid"
+    local id
+
+    id=$(cat "$id_file" 2>/dev/null)
+
+    notify-send -a sink_module -p -r "${id:-0}" \
+        -h "int:value:$(( volume < 0 ? 0 : volume ))" \
+        "" > "$id_file"
+}
+
 case "$1" in
     "--status")
         sink_status "$(sink_volume)"
     ;;
     "--toggle")
         pamixer --toggle-mute
+        sink_notify
     ;;
     "--inc")
         pamixer --increase 5
+        sink_notify
     ;;
     "--dec")
         pamixer --decrease 5
+        sink_notify
     ;;
 esac

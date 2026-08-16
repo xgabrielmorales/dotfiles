@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   mainUser,
   ...
@@ -14,6 +13,7 @@ in
 {
   home.file = {
     "${bin}/bookmarks".source = link "${bin}/bookmarks";
+    "${bin}/brightness_module".source = link "${bin}/brightness_module";
     "${bin}/dictate".source = link "${bin}/dictate";
     "${bin}/mic-check".source = link "${bin}/mic-check";
     "${bin}/recycle".source = link "${bin}/recycle";
