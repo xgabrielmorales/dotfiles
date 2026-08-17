@@ -55,7 +55,7 @@
     {
       "type": "sys_info",
       "format": [
-        "CPU {temp_c@k10temp Tctl:.0}°C"
+        " {temp_c@k10temp Tctl:.0}°C"
       ],
       "interval": {
         "temps": 5

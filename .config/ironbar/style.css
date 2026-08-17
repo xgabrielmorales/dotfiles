@@ -11,7 +11,7 @@
 }
 
 #bar {
-  border-top: 2px solid #2f343f;
+  border-top: 1px solid #2f343f;
 }
 
 .widget-container,
@@ -29,18 +29,6 @@ button {
   margin: 2px;
 }
 
-#launcher-btn {
-  background-color: #98c379;
-  border-radius: 8px;
-  color: #1e222a;
-  margin: 2px 0 2px 6px;
-  padding: 0 10px;
-}
-
-.launcher {
-  margin: 2px 0 2px 10px;
-}
-
 .launcher .item {
   border-radius: 8px;
   padding: 0 2px;
@@ -52,35 +40,33 @@ button {
   border-radius: 8px;
 }
 
-.tray,
-.sysinfo .item,
-.music,
-.brightness,
+#launcher-btn,
+#power-btn,
+#power-draw,
 .battery,
-.mic,
-.volume,
 .bluetooth,
-.clock {
+.brightness,
+.clock,
+.mic,
+.music,
+.sysinfo .item,
+.tray,
+.volume {
   background-color: #282c34;
   border-radius: 8px;
   margin: 2px 4px 2px 0;
-  padding: 0 10px;
+  padding: 0px 6px;
+}
+
+#launcher-btn {
+  background-color: #98c379;
+  color: #1e222a;
+  padding: 0px 10px;
 }
 
 .music:hover,
 .volume:hover,
 .bluetooth:hover {
-  background-color: #333b41;
-}
-
-#power-draw {
-  background-color: #282c34;
-  border-radius: 8px;
-  margin: 2px 4px 2px 0;
-  padding: 0 10px;
-}
-
-#power-draw:hover {
   background-color: #333b41;
 }
 
@@ -94,7 +80,11 @@ button {
 
 .popup-bluetooth .header {
   padding: 5px;
-  border-bottom: 2px solid #2f343f;
+  border-bottom: 1px solid #2f343f;
+}
+
+.tray {
+  background-color: #1e222a;
 }
 
 .tray .item:not(:last-child) {
@@ -137,10 +127,8 @@ button {
 
 #power-btn {
   background-color: #e06c75;
-  border-radius: 8px;
   color: #1e222a;
-  margin: 2px 4px 2px 0;
-  padding: 0 10px;
+  padding: 0px 10px;
 }
 
 .popup-power-menu .power-menu-btn {
@@ -221,7 +209,7 @@ calendar label.day-number:selected {
 
 .popup {
   background-color: #1e222a;
-  border: 2px solid #2f343f;
+  border: 1px solid #2f343f;
   border-radius: 8px;
   color: #c4c7c5;
   padding: 8px;
