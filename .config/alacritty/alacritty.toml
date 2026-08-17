@@ -14,7 +14,7 @@ program = "/bin/sh"
 
 [window]
 dynamic_title = false
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 title = "Alacritty"
 
 [window.dimensions]
