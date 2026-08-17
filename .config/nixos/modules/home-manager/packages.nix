@@ -78,7 +78,6 @@
     viewnior
     vlc
     waylock
-    waypaper
     wdisplays
     wget
     wireguard-tools
