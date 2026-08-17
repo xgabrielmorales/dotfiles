@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+DISCHARGE_ICON="󱐋"
+CHARGE_ICON="󰂄"
+
+BAT="/sys/class/power_supply/BAT0"
+
+power_watts() {
+    local uw
+
+    uw=$(cat "$BAT/power_now" 2>/dev/null) || return 1
+    printf "%.1f" "$(( uw ))e-6"
+}
+
+case "$1" in
+    "--status")
+        watts="$(power_watts)" || exit 0
+        [[ "$(cat "$BAT/status")" == "Charging" ]] \
+            && echo "$CHARGE_ICON ${watts}W" \
+            || echo "$DISCHARGE_ICON ${watts}W"
+    ;;
+esac

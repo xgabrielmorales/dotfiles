@@ -73,6 +73,17 @@ button {
   background-color: #333b41;
 }
 
+#power-draw {
+  background-color: #282c34;
+  border-radius: 8px;
+  margin: 2px 4px 2px 0;
+  padding: 0 10px;
+}
+
+#power-draw:hover {
+  background-color: #333b41;
+}
+
 .popup-volume,
 .popup-bluetooth {
   min-width: 300px;
