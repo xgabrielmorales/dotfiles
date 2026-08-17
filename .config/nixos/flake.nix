@@ -29,7 +29,6 @@
       mkHost =
         name:
         nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
           specialArgs = {
             mainUser = name;
             inherit zen-browser;
@@ -39,10 +38,11 @@
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.sops
             {
+              nixpkgs.hostPlatform = "x86_64-linux";
               nixpkgs.overlays = [
                 (import ./overlays)
                 (final: _: {
-                  inherit (nixpkgs-2605.legacyPackages.${final.system}) arc-theme;
+                  inherit (nixpkgs-2605.legacyPackages.${final.stdenv.hostPlatform.system}) arc-theme;
                 })
               ];
             }
