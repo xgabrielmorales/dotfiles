@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
 systemctl --user --no-block start labwc-session.target
-
-GSK_RENDERER=gl exec ironbar &
