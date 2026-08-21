@@ -2,7 +2,6 @@
   description = "NixOS";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-2605.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +18,6 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-2605,
       zen-browser,
       home-manager,
       sops-nix,
@@ -39,12 +37,7 @@
             sops-nix.nixosModules.sops
             {
               nixpkgs.hostPlatform = "x86_64-linux";
-              nixpkgs.overlays = [
-                (import ./overlays)
-                (final: _: {
-                  inherit (nixpkgs-2605.legacyPackages.${final.stdenv.hostPlatform.system}) arc-theme;
-                })
-              ];
+              nixpkgs.overlays = [ (import ./overlays) ];
             }
           ];
         };
