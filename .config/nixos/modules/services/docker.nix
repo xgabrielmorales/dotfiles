@@ -13,8 +13,5 @@
       ];
     };
   };
-  environment.systemPackages = with pkgs; [
-    docker-sbx
-  ];
   users.users.${mainUser}.extraGroups = [ "docker" ];
 }
