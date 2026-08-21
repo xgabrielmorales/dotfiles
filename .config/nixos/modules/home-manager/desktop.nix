@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   xfconf.settings = {
@@ -44,7 +44,7 @@
       "zen-beta" = {
         name = "Web Browser (Personal)";
         icon = "zen-browser";
-        exec = "recycle zen-beta %U";
+        exec = "${config.home.homeDirectory}/.local/bin/recycle zen-beta %U";
         type = "Application";
         categories = [
           "Network"
@@ -68,7 +68,7 @@
       "browser-work" = {
         name = "Web Browser (Work)";
         icon = "firefox";
-        exec = "recycle firefox";
+        exec = "${config.home.homeDirectory}/.local/bin/recycle firefox";
         type = "Application";
       };
       "img" = {

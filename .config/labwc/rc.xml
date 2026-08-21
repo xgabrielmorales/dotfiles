@@ -175,10 +175,10 @@
     </keybind>
     <!-- Applications launcher -->
     <keybind key="W-Return">
-      <action name="Execute" command="recycle alacritty"/>
+      <action name="Execute" command="~/.local/bin/recycle alacritty"/>
     </keybind>
     <keybind key="W-o">
-      <action name="Execute" command="toggle-audio-output"/>
+      <action name="Execute" command="~/.local/bin/toggle-audio-output"/>
     </keybind>
     <keybind key="W-space">
       <action name="Execute" command="~/.config/rofi/bin/rofi-launcher/launcher.sh"/>
@@ -206,13 +206,13 @@
     </keybind>
     <!-- Media Controls -->
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute" command="sink_module --inc"/>
+      <action name="Execute" command="~/.local/bin/sink_module --inc"/>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
-      <action name="Execute" command="sink_module --dec"/>
+      <action name="Execute" command="~/.local/bin/sink_module --dec"/>
     </keybind>
     <keybind key="XF86AudioMute">
-      <action name="Execute" command="sink_module --toggle"/>
+      <action name="Execute" command="~/.local/bin/sink_module --toggle"/>
     </keybind>
     <keybind key="XF86AudioStop">
       <action name="Execute" command="playerctl stop"/>
@@ -231,10 +231,10 @@
     </keybind>
     <!-- Brightness -->
     <keybind key="XF86MonBrightnessUp">
-      <action name="Execute" command="brightness_module --inc"/>
+      <action name="Execute" command="~/.local/bin/brightness_module --inc"/>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
-      <action name="Execute" command="brightness_module --dec"/>
+      <action name="Execute" command="~/.local/bin/brightness_module --dec"/>
     </keybind>
     <!-- Lock screen -->
     <keybind key="W-l">
@@ -242,10 +242,10 @@
     </keybind>
     <!-- Screenshots -->
     <keybind key="Print">
-      <action name="Execute" command="screenshot --screen"/>
+      <action name="Execute" command="~/.local/bin/screenshot --screen"/>
     </keybind>
     <keybind key="W-s">
-      <action name="Execute" command="screenshot --selection"/>
+      <action name="Execute" command="~/.local/bin/screenshot --selection"/>
     </keybind>
   </keyboard>
   <!-- MOUSE BINDINGS-->
