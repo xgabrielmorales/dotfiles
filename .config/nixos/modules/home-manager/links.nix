@@ -20,6 +20,7 @@ in
     "${bin}/recycle".source = link "${bin}/recycle";
     "${bin}/screenshot".source = link "${bin}/screenshot";
     "${bin}/sink_module".source = link "${bin}/sink_module";
+    "${bin}/sort-downloads".source = link "${bin}/sort-downloads";
     "${bin}/source_module".source = link "${bin}/source_module";
     "${bin}/toggle-audio-output".source = link "${bin}/toggle-audio-output";
     "${bin}/toggle-ironbar".source = link "${bin}/toggle-ironbar";
