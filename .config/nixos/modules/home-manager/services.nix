@@ -8,13 +8,6 @@ let
   whisper = pkgs.whisper-cpp.override { vulkanSupport = true; };
 in
 {
-  services.gammastep = {
-    enable = true;
-    provider = "manual";
-    latitude = "4.69";
-    longitude = "-74.1";
-  };
-
   systemd.user.services.whisper-server = {
     Unit.Description = "whisper.cpp - servidor de transcripción para dictate";
     Service = {
