@@ -23,6 +23,7 @@
     delta
     dig
     eza
+    fastpotify
     fd
     file
     firefox
