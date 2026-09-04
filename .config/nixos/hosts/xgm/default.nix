@@ -11,7 +11,6 @@
     ./nvidia.nix
 
     # Hardware support
-    ../../modules/hardware/footpedal.nix
     ../../modules/hardware/webcam.nix
 
     # Services

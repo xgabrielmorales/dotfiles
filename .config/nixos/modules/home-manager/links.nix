@@ -47,7 +47,6 @@ in
     "tmux".source = link ".config/tmux";
     "ironbar".source = link ".config/ironbar";
     "waypaper".source = link ".config/waypaper";
-    "xremap".source = link ".config/xremap";
     "xsettingsd".source = link ".config/xsettingsd";
     "zathura".source = link ".config/zathura";
     "zsh".source = link ".config/zsh";
