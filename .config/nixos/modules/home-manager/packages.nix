@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    (prismlauncher.override { jdks = [ jdk25 ]; })
     (rofi.override {
       plugins = [
         rofi-calc
@@ -88,10 +89,10 @@
     xdg-user-dirs
     xfce4-notifyd
     ydotool
-    zuban
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zip
     zsh-completions
+    zuban
   ];
 }
