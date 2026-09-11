@@ -1,6 +1,12 @@
 { pkgs, config, ... }:
 
 {
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+  };
+
   xfconf.settings = {
     xfce4-notifyd = {
       "theme" = "Default";
