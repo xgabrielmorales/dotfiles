@@ -17,11 +17,11 @@
 
 stdenv.mkDerivation rec {
   pname = "fastpotify";
-  version = "0.6.0";
+  version = "0.7.1";
 
   src = fetchurl {
     url = "https://github.com/crmne/fastpotify/releases/download/v${version}/fastpotify-v${version}-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-FXIuJZGBLQgwTzUD/7mx405zyHhhSBMP75yHfB4rCxI=";
+    hash = "sha256-Oc8i7k0IQYH83XKQrLVXjwi6Kl0qf8uuYhJPAnKNMWo=";
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
