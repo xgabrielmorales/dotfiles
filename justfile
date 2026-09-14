@@ -4,8 +4,5 @@ delete-generations:
 clean:
   sudo nix-store --gc
 
-build:
-  sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos#xgm
-
-build-work:
-  sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos#xgm-work
+build host=`hostname`:
+  sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos#{{host}}
