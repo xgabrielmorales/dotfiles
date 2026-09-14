@@ -46,6 +46,7 @@
     ncdu
     neovim
     net-tools
+    nh
     nil
     nixfmt-tree
     nodejs_24
