@@ -46,7 +46,6 @@ in
     "rofi".source = link ".config/rofi";
     "tmux".source = link ".config/tmux";
     "ironbar".source = link ".config/ironbar";
-    "waypaper".source = link ".config/waypaper";
     "xsettingsd".source = link ".config/xsettingsd";
     "zathura".source = link ".config/zathura";
     "zsh".source = link ".config/zsh";
