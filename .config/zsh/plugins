@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
 
-PLUGIN_DIR="$XDG_CONFIG_HOME/zsh/external-plugins"
+PLUGIN_SHARE="/etc/profiles/per-user/$USER/share"
+PLUGIN_DIR="$PLUGIN_SHARE/zsh/plugins"
 
-source "$PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh"
+source "$PLUGIN_SHARE/fzf-tab/fzf-tab.plugin.zsh"
 source "$PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$PLUGIN_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh"
 source "$PLUGIN_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"

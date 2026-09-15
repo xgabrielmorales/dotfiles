@@ -93,7 +93,11 @@
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zip
+    zsh-autosuggestions
     zsh-completions
+    zsh-fast-syntax-highlighting
+    zsh-fzf-tab
+    zsh-history-substring-search
     zuban
   ];
 }
