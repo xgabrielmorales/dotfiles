@@ -16,12 +16,12 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname = "fastpotify";
-  version = "0.7.1";
+  pname = "spotifast";
+  version = "0.8.0";
 
   src = fetchurl {
-    url = "https://github.com/crmne/fastpotify/releases/download/v${version}/fastpotify-v${version}-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-Oc8i7k0IQYH83XKQrLVXjwi6Kl0qf8uuYhJPAnKNMWo=";
+    url = "https://github.com/crmne/spotifast/releases/download/v${version}/spotifast-v${version}-x86_64-unknown-linux-gnu.tar.gz";
+    hash = "sha256-J5yvNjiX4WWp+VwDo0MTqK+hYSgDLro79rLLiHIzlKQ=";
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
@@ -46,8 +46,8 @@ stdenv.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
-    install -Dm755 fastpotify $out/bin/fastpotify
-    install -Dm644 packaging/applications/fastpotify.desktop $out/share/applications/fastpotify.desktop
+    install -Dm755 spotifast $out/bin/spotifast
+    install -Dm644 packaging/applications/fastpotify.desktop $out/share/applications/spotifast.desktop
     install -Dm644 packaging/icons/fastpotify.svg $out/share/icons/hicolor/scalable/apps/fastpotify.svg
 
     runHook postInstall
@@ -55,9 +55,9 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Fast, native Spotify client written in Rust";
-    homepage = "https://fastpotify.rocks/";
+    homepage = "https://spotifast.rocks/";
     license = licenses.mit;
     platforms = [ "x86_64-linux" ];
-    mainProgram = "fastpotify";
+    mainProgram = "spotifast";
   };
 }

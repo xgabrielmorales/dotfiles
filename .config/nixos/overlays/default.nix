@@ -1,4 +1,4 @@
 final: prev: {
-  fastpotify = final.callPackage ../packages/fastpotify.nix { };
+  spotifast = final.callPackage ../packages/spotifast.nix { };
   postman-agent = final.callPackage ../packages/postman-agent.nix { };
 }

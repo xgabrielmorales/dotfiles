@@ -24,7 +24,7 @@
     delta
     dig
     eza
-    fastpotify
+    spotifast
     fd
     file
     firefox
