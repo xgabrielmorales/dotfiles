@@ -89,7 +89,7 @@
       };
       "text" = {
         name = "Text Editor";
-        exec = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.neovim}/bin/nvim %u";
+        exec = "${pkgs.kitty}/bin/kitty -e ${pkgs.neovim}/bin/nvim %u";
         type = "Application";
       };
       "video" = {

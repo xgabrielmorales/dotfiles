@@ -30,7 +30,6 @@ in
   };
 
   xdg.configFile = {
-    "alacritty".source = link ".config/alacritty";
     "atuin/config.toml".source = link ".config/atuin/config.toml";
     "btop".source = link ".config/btop";
     "direnv/direnvrc".source = link ".config/direnv/direnvrc";
@@ -39,6 +38,7 @@ in
     "gtk-2.0".source = link ".config/gtk-2.0";
     "gtk-3.0".source = link ".config/gtk-3.0";
     "gtk-4.0".source = link ".config/gtk-4.0";
+    "kitty".source = link ".config/kitty";
     "labwc".source = link ".config/labwc";
     "lf".source = link ".config/lf";
     "nvim".source = link ".config/nvim";

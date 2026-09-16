@@ -8,7 +8,7 @@
 | Window Manager       | [labwc](https://labwc.github.io/)                 | [.config/labwc/](.config/labwc/)                 |
 | Status Bar           | [Ironbar](https://github.com/jakestanger/ironbar) | [.config/ironbar](.config/ironbar)               |
 | Window Switcher      | [Rofi](https://github.com/davatorium/rofi)        | [.config/rofi](.config/rofi)                     |
-| Terminal Emulator    | [Alacritty](https://alacritty.org/)               | [.config/alacritty/](.config/alacritty/)         |
+| Terminal Emulator    | [kitty](https://sw.kovidgoyal.net/kitty/)         | [.config/kitty/](.config/kitty/)                 |
 | Terminal Multiplexer | [Tmux](https://github.com/tmux/tmux)              | [.config/tmux/tmux.conf](.config/tmux/tmux.conf) |
 | File Manager         | [Lf](https://github.com/gokcehan/lf)              | [.config/lf](.config/lf)                         |
 | Text Editor          | [Neovim](https://neovim.io/)                      | [.config/nvim/](.config/nvim/)                   |

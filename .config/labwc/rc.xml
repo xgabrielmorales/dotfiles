@@ -175,7 +175,7 @@
     </keybind>
     <!-- Applications launcher -->
     <keybind key="W-Return">
-      <action name="Execute" command="~/.local/bin/recycle alacritty"/>
+      <action name="Execute" command="~/.local/bin/recycle kitty"/>
     </keybind>
     <keybind key="W-o">
       <action name="Execute" command="~/.local/bin/toggle-audio-output"/>

@@ -10,7 +10,6 @@
       ];
     })
     age
-    alacritty
     arc-theme
     atuin
     awscli2
@@ -39,6 +38,7 @@
     jetbrains.datagrip
     jq
     just
+    kitty
     lf
     libnotify
     librepods
