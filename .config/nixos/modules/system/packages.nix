@@ -2,7 +2,10 @@
 
 {
   programs = {
-    direnv.enable = true;
+    direnv = {
+      enable = true;
+      silent = true;
+    };
     nano.enable = false;
   };
 
