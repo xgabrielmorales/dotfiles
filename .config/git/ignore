@@ -1,5 +1,6 @@
 # Python Environments
 .env*
+!.envrc
 .venv
 env/
 venv/
