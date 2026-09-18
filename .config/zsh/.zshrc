@@ -11,6 +11,8 @@ if [[ -n $XDG_CACHE_HOME/.zcompdump(#qNmh-24) ]]; then
   compinit -C -d "$XDG_CACHE_HOME/.zcompdump"
 else
   compinit -d "$XDG_CACHE_HOME/.zcompdump"
+  touch "$XDG_CACHE_HOME/.zcompdump"
+  zcompile -R "$XDG_CACHE_HOME/.zcompdump"
 fi
 
 unsetopt EXTENDEDGLOB
