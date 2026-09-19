@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
-SCREENSHOT_TEMP="/tmp/screenshot-$(date +'%Y-%m-%dT%H-%M-%S').png"
+SCREENSHOT_TEMP="${XDG_RUNTIME_DIR:?}/screenshot-$(date +'%Y-%m-%dT%H-%M-%S').png"
 SCREENSHOT="$SCREENSHOTS_DIR/ss.$(date +'%Y-%m-%dT%H-%M-%S').png"
 
 NOTIFY_ID_FILE="${XDG_RUNTIME_DIR:-/tmp}/screenshot.nid"
