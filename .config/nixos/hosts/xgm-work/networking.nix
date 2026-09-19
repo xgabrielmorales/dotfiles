@@ -7,10 +7,6 @@
     networkmanager.enable = false;
     dhcpcd.enable = false;
     useDHCP = false;
-    nameservers = [
-      "1.1.1.1"
-      "8.8.8.8"
-    ];
     wireless.iwd = {
       enable = true;
       settings = {
@@ -22,6 +18,13 @@
   };
   services.resolved = {
     enable = true;
-    settings.Resolve.Domains = [ "~." ];
+    settings.Resolve = {
+      Domains = [ "~." ];
+      DNS = [
+        "1.1.1.1#one.one.one.one"
+        "8.8.8.8#dns.google"
+      ];
+      DNSOverTLS = true;
+    };
   };
 }
