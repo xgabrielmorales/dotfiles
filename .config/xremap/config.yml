@@ -1,7 +1,0 @@
-modmap:
-  - name: Foot pedal dictation
-    remap:
-      KEY_F13:
-        skip_key_event: true
-        press:
-          - launch: ["/bin/sh", "-lc", "exec $HOME/.local/bin/dictate"]
