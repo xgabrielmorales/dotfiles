@@ -29,7 +29,7 @@
     <fallbackAppIcon>labwc</fallbackAppIcon>
     <titlebar>
       <layout>icon:iconify,max,close</layout>
-      <showTitle>yes</showTitle>
+      <showTitle>no</showTitle>
     </titlebar>
     <cornerRadius>0</cornerRadius>
     <keepBorder>no</keepBorder>
