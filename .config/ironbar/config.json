@@ -2,8 +2,9 @@
   "$schema": "https://f.jstanger.dev/github/ironbar/schema.json",
   "name": "main",
   "position": "bottom",
-  "start_hidden": true,
   "height": 32,
+  "autohide": 500,
+  "start_hidden": true,
   "popup_autohide": true,
   "start": [
     {
