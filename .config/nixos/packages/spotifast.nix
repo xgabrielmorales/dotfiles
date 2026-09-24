@@ -17,14 +17,13 @@
 
 stdenv.mkDerivation rec {
   pname = "spotifast";
-  version = "0.9.1";
+  version = "0.10.0";
 
   src = fetchurl {
     url = "https://github.com/crmne/spotifast/releases/download/v${version}/spotifast-v${version}-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-tv7ixet5Netb5UQ/D0bGXDs3XiCQXeK2ozMssfODViE=";
+    hash = "sha256-oj2oD4bU6Pbr92cv5mhNouqj61VJ4DhNln8eKkEAnBI=";
   };
 
-  # tarball ships two top-level dirs (spotifast + fastpotify)
   sourceRoot = "spotifast-v${version}-x86_64-unknown-linux-gnu";
 
   nativeBuildInputs = [ autoPatchelfHook ];
