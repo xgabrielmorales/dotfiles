@@ -31,7 +31,7 @@ button {
 
 .launcher .item {
   border-radius: 8px;
-  padding: 0 2px;
+  padding: 0 5px;
 }
 
 .launcher .item:hover,
@@ -61,7 +61,7 @@ button {
 #launcher-btn {
   background-color: #98c379;
   color: #1e222a;
-  padding: 0px 10px;
+  padding: 0px 8px;
 }
 
 .music:hover,
@@ -128,7 +128,7 @@ button {
 #power-btn {
   background-color: #e06c75;
   color: #1e222a;
-  padding: 0px 10px;
+  padding: 0px 8px;
 }
 
 .popup-power-menu .power-menu-btn {
