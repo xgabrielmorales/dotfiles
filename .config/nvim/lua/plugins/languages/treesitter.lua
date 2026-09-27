@@ -14,6 +14,7 @@ return {
       "git_config",
       "gitcommit",
       "gitignore",
+      "json",
       "lua",
       "nix",
       "terraform",
