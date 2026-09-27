@@ -35,8 +35,4 @@ zstyle ":vcs_info:git*" check-for-changes true
 }
 
 current_dir="%F{${fg[xgm_yellow]}}%~%f"
-PROMPT=$'${current_dir} ${vcs_info_msg_0_}\n⇒ '
-
-last_command_status="%(?..%F{${fg[xgm_red]}}●%f)"
-current_time="%F{${fg[xgm_fg]}}%*%f"
-RPROMPT="${last_command_status} ${current_time}"
+PROMPT=$'${current_dir} ${vcs_info_msg_0_}\n$ '
