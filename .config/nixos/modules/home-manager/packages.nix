@@ -28,6 +28,7 @@
     file
     firefox
     fzf
+    gcc
     gh
     git-extras
     google-cloud-sdk
