@@ -1,10 +1,9 @@
 { pkgs, ... }:
 
 {
-  virtualisation.docker = {
+  virtualisation.docker.rootless = {
     enable = true;
-    enableOnBoot = false;
-    autoPrune.enable = true;
+    setSocketVariable = true;
     extraPackages = [ pkgs.docker-buildx ];
     daemon.settings = {
       dns = [
