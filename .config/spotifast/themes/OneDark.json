@@ -1,0 +1,19 @@
+{
+  "base": "dark",
+  "colors": {
+    "window": "#1e222a",
+    "panel": "#1a1d24",
+    "surface": "#252a33",
+    "surface_hover": "#2b303a",
+    "surface_active": "#353b45",
+    "outline": "#353b45",
+    "text": "#d8d8d8",
+    "secondary": "#abb2bf",
+    "dim": "#5c6370",
+    "accent": "#98c379",
+    "accent_hover": "#a8cd8e",
+    "on_accent": "#1e222a",
+    "danger": "#e06c75",
+    "warning": "#e5c07b"
+  }
+}
