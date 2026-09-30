@@ -48,7 +48,7 @@
     };
     desktopEntries = {
       "zen-beta" = {
-        name = "Web Browser (Personal)";
+        name = "Web Browser";
         icon = "zen-browser";
         exec = "${config.home.homeDirectory}/.local/bin/recycle zen-beta %U";
         type = "Application";
@@ -70,12 +70,6 @@
           "x-scheme-handler/https"
           "x-scheme-handler/unknown"
         ];
-      };
-      "browser-work" = {
-        name = "Web Browser (Work)";
-        icon = "firefox";
-        exec = "${config.home.homeDirectory}/.local/bin/recycle firefox";
-        type = "Application";
       };
       "img" = {
         name = "Image Viewer";
