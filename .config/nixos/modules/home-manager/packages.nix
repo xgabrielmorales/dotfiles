@@ -26,7 +26,6 @@
     spotifast
     fd
     file
-    firefox
     fzf
     gcc
     gh
