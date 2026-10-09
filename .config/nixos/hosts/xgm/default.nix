@@ -15,6 +15,7 @@
 
     # Services
     ../../modules/services/virtualbox.nix
+    ../../modules/services/wireguard.nix
   ];
 
   system.stateVersion = "25.05";
