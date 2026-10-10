@@ -38,13 +38,13 @@ in
     "gtk-2.0".source = link ".config/gtk-2.0";
     "gtk-3.0".source = link ".config/gtk-3.0";
     "gtk-4.0".source = link ".config/gtk-4.0";
+    "herdr/config.toml".source = link ".config/herdr/config.toml";
     "kitty".source = link ".config/kitty";
     "labwc".source = link ".config/labwc";
     "lf".source = link ".config/lf";
     "nvim".source = link ".config/nvim";
     "ranger".source = link ".config/ranger";
     "rofi".source = link ".config/rofi";
-    "tmux".source = link ".config/tmux";
     "ironbar".source = link ".config/ironbar";
     "xsettingsd".source = link ".config/xsettingsd";
     "zathura".source = link ".config/zathura";

@@ -1,0 +1,20 @@
+onboarding = false
+
+[ui.toast]
+delivery = "herdr"
+
+[ui.sound]
+enabled = false
+
+[ui]
+status_indicators = "symbols"
+
+[theme]
+name = "one-dark"
+auto_switch = false
+
+[keys]
+prefix = "ctrl+space"
+split_horizontal = 'prefix+"'
+split_vertical = 'prefix+%'
+switch_tab = "alt+1..9"

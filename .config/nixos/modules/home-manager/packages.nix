@@ -33,6 +33,7 @@
     google-cloud-sdk
     grim
     gucharmap
+    herdr
     impala
     ironbar
     jetbrains.datagrip
@@ -73,7 +74,6 @@
     terraform-ls
     thunar
     time
-    tmux
     tree-sitter
     unrar
     unzip
