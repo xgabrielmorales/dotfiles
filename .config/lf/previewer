@@ -1,0 +1,10 @@
+#!/bin/sh
+# lf previewer: $1=file $2=width $3=height $4=x $5=y
+case "$(file -Lb --mime -- "$1")" in
+  image/*)
+    kitten icat --passthrough none --stdin no --transfer-mode memory --place "${2}x${3}@${4}x${5}" "$1" </dev/null >/dev/tty
+    exit 1 # non-zero disables lf's preview cache so the image is redrawn
+    ;;
+  *charset=binary) file -Lb -- "$1" ;;
+  *) cat -- "$1" ;;
+esac

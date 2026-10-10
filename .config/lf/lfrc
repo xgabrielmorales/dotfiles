@@ -9,6 +9,8 @@ set cursorpreviewfmt "\033[7m"
 set period 1
 set hiddenfiles ".*:lost+found:*.bak:__pycache__"
 set info time:size
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
 
 # MAPPINGS
 # ================================
