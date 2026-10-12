@@ -49,6 +49,7 @@ user_pref("permissions.default.xr", 2);
 user_pref("places.history.enabled", false);
 user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"formdata\",\"browsingHistoryAndDownloads\",\"cookiesAndStorage\"],\"options\":{}}]");
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+user_pref("security.webauthn.enable_conditional_mediation", false);
 user_pref("signon.autofillForms", false);
 user_pref("signon.autofillForms.http", false);
 user_pref("signon.firefoxRelay.feature", "disabled");
