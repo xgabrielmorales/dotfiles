@@ -17,11 +17,11 @@
 
 stdenv.mkDerivation rec {
   pname = "spotifast";
-  version = "0.11.0";
+  version = "0.13.0";
 
   src = fetchurl {
     url = "https://github.com/crmne/spotifast/releases/download/v${version}/spotifast-v${version}-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-LOCT7BYIjTH+GQUyHskhfxwNBdnSYZ42jkXfKUnQmls=";
+    hash = "sha256-VK19ETerTsdhdymPsibb/GOZnnTcHX/ZJI3aAAnJlbc=";
   };
 
   sourceRoot = "spotifast-v${version}-x86_64-unknown-linux-gnu";
