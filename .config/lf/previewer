@@ -5,7 +5,7 @@ case "$(file -Lb --mime -- "$1")" in
     kitten icat --passthrough none --stdin no --transfer-mode memory --place "${2}x${3}@${4}x${5}" "$1" </dev/null >/dev/tty
     exit 1 # non-zero disables lf's preview cache so the image is redrawn
     ;;
-  inode/directory*) eza --tree --level=2 --only-dirs --color=always --icons=always -- "$1" ;;
+  inode/directory*) eza --tree --level=1 --color=always --icons=always --group-directories-first --dereference -- "$1" ;;
   *charset=binary) file -Lb -- "$1" ;;
   *) bat --color=always --style=plain --paging=never --terminal-width="$2" -- "$1" ;;
 esac
