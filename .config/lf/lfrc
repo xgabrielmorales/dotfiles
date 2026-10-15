@@ -23,8 +23,8 @@ map dD delete
 map <enter>
 map <enter> open
 
-map <backspace>
-map <backspace> set hidden!
+map <c-h>
+map <c-h> set hidden!
 
 map r
 map r :rename; cmd-end
