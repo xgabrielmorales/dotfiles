@@ -49,7 +49,7 @@ map ,wa  cd ~/Documents/Work/Ambientes
 map ,wb  cd ~/Documents/Work/Backend
 map ,lf edit-config
 
-map i $bat --paging=always -- "$f"
+map i $bat --color=always --style=numbers --wrap=never --paging=always -- "$f"
 
 map O push :open-with-gui<space>
 map o push :open-with-cli<space>

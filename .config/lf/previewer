@@ -7,5 +7,5 @@ case "$(file -Lb --mime -- "$1")" in
     ;;
   inode/directory*) eza --tree --level=1 --color=always --icons=always --group-directories-first --dereference -- "$1" ;;
   *charset=binary) file -Lb -- "$1" ;;
-  *) bat --color=always --style=plain --paging=never --terminal-width="$2" -- "$1" ;;
+  *) bat --color=always --style=numbers --wrap=never --paging=never --terminal-width="$2" -- "$1" ;;
 esac
