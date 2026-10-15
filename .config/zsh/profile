@@ -5,6 +5,7 @@ export EDITOR="nvim"
 export PAGER="less"
 export READER="zathura"
 export VISUAL="nvim"
+export BAT_THEME="TwoDark"
 
 export HISTFILE="$XDG_DATA_HOME/.zsh_history"
 export HISTORY_IGNORE="(ls( *)?|cd( *)?|curl( *)?|cp( *)?|pwd|exit|history)"

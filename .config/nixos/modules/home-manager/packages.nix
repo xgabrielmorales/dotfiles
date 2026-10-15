@@ -13,6 +13,7 @@
     arc-theme
     atuin
     awscli2
+    bat
     bluetui
     brave-origin
     brightnessctl
