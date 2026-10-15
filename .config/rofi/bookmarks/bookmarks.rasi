@@ -1,15 +1,7 @@
 @import "../xgm.rasi"
 
-window {
-    width: 300px;
-}
-
 inputbar {
-    enabled: false;
-}
-
-listview {
-    lines: 5;
+    children: [ entry ];
 }
 
 element {

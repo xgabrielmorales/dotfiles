@@ -15,7 +15,7 @@
           "type": "button",
           "name": "launcher-btn",
           "label": "",
-          "on_click": "!~/.config/rofi/bin/rofi-launcher/launcher.sh"
+          "on_click": "!~/.config/rofi/launcher/launcher.sh"
         }
       ]
     },

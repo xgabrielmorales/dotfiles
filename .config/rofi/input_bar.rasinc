@@ -3,13 +3,10 @@ inputbar {
     background-color: @bg;
     text-color: @fga;
     expand: false;
-    margin: 0px;
-    padding: 0px;
     border-radius: 7px;
 }
 
 prompt {
-    enabled: true;
     padding: 7px 9px;
     background-color: @ac;
     vertical-align: 0.50;
@@ -25,6 +22,6 @@ entry {
     horizontal-align: 0;
     padding: 6px 10px;
     margin: 0px 0px 0px 3px;
-    placeholder-color: @fg;
+    placeholder-color: #5c6370;
     text-color: @fg;
 }

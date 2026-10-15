@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-THEME="${XDG_CONFIG_HOME}/rofi/default/rofi-askpass.rasi"
-
-rofi -theme $THEME -i -dmenu -password -no-fixed-num-lines -p "Password:"

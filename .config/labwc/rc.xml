@@ -181,22 +181,19 @@
       <action name="Execute" command="~/.local/bin/toggle-audio-output"/>
     </keybind>
     <keybind key="W-space">
-      <action name="Execute" command="~/.config/rofi/bin/rofi-launcher/launcher.sh"/>
+      <action name="Execute" command="~/.config/rofi/launcher/launcher.sh"/>
     </keybind>
     <keybind key="W-x">
       <action name="Execute" command="rofi -show run -theme xgm"/>
     </keybind>
     <keybind key="W-c">
-      <action name="Execute" command="~/.config/rofi/bin/rofi-calc/rofi-calc.sh"/>
+      <action name="Execute" command="~/.config/rofi/calc/calc.sh"/>
     </keybind>
     <keybind key="W-e">
-      <action name="Execute" command="~/.config/rofi/bin/rofi-emoji/rofi-emoji.sh"/>
+      <action name="Execute" command="~/.config/rofi/emoji/emoji.sh"/>
     </keybind>
     <keybind key="W-i">
       <action name="Execute" command="~/.local/bin/bookmarks"/>
-    </keybind>
-    <keybind key="W-m">
-      <action name="Execute" command="~/.config/rofi/bin/rofi-mpd/rofi-mpd.sh"/>
     </keybind>
     <keybind key="W-b">
       <action name="Execute" command="~/.local/bin/toggle-ironbar"/>

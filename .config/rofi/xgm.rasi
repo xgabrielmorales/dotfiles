@@ -1,7 +1,6 @@
-@import "colors.rasi"
-@import "input_bar.rasi"
-@import "list_view.rasi"
-@import "mode_switcher.rasi"
+@import "colors.rasinc"
+@import "input_bar.rasinc"
+@import "list_view.rasinc"
 
 configuration {
     modi: "drun,run,window,ssh";
@@ -13,14 +12,13 @@ configuration {
     display-run: "";
     display-drun: "";
     display-window: "";
-    display-filebrowser: "";
     display-calc: "";
     display-emoji: "📔";
 
     window-format: "{c} · {t}";
     drun-display-format: "{name}";
 
-    sidebar-mode: false;
+    case-smart: true;
     disable-history: false;
     parse-known-hosts: false;
 }
@@ -30,25 +28,17 @@ window {
     border: 1px solid;
     border-color: @fga;
     border-radius: 0px;
-    location: center;
-    transparency: "real";
     width: 600px;
-    x-offset: 0;
-    y-offset: 0;
 }
 
 mainbox {
     background-color: @al;
-    border: 0px;
-    border-radius: 0px;
-    border-color: @ac;
-    children: ["inputbar", "listview", "message", "mode-switcher"];
+    children: ["inputbar", "listview", "message"];
     spacing: 6px;
     padding: 6px;
 }
 
 message {
-    enabled: true;
     padding: 7px 9px;
     background-color: @bga;
     border-radius: 7px;

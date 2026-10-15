@@ -1,11 +1,6 @@
-/* OneDark unified palette (see waybar/style.css, tmux.conf, etc.)
- * base #1e222a · surface #282c34 · overlay #333b41 · border #2f343f
- * text #c4c7c5 · on-accent #1e222a · green #98c379
- */
 * {
     /* OneDark palette */
     bg:   #1e222aFF;   /* base background      */
-    bgs:  #282c34FF;   /* dark surface         */
     fg:   #1e222aFF;   /* dark text on accent  */
     ac:   #98c379FF;   /* accent green         */
 

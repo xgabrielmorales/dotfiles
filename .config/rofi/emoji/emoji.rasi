@@ -1,0 +1,9 @@
+@import "../xgm.rasi"
+
+listview {
+    columns: 1;
+}
+
+element {
+    children: [ element-text ];
+}

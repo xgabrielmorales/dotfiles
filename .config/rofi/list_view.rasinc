@@ -1,12 +1,9 @@
 listview {
     background-color: @al;
-    padding: 0px;
     columns: 2;
     lines: 10;
     spacing: 6px;
     cycle: false;
-    dynamic: true;
-    layout: vertical;
     scrollbar: false;
 }
 
@@ -25,19 +22,16 @@ element-icon {
 }
 
 element-text {
-    expand: false;
-    width: 500px;
+    expand: true;
     horizontal-align: 0;
     vertical-align: 0.5;
     margin: 0px 2.5px 0px 2.5px;
     background-color: @al;
-    text-color: @fga;
+    text-color: inherit;
 }
 
 element selected {
     background-color: @se;
     text-color: @fga;
-    border: 0px 0px 0px 0px;
     border-radius: 7px;
-    border-color: @ac;
 }

@@ -1,9 +1,5 @@
 @import "../xgm.rasi"
 
-mainbox {
-    children: [ "inputbar", "listview", "message" ];
-}
-
 listview {
     columns: 1;
 }
