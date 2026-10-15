@@ -1,5 +1,8 @@
 onboarding = false
 
+[update]
+version_check = false
+
 [ui.toast]
 delivery = "herdr"
 
