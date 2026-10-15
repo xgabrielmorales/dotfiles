@@ -55,8 +55,8 @@ map O push :open-with-gui<space>
 map o push :open-with-cli<space>
 
 map t
-map th tmux-split-h-window
-map tv tmux-split-v-window
+map th &herdr pane split --current --direction right --cwd "$PWD" --focus
+map tv &herdr pane split --current --direction down --cwd "$PWD" --focus
 
 map y
 map yy copy
@@ -109,6 +109,3 @@ cmd touch %touch "$@"
 
 cmd yank-path $printf '%s' "$fx" | wl-copy
 cmd yank-name $basename -a -- $fx | head -c-1 | wl-copy
-
-cmd tmux-split-h-window $ tmux split-window -h -c "$PWD"
-cmd tmux-split-v-window $ tmux split-window -v -c "$PWD"
