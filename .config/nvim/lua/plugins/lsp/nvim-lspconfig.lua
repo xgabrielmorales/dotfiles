@@ -9,7 +9,7 @@ return {
     local M = {}
 
     M.on_attach = function(client, bufnr)
-      if client.name == "ruff" then
+      if client.name == "ruff" or client.name == "nixd" then
         client.server_capabilities.hoverProvider = false
       end
 
@@ -119,8 +119,33 @@ return {
       },
     }
 
+    -- nixd: completion for NixOS / home-manager options (hostname == flake host)
+    local flake = vim.fn.expand("~/dotfiles/.config/nixos")
+    local host = vim.fn.hostname()
+    vim.lsp.config["nixd"] = {
+      on_attach = M.on_attach,
+      capabilities = M.capabilities,
+      settings = {
+        nixd = {
+          formatting = { command = { "nixfmt" } },
+          options = {
+            nixos = {
+              expr = string.format('(builtins.getFlake "%s").nixosConfigurations.%s.options', flake, host),
+            },
+            ["home-manager"] = {
+              expr = string.format(
+                '(builtins.getFlake "%s").nixosConfigurations.%s.options.home-manager.users.type.getSubOptions []',
+                flake,
+                host
+              ),
+            },
+          },
+        },
+      },
+    }
+
     -- Enable all configured LSP servers
-    local all_servers = vim.list_extend(servers, { "lua_ls", "jsonls", "nil_ls" })
+    local all_servers = vim.list_extend(servers, { "lua_ls", "jsonls", "nil_ls", "nixd" })
     vim.lsp.enable(all_servers)
   end,
 }
