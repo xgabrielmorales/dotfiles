@@ -21,6 +21,7 @@
     cameractrls-gtk4
     corepack_24
     csvlens
+    deadnix
     delta
     dig
     eza
@@ -50,7 +51,8 @@
     net-tools
     nh
     nil
-    nixfmt-tree
+    nixd
+    nixfmt
     nodejs_24
     nwg-look
     obs-studio
@@ -70,6 +72,7 @@
     slurp
     sops
     speedtest-go
+    statix
     swaybg
     terraform
     terraform-ls
