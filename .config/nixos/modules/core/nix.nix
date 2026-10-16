@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   nix.channel.enable = false;

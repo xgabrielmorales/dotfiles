@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
