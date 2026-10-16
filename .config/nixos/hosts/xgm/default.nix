@@ -16,6 +16,7 @@
     # Services
     ../../modules/services/virtualbox.nix
     ../../modules/services/wireguard.nix
+    ../../modules/services/steam.nix
   ];
 
   system.stateVersion = "25.05";
