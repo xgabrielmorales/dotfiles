@@ -21,3 +21,4 @@ prefix = "ctrl+space"
 split_horizontal = 'prefix+"'
 split_vertical = 'prefix+%'
 switch_tab = "alt+1..9"
+switch_workspace = "alt+shift+1..9"
