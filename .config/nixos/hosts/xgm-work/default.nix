@@ -12,6 +12,9 @@
     ./networking.nix
     ./nvidia.nix
 
+    # Services
+    ../../modules/services/wireguard.nix
+
     # Hardware support
     ../../modules/hardware/iphone-tethering.nix
   ];
