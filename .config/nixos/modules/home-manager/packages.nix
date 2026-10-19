@@ -26,6 +26,7 @@
     dig
     eza
     spotifast
+    zapfast
     fd
     file
     fzf
