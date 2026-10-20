@@ -3,7 +3,7 @@
 export BROWSER="zen-beta"
 export EDITOR="nvim"
 export PAGER="less"
-export READER="zathura"
+export READER="zen-beta"
 export VISUAL="nvim"
 export BAT_THEME="TwoDark"
 

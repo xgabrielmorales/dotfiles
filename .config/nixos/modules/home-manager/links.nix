@@ -47,7 +47,6 @@ in
     "rofi".source = link ".config/rofi";
     "ironbar".source = link ".config/ironbar";
     "xsettingsd".source = link ".config/xsettingsd";
-    "zathura".source = link ".config/zathura";
     "zsh".source = link ".config/zsh";
   };
 }

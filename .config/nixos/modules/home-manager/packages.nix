@@ -95,7 +95,6 @@
     xdg-user-dirs
     xfce4-notifyd
     ydotool
-    zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zip
     zsh-autosuggestions

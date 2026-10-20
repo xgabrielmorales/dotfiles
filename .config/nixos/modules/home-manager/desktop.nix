@@ -26,8 +26,8 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "image/png" = "pdf.desktop";
-        "image/jpeg" = "pdf.desktop";
+        "image/png" = "img.desktop";
+        "image/jpeg" = "img.desktop";
         "image/*" = "img.desktop";
         "video/*" = "video.desktop";
         "text/*" = "text.desktop";
@@ -78,7 +78,7 @@
       };
       "pdf" = {
         name = "PDF Reader";
-        exec = "${pkgs.zathura}/bin/zathura %u";
+        exec = "${config.home.homeDirectory}/.local/bin/recycle zen-beta %u";
         type = "Application";
       };
       "text" = {
