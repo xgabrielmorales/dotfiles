@@ -4,23 +4,6 @@ SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
 SCREENSHOT_TEMP="${XDG_RUNTIME_DIR:?}/screenshot-$(date +'%Y-%m-%dT%H-%M-%S').png"
 SCREENSHOT="$SCREENSHOTS_DIR/ss.$(date +'%Y-%m-%dT%H-%M-%S').png"
 
-NOTIFY_ID_FILE="${XDG_RUNTIME_DIR:-/tmp}/screenshot.nid"
-
-notify_id() {
-    local id
-
-    id=$(cat "$NOTIFY_ID_FILE" 2>/dev/null)
-    echo "${id:-0}"
-}
-
-notify_replace() {
-    notify-send \
-        --app-name="Screenshot" \
-        --icon="image-x-generic" \
-        --replace-id="$(notify_id)" \
-        --id-fd=3 "$@" 3>"$NOTIFY_ID_FILE"
-}
-
 mkdir --parent "$SCREENSHOTS_DIR"
 
 case "$1" in
@@ -40,7 +23,9 @@ if [[ ! -s "$SCREENSHOT_TEMP" ]]; then
     exit
 fi
 
-action=$(notify_replace \
+action=$(notify-send \
+    --app-name="Screenshot" \
+    --icon="image-x-generic" \
     --action="edit=Edit" \
     --action="view=View" \
     --action="save=Save" \
@@ -53,10 +38,8 @@ case "$action" in
         cp "$SCREENSHOT_TEMP" "$SCREENSHOT"
         satty --filename "$SCREENSHOT" --output-filename "$SCREENSHOT" --font-family "JetBrainsMono Nerd Font" --disable-notifications --save-after-copy
         rm "$SCREENSHOT_TEMP"
-        notify_replace "Screenshot Edited" "It has been saved."
     ;;
     "view")
-        notify_replace "Screenshot" "Opening file..."
         cp "$SCREENSHOT_TEMP" "$SCREENSHOT"
         xdg-open "$SCREENSHOT"
         rm "$SCREENSHOT_TEMP"
@@ -64,6 +47,5 @@ case "$action" in
     "save")
         cp "$SCREENSHOT_TEMP" "$SCREENSHOT"
         rm "$SCREENSHOT_TEMP"
-        notify_replace "Screenshot Saved" "Saved to $SCREENSHOTS_DIR"
     ;;
 esac

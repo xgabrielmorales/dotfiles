@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  services.wob.enable = true;
+
   systemd.user.services.ironbar = {
     Unit = {
       Description = "ironbar - barra de estado";

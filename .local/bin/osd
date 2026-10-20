@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Usage: osd sink|source|brightness inc|dec|toggle
+# Changes the value and shows it on wob (services.wob).
+
+case "$1" in
+    "sink" | "source")
+        pa=()
+        [[ "$1" == "source" ]] && pa=(--default-source)
+
+        case "$2" in
+            "inc") pamixer "${pa[@]}" --increase 5 ;;
+            "dec") pamixer "${pa[@]}" --decrease 5 ;;
+            "toggle") pamixer "${pa[@]}" --toggle-mute ;;
+        esac
+
+        value=$(pamixer "${pa[@]}" --get-volume)
+        style="$1"
+        [[ $(pamixer "${pa[@]}" --get-mute) == true ]] && style="muted"
+    ;;
+    "brightness")
+        case "$2" in
+            "inc") brightnessctl --quiet set 5%+ ;;
+            "dec") brightnessctl --quiet set 5%- ;;
+        esac
+
+        style="brightness"
+        value=$(brightnessctl --machine-readable | cut --delimiter=, --fields=4 | tr --delete '%')
+    ;;
+    *)
+        >&2 echo "Usage: osd sink|source|brightness inc|dec|toggle" && exit 1
+    ;;
+esac
+
+wob="${XDG_RUNTIME_DIR:?}/wob.sock"
+[[ -p "$wob" ]] && echo "$value $style" > "$wob"

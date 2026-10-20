@@ -13,15 +13,13 @@ in
 {
   home.file = {
     "${bin}/bookmarks".source = link "${bin}/bookmarks";
-    "${bin}/brightness_module".source = link "${bin}/brightness_module";
+    "${bin}/osd".source = link "${bin}/osd";
     "${bin}/mic-check".source = link "${bin}/mic-check";
     "${bin}/power_module".source = link "${bin}/power_module";
     "${bin}/recycle".source = link "${bin}/recycle";
     "${bin}/screenshot".source = link "${bin}/screenshot";
-    "${bin}/sink_module".source = link "${bin}/sink_module";
     "${bin}/sort-downloads".source = link "${bin}/sort-downloads";
     "${bin}/sort-screenshots".source = link "${bin}/sort-screenshots";
-    "${bin}/source_module".source = link "${bin}/source_module";
     "${bin}/toggle-audio-output".source = link "${bin}/toggle-audio-output";
     "${bin}/toggle-ironbar".source = link "${bin}/toggle-ironbar";
     "${bin}/wclone".source = link "${bin}/wclone";
@@ -46,6 +44,7 @@ in
     "ranger".source = link ".config/ranger";
     "rofi".source = link ".config/rofi";
     "ironbar".source = link ".config/ironbar";
+    "wob".source = link ".config/wob";
     "xsettingsd".source = link ".config/xsettingsd";
     "zsh".source = link ".config/zsh";
   };

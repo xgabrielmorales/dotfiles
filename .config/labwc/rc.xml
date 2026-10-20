@@ -200,13 +200,13 @@
     </keybind>
     <!-- Media Controls -->
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute" command="~/.local/bin/sink_module --inc"/>
+      <action name="Execute" command="~/.local/bin/osd sink inc"/>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
-      <action name="Execute" command="~/.local/bin/sink_module --dec"/>
+      <action name="Execute" command="~/.local/bin/osd sink dec"/>
     </keybind>
     <keybind key="XF86AudioMute">
-      <action name="Execute" command="~/.local/bin/sink_module --toggle"/>
+      <action name="Execute" command="~/.local/bin/osd sink toggle"/>
     </keybind>
     <keybind key="XF86AudioStop">
       <action name="Execute" command="playerctl stop"/>
@@ -225,10 +225,10 @@
     </keybind>
     <!-- Brightness -->
     <keybind key="XF86MonBrightnessUp">
-      <action name="Execute" command="~/.local/bin/brightness_module --inc"/>
+      <action name="Execute" command="~/.local/bin/osd brightness inc"/>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
-      <action name="Execute" command="~/.local/bin/brightness_module --dec"/>
+      <action name="Execute" command="~/.local/bin/osd brightness dec"/>
     </keybind>
     <!-- Lock screen -->
     <keybind key="W-l">
