@@ -3,8 +3,8 @@
 let
   host = config.networking.hostName;
   addresses = {
-    xgm = "10.8.0.3/32, fdcc:ad94:bacf:61a4::cafe:3/128";
-    xgm-work = "10.8.0.4/32, fdcc:ad94:bacf:61a4::cafe:4/128";
+    xgm = "10.10.11.3/32, fdcc:ad94:bacf:61a4::cafe:3/128";
+    xgm-work = "10.10.11.2/32, fdcc:ad94:bacf:61a4::cafe:2/128";
   };
   secret = name: config.sops.placeholder."wireguard/${name}";
 in
