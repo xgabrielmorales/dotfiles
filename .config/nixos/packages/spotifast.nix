@@ -10,6 +10,7 @@
   libxi,
   libxkbcommon,
   libxrandr,
+  pipewire,
   stdenv,
   vulkan-loader,
   wayland,
@@ -17,11 +18,11 @@
 
 stdenv.mkDerivation rec {
   pname = "spotifast";
-  version = "0.13.0";
+  version = "0.14.1";
 
   src = fetchurl {
     url = "https://github.com/crmne/spotifast/releases/download/v${version}/spotifast-v${version}-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-VK19ETerTsdhdymPsibb/GOZnnTcHX/ZJI3aAAnJlbc=";
+    hash = "sha256-+Ev6R+3RiEM7oiSxnjJuCjaLqkWaFNlBTemOWadg3Lw=";
   };
 
   sourceRoot = "spotifast-v${version}-x86_64-unknown-linux-gnu";
@@ -31,6 +32,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     alsa-lib
     libpulseaudio
+    pipewire
     stdenv.cc.cc.lib
   ];
 
