@@ -1,3 +1,6 @@
+update:
+  nix flake update --flake ~/dotfiles/.config/nixos
+
 clean:
   sudo nh clean all --keep 5 --keep-one --optimise
 
