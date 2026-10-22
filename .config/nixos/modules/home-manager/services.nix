@@ -14,6 +14,7 @@
       ExecStart = "${pkgs.ironbar}/bin/ironbar";
       Restart = "always";
       RestartSec = 1;
+      KillMode = "process";
     };
     Install.WantedBy = [ "graphical-session.target" ];
   };
