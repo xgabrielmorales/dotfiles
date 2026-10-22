@@ -4,7 +4,10 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = "*";
+    config.labwc = {
+      default = "wlr;*";
+      "org.freedesktop.impl.portal.Inhibit" = "none";
+    };
     wlr = {
       enable = true;
       settings.screencast = {
