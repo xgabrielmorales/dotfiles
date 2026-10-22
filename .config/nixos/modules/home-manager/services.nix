@@ -2,7 +2,9 @@
 
 let
   lock = "${pkgs.waylock}/bin/waylock -fork-on-lock -init-color 0x1e222a -input-color 0x98c379 -fail-color 0xe06c75";
-  wlopm = "${pkgs.wlopm}/bin/wlopm";
+  turn_screen_off = "${pkgs.wlopm}/bin/wlopm --off '*'";
+  turn_screen_on = "${pkgs.wlopm}/bin/wlopm --on '*'";
+  suspend = "${pkgs.systemd}/bin/systemctl suspend";
 in
 {
   services.wob.enable = true;
@@ -11,17 +13,17 @@ in
     enable = true;
     timeouts = [
       {
-        timeout = 120;
-        command = "${wlopm} --off '*'";
-        resumeCommand = "${wlopm} --on '*'";
-      }
-      {
-        timeout = 300;
+        timeout = 300; # 5 min
         command = lock;
       }
       {
-        timeout = 900;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
+        timeout = 300; # 5 min
+        command = turn_screen_off;
+        resumeCommand = turn_screen_on;
+      }
+      {
+        timeout = 900; # 15 min
+        command = suspend;
       }
     ];
     events.before-sleep = lock;
