@@ -19,6 +19,7 @@
     ./hardware/audio.nix
     ./hardware/bluetooth.nix
     ./hardware/nvidia.nix
+    ./hardware/yubikey.nix
 
     # Desktop environment
     ./desktop/labwc.nix
