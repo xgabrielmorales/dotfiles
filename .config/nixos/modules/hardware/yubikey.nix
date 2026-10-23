@@ -12,6 +12,7 @@
         sudo.u2fAuth = true;
         login.u2fAuth = true;
         greetd.u2fAuth = true;
+        polkit-1.u2fAuth = true;
         waylock.u2fAuth = true;
       };
     };

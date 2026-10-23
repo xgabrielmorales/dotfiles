@@ -1,0 +1,48 @@
+window {
+  background-color: #1e222a;
+  color: #abb2bf;
+  border: 1px solid #c4c7c5;
+  border-radius: 2px;
+}
+
+entry {
+  background-color: #282c34;
+  color: #abb2bf;
+  border: 1px solid #3e4451;
+}
+
+entry:focus-within {
+  border-color: #98c379;
+}
+
+label {
+  color: #abb2bf;
+}
+
+button,
+dropdown > button {
+  background-image: none;
+  background-color: #282c34;
+  color: #abb2bf;
+  border: 1px solid #3e4451;
+  box-shadow: none;
+}
+
+button:hover {
+  border-color: #98c379;
+}
+
+popover > contents {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+
+button.suggested-action {
+  background-color: #98c379;
+  color: #1e222a;
+}
+
+button.destructive-action {
+  background-color: #e06c75;
+  color: #1e222a;
+}

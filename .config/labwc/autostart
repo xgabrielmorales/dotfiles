@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+systemctl --user import-environment XDG_SESSION_ID
 systemctl --user --no-block start labwc-session.target

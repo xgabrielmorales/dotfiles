@@ -44,6 +44,7 @@ in
     "ranger".source = link ".config/ranger";
     "rofi".source = link ".config/rofi";
     "ironbar".source = link ".config/ironbar";
+    "soteria".source = link ".config/soteria";
     "wob".source = link ".config/wob";
     "xsettingsd".source = link ".config/xsettingsd";
     "zsh".source = link ".config/zsh";
