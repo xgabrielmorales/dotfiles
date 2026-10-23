@@ -7,26 +7,36 @@ let
   suspend = "${pkgs.systemd}/bin/systemctl suspend";
 in
 {
-  services.wob.enable = true;
-
-  services.swayidle = {
-    enable = true;
-    timeouts = [
-      {
-        timeout = 300; # 5 min
-        command = lock;
-      }
-      {
-        timeout = 300; # 5 min
-        command = turn_screen_off;
-        resumeCommand = turn_screen_on;
-      }
-      {
-        timeout = 900; # 15 min
-        command = suspend;
-      }
-    ];
-    events.before-sleep = lock;
+  services = {
+    wob.enable = true;
+    gammastep = {
+      enable = true;
+      provider = "manual";
+      latitude = 4.7;
+      longitude = -74.1;
+      temperature = {
+        night = 5500; # 4000 looks too orange with HDR on
+      };
+    };
+    swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 300; # 5 min
+          command = lock;
+        }
+        {
+          timeout = 300; # 5 min
+          command = turn_screen_off;
+          resumeCommand = turn_screen_on;
+        }
+        {
+          timeout = 900; # 15 min
+          command = suspend;
+        }
+      ];
+      events.before-sleep = lock;
+    };
   };
 
   systemd.user.services.ironbar = {
