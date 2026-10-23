@@ -11,6 +11,7 @@
     ./luks.nix
     ./networking.nix
     ./nvidia.nix
+    ./yubikey.nix
 
     # Services
     ../../modules/services/wireguard.nix

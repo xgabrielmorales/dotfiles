@@ -36,6 +36,7 @@ in
         }
       ];
       events.before-sleep = lock;
+      events.lock = lock;
     };
   };
 

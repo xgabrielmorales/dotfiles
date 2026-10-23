@@ -11,6 +11,7 @@
       services = {
         sudo.u2fAuth = true;
         login.u2fAuth = true;
+        greetd.u2fAuth = true;
         waylock.u2fAuth = true;
       };
     };
