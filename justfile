@@ -2,7 +2,7 @@ update:
   nix flake update --flake ~/dotfiles/.config/nixos
 
 clean:
-  sudo nh clean all --keep 5 --keep-one --optimise
+  run0 nh clean all --keep 5 --keep-one --optimise
 
 build host=`hostname`:
-  sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos#{{host}}
+  run0 nixos-rebuild switch --flake ~/dotfiles/.config/nixos#{{host}}
