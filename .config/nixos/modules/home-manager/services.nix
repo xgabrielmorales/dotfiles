@@ -9,6 +9,7 @@ in
 {
   services = {
     wob.enable = true;
+    poweralertd.enable = true;
     gammastep = {
       enable = true;
       provider = "manual";
