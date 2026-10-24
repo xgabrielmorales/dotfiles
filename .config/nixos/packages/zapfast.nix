@@ -9,6 +9,7 @@
   libxi,
   libxkbcommon,
   libxrandr,
+  pipewire,
   stdenv,
   vulkan-loader,
   wayland,
@@ -16,11 +17,11 @@
 
 stdenv.mkDerivation rec {
   pname = "zapfast";
-  version = "0.19.0";
+  version = "0.20.0";
 
   src = fetchurl {
     url = "https://github.com/crmne/zapfast/releases/download/v${version}/zapfast-v${version}-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-DKx8fdoTJiZcmhbcxWK6bQe9C4rl1TTzUpt4Z2ADZmM=";
+    hash = "sha256-poRcizm5M3liDCOE2OPUZ+Glxd0vrNGuixEGLg3TJ5w=";
   };
 
   sourceRoot = "zapfast-v${version}-x86_64-unknown-linux-gnu";
@@ -29,6 +30,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     alsa-lib
+    pipewire
     stdenv.cc.cc.lib
   ];
 
@@ -39,6 +41,7 @@ stdenv.mkDerivation rec {
     libxi
     libxkbcommon
     libxrandr
+    pipewire
     vulkan-loader
     wayland
   ];
