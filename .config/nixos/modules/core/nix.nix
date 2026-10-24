@@ -9,6 +9,7 @@ _:
   };
   nix.settings.auto-optimise-store = true;
   nix.settings.download-buffer-size = 536870912; # 512 MB
+  nix.settings.use-xdg-base-directories = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

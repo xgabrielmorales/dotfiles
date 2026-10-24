@@ -5,6 +5,7 @@
     enable = true;
     package = pkgs.adwaita-icon-theme;
     name = "Adwaita";
+    dotIcons.enable = false;
   };
 
   xfconf.settings = {
