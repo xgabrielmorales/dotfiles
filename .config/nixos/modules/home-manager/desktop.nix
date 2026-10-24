@@ -23,6 +23,11 @@
       enable = true;
       createDirectories = true;
       setSessionVariables = true;
+      desktop = null;
+      music = null;
+      projects = null;
+      publicShare = null;
+      templates = null;
     };
     mimeApps = {
       enable = true;
