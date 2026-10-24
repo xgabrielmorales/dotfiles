@@ -21,11 +21,12 @@ in
       PrivateKey = ${secret "${host}/privateKey"}
       Address = ${addresses.${host}}
       MTU = 1420
+      DNS = 10.10.10.3
 
       [Peer]
       PublicKey = ${secret "publicKey"}
       PresharedKey = ${secret "${host}/presharedKey"}
-      AllowedIPs = 0.0.0.0/0, ::/0
+      AllowedIPs = 10.10.10.0/23
       PersistentKeepalive = 25
       Endpoint = ${secret "endpoint"}
     '';
