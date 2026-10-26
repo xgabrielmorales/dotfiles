@@ -30,6 +30,17 @@ _fzf_compgen_dir()  { fd --type d --hidden --follow $_fzf_excludes . "$1" }
 
 # THE ORDER MATTERS!
 source <(fzf --zsh)
+
+fzf-git-changed-widget() {
+  local file
+  file=$(git status --short --untracked-files=no 2>/dev/null | cut -c4- | sed 's/.* -> //' |
+    fzf --preview 'git diff --color=always HEAD -- {}') || { zle reset-prompt; return }
+  BUFFER="$EDITOR ${(q)file}"
+  zle accept-line
+}
+zle -N fzf-git-changed-widget
+bindkey '^G' fzf-git-changed-widget
+
 source "$XDG_CONFIG_HOME/zsh/prompt"
 source "$XDG_CONFIG_HOME/zsh/aliases"
 source "$XDG_CONFIG_HOME/zsh/profile"
