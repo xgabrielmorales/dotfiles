@@ -17,11 +17,11 @@
 
 stdenv.mkDerivation rec {
   pname = "zapfast";
-  version = "0.20.0";
+  version = "0.20.1";
 
   src = fetchurl {
     url = "https://github.com/crmne/zapfast/releases/download/v${version}/zapfast-v${version}-x86_64-unknown-linux-gnu.tar.gz";
-    hash = "sha256-poRcizm5M3liDCOE2OPUZ+Glxd0vrNGuixEGLg3TJ5w=";
+    hash = "sha256-5ZQ7wiGdDzEdThYTIiuA4y77Ko3C0pz/XZLUJKiNsTI=";
   };
 
   sourceRoot = "zapfast-v${version}-x86_64-unknown-linux-gnu";
