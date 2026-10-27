@@ -10,15 +10,6 @@ in
   services = {
     wob.enable = true;
     poweralertd.enable = true;
-    gammastep = {
-      enable = true;
-      provider = "manual";
-      latitude = 4.7;
-      longitude = -74.1;
-      temperature = {
-        night = 5500; # 4000 looks too orange with HDR on
-      };
-    };
     swayidle = {
       enable = true;
       timeouts = [
