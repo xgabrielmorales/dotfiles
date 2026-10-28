@@ -1,20 +1,26 @@
 _:
 
 {
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  boot.consoleLogLevel = 0;
-  boot.kernelParams = [
-    "quiet"
-    "splash"
-    "udev.log_level=3"
-  ];
-  boot.plymouth.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 5;
-  boot.loader.systemd-boot.editor = false;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.timeout = 5;
-  boot.tmp.cleanOnBoot = true;
+  boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    consoleLogLevel = 0;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "udev.log_level=3"
+    ];
+    plymouth.enable = true;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        configurationLimit = 5;
+        editor = false;
+        enable = true;
+      };
+      timeout = 5;
+    };
+    tmp.cleanOnBoot = true;
+  };
   services.fstrim.enable = true;
   zramSwap.enable = true;
 }
