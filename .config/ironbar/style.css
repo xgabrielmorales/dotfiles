@@ -50,7 +50,6 @@ button {
 .mic,
 .music,
 .sysinfo .item,
-.tray,
 .volume {
   background-color: #282c34;
   border-radius: 8px;
@@ -66,7 +65,8 @@ button {
 
 .music:hover,
 .volume:hover,
-.bluetooth:hover {
+.bluetooth:hover,
+.clock:hover {
   background-color: #333b41;
 }
 
@@ -84,11 +84,10 @@ button {
 }
 
 .tray {
-  background-color: #1e222a;
-}
-
-.tray .item:not(:last-child) {
-  margin-right: 16px;
+  background-color: #282c34;
+  border-radius: 8px;
+  margin: 2px 4px 2px 0;
+  padding: 0px;
 }
 
 .tray .item.urgent {
@@ -223,4 +222,12 @@ calendar label.day-number:selected {
 
 .popup button:hover {
   background-color: #333b41;
+}
+
+#launcher-btn:hover {
+  background-color: #b0d49a;
+}
+
+#power-btn:hover {
+  background-color: #e8929a;
 }
