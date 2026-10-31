@@ -6,6 +6,7 @@
 [alias]
     lod = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(red)%aN%C(reset) %C(green)%ar%C(reset) %C(yellow)%D%C(reset)%n%s%n' --use-mailmap
     s = status
+    lpush = push --force-with-lease
     staged = diff --staged
     wclone = "!~/.local/bin/wclone"
 
@@ -94,6 +95,7 @@
 [push]
     autoSetupRemote = true
     default = simple
+    useForceIfIncludes = true
 
 [rebase]
     autoStash = true
