@@ -19,5 +19,13 @@
     ../../modules/services/steam.nix
   ];
 
+  # Hibernation target (~RAM size)
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+    }
+  ];
+
   system.stateVersion = "25.05";
 }

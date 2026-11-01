@@ -152,14 +152,14 @@
             {
               "type": "button",
               "class": "power-menu-btn",
-              "label": " Sleep   ",
-              "on_click": "!systemctl suspend"
+              "label": " Logout  ",
+              "on_click": "!labwc --exit"
             },
             {
               "type": "button",
               "class": "power-menu-btn",
-              "label": " Logout  ",
-              "on_click": "!labwc --exit"
+              "label": " Sleep   ",
+              "on_click": "!systemctl suspend-then-hibernate"
             },
             {
               "type": "button",
@@ -172,6 +172,12 @@
               "class": "power-menu-btn",
               "label": " Shutdown",
               "on_click": "!systemctl poweroff"
+            },
+            {
+              "type": "button",
+              "class": "power-menu-btn",
+              "label": " Hibernate",
+              "on_click": "!systemctl hibernate"
             }
           ]
         }

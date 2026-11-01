@@ -23,4 +23,5 @@ _:
   };
   services.fstrim.enable = true;
   zramSwap.enable = true;
+  systemd.sleep.settings.Sleep.HibernateDelaySec = "30min";
 }

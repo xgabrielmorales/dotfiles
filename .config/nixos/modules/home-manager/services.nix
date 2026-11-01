@@ -4,7 +4,7 @@ let
   lock = "${pkgs.waylock}/bin/waylock -fork-on-lock -init-color 0x1e222a -input-color 0x98c379 -fail-color 0xe06c75";
   turn_screen_off = "${pkgs.wlopm}/bin/wlopm --off '*'";
   turn_screen_on = "${pkgs.wlopm}/bin/wlopm --on '*'";
-  suspend = "${pkgs.systemd}/bin/systemctl suspend";
+  suspend = "${pkgs.systemd}/bin/systemctl suspend-then-hibernate";
 in
 {
   services = {

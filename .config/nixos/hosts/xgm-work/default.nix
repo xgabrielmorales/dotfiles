@@ -20,5 +20,13 @@
     ../../modules/hardware/iphone-tethering.nix
   ];
 
+  # Hibernation target (~RAM size)
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 40 * 1024;
+    }
+  ];
+
   system.stateVersion = "25.05";
 }

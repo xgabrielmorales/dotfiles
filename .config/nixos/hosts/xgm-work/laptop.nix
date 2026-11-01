@@ -3,6 +3,11 @@ _:
 {
   boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitchExternalPower = "suspend-then-hibernate";
+  };
+
   services = {
     upower.enable = true;
     tlp = {
