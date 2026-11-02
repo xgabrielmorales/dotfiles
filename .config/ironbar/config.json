@@ -63,6 +63,16 @@
       }
     },
     {
+      "type": "sys_info",
+      "name": "disk",
+      "format": [
+        "󰋊 {disk_percent@/:.0}%"
+      ],
+      "interval": {
+        "disks": 60
+      }
+    },
+    {
       "type": "label",
       "name": "power-draw",
       "label": "{{5000:~/.local/bin/power_module --status}}"
