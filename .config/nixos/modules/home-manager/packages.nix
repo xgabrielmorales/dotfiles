@@ -56,7 +56,6 @@
     nixfmt
     nodejs_24
     nwg-look
-    obs-studio
     openssl_oqs
     pamixer
     papirus-icon-theme
@@ -87,6 +86,7 @@
     vlc
     waylock
     wdisplays
+    wf-recorder
     wget
     wireguard-tools
     wl-clipboard
