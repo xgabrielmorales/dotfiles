@@ -42,6 +42,7 @@ in
     "labwc".source = link ".config/labwc";
     "lf".source = link ".config/lf";
     "nvim".source = link ".config/nvim";
+    "pnpm/rc".source = link ".config/pnpm/rc";
     "ranger".source = link ".config/ranger";
     "rofi".source = link ".config/rofi";
     "ironbar".source = link ".config/ironbar";

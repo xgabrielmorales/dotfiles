@@ -19,14 +19,11 @@
     brightnessctl
     btop
     cameractrls-gtk4
-    corepack_24
     csvlens
     deadnix
     delta
     dig
     eza
-    spotifast
-    zapfast
     fd
     file
     fzf
@@ -54,7 +51,7 @@
     nil
     nixd
     nixfmt
-    nodejs_24
+    nodejs-slim_26
     nwg-look
     openssl_oqs
     pamixer
@@ -62,6 +59,7 @@
     pavucontrol
     pciutils
     playerctl
+    pnpm
     postman-agent
     python314
     ranger
@@ -72,6 +70,7 @@
     slurp
     sops
     speedtest-go
+    spotifast
     statix
     swaybg
     terraform
@@ -95,6 +94,7 @@
     xdg-user-dirs
     xfce4-notifyd
     ydotool
+    zapfast
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     zip
     zsh-autosuggestions
