@@ -37,6 +37,7 @@ in
     "gtk-3.0".source = link ".config/gtk-3.0";
     "gtk-4.0".source = link ".config/gtk-4.0";
     "herdr/config.toml".source = link ".config/herdr/config.toml";
+    "k9s".source = link ".config/k9s";
     "kitty".source = link ".config/kitty";
     "labwc".source = link ".config/labwc";
     "lf".source = link ".config/lf";
