@@ -9,6 +9,7 @@ _:
       options = "--delete-older-than 14d";
     };
     settings = {
+      allowed-users = [ "@wheel" ];
       auto-optimise-store = true;
       download-buffer-size = 536870912; # 512 MB
       use-xdg-base-directories = true;
