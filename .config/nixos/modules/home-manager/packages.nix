@@ -15,7 +15,6 @@
     awscli2
     bat
     bluetui
-    brave-origin
     brightnessctl
     btop
     cameractrls-gtk4
