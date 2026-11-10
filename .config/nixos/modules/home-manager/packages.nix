@@ -33,6 +33,7 @@
     grim
     gucharmap
     herdr
+    herdr-core
     impala
     ironbar
     jetbrains.datagrip
