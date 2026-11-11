@@ -17,6 +17,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ironbar = {
+      url = "github:JakeStanger/ironbar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -24,6 +28,7 @@
       zen-browser,
       home-manager,
       sops-nix,
+      ironbar,
       ...
     }:
     let
@@ -40,7 +45,10 @@
             sops-nix.nixosModules.sops
             {
               nixpkgs.hostPlatform = "x86_64-linux";
-              nixpkgs.overlays = [ (import ./overlays) ];
+              nixpkgs.overlays = [
+                (import ./overlays)
+                (final: prev: { ironbar = ironbar.packages.${final.stdenv.hostPlatform.system}.default; })
+              ];
             }
           ];
         };
