@@ -16,3 +16,10 @@ history_filter = [
   "^exit$",
   "^history$"
 ]
+
+[daemon]
+enabled = true
+autostart = true
+
+[threads]
+capture = true
