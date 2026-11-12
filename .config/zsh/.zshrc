@@ -28,6 +28,13 @@ export FZF_ALT_C_COMMAND="fd --type d --hidden --follow ${_fzf_excludes[*]}"
 _fzf_compgen_path() { fd --hidden --follow $_fzf_excludes . "$1" }
 _fzf_compgen_dir()  { fd --type d --hidden --follow $_fzf_excludes . "$1" }
 
+export FZF_DEFAULT_OPTS="
+  --color=fg:#abb2bf,bg:-1,hl:#98c379
+  --color=fg+:#d8d8d8,bg+:#2b303a,hl+:#98c379,gutter:-1
+  --color=info:#e5c07b,prompt:#61afef,pointer:#98c379,marker:#d19a66
+  --color=spinner:#c678dd,header:#5c6370,border:#353b45,query:#d8d8d8"
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+
 # THE ORDER MATTERS!
 source <(fzf --zsh)
 
