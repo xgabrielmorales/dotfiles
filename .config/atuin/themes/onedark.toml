@@ -1,0 +1,13 @@
+[theme]
+name = "onedark"
+
+[colors]
+Base = "#d8d8d8"
+Guidance = "#5c6370"
+Muted = "#5c6370"
+Annotation = "#abb2bf"
+AlertInfo = "#5c6370"
+AlertWarn = "#e5c07b"
+AlertError = "#e06c75"
+Important = "#61afef"
+Title = "#98c379"

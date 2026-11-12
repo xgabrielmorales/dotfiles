@@ -29,6 +29,7 @@ in
 
   xdg.configFile = {
     "atuin/config.toml".source = link ".config/atuin/config.toml";
+    "atuin/themes".source = link ".config/atuin/themes";
     "btop".source = link ".config/btop";
     "direnv/direnvrc".source = link ".config/direnv/direnvrc";
     "emacs/init.el".source = link ".config/emacs/init.el";

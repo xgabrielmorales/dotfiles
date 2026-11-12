@@ -23,3 +23,6 @@ autostart = true
 
 [threads]
 capture = true
+
+[theme]
+name = "onedark"
