@@ -1,6 +1,6 @@
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 14px;
 }
@@ -30,14 +30,13 @@ button {
 }
 
 .launcher .item {
-  border-radius: 8px;
-  padding: 0 5px;
+  margin: 2px 0;
+  padding: 0 3px;
 }
 
 .launcher .item:hover,
 .launcher .item.focused {
   background-color: #333b41;
-  border-radius: 8px;
 }
 
 #launcher-btn,
@@ -51,9 +50,7 @@ button {
 .music,
 .sysinfo .item,
 .volume {
-  background-color: #282c34;
-  border-radius: 8px;
-  margin: 2px 4px 2px 0;
+  margin: 2px 0;
   padding: 0px 6px;
 }
 
@@ -61,6 +58,7 @@ button {
   background-color: #98c379;
   color: #1e222a;
   padding: 0px 8px;
+  margin: 2px 4px;
 }
 
 .music:hover,
@@ -74,6 +72,7 @@ button {
 .popup-bluetooth {
   min-width: 300px;
 }
+
 .popup-bluetooth .devices .box .device {
   padding: 5px;
 }
@@ -84,9 +83,7 @@ button {
 }
 
 .tray {
-  background-color: #282c34;
-  border-radius: 8px;
-  margin: 2px 4px 2px 0;
+  margin: 2px 0;
   padding: 0px;
 }
 
@@ -128,11 +125,10 @@ button {
   background-color: #e06c75;
   color: #1e222a;
   padding: 0px 8px;
+  margin: 2px 4px;
 }
 
 .popup-power-menu .power-menu-btn {
-  background-color: #282c34;
-  border-radius: 8px;
   padding: 4px 12px;
 }
 
@@ -146,8 +142,7 @@ button {
 
 tooltip {
   background-color: #1e222a;
-  border-radius: 8px;
-  border: 2px solid #2f343f;
+  border: 1px solid #c4c7c5;
   margin: 2px;
   padding: 5px;
 }
@@ -168,8 +163,7 @@ popover arrow {
 }
 
 scale trough {
-  background-color: #282c34;
-  border-radius: 2px;
+  background-color: #333b41;
   min-height: 4px;
   min-width: 4px;
 }
@@ -202,21 +196,18 @@ calendar label.day-number.other-month {
 
 calendar label.day-number:selected {
   background-color: #98c379;
-  border-radius: 6px;
   color: #1e222a;
 }
 
 .popup {
   background-color: #1e222a;
-  border: 1px solid #2f343f;
-  border-radius: 8px;
+  border: 1px solid #c4c7c5;
   color: #c4c7c5;
   padding: 8px;
 }
 
 .popup button {
-  background-color: #282c34;
-  border-radius: 8px;
+  border: 1px solid #333b41;
   padding: 2px 8px;
 }
 
