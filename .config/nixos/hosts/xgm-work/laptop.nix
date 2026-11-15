@@ -14,34 +14,28 @@ _:
       enable = true;
       settings = {
         # CPU governor: powersave uses lower frequencies unless needed
-        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
         # Energy/performance preference via EPP (Intel HWP / AMD CPPC)
-        CPU_ENERGY_PERF_POLICY_ON_AC = "balance_power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
 
-        # Disable CPU turbo boost on AC to reduce heat
-        # Set to 1 to re-enable if you need full performance
-        CPU_BOOST_ON_AC = 0;
+        # Turbo boost on AC only
+        CPU_BOOST_ON_AC = 1;
         CPU_BOOST_ON_BAT = 0;
 
         # ACPI platform profile (handled by amd-pmf): caps the SoC sustained/
-        # boost power limits (SPL/sPPT/fPPT) and thermal targets. low-power
-        # keeps the whole machine in power-saving mode.
-        PLATFORM_PROFILE_ON_AC = "low-power";
+        # boost power limits (SPL/sPPT/fPPT) and thermal targets.
+        PLATFORM_PROFILE_ON_AC = "performance";
         PLATFORM_PROFILE_ON_BAT = "low-power";
 
         # WiFi power saving
-        WIFI_PWR_ON_AC = "on";
+        WIFI_PWR_ON_AC = "off";
         WIFI_PWR_ON_BAT = "on";
 
-        # PCIe Active State Power Management
-        PCIE_ASPM_ON_AC = "powersupersave";
-        PCIE_ASPM_ON_BAT = "powersupersave";
-
         # Runtime power management for PCI(e) devices
-        RUNTIME_PM_ON_AC = "auto";
+        RUNTIME_PM_ON_AC = "on";
         RUNTIME_PM_ON_BAT = "auto";
       };
     };
