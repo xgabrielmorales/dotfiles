@@ -35,6 +35,7 @@ user_pref("media.hardware-video-decoding.force-enabled", true);
 user_pref("media.navigator.video.h264.enabled", true);
 user_pref("media.peerconnection.video.vp9_enabled", false);
 user_pref("media.rdd-ffmpeg.enabled", true);
+user_pref("media.webspeech.synth.enabled", false);
 user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 user_pref("middlemouse.openNewWindow", false);
 user_pref("middlemouse.paste", false);

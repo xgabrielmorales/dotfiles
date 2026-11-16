@@ -5,4 +5,5 @@ _:
   programs.labwc.enable = true;
   programs.xfconf.enable = true;
   security.soteria.enable = true; # polkit agent
+  services.speechd.enable = false;
 }
