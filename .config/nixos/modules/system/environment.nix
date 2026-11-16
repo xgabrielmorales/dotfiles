@@ -28,7 +28,7 @@
     AWS_SHARED_CREDENTIALS_FILE = "${XDG_CONFIG_HOME}/aws/credentials";
     CARGO_HOME = "${XDG_DATA_HOME}/cargo";
     CHECKPOINT_DISABLE = "1"; # terraform: stops ~/.terraform.d/checkpoint_*
-    CLAUDE_CONFIG_DIR = "${XDG_CONFIG_HOME}/claude-code";
+    CLAUDE_CONFIG_DIR = "${XDG_CONFIG_HOME}/claude";
     CLOUDSDK_CONFIG = "${XDG_CONFIG_HOME}/gcloud";
     CUDA_CACHE_PATH = "${XDG_CACHE_HOME}/nv";
     DOCKER_CONFIG = "${XDG_CONFIG_HOME}/docker";

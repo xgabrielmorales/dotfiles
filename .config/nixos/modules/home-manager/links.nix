@@ -31,6 +31,10 @@ in
     "atuin/config.toml".source = link ".config/atuin/config.toml";
     "atuin/themes".source = link ".config/atuin/themes";
     "btop".source = link ".config/btop";
+    "claude/CLAUDE.md".source = link ".config/claude/CLAUDE.md";
+    "claude/scripts".source = link ".config/claude/scripts";
+    "claude/settings.json".source = link ".config/claude/settings.json";
+    "claude/skills".source = link ".config/claude/skills";
     "direnv/direnvrc".source = link ".config/direnv/direnvrc";
     "emacs/init.el".source = link ".config/emacs/init.el";
     "git".source = link ".config/git";
