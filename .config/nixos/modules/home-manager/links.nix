@@ -13,8 +13,8 @@ in
 {
   home.file = {
     "${bin}/bookmarks".source = link "${bin}/bookmarks";
-    "${bin}/osd".source = link "${bin}/osd";
     "${bin}/mic-check".source = link "${bin}/mic-check";
+    "${bin}/osd".source = link "${bin}/osd";
     "${bin}/power_module".source = link "${bin}/power_module";
     "${bin}/recycle".source = link "${bin}/recycle";
     "${bin}/screenshot".source = link "${bin}/screenshot";
@@ -42,6 +42,7 @@ in
     "gtk-3.0".source = link ".config/gtk-3.0";
     "gtk-4.0".source = link ".config/gtk-4.0";
     "herdr/config.toml".source = link ".config/herdr/config.toml";
+    "ironbar".source = link ".config/ironbar";
     "k9s".source = link ".config/k9s";
     "kitty".source = link ".config/kitty";
     "labwc".source = link ".config/labwc";
@@ -50,7 +51,6 @@ in
     "pnpm/rc".source = link ".config/pnpm/rc";
     "ranger".source = link ".config/ranger";
     "rofi".source = link ".config/rofi";
-    "ironbar".source = link ".config/ironbar";
     "soteria".source = link ".config/soteria";
     "wob".source = link ".config/wob";
     "xsettingsd".source = link ".config/xsettingsd";
