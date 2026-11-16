@@ -34,6 +34,7 @@
     gucharmap
     herdr
     herdr-core
+    idescriptor
     impala
     ironbar
     jetbrains.datagrip
