@@ -222,3 +222,22 @@ calendar label.day-number:selected {
 #power-btn:hover {
   background-color: #e8929a;
 }
+
+.popup dropdown popover contents {
+  background-color: #1e222a;
+  border: 1px solid #333b41;
+}
+
+.popup dropdown popover.menu > contents {
+  padding: 0px;
+}
+
+.popup dropdown popover contents * {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.popup dropdown popover row {
+  padding: 4px 8px;
+}
