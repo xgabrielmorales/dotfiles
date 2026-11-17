@@ -4,8 +4,8 @@ clean:
 update:
   nix flake update --flake ~/dotfiles/.config/nixos
 
-rollback host=`hostname`:
-  run0 nixos-rebuild switch --flake ~/dotfiles/.config/nixos#{{host}} --rollback
+rollback:
+  nh os rollback -e run0
 
 rebuild host=`hostname`:
-  run0 nixos-rebuild switch --flake ~/dotfiles/.config/nixos#{{host}}
+  nh os switch ~/dotfiles/.config/nixos -H {{host}} -e run0
