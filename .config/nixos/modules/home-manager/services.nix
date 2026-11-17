@@ -29,6 +29,7 @@ in
       ];
       events.before-sleep = lock;
       events.lock = lock;
+      events.after-resume = "${pkgs.systemd}/bin/systemctl --user restart ironbar.service";
     };
   };
 
