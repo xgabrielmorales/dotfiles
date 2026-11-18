@@ -142,7 +142,7 @@ button {
 
 tooltip {
   background-color: #1e222a;
-  border: 1px solid #c4c7c5;
+  border: 1px solid #333b41;
   margin: 2px;
   padding: 5px;
 }
@@ -201,7 +201,7 @@ calendar label.day-number:selected {
 
 .popup {
   background-color: #1e222a;
-  border: 1px solid #c4c7c5;
+  border: 1px solid #333b41;
   color: #c4c7c5;
   padding: 8px;
 }
@@ -240,4 +240,9 @@ calendar label.day-number:selected {
 
 .popup dropdown popover row {
   padding: 4px 8px;
+}
+
+.tray popover contents {
+  background-color: #1e222a;
+  border: 1px solid #333b41;
 }
