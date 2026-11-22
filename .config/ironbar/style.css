@@ -104,17 +104,34 @@ button {
   min-height: 100px;
 }
 
+.popup-music .title,
+.popup-music .album,
+.popup-music .artist,
+.popup-music .controls {
+  min-width: 250px;
+}
+
+.popup-music .album-art {
+  border: 1px solid #333b41;
+  margin-right: 8px;
+}
+
 .popup-music .volume,
 .popup-music .volume:hover {
   background-color: transparent;
   border-radius: 0;
+  border-left: 1px solid #333b41;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 6px;
 }
 
-.popup-music .volume .slider,
-.popup-music .volume .icon {
-  min-width: 24px;
+.popup-music .progress,
+.popup-music .progress:hover {
+  background-color: transparent;
+  border-radius: 0;
+  border-top: 1px solid #333b41;
+  margin: 0;
+  padding-top: 6px;
 }
 
 .popup-bluetooth .devices .box .device .icon-box {
@@ -160,6 +177,14 @@ popover contents {
 
 popover arrow {
   background-color: transparent;
+}
+
+scale.horizontal {
+  padding: 3px 10px;
+}
+
+scale.vertical {
+  padding: 10px 3px;
 }
 
 scale trough {
