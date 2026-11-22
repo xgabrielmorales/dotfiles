@@ -14,9 +14,7 @@
     ../../modules/hardware/webcam.nix
 
     # Services
-    ../../modules/services/virtualbox.nix
     ../../modules/services/wireguard.nix
-    ../../modules/services/steam.nix
   ];
 
   # Hibernation target (~RAM size)
