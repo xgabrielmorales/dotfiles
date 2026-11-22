@@ -11,6 +11,7 @@ enabled = false
 
 [ui]
 status_indicators = "symbols"
+prompt_new_tab_name = false
 
 [theme]
 name = "one-dark"
