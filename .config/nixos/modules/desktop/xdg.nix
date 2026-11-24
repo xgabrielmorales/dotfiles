@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, mainUser, ... }:
 
 {
   xdg.portal = {
@@ -13,8 +13,8 @@
       settings.screencast = {
         chooser_type = "none";
         max_fps = 30;
-        exec_before = "${pkgs.libnotify}/bin/notify-send -u normal -i video-display 'Screen sharing' 'You started sharing your screen'";
-        exec_after = "${pkgs.libnotify}/bin/notify-send -u normal -i video-display 'Screen sharing' 'You stopped sharing your screen'";
+        exec_before = "/home/${mainUser}/.local/bin/screenshare-hook start";
+        exec_after = "/home/${mainUser}/.local/bin/screenshare-hook stop";
       };
     };
   };

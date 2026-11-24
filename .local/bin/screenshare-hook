@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# the xdg-desktop-portal-wlr service runs with a minimal PATH
+PATH="/etc/profiles/per-user/$USER/bin:/run/current-system/sw/bin:$PATH"
+
+case "$1" in
+    start) message="You started sharing your screen" ;;
+    stop) message="You stopped sharing your screen" ;;
+esac
+
+notify-send -u normal -i video-display "Screen sharing" "$message"

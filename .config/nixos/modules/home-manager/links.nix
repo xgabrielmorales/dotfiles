@@ -18,6 +18,7 @@ in
     "${bin}/power_module".source = link "${bin}/power_module";
     "${bin}/recycle".source = link "${bin}/recycle";
     "${bin}/screenshot".source = link "${bin}/screenshot";
+    "${bin}/screenshare-hook".source = link "${bin}/screenshare-hook";
     "${bin}/sort-downloads".source = link "${bin}/sort-downloads";
     "${bin}/sort-screenshots".source = link "${bin}/sort-screenshots";
     "${bin}/toggle-audio-output".source = link "${bin}/toggle-audio-output";
