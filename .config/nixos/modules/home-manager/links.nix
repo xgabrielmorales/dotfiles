@@ -22,6 +22,7 @@ in
     "${bin}/sort-downloads".source = link "${bin}/sort-downloads";
     "${bin}/sort-screenshots".source = link "${bin}/sort-screenshots";
     "${bin}/toggle-audio-output".source = link "${bin}/toggle-audio-output";
+    "${bin}/toggle-hdr".source = link "${bin}/toggle-hdr";
     "${bin}/toggle-ironbar".source = link "${bin}/toggle-ironbar";
     "${bin}/wclone".source = link "${bin}/wclone";
     "${share}/fonts".source = link "${share}/fonts";

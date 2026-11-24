@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+rc="$HOME/.config/labwc/rc.xml"
+
+if grep -q '<hdr>yes</hdr>' "$rc"; then
+    hdr=no message="HDR has been disabled"
+else
+    hdr=yes message="HDR has been enabled"
+fi
+
+sed -i "s|<hdr>[a-z]*</hdr>|<hdr>$hdr</hdr>|" "$rc"
+labwc --reconfigure
+# labwc only applies <hdr> when outputs are reconfigured; wlr-randr resends the whole layout
+wlr-randr --output "$(wlr-randr | awk '/^[^ ]/{o=$1} /Enabled: yes/{print o; exit}')" --on
+
+notify-send -i luminance-hdr "Display" "$message"

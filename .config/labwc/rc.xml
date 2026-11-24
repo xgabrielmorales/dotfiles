@@ -198,6 +198,9 @@
     <keybind key="W-b">
       <action name="Execute" command="~/.local/bin/toggle-ironbar"/>
     </keybind>
+    <keybind key="W-h">
+      <action name="Execute" command="~/.local/bin/toggle-hdr"/>
+    </keybind>
     <!-- Media Controls -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute" command="~/.local/bin/osd sink inc"/>

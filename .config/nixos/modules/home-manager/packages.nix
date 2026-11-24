@@ -90,6 +90,7 @@
     wireguard-tools
     wl-clipboard
     wlrctl
+    wlr-randr
     wtype
     xdg-user-dirs
     xfce4-notifyd
