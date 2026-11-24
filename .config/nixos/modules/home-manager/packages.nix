@@ -17,7 +17,6 @@
     bluetui
     brightnessctl
     btop
-    cameractrls-gtk4
     csvlens
     deadnix
     delta
