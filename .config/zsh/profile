@@ -6,6 +6,7 @@ export PAGER="less"
 export READER="zen-beta"
 export VISUAL="nvim"
 export BAT_THEME="TwoDark"
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 
 export HISTFILE="$XDG_DATA_HOME/.zsh_history"
 export HISTORY_IGNORE="(ls( *)?|cd( *)?|curl( *)?|cp( *)?|pwd|exit|history)"
