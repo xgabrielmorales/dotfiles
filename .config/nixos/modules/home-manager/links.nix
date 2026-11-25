@@ -50,7 +50,7 @@ in
     "labwc".source = link ".config/labwc";
     "lf".source = link ".config/lf";
     "nvim".source = link ".config/nvim";
-    "pnpm/rc".source = link ".config/pnpm/rc";
+    "pnpm/config.yaml".source = link ".config/pnpm/config.yaml";
     "ranger".source = link ".config/ranger";
     "rofi".source = link ".config/rofi";
     "soteria".source = link ".config/soteria";
