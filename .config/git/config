@@ -4,7 +4,7 @@
     signingkey = ~/.ssh/Personal/IdentityFiles/id_ed25519.pub
 
 [alias]
-    lod = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(red)%aN%C(reset) %C(green)%ar%C(reset) %C(yellow)%D%C(reset)%n%s%n' --use-mailmap
+    lod = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(red)%aN%C(reset) %C(green)%ar%C(reset) %C(yellow)%D%C(reset)%n%C(cyan)[%G?]% GS%C(reset)%n%s%n' --use-mailmap
     s = status
     lpush = push --force-with-lease
     staged = diff --staged
@@ -38,6 +38,9 @@
 
 [gpg]
     format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = ~/.config/git/allowed_signers
 
 [help]
     autocorrect = immediate
@@ -101,6 +104,9 @@
     autoStash = true
     missingCommitsCheck = warn
     updateRefs = true
+
+[tag]
+    gpgSign = true
 
 [status]
     showStash = true
