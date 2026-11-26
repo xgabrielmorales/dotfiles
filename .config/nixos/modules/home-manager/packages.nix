@@ -15,6 +15,7 @@
     awscli2
     bat
     bluetui
+    brave-origin
     brightnessctl
     btop
     csvlens
@@ -28,6 +29,7 @@
     gcc
     gh
     git-extras
+    gnome-sound-recorder
     google-cloud-sdk
     grim
     gucharmap
@@ -89,8 +91,8 @@
     wget
     wireguard-tools
     wl-clipboard
-    wlrctl
     wlr-randr
+    wlrctl
     wtype
     xdg-user-dirs
     xfce4-notifyd
